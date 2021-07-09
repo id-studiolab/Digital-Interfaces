@@ -4,7 +4,7 @@ title: Step 7 Additional visualization using the servo
 parent: "01 Pomodoro"
 ---
 
-## Step 7 Additional visualization using the servo
+# Step 7 Additional visualization using the servo
 The Pomodoro timer is functional, but we can still improve on the user experience. It would be a good idea to visualize to the user how much time there is left before the next alarm goes off. We can use a servo for this, with its angle being 0 when the timer just starts, going up to 180 when the timer expires.
 
 Import the following libaries:

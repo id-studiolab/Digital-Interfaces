@@ -4,8 +4,8 @@ title: Step 6 Adding the breaks
 parent: "01 Pomodoro"
 ---
 
-## Step 6 Adding the breaks
-### Step 6.1 Short break
+# Step 6 Adding the breaks
+## Step 6.1 Short break
 Instead of returning to state_idle, we want to give the user a timed break, which can be either a short break or a long break. We start with the short break. Add *state_short_break* to your variables. When the break is over, we also want to alert the user that their break is over. This state, *state_work_alarm*, should also be in your list of variables. We also store its duration in a variable called *short_break_duration*. It is set to three seconds now:
 
 ```python
@@ -72,7 +72,7 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  
  Here you can find the code we have until now: ** add link ** 
 
-### Step 6.2 Long break
+## Step 6.2 Long break
 After three short breaks, we want to give the user a long break before they have to go back to work. We need to take into account how many breaks the user has had. Create a new variable called *break_counter*, a new state called *state_long_break*, and a variable for the duration:
 
 ```python

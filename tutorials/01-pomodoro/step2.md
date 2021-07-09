@@ -4,7 +4,7 @@ title: Step 2 Setting up the states
 parent: "01 Pomodoro"
 ---
 
-## Step 2 Setting up the states
+# Step 2 Setting up the states
 Upon startup, we would like the program to be in an idle state until the user explicitly starts the timer by means of a button press. So, our programming starts with initializing some variables to keep track of the states: state_idle, state_work, and current_state. We represent the different states as integers. The integer stored in current_state can then be compared to the different states to decide what next steps to take. 
 
 ```python

@@ -4,7 +4,7 @@ title: Step 5 Adding an alarm
 parent: "01 Pomodoro"
 ---
 
-## Step 5 Adding an alarm
+# Step 5 Adding an alarm
 Switching between states works now, as does the LED. But when the user's worktime is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their worktime being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
 
 ```python

@@ -4,7 +4,7 @@ title: Step 4 Creating a timer
 parent: "01 Pomodoro"
 ---
 
-## Step 4 Creating a timer
+# Step 4 Creating a timer
 Now we're ready to add in the timer! Import the time library:
 
 ```python

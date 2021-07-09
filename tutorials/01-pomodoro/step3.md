@@ -4,7 +4,7 @@ title: Step 3 Adding the LED
 parent: "01 Pomodoro"
 ---
 
-## Step 3 Adding the LED
+# Step 3 Adding the LED
 We can switch between two states, and the program prints some output when this switch happens. It would be nice to have a way to show the user which state the program is in now. We can make use of a LED for this. The ItsyBitsy doesn't have a standard library that can control the Grove Chainable LEDs, so we will need to go through some additional steps for it to work. Follow the tutorial below to get things set up.
 
 [Using a Grove Chainable LED on the ItsyBitsy](https://www.notion.so/Using-a-Grove-Chainable-LED-on-the-ItsyBitsy-96b94be0d93647928cedf38bf2ed4097)
