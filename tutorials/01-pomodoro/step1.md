@@ -1,3 +1,9 @@
+---
+layout: default
+title: Step 1 Preparation
+parent: "01 Pomodoro"
+---
+
 ## Step 1 Preparation
 To follow this tutorial, you will need your ItsyBitsy, a chainable LED, a button, a buzzer, and a servo motor. You will also need materials to construct the Pomodoro Timer embodiment. These materials can be picked up at the faculty.
 
