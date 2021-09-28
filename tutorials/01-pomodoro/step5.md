@@ -93,4 +93,4 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Turn the LED red and turn on the buzzer when switching to state_break_alarm
  - Return to state_idle when pressing the button while in state_break_alarm
  
- Here you can find the code we have until now: ** add link ** 
+[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step5-code.html)

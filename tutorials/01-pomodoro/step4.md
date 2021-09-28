@@ -74,6 +74,6 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Switch from state_work to state_idle when the timer expires
  - Switch from state_idle to state_work when the button is pressed
  - Turn the LED green when the state changes from idle to work
- -  Turn the LED off when the state changes from work to idle
+ - Turn the LED off when the state changes from work to idle
  
- Here you can find the code we have until now: ** add link ** 
+[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step4-code.html)

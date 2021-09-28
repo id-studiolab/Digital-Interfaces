@@ -77,4 +77,4 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Turn the LED green when the state changes from idle to work
  -  Turn the LED off when the state changes from work to idle
  
- Here you can find the code we have until now: ** add link ** 
+[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step3-code.html)

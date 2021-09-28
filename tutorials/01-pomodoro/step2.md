@@ -98,4 +98,4 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Output a print statement once the state changes
  - Switch between states upon button press
  
- Here you can find the code we have until now: ** add link ** 
+[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step2-code.html)

@@ -121,4 +121,4 @@ Now we can add in the behavior for the long break. When the timer runs out, we w
 
 And here we have a functional Pomodoro timer! Upload your code to the ItsyBitsy and see if it works. 
 
-Here you can find the code we have until now: ** add link ** 
+[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step6-code.html)
