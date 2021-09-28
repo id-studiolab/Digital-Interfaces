@@ -16,7 +16,7 @@ The Pomodoro technique can be described by the following steps:
 5.  Repeat until task is done.
 
 These steps will look like this in a state diagram:
-** add state diagram **
+![Pomodoro State Diagram](https://github.com/id-studiolab/Digital-Interfaces/blob/documentation/assets/images/pomodoro-states.png?raw=true)
 
 Open Mu and create a new file. Add the following template to the file:
 
