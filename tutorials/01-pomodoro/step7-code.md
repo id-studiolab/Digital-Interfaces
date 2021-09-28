@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 7 Code until now
-parent: "01 Pomodoro"
+parent: "Step 7 Additional visualization using the servo"
 nav_exclude: true
 ---
 

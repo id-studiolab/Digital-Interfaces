@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 5 Code until now
-parent: "01 Pomodoro"
+parent: "Step 5 Adding an alarm"
 nav_exclude: true
 ---
 

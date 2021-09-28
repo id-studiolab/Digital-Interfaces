@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Step 3 Code until now
-parent: "01 Pomodoro"
+parent: "Step 3 Adding the LED"
 nav_exclude: true
-toc_exclude: true
 ---
 
 # Step 3 Code until now

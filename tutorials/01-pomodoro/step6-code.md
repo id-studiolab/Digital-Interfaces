@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 6 Code until now
-parent: "01 Pomodoro"
+parent: "Step 6 Adding the breaks"
 nav_exclude: true
 ---
 

@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Step 2 Code until now
-parent: "01 Pomodoro"
+parent: "Step 2 Setting up the states"
 nav_exclude: true
-toc_exclude: true
 ---
 
 # Step 2 Code until now

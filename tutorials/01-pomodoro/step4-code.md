@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step 4 Code until now
-parent: "01 Pomodoro"
+parent: "Step 4 Creating a timer"
 nav_exclude: true
 ---
 
