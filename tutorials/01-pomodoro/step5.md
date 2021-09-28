@@ -2,7 +2,6 @@
 layout: default
 title: Step 5 Adding an alarm
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 5 Adding an alarm

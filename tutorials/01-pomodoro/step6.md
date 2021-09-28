@@ -2,7 +2,6 @@
 layout: default
 title: Step 6 Adding the breaks
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 6 Adding the breaks

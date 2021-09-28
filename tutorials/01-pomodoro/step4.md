@@ -2,7 +2,6 @@
 layout: default
 title: Step 4 Creating a timer
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 4 Creating a timer

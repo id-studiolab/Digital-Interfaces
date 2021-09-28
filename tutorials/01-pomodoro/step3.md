@@ -2,7 +2,6 @@
 layout: default
 title: Step 3 Adding the LED
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 3 Adding the LED

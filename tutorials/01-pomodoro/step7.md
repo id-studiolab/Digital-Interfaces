@@ -2,7 +2,6 @@
 layout: default
 title: Step 7 Additional visualization using the servo
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 7 Additional visualization using the servo

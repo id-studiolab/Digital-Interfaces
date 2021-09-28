@@ -2,7 +2,6 @@
 layout: default
 title: Step 2 Setting up the states
 parent: "01 Pomodoro"
-has_children: true
 ---
 
 # Step 2 Setting up the states
