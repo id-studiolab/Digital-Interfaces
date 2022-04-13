@@ -2,6 +2,8 @@
 layout: default
 title: Step 3 Adding the LED
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
+
 ---
 
 # Step 3 Adding the LED

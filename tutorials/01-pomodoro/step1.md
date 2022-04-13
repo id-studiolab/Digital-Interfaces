@@ -2,6 +2,7 @@
 layout: default
 title: Step 1 Preparation
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
 ---
 
 # Step 1 Preparation

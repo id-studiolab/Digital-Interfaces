@@ -2,6 +2,8 @@
 layout: default
 title: Step 5 Adding an alarm
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
+
 ---
 
 # Step 5 Adding an alarm

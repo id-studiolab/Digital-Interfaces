@@ -2,6 +2,8 @@
 layout: default
 title: Step 7 Additional visualization using the servo
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
+
 ---
 
 # Step 7 Additional visualization using the servo

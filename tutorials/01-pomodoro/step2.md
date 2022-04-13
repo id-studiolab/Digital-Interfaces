@@ -2,6 +2,7 @@
 layout: default
 title: Step 2 Setting up the states
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
 ---
 
 # Step 2 Setting up the states

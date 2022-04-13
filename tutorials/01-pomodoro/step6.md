@@ -2,6 +2,8 @@
 layout: default
 title: Step 6 Adding the breaks
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
+
 ---
 
 # Step 6 Adding the breaks
