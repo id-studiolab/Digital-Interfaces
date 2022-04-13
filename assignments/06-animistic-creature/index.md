@@ -2,7 +2,7 @@
 layout: default
 title: "Week 6: Animistic Creature"
 parent: Assignments
-has_children: true
+has_children: false
 ---
 
 # Animistic Creature

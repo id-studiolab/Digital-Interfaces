@@ -2,7 +2,7 @@
 layout: default
 title: "Week 4: Data Embodiment"
 parent: Assignments
-has_children: true
+has_children: false
 ---
 
 # Data Embodiment
