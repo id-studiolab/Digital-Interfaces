@@ -6,8 +6,6 @@ nav_order: 0
 
 # Digital Interfaces
 
-Introduction
-
 ## Assignments
 [Week 1: Digital Interfaces Safari](assignments/01-digital-interface-safari/index)
 
