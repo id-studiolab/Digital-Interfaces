@@ -26,6 +26,6 @@ nav_order: 0
 
 [Code @ IDE](https://datacentricdesign.github.io/code/){:target="_blank"}
 
-Discourse
+[Discourse](https://bsc2021.io.tudelft.nl/){:target="_blank"}
 
-Brightspaces
+[Brightspace](https://brightspace.tudelft.nl){:target="_blank"}
