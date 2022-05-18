@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Step 2: Setting up MQTT on your ItsyBitsy"
+title: "Step 2: Interpreting data for our embodiment"
 parent: "Week 4: Data Embodiment"
 grand_parent: Assignments
 has_children: false
