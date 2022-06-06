@@ -15,9 +15,8 @@ nav_order: 0
 
 [Week 4: Data Embodiment](assignments/04-data-embodiment/index)
 
-[Week 5: Animistic Design](assignments/05-animistic-design/index)
+[Week 5+6: Animistic Design](assignments/05-animistic-design/index)
 
-[Week 6: Animistic Creature](assignments/06-animistic-creature/index)
 
 
 
