@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Week 5: Animistic Design"
+title: "Week 5+6: Animistic Design"
 parent: Assignments
 has_children: true
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "03: Fading and blinking a Chainable LED"
-parent: "Week 5: Animistic Design"
+parent: "Week 5+6: Animistic Design"
 grand_parent: Assignments
 has_children: false
 ---

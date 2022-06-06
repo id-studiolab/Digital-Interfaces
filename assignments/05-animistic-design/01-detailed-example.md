@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "01: Detailed example of how to control a servo motor with a sequence"
-parent: "Week 5: Animistic Design"
+parent: "Week 5+6: Animistic Design"
 grand_parent: Assignments
 has_children: false
 ---
