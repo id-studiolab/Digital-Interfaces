@@ -18,7 +18,8 @@ nav_order: 0
 [Week 5+6: Animistic Design](assignments/05-animistic-design/index)
 
 
-
+## Tutorials
+[Building a Pomodoro timer](tutorials/01-pomodoro/index)
 
 ## Other links
 [Documentation for the Connected Interaction Kit](https://id-studiolab.github.io/Connected-Interaction-Kit/){:target="_blank"}

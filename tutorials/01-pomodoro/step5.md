@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Step 5 Adding an alarm
+title: "Step 5: Adding an alarm"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 
 ---
 
-# Step 5 Adding an alarm
+# Step 5: Adding an alarm
 Switching between states works now, as does the LED. But when the user's worktime is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their worktime being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
 
 ```python
@@ -95,4 +95,6 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Turn the LED red and turn on the buzzer when switching to state_break_alarm
  - Return to state_idle when pressing the button while in state_break_alarm
  
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step5-code.html)
+[Click here to see the code you should have until now.](step5-code)
+
+[Next Step](step6){: .btn .btn-blue }

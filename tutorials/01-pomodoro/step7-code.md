@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 7 Code until now
-parent: "Step 7 Additional visualization using the servo"
+title: "Step 7: Code until now"
+parent: "Step 7: Additional visualization using the servo"
 nav_exclude: true
 ---
 
-# Step 7 Code until now
+# Step 7: Code until now
 
 ```python
 ##--- Imports
@@ -164,3 +164,5 @@ while True:
             set_timer(work_duration)
             set_buzzer(False)
 ```
+
+[Return to tutorial](step7){: .btn .btn-blue }

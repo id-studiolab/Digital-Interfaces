@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 2 Setting up the states
+title: "Step 2: Setting up the states"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 ---
 
-# Step 2 Setting up the states
+# Step 2: Setting up the states
 Upon startup, we would like the program to be in an idle state until the user explicitly starts the timer by means of a button press. So, our programming starts with initializing some variables to keep track of the states: state_idle, state_work, and current_state. We represent the different states as integers. The integer stored in current_state can then be compared to the different states to decide what next steps to take. 
 
 ```python
@@ -99,4 +99,6 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Output a print statement once the state changes
  - Switch between states upon button press
  
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step2-code.html)
+[Click here to see the code you should have until now.](step2-code)
+
+[Next Step](step3){: .btn .btn-blue }

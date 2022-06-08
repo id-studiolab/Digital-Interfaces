@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Step 7 Additional visualization using the servo
+title: "Step 7: Additional visualization using the servo"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 
 ---
 
-# Step 7 Additional visualization using the servo
+# Step 7: Additional visualization using the servo
 The Pomodoro timer is functional, but we can still improve on the user experience. It would be a good idea to visualize to the user how much time there is left before the next alarm goes off. We can use a servo for this, with its angle being 0 when the timer just starts, going up to 180 when the timer expires.
 
 Import the following libaries:
@@ -46,4 +46,6 @@ We can call this function in every state we have a timer in: *state_work*, *stat
 
 Upload your code to the ItsyBitsy and see if it works. This concludes the programming part of the assignment! 
 
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step7-code.html)
+[Click here to see the code you should have until now.](step7-code)
+
+[Last Step](step8){: .btn .btn-blue }

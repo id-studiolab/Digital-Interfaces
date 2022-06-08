@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 1 Preparation
+title: "Step 1: Preparation"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 ---
 
-# Step 1 Preparation
+# Step 1: Preparation
 To follow this tutorial, you will need your ItsyBitsy, a chainable LED, a button, a buzzer, and a servo motor. You will also need materials to construct the Pomodoro Timer embodiment. These materials can be picked up at the faculty.
 
 The Pomodoro technique can be described by the following steps:
@@ -17,7 +17,7 @@ The Pomodoro technique can be described by the following steps:
 5.  Repeat until task is done.
 
 These steps will look like this in a state diagram:
-![Pomodoro State Diagram](https://github.com/id-studiolab/Digital-Interfaces/blob/documentation/assets/images/pomodoro-states.png?raw=true)
+![Pomodoro State Diagram](assets/pomodoro-states.png)
 
 Open Mu and create a new file. Add the following template to the file:
 
@@ -37,3 +37,5 @@ while True:
 
 ```
 This template provides us with some basic organization for the programming that we will do in the following steps. Save this new file as *code.py* on your ItsyBitsy. If you already have a *code.py* file from a previous tutorial, move it over to some place on your computer so you can access it later.
+
+[Next Step](step2){: .btn .btn-blue }

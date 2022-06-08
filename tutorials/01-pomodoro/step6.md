@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Step 6 Adding the breaks
+title: "Step 6: Adding the breaks"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 
 ---
 
-# Step 6 Adding the breaks
+# Step 6: Adding the breaks
 ## Step 6.1 Short break
 Instead of returning to state_idle, we want to give the user a timed break, which can be either a short break or a long break. We start with the short break. Add *state_short_break* to your variables. When the break is over, we also want to alert the user that their break is over. This state, *state_work_alarm*, should also be in your list of variables. We also store its duration in a variable called *short_break_duration*. It is set to three seconds now:
 
@@ -123,4 +123,6 @@ Now we can add in the behavior for the long break. When the timer runs out, we w
 
 And here we have a functional Pomodoro timer! Upload your code to the ItsyBitsy and see if it works. 
 
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step6-code.html)
+[Click here to see the code you should have until now.](step6-code)
+
+[Next Step](step7){: .btn .btn-blue }

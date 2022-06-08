@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Step 3 Adding the LED
+title: "Step 3: Adding the LED"
 parent: "01 Pomodoro"
 grand_parent: "Tutorials"
 
 ---
 
-# Step 3 Adding the LED
+# Step 3: Adding the LED
 We can switch between two states, and the program prints some output when this switch happens. It would be nice to have a way to show the user which state the program is in now. We can make use of a LED for this. The ItsyBitsy doesn't have a standard library that can control the Grove Chainable LEDs, so we will need to go through some additional steps for it to work. Follow the tutorial below to get things set up.
 
 [Using a Grove Chainable LED on the ItsyBitsy](https://www.notion.so/Using-a-Grove-Chainable-LED-on-the-ItsyBitsy-96b94be0d93647928cedf38bf2ed4097)
@@ -79,4 +79,6 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Turn the LED green when the state changes from idle to work
  -  Turn the LED off when the state changes from work to idle
  
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step3-code.html)
+[Click here to see the code you should have until now.](step3-code)
+
+[Next Step](step4){: .btn .btn-blue }
