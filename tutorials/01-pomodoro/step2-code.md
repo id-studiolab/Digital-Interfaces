@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Step 2 Code until now
-parent: "Step 2 Setting up the states"
+title: "Step 2: Code until now"
+parent: "Step 2: Setting up the states"
 nav_exclude: true
 ---
 
@@ -56,3 +56,5 @@ while True:
             current_state = state_idle
 
 ```
+
+[Return to tutorial](step2){: .btn .btn-blue }

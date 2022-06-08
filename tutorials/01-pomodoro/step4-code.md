@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 4 Code until now
-parent: "Step 4 Creating a timer"
+title: "Step 4: Code until now"
+parent: "Step 4: Creating a timer"
 nav_exclude: true
 ---
 
-# Step 4 Code until now
+# Step 4: Code until now
 
 ```python
 ##--- Imports
@@ -96,3 +96,5 @@ while True:
             current_state = state_idle
             set_led_color(led_off)
 ```
+
+[Return to tutorial](step4){: .btn .btn-blue }

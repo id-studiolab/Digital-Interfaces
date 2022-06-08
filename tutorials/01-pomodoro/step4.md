@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Step 4 Creating a timer
+title: "Step 4: Creating a timer"
 parent: "01 Pomodoro"
+grand_parent: "Tutorials"
+
 ---
 
-# Step 4 Creating a timer
+# Step 4: Creating a timer
 Now we're ready to add in the timer! Import the time library:
 
 ```python
@@ -76,4 +78,6 @@ It's time to upload your code to the ItsyBitsy and see if it works! Your code sh
  - Turn the LED green when the state changes from idle to work
  - Turn the LED off when the state changes from work to idle
  
-[Click here to see the code you should have until now.](https://id-studiolab.github.io/Digital-Interfaces/tutorials/01-pomodoro/step4-code.html)
+[Click here to see the code you should have until now.](step4-code)
+
+[Next Step](step5){: .btn .btn-blue }

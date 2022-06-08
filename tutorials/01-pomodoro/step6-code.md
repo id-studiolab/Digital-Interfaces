@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 6 Code until now
-parent: "Step 6 Adding the breaks"
+title: "Step 6: Code until now"
+parent: "Step 6: Adding the breaks"
 nav_exclude: true
 ---
 
-# Step 6 Code until now
+# Step 6: Code until now
 
 ```python
 ##--- Imports
@@ -152,3 +152,5 @@ while True:
             set_timer(work_duration)
             set_buzzer(False)
 ```
+
+[Return to tutorial](step6){: .btn .btn-blue }

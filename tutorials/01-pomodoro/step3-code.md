@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 3 Code until now
-parent: "Step 3 Adding the LED"
+title: "Step 3: Code until now"
+parent: "Step 3: Adding the LED"
 nav_exclude: true
 ---
 
-# Step 3 Code until now
+# Step 3: Code until now
 
 ```python
 ##--- Imports
@@ -79,3 +79,5 @@ while True:
             
 
 ```
+
+[Return to tutorial](step3){: .btn .btn-blue }

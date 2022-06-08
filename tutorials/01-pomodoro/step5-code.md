@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Step 5 Code until now
-parent: "Step 5 Adding an alarm"
+title: "Step 5: Code until now"
+parent: "Step 5: Adding an alarm"
 nav_exclude: true
 ---
 
-# Step 5 Code until now
+# Step 5: Code until now
 
 ```python
 ##--- Imports
@@ -115,3 +115,5 @@ while True:
             set_led_color(led_off)
             set_buzzer(False)
 ```
+
+[Return to tutorial](step5){: .btn .btn-blue }

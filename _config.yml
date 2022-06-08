@@ -1,1 +1,6 @@
 remote_theme: pmarsceill/just-the-docs
+#theme: just-the-docs 
+title: Digital Interfaces
+color_scheme: digital-interfaces
+plugins:
+  - jekyll-redirect-from
