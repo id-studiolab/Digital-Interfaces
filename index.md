@@ -24,7 +24,7 @@ nav_order: 0
 ## Other links
 [Documentation for the Connected Interaction Kit](https://id-studiolab.github.io/Connected-Interaction-Kit/){:target="_blank"}
 
-[Code @ IDE](https://datacentricdesign.github.io/code/){:target="_blank"}
+[IOB22 - Digital Product Development](https://datacentricdesign.github.io/iob22/){:target="_blank"}
 
 [Brightspace](https://brightspace.tudelft.nl/d2l/home/411563){:target="_blank"}
 
