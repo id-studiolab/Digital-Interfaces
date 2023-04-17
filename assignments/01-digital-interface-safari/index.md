@@ -26,13 +26,13 @@ Of all these activities we want to make sure you finish the final one - the prot
 
 | Time | Activity |
 | --- | --- |
-| 8:45 - 9:30 | Plenair Lecture |
-| 9:30 - 9:45 | Break - Find your Studio |
-| 9:45 - 10:00 | Introductions coach and students |
-| 10:00 - 11:30 | Start working on the part A and B |
-| 11:30 - 11:45 | Prepare for the prototype-test of your switch |
-| 11:45 - 12:15 | Execute the prototype-test |
-| 12:15.- 12:30 | Together with your coach select the top 3 switches and close the workshop. |
+| 13:45 - 14:30 | Plenair Lecture |
+| 14:30 - 14:45 | Break - Find your Studio |
+| 14:45 - 15:00 | Introductions coach and students |
+| 15:00 - 16:30 | Start working on the part A and B |
+| 16:30 - 16:45 | Prepare for the prototype-test of your switch |
+| 16:45 - 17:15 | Execute the prototype-test |
+| 17:15.- 17:30 | Together with your coach select the top 3 switches and close the workshop. |
 
 ## Part A: Creating switches
 
