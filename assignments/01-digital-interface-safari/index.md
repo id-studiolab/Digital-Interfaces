@@ -32,7 +32,7 @@ Of all these activities we want to make sure you finish the final one - the prot
 | 15:00 - 16:30 | Start working on the part A and B |
 | 16:30 - 16:45 | Prepare for the prototype-test of your switch |
 | 16:45 - 17:15 | Execute the prototype-test |
-| 17:15.- 17:30 | Together with your coach select the top 3 switches and close the workshop. |
+| 17:15 - 17:30 | Together with your coach select the top 3 switches and close the workshop. |
 
 ## Part A: Creating switches
 
@@ -71,7 +71,7 @@ If you receive a soldering token, drop everything and go the the PMB Digital Lab
 
 ![Untitled](assignment-2.png)
 
-## Testing your design (11:30-12:15)
+## Testing your design (16:30-17:15)
 
 ---
 
