@@ -9,11 +9,11 @@ has_children: true
 
 ---
 ## Links
-[What is a computer? (Eames)](https://www.youtube.com/watch?v=eIgX6sPOqCY&t=345s)
+[What is a computer? (Eames)](https://www.youtube.com/watch?v=eIgX6sPOqCY&t=345s){:target="_blank"}
 
-[Switch Inspiration Machine ✨](https://switch-inspiration-machine.netlify.app)
+[Switch Inspiration Machine ✨](https://switch-inspiration-machine.netlify.app){:target="_blank"}
 
-[Additional Switch Inspiration (Lo-fi prototyping)](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch)
+[Additional Switch Inspiration (Lo-fi prototyping)](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch){:target="_blank"}
 
 ---
 ## Workshop assignment
