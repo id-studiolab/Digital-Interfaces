@@ -7,15 +7,15 @@ nav_order: 0
 # Digital Interfaces
 
 ## Assignments
-[Week 1: Digital Interfaces Safari](assignments/01-digital-interface-safari/index)
+[1: Digital Interfaces Safari](assignments/01-digital-interface-safari/index)
 
-[Week 2: Reaction Game](assignments/02-reaction-game/index)
+[2: Reaction Game](assignments/02-reaction-game/index)
 
-[Week 3: Game Controller](assignments/03-game-controller/index)
+[3: Game Controller](assignments/03-game-controller/index)
 
-[Week 4: Data Embodiment](assignments/04-data-embodiment/index)
+[4: Data Embodiment](assignments/04-data-embodiment/index)
 
-[Week 5+6: Animistic Design](assignments/05-animistic-design/index)
+[5+6: Animistic Design](assignments/05-animistic-design/index)
 
 
 ## Tutorials

@@ -13,7 +13,7 @@ has_children: true
 
 [Switch Inspiration Machine ✨](https://switch-inspiration-machine.netlify.app){:target="_blank"}
 
-[Additional Switch Inspiration (Lo-fi prototyping)](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch){:target="_blank"}
+[Additional Switch Inspiration (Lo-fi prototyping)](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch){:target="_blank"} 
 
 ---
 ## Workshop assignment
@@ -40,7 +40,7 @@ Of all these activities we want to make sure you finish the final one - the prot
 
 As seen in the introduction lecture, a switch can have many shapes, forms and interactive properties. In its most basic form, a switch is a device that changes directly from one state to the other. It is either `True` or `False`.
 
-In this assignment you are going to design and build three different, hopefully very creative switches (you can find some more inspiration [here](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch)).
+In this assignment you are going to design and build three different, hopefully very creative switches (you can find some more inspiration [here](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch)){:target="_blank"}.
 
 1. Go to our ✨ [Switch Inspiration Machine](https://switch-inspiration-machine.netlify.app) ✨ to generate a novel design brief. You don’t *need* to use it, but its constraints might help you along in your creative process and guide your design. Take a screenshot of the brief for later reference.
 2. Come up with at least three different switches. Be as creative and diverse in the ideas as possible. 
@@ -80,9 +80,9 @@ Although the functionality of your switch might be obvious to you (its designer)
 To do so:
 
 1. Ask for an A3 Prototype-Test form, your coach has one. 
-2. Prepare for the prototype-test of your switch (if you have more, choose your favourite switch). Fill out the **interaction journey** and the **outcome you expect**.
+2. Prepare for the prototype-test of your switch (if you have more, choose your favourite switch). Fill out the **interaction scenario** and the **outcome you expect**.
 3. Split up into groups of 2 students
-4. In turn, present your switch designs and test it with one another. Observe and take notes on your testers reactions.
+4. In turn, let another student inspect your switch design and proceed to ask them to operate the switch. Observe and take notes on your testers reactions.
 5. Fill out the evaluation form when testing another’s design.
 6. Upload the form to Brightspace: *[Week 1 - Schakelaars](https://brightspace.tudelft.nl/d2l/lms/dropbox/admin/mark/folder_submissions_users.d2l?db=95400&ou=411563)*
 7. Place your switch with the others on the podium in the main hall of IO. If you want, you can print and present your chosen design brief next to it.
