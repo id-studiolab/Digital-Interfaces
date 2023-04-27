@@ -21,4 +21,4 @@ Once the LED turns white, both players have to try and touch their sensor as qui
 |                Chainable RGB/W LED (ChaiNEO)                 |                  Chainable RGB LED (Grove)                   |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGB LED" width="250"/> | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Grove-Chainable-LED-2.0.png" alt="Chainable RGB LED" width="250"/> |
-|    [Code for the game](chainable-led-chaineo){: .btn .btn-blue }    |     [Code for the game](chainable-led-p9813){: .btn .btn-blue }     |
+|    [Code for the game](game_code_neopixel){: .btn .btn-blue }    |     [Code for the game](game_code_p9813){: .btn .btn-blue }     |
