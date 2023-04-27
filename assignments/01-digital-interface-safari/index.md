@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Week 1: Digital Interfaces Safari"
+title: "1: Digital Interfaces Safari"
 parent: Assignments
 has_children: true
 ---

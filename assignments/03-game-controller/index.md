@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Week 3: Game Controller"
+title: "3: Game Controller"
 parent: Assignments
 has_children: false
 ---

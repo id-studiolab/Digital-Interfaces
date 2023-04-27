@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Week 4: Data Embodiment"
+title: "4: Data Embodiment"
 parent: Assignments
 has_children: true
 ---
