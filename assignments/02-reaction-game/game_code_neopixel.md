@@ -89,7 +89,7 @@ while True:
         if timer_expired():
             set_led_color(led_white)
             current_state = state_wait_button_press
-ß
+
     elif current_state == state_wait_button_press:
         if red_button.value:
             current_state = state_red_wins
