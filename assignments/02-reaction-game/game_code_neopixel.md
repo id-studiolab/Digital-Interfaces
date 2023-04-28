@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Game code for Neopixel"
-grand_parent: "Assignments"_
+grand_parent: "Assignments"
 parent: "2: Reaction Game"
 nav_order: 0
 has_children: false
