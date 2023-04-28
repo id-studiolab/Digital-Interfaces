@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Game code for Neopixel"
-parent: Assignments
+parent: "2: Reaction Game"
 has_children: false
 ---
 
@@ -21,7 +21,7 @@ We provide you with the basic code for the game. You can deduce the correct wiri
 ##--- Imports
 import digitalio
 import board
-import p9813
+import neopixel
 import time
 import random
 
@@ -43,15 +43,14 @@ blue_button = digitalio.DigitalInOut(blue_pin)
 blue_button.direction = digitalio.Direction.INPUT
 
 # For the Chainable LED:
-pin_clk = board.D3
-pin_data = board.D4
+pin_leds = board.D3
 num_leds = 1
-leds = p9813.P9813(pin_clk, pin_data, num_leds)
+leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
-led_off = (0, 0, 0)
-led_red = (255, 0, 0)
-led_blue = (0, 0, 255)
-led_white = (255, 255, 255)
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_white = (0, 0, 0, 255)
 
 # Timer variables
 timer_duration = 0
@@ -61,7 +60,7 @@ timer_mark = 0
 def set_led_color(color):
     global leds
     leds.fill(color)
-    leds.write()
+    leds.show()
 
 def set_timer(duration):
     global timer_duration, timer_mark
@@ -77,6 +76,7 @@ def timer_expired():
 
 ##--- Main loop
 while True:
+
     if current_state == state_wait:
         set_led_color(led_off)
         set_timer(random.randint(3, 10))
@@ -86,7 +86,7 @@ while True:
         if timer_expired():
             set_led_color(led_white)
             current_state = state_wait_button_press
-
+ß
     elif current_state == state_wait_button_press:
         if red_button.value:
             current_state = state_red_wins
@@ -102,4 +102,3 @@ while True:
         set_led_color(led_red)
         time.sleep(3)
         current_state = state_wait
-```

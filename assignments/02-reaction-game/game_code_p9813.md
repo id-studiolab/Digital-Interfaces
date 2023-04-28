@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Game code for P9813"
-parent: Assignments
+parent: "2: Reaction Game"
 has_children: false
 ---
 
