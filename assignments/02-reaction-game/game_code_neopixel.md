@@ -19,6 +19,7 @@ Once the LED turns white, both players have to try and touch their sensor as qui
 ## Code for the game
 We provide you with the basic code for the game. You can deduce the correct wiring of the buttons and LED from the set variables. Copy this code into your `code.py` file and connect all hardware components to have a basic game ready.
 
+
 ```python
 ##--- Imports
 import digitalio
