@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Game code for Neopixel"
+grand_parent: "Assignments"_
 parent: "2: Reaction Game"
 has_children: false
 ---
