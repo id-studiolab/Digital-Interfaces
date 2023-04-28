@@ -2,7 +2,7 @@
 layout: default
 title: "2: Reaction Game"
 parent: Assignments
-has_children: false
+has_children: true
 ---
 
 # Reaction Game
