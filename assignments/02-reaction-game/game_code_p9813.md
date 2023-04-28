@@ -3,7 +3,7 @@ layout: default
 title: "Game code for P9813"
 grand_parent: "Assignments"_
 parent: "2: Reaction Game"
-nav_order: 0
+nav_order: 1
 has_children: false
 ---
 
