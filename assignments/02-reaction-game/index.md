@@ -16,10 +16,14 @@ Once the LED turns white, both players have to try and touch their sensor as qui
 
 ![](reaction_game.jpg)
 
-The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about Acting Machine Diagrams later. For now you can already interprete how the control might flow if you start in the state (circle) labeled "wait" and then traverse the transitions (arrows) from state to state.
+The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about <i>Acting Machine Diagrams</i> later. For now you can already interprete how the control might flow if you start in the <i>state</i> (circle) labeled "wait" and then traverse the <i>transitions</i> (arrows) from state to state.
 
 ## Game code
-There is a simple way to derive a program that implement the control flow from the acting machine diagram, we have already done that for you. In order to find this code you first have to identify the LED form factor of the LEDs in your Connected Interaction Kit. Match the LED in your kit with one of the images below, then access the game code by pressing the  button under the matching image.
+There is a simple way to derive a program that implement the control flow from the Acting 
+Machine Diagram, we have already done that for you!
+
+In order to navigate to the right code you first have to identify the LED form factor of the LEDs in your Connected Interaction Kit. Match the LED in your kit with one of the images below, then access the game code by pressing the  button under the matching image.
+
 ---
 
 |                Chainable RGB/W LED (ChaiNEO)                 |                  Chainable RGB LED (Grove)                   |
