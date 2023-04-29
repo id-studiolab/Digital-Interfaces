@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Game code for Neopixel"
+title: "Game code for ChaiNEO"
 grand_parent: "Assignments"
 parent: "2: Reaction Game"
 nav_order: 0
