@@ -8,7 +8,7 @@ has_children: false
 
 # Step 1: Setting up MQTT on your ItsyBitsy
 
-After successfully completing [Tutorial 3](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
+After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
 1. Download the [Circuit Python library bundle for Version 7.x](https://circuitpython.org/libraries) if you haven’t already. Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy over only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
 2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` library folder into the `lib` folder of your `CIRCUITPY` device
