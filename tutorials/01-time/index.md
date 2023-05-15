@@ -3,6 +3,7 @@ layout: default
 title: "01 Time in CircuitPython"
 has_children: false
 parent: "Tutorials"
+---
 
 # Dealing with Time in Circuit Python - Coding Seminar
 
