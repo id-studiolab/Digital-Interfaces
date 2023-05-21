@@ -237,4 +237,4 @@ while True:
    time.sleep(1)
 ```
 
-[Next Step](step-3){: .btn .btn-blue }
+[Previous Step](step-1){: .btn .btn-gray }  [Next Step](step-3){: .btn .btn-blue }
