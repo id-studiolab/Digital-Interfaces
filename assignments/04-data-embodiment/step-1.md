@@ -32,7 +32,6 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    import time
    import board
    import busio
-   import p9813
    from digitalio import DigitalInOut
    from adafruit_esp32spi import adafruit_esp32spi
    from adafruit_esp32spi import adafruit_esp32spi_wifimanager
