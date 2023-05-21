@@ -120,7 +120,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    #MQTT_topic = "iss/coordinates"
    
    # We will use this value to save new incoming data
-   last_incoming_value = 0;
+   last_incoming_value = 0
    
    ## --- Functions
    
