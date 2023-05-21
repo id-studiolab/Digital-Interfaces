@@ -78,7 +78,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       print("Disconnected from MQTT Broker!")
    
    def message(client, topic, message):
-      global incoming_value
+      global last_incoming_value
       """Method callled when a client's subscribed feed has a new
       value.
       :param str topic: The topic of the feed with a new value.
@@ -87,7 +87,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       print("New message on topic {0}: {1}".format(topic, message))
       
       # New values are saved in this variable
-      incoming_value = float(message)
+      last_incoming_value = float(message)
    
    # Connect to WiFi
    print("Connecting to WiFi...")
@@ -121,7 +121,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    #MQTT_topic = "ISS/coordinates"
    
    # We will use this value to save new incoming data
-   incoming_value = 0;
+   last_incoming_value = 0;
    
    ## --- Functions
    
@@ -146,7 +146,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       # Add your own looping functions to do something with the data below this line
       
       # Let's print the incoming data in our Serial Monitor
-      print(incoming_value)
+      print(last_incoming_value)
    
       time.sleep(0.01)
    ```
@@ -168,4 +168,4 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
 
 6. Let’s `import mqtt_client` for now and save the file. Open the `Serial Monitor` and you should be receiving data!
 
-[Next Step](step-2){: .btn .btn-blue }
+[Previous Step](index){: .btn .btn-gray }  [Next Step](step-2){: .btn .btn-blue }
