@@ -115,9 +115,9 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    # Here you can choose what datasource you want to subscribe to. The default is Perlin Noise.
    # Make sure there is only one datasource active at any given time (and otherwise add a # before the one you do not want to use anymore)
    
-   MQTT_topic = "Perlin"
-   #MQTT_topic = "ISS/distance"
-   #MQTT_topic = "ISS/coordinates"
+   MQTT_topic = "perlin"
+   #MQTT_topic = "iss/distance"
+   #MQTT_topic = "iss/coordinates"
    
    # We will use this value to save new incoming data
    last_incoming_value = 0;
