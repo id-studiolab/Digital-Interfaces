@@ -129,12 +129,13 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    # Connect the client to the MQTT broker.
    print("Connecting to MQTT broker...")
    mqtt_client.connect()
+   mqtt_client._backwards_compatible_sock = True
    
    # --- Main loop
    while True:
       # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
       try:
-         mqtt_client.loop()
+         mqtt_client.loop(0.1)
       except (ValueError, RuntimeError) as e:
          print("Failed to get data, retrying\n", e)
          wifi.reset()
