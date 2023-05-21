@@ -119,7 +119,6 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    MQTT_topic = "Perlin"
    #MQTT_topic = "ISS/distance"
    #MQTT_topic = "ISS/coordinates"
-   #MQTT_topic = "Coffeemachine"
    
    # We will use this value to save new incoming data
    incoming_value = 0;
