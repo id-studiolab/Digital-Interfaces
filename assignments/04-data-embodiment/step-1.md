@@ -17,10 +17,10 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    secrets = {
       'ssid' : 'TUD-facility', # The wifi we connect to 
       'password' : 'replace-with-your-iPSK-String', # Our personal password to connect to Wifi
-      'mqtt_broker' : 'idedigitalinterfaces.cloud.shiftr.io', # The MQTT server we connect to
-      'mqtt_broker_user' : 'idedigitalinterfaces', # The username for connecting to the server
-      'mqtt_broker_password' : 'KxiJ75HOT0VAwDQR', # The password for connecting to the server
-      'mqtt_clientid': 'Studio13_Frederik', # The device name we present to the server when connecting
+      'mqtt_broker' : 'ide-education.cloud.shiftr.io', # The MQTT server we connect to
+      'mqtt_broker_user' : 'ide-education', # The username for connecting to the server
+      'mqtt_broker_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
+      'mqtt_clientid': 'Studio5_Caspar', # The device name we present to the server when connecting
    }
    ```
 4. This week we are introducing a new way of choosing what code should be executed on your ItsyBitsy. We think that this will help you when juggling or working on multiple prototypes or code tryouts at the same time.

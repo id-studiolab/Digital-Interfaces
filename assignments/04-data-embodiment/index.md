@@ -15,9 +15,8 @@ The three datasources we provide are:
 
 1. The current coordinates of the ISS and its calculated distance to IDE in Delft
 2. A [Perlin Noise](https://en.wikipedia.org/wiki/Perlin_noise) function that returns smooth values between 1-100
-3. An coffee tracker that returns the total amount of coffees bought that day at the IDE Douwe Egberts corner
 
-You can follow the flow of data when going to [https://idedigitalinterfaces.cloud.shiftr.io](https://idedigitalinterfaces.cloud.shiftr.io/)
+You can follow the flow of data when going to [https://ide-education.cloud.shiftr.io](https://ide-education.cloud.shiftr.io/)
 
 ---
 
