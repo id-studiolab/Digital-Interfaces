@@ -31,25 +31,25 @@ We created some helper functions and examples that you can use for this purpose:
 
 ```python
 # To map a number from one range to another, we just need to apply some math to the number.
-def map_to_range(x, fromMin, fromMax, toMin, toMax): 
-   # Get the total "amount" of numbers between our minimum and maximum. For example if we want to go between 1 and 3, this will be 2.d
-   fromTotal = fromMax - fromMin 
+def map_to_range(x, fromMin, fromMax, toMin, toMax):
+    # Get the total "amount" of numbers between our minimum and maximum. For example if we want to go between 1 and 3, this will be 2.d
+    fromTotal = fromMax - fromMin
 
-   # Same as previous but for the minimum and maximum we want to work towards.
-   toTotal = toMax - toMin
+    # Same as previous but for the minimum and maximum we want to work towards.
+    toTotal = toMax - toMin
 
-   # Divide the To by the From to see how much bigger (or smaller) the To is compared to the From.
-   multiplier = toTotal / fromTotal
+    # Divide the To by the From to see how much bigger (or smaller) the To is compared to the From.
+    multiplier = toTotal / fromTotal
 
-   # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
-   y = x - fromMin 
+    # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
+    y = x - fromMin
 
-   # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
-   z = y * multiplier 
+    # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
+    z = y * multiplier
 
-   # We get the result by adding the minimum of the To to our previous result.
-   result = z + toMin 
-   return result # Return 
+    # We get the result by adding the minimum of the To to our previous result.
+    result = z + toMin
+    return result  # Return
 ```
 
 ### Code Example
@@ -113,10 +113,10 @@ while True:
 ### Basic function
 
 ```python
-def add_to_list(lst, x, length): # x is the number we wish to add to the list, length is how long we want our list to be at most.
-   lst.append(x) # Add our x to the end of the list
-   while len(lst) > length: # While the list contains more than the allowed amount of items
-      lst.pop(0) # Remove the first item
+def add_to_list(lst, x, length):  # x is the number we wish to add to the list, length is how long we want our list to be at most.
+    lst.append(x)  # Add our x to the end of the list
+    while len(lst) > length:  # While the list contains more than the allowed amount of items
+        lst.pop(0)  # Remove the first item
 ```
 
 ### Code example
@@ -140,7 +140,7 @@ def add_to_list(lst, x, length): # x is the number we wish to add to the list, l
 # --- Main loop
 while True:
    ## Generate a random integer between 0 and 1024
-   random_number = random.randint(0,1024);
+   random_number = random.randint(0,1024)
    
    ## Add random_number to our list, and remove first entries when the maximum capacity is reached
    add_to_list(data_collection, random_number, maximum_number_of_entries)
@@ -157,7 +157,7 @@ while True:
 
 ```python
 def list_average(lst):
-   return sum(lst) / len(lst) # To get the average of a list, we get the sum of the list (all numbers added together) and divide it by the length of the list (the amount of numbers in the list)
+    return sum(lst) / len(lst) # To get the average of a list, we get the sum of the list (all numbers added together) and divide it by the length of the list (the amount of numbers in the list)
 ```
 
 ### Code example
@@ -187,7 +187,7 @@ while True:
 
 ```python
 def list_minimum(lst):
-   return min(lst) # This is the function used to get the smallest number from a list
+    return min(lst) # This is the function used to get the smallest number from a list
    
 ```
 
@@ -197,16 +197,18 @@ def list_minimum(lst):
 import time
 
 ## Creating some  variables
-data_collection = [150,52,32,10,212,50,100]
+data_collection = [150, 52, 32, 10, 212, 50, 100]
+
 
 ## --- Functions
 def list_minimum(lst):
-   return min(lst) # This is the function used to get the smallest number from a list
+    return min(lst)  # This is the function used to get the smallest number from a list
+
 
 # --- Main loop
 while True:
-   print("List minimum: {0}".format(list_minimum(data_collection)))
-   time.sleep(1)
+    print("List minimum: {0}".format(list_minimum(data_collection)))
+    time.sleep(1)
 ```
 
 ## Get the largest number from a list
@@ -215,7 +217,7 @@ while True:
 
 ```python
 def list_maximum(lst):
-   return max(lst) # This is the function used to get the largest number from a list
+    return max(lst) # This is the function used to get the largest number from a list
 
 ```
 
@@ -225,16 +227,18 @@ def list_maximum(lst):
 import time
 
 ## Creating some  variables
-data_collection = [150,52,32,10,212,50,100]
+data_collection = [150, 52, 32, 10, 212, 50, 100]
+
 
 ## --- Functions
 def list_maximum(lst):
-   return max(lst) # This is the function used to get the largest number from a list
+    return max(lst)  # This is the function used to get the largest number from a list
+
 
 # --- Main loop
 while True:
-   print("List maximum: {0}".format(list_maximum(data_collection)))
-   time.sleep(1)
+    print("List maximum: {0}".format(list_maximum(data_collection)))
+    time.sleep(1)
 ```
 
 [Previous Step](step-1){: .btn .btn-gray }  [Next Step](step-3){: .btn .btn-blue }
