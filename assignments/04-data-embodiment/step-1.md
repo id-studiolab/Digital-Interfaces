@@ -85,8 +85,15 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       """
       print("New message on topic {0}: {1}".format(topic, message))
       
-      # New values are saved in this variable
-      last_incoming_value = float(message)
+      # Check if we are recieving messages from ISS -> Location, that message contains two values
+      if " " in message:
+          last_incoming_value = message.split()
+          # make a number out of the message
+          last_incoming_value[0] = float(last_incoming_value[0])
+          last_incoming_value[1] = float(last_incoming_value[1])
+      else:
+          # make a number out of the message
+          last_incoming_value = float(message)
    
    # Connect to WiFi
    print("Connecting to WiFi...")
@@ -117,7 +124,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    
    MQTT_topic = "perlin"
    #MQTT_topic = "iss/distance"
-   #MQTT_topic = "iss/coordinates"
+   #MQTT_topic = "iss/location"
    
    # We will use this value to save new incoming data
    last_incoming_value = 0
