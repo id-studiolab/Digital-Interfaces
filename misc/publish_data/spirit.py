@@ -5,6 +5,8 @@ from perlin_noise import PerlinNoise
 from random import randrange
 from urllib.request import urlopen
 import json
+perlin_noise = PerlinNoise()
+count = 0
 
 try:
     from settings import settings
@@ -29,13 +31,9 @@ client.connect(settings["broker"], 1883)
 client.loop_start()
 
 def perlin_noise_step ():
-	perlin_noise = PerlinNoise()
-	perlin_broker_topic = "perlin"
-	perlin = "0.5";
-	noiseScale=0.02
-	offset = 0.0
-	speed = 0.8
-	noise = perlin_noise(randrange(100)/100)
+	global perlin_noise, count
+	noise = perlin_noise(count)
+	count += 0.1
 	return noise
 	
 import math
