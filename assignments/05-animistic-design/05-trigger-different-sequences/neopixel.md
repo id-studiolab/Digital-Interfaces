@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chainable LED ChaiNEO"
-parent: "05: Triggering different sequences based on context or interaction"
+parent: "02: Triggering different sequences based on context or interaction"
 grand_parent: "5+6: Animistic Design"
 has_children: false
 ---

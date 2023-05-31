@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "04: Running two sequences simultaneously"
-parent: "Week 5+6: Animistic Design"
+title: "02: Running two sequences simultaneously"
+parent: "5+6: Animistic Design"
 grand_parent: Assignments
 has_children: true
 ---

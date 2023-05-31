@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "05: Triggering different sequences based on context or interaction"
-parent: "Week 5+6: Animistic Design"
+title: "03: Triggering different sequences based on context or interaction"
+parent: "5+6: Animistic Design"
 grand_parent: Assignments
 has_children: true
 

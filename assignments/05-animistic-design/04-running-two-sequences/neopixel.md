@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chainable LED ChaiNEO"
-parent: "04: Running two sequences simultaneously"
+parent: "02: Running two sequences simultaneously"
 grand_parent: "5+6: Animistic Design"
 has_children: false
 ---
