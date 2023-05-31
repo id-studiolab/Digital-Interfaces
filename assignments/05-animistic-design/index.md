@@ -195,6 +195,6 @@ It is important to understand that you are **not limited to these examples.** Th
 
 [Fading and blinking a Chainable LED](03-fading-and-blinking-a-chainable-led-index){: .btn .btn-blue }
 
-[Running two sequences](04-running-two-sequences){: .btn .btn-blue }
+[Running two sequences](04-running-two-sequences-index){: .btn .btn-blue }
 
-[Trigger different sequences](05-trigger-different-sequences){: .btn .btn-blue }
+[Trigger different sequences](05-trigger-different-sequences-index){: .btn .btn-blue }
