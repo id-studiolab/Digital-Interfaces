@@ -6,7 +6,7 @@ grand_parent: Assignments
 has_children: true
 ---
 
-# 03: Fading and blinking a Chainable LED
+# 01: Fading and blinking a Chainable LED
 
 This example uses a Chainable LED, Please select the type of LED that you are using.
 

@@ -6,7 +6,7 @@ grand_parent: "5+6: Animistic Design"
 has_children: false
 ---
 
-# 04: Running two sequences simultaneously
+# 02: Running two sequences simultaneously
 
 When we want to run two sequences at the same time, for example to control a servo and an LED, we basically have to double everything from the individual sequence.
 

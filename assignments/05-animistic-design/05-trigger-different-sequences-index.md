@@ -7,7 +7,7 @@ has_children: true
 
 ---
 
-# 05: Triggering different sequences based on context or interaction
+# 03: Triggering different sequences based on context or interaction
 
 How could we trigger different sequences based on user or context interaction? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
