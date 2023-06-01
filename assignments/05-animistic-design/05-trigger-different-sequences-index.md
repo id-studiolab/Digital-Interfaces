@@ -11,7 +11,7 @@ has_children: true
 
 How could we trigger different sequences based on user or context interaction? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
-Connect the Chainable LED to pin `D13`, the Servo Motor to pin `D2` and the Touch Sensor to `D0 / SERIAL`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
+Connect the Chainable LED to pin `D13`, the Servo Motor to pin `D2` and the Touch Sensor to `D3`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
 
 ---
 
