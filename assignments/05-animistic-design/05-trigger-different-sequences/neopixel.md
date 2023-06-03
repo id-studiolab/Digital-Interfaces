@@ -115,7 +115,7 @@ while True:
 
             # Turn LED White
             led_value = int(position_led)
-            leds.fill((led_value, led_value, led_value))
+            leds.fill((0, 0, 0, led_value))
             leds.show()
 
         # Make a call to the library and request the desired of our servo motor
