@@ -40,7 +40,13 @@ while True:
 
 The issue with this code is, that the `time.sleep(2)` function actually *blocks* our entire main loop for two seconds, before continuing. If we want to still read sensors while blinking our LED, or want to move another actuator at a different interval, we run into issues.
 
-The VarSpeed library solves this issue neatly by allowing us to define actuator behaviour in a simple way. In the code below, we can easily define a sequence of movements for our servo motor (through target-value, time to get to that value, number of steps to get there, and even [easing functions](https://easings.net)) without having to worry about our code being blocked by a `time.sleep()` function. 
+The VarSpeed library solves this issue neatly by allowing us to define actuator behaviour in a simple way. In the code below, we can easily define a sequence of movements for our servo motor by providing four inputs:
+1. A target-value, 
+2. Time to get to that value (in seconds), 
+3. Number of steps to get there, 
+4. An easing function (see: [easing functions](https://easings.net)))
+
+All this without having to worry about our code being blocked by a `time.sleep()` function. 
 
 Pretty cool! Take a look at the code examples below to get a better understanding of the library and how you can use it to bring your creature to life!
 
@@ -133,6 +139,28 @@ For the result we chose `int` because our output should only contain whole numbe
                 f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
            my_servo.angle = position
    ```
+
+   Let's have a look at the following statement:
+
+   ```python
+   position, running, changed = vs.sequence(sequence=servo_sequence, loop_max=servo_looping)
+   ```
+
+   What happens here is that the VarSpeed library contains a function `sequence()` which takes two variables: the desired sequence (`servo_sequence`) and the amount of loops (`servo_looping`). It also returns three variables:
+   1. The current position in the sequence (`position`)
+   2. Whether the sequence is running (`running`) 
+   3. If the value has changed (`changed`)
+   
+   So basically we say that we have three variables which we want to assign the returned values from the `sequence()` function, therefore we could also write the code as:
+
+   ```python
+   data = vs.sequence(sequence=servo_sequence, loop_max=servo_looping)
+   position = data[0]
+   running = data[1]
+   changed = data[2]
+   ```
+
+   But this increases the amount of code we have to write and the amount of variables we have to keep track of. 
    
 Combined together, the final code for controlling a servo motor with a sequence is this:
 
