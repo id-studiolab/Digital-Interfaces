@@ -11,7 +11,8 @@ has_children: false
 In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms.
 
 ## Game logic and hardware involved
-The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. 
+The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Refer to the component page for the [Grove Chainable RGB LED ](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-p9813), to obtain the P9813.py Python module.
+
 
 Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the corresponding color.
 
