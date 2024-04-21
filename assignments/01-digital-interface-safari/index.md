@@ -13,14 +13,14 @@ has_children: true
 
 [Switch Inspiration Machine ✨](https://switch-inspiration-machine.netlify.app){:target="_blank"}
 
-[Additional Switch Inspiration (Lo-fi prototyping)](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch){:target="_blank"} 
+[Additional Switch Inspiration (Lo-fi prototyping)](https://player.vimeo.com/video/3521857){:target="_blank"} 
 
 ---
 ## Workshop assignment - Creating Switches
 
 As seen in the introduction lecture, a switch can have many shapes, forms and interactive properties. In its most basic form, a switch is a device that changes directly from one state to the other. It is either `True` or `False`.
 
-In this assignment you are going to design and build three different, hopefully very creative switches (you can find some more inspiration [here](https://ahointeractiveproducts2018.tumblr.com/post/177335765394/brief-3-what-is-a-switch)){:target="_blank"}.
+In this assignment you are going to design and build three different, hopefully very creative switches (inpiration in the links above).
 
 1. Go to our ✨ [Switch Inspiration Machine](https://switch-inspiration-machine.netlify.app) ✨ to generate a novel design brief. You don’t *need* to use it, but its constraints might help you along in your creative process and guide your design. Take a screenshot of the brief for later reference.
 2. Come up with at least three different switches. Be as creative and diverse in the ideas as possible. 

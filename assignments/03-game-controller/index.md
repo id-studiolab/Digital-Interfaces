@@ -12,7 +12,7 @@ In this weeks assignment we are going to build and embody a physical controller 
 
 ## Download and install needed libraries
 For the code to work, we need an additional library that turns our ItsyBitsy into a device that can send keyboard commands to our computer.
-1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 7.x
+1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 9.x
 2. Search for the folder names `adafruit_hid` and copy it into the `lib` folder of your `CIRCUITPY` device.
 
 ---
