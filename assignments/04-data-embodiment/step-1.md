@@ -12,7 +12,7 @@ has_children: false
    If you see the following error:    
    `File "code.py", line 6, in <module>`  
    `ImportError: no module named 'adafruit_connection_manager'`  
-    then you need to update your ItsyBitsy and all the libraries. To do so, please check out [this page](../../support/index) 
+    then you need to update your ItsyBitsy and all the libraries. To do so, please check out [this page](https://id-studiolab.github.io/Connected-Interaction-Kit/support/) 
 
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
