@@ -83,17 +83,21 @@ while True:
     if current_state == state_wait:
         set_led_color(led_off)
         set_timer(random.randint(3, 10))
+			print("starting game, timeout", timeout)
         current_state = state_start_game
 
     elif current_state == state_start_game:
         if timer_expired():
+            print("timer expired, press your buttons!")
             set_led_color(led_white)
             current_state = state_wait_button_press
 
     elif current_state == state_wait_button_press:
         if red_button.value:
+            print("red won")
             current_state = state_red_wins
         elif blue_button.value:
+            print("blue won")
             current_state = state_blue_wins
 
     elif current_state == state_blue_wins:
