@@ -10,7 +10,6 @@ parent: "Tutorials"
 This section is not a full tutorial but more a challenge of you coding skills. You will be building an increasingly more complicated sound activated LED. Every step consists of the following:
 
 - A detailed explanation of what the end result of this step should be.
-- A button that leads to a page with hints for this step.
 - A button that leads to a page with the solution.
 
 We really encourage you to try before taking a peak at the hints and solution.
