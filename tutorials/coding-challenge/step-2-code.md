@@ -83,7 +83,7 @@ while True:
         # check if we should turn on
         if sound_sensor.value > 30000:
             # Start the timer!
-            timer_mark = time.monotinic()
+            timer_mark = time.monotonic()
             current_state = state_on       
     
     elif current_state == state_on:

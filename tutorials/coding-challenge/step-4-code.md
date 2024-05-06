@@ -77,13 +77,14 @@ import board
 import analogio
 import digitalio
 import neopixel
+import random
 
 # States
 state_on_loud = 0
 state_on_quiete = 1
 state_off = 2
 state_memory = 3
-current_state = 0
+current_state = state_off
 
 
 # Register sensors
@@ -122,7 +123,7 @@ while True:
             # Start the timer!
             color = (random.randint(0,70),random.randint(0,70),random.randint(0,70),0)
             color_memory.append(color)
-            timer_mark = time.monotinic()
+            timer_mark = time.monotonic()
             current_state = state_on_loud
         elif button.value is True:
             current_state = state_memory
@@ -130,7 +131,7 @@ while True:
     elif current_state == state_on_loud:
         leds.fill(color)
         leds.show()
-        if time.monotinic() - timer_mark >= timer_duration:
+        if time.monotonic() - timer_mark >= timer_duration:
             current_state = state_off
         elif button.value is True:
             current_state = state_memory
@@ -141,7 +142,7 @@ while True:
     elif current_state == state_on_quiete:
         leds.fill(color)
         leds.show()
-        if time.monotinic() - timer_mark >= timer_duration:
+        if time.monotonic() - timer_mark >= timer_duration:
             current_state = state_off
         elif button.value is True:
             current_state = state_memory
@@ -149,7 +150,7 @@ while True:
             # Her start the timer!
             color = (random.randint(0,70),random.randint(0,70),random.randint(0,70),0)
             color_memory.append(color)
-            timer_mark = time.monotinic()
+            timer_mark = time.monotonic()
             current_state = state_on_loud
     elif current_state == state_memory:
         for color in color_memory:
