@@ -7,8 +7,6 @@ parent: "Tutorials"
 
 # Dealing with Time in Circuit Python
 
-# **Time in Circuit Python**
-
 You often need to take time into account one way or another when writing programs. The **Core Module** called **time** can help us with this! It has a few more bits of functionality than I will describe here (check the documentation if you're interested). I will focus on the most important and fundamental functions, which are also very useful for the type of thing's you might be doing.
 
 **time.sleep(seconds_as_floating_point)** **[returns nothing]**
