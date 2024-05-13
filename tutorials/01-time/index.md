@@ -42,7 +42,7 @@ Difference between **time.monotonic()** and **time.monotonic_ns()**
 
 To illustrate these concepts, we will consider two examples: blinking an LED, and detecting a "double click" of a button. The associated programs are provided.
 
-Example 1: Blinked an LED
+##Example 1: Blink an LED
 
 Two programs are provided, both of which make the on-board LED blink at 1Hz and 50% duty cycle (i.e. on for 500ms, off for 500ms and so on).
 
@@ -133,7 +133,7 @@ while True:
         lastChangeTimeLED = timeNow
 ```
 
-Example 2: Detecting “double click” of a button
+##Example 2: Detecting “double click” of a button
 
 Background information
 
@@ -227,7 +227,7 @@ while True:
     led.value = LEDstate
 ```
 
-Program 3: button toggle using **********************time module**********************
+Program 3: button toggle using **time module**
 
 Finally, the third program (“Button toggle only on double click.py”) uses the **time** module (specifically the **time.monotonic()** function) to differentiate between a “double click” (two clicks in sufficiently quick succession – 250ms in the provided code) and one or more “single clicks”. It only toggles the LED state on a double click, but it prints “Single Click” or “Double Click” to the serial monitor. If you were using this as part of a larger program, you could do different actions on the single and double clicks. This one is fairly complicated, but the comments in the code explain in detail.
 
