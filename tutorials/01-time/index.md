@@ -42,11 +42,11 @@ Difference between **time.monotonic()** and **time.monotonic_ns()**
 
 To illustrate these concepts, we will consider two examples: blinking an LED, and detecting a "double click" of a button. The associated programs are provided.
 
-##Example 1: Blink an LED
+## Example 1: Blink an LED
 
 Two programs are provided, both of which make the on-board LED blink at 1Hz and 50% duty cycle (i.e. on for 500ms, off for 500ms and so on).
 
-Program 1: using **time.sleep()**
+### Program 1: using **time.sleep()**
 
 The first program (“LED blink using sleep.py”) does this using **time.sleep()**: it turns on the LED, sleeps for 500ms, turns off the LED, sleeps for 500ms and repeats. (See the detailed comments in the code for further explanation)
 
@@ -86,7 +86,7 @@ while True:
     # The loop will repeat, causing the LED to blink on and off every half second.
 ```
 
-Program 2: using **time.monotonic()**
+### Program 2: using **time.monotonic()**
 
 The second program (“LED blink using time monotonic.py”) achieves the same thing using **time.monotonic()**: it notes the last time it changed the LED state, keeps looping and checking the time, and changes the state again when enough time has passed (See the detailed comments in the code for further explanation)
 
@@ -133,7 +133,7 @@ while True:
         lastChangeTimeLED = timeNow
 ```
 
-##Example 2: Detecting “double click” of a button
+## Example 2: Detecting “double click” of a button
 
 Background information
 
@@ -148,7 +148,7 @@ Switch bouncing, also known as contact bouncing, is a common issue in electronic
 - The Touch Sensor module includes hardware debouncing so it gives a very clean signal.
 - We won’t go further into the issue of debouncing here, so just use the Touch Sensor for now.
 
-Program 1: most basic way
+### Program 1: most basic way
 
 The first program (“Button basic.py”) is just included to show the most basic way to control an LED from a button. The LED mirrors the state of the button, so it’s on while you hold the button. See comments in the program for more detailed explanation.
 
@@ -181,7 +181,7 @@ while True:
     led.value = button.value
 ```
 
-Program 2: edge detection
+### Program 2: edge detection
 
 The second program (“Button toggle single click.py) introduces the concept of **edge detection**. It specifically monitors to changes from **low** to **high** in the state of the button. Each time this occurs, it **toggles** the state of the LED (i.e. turns it on if it was off and vice versa). Again, this is explained in more detail in the comments in the code.
 
@@ -227,7 +227,7 @@ while True:
     led.value = LEDstate
 ```
 
-Program 3: button toggle using **time module**
+### Program 3: button toggle using **time module**
 
 Finally, the third program (“Button toggle only on double click.py”) uses the **time** module (specifically the **time.monotonic()** function) to differentiate between a “double click” (two clicks in sufficiently quick succession – 250ms in the provided code) and one or more “single clicks”. It only toggles the LED state on a double click, but it prints “Single Click” or “Double Click” to the serial monitor. If you were using this as part of a larger program, you could do different actions on the single and double clicks. This one is fairly complicated, but the comments in the code explain in detail.
 
