@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Step 7: Additional visualization using the servo"
-parent: "01 Pomodoro"
+parent: "02 Pomodoro"
 grand_parent: "Tutorials"
 
 ---

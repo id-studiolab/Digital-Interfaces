@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Step 2: Setting up the states"
-parent: "01 Pomodoro"
+parent: "02 Pomodoro"
 grand_parent: "Tutorials"
 ---
 
