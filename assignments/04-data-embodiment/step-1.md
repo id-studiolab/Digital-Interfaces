@@ -18,7 +18,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
 
 1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy over only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
 2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` library folder into the `lib` folder of your `CIRCUITPY` device
-3. Extend your `secrets.py` file and add the entries for the MQTT broker (the server we connect to), your username (please construct it as **Studio[your studio]_YourName**), and add the access token below. Save the file afterwards.
+3. Edit your `secrets.py` file and add the entries for the MQTT broker (the server we connect to). Change the client id (`mqtt_clientid`) so it's unique (please construct it as **Studio[your studio]_[YourName]**). Save the file afterwards.
    ```python
    secrets = {
       'ssid' : 'TUD-facility', # The wifi we connect to 
