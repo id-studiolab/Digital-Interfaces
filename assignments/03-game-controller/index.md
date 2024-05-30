@@ -13,7 +13,7 @@ In this weeks assignment we are going to build and embody a physical controller 
 ## Download and install needed libraries
 For the code to work, we need an additional library that turns our ItsyBitsy into a device that can send keyboard commands to our computer.
 1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 8.x. If you get an error about an
- incompetable .mpy file then you need the bundle for version 9.x.
+ incompatible .mpy file then you need the bundle for version 9.x.
 3. Search for the folder names `adafruit_hid` and copy it into the `lib` folder of your `CIRCUITPY` device.
 
 ---
@@ -29,7 +29,7 @@ These are just some examples of games you can play, and there are many more onli
 --- 
 
 ## Code examples
-You will see that different games need different inputs. Either they expect a single keycode or mouse press, or a continous stream of keycodes to play the game.
+You will see that different games need different inputs. Either they expect a single keycode or mouse press, or a continous stream of keycodes to play the game. If you want to press a different button (like arrow keys) you can find the corresponding keycode in the [list of keycodes](https://docs.circuitpython.org/projects/hid/en/latest/api.html#adafruit_hid.keycode.Keycode).
 ---
 
 ### Send a single `SPACE` key
