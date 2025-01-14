@@ -22,10 +22,10 @@ nav_order: 0
 [Building a Pomodoro timer](tutorials/01-pomodoro/index)
 
 ## Other links
-[Documentation for the Connected Interaction Kit](https://id-studiolab.github.io/Connected-Interaction-Kit/){:target="_blank"}
+[⤴ Documentation for the Connected Interaction Kit](https://id-studiolab.github.io/Connected-Interaction-Kit/){:target="_blank"}
 
-[IOB22 - Digital Product Development](https://datacentricdesign.github.io/iob22/){:target="_blank"}
+[⤴ IOB22 - Digital Product Development](https://datacentricdesign.github.io/iob22/){:target="_blank"}
 
-[Brightspace](https://brightspace.tudelft.nl/d2l/home/411563){:target="_blank"}
+[⤴ Brightspace](https://brightspace.tudelft.nl/d2l/home/411563){:target="_blank"}
 
-[Discourse](https://bsc2021.io.tudelft.nl/c/iob2-5/29){:target="_blank"}
+[⤴ Discourse](https://bsc2021.io.tudelft.nl/c/iob2-5/29){:target="_blank"}
