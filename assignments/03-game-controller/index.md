@@ -49,7 +49,7 @@ Your assignment is to use the template code and one of the acting machine diagra
 
 | Single keypress Acting Machine Diagram | Continuous keypress Acting Machine Diagram |
 | -------------------------------------- | ------------------------------------------ |
-| ![[singleKeypress.png]]                | ![[continuousKeypress.png]]                |
+| ![](singleKeypress.png)                | ![](continuousKeypress.png)                |
 
 ### Code template
 ```python
