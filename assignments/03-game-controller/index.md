@@ -10,7 +10,7 @@ In this week's assignment we are going to build and embody a physical controller
 
 ---
 ## Coding Instructions
-In this section, you’ll learn how to use the `usb_hid` library to simulate keyboard or mouse inputs with your microcontroller. Remember that when working with keyboards, it’s important to understand how keys are mapped to characters in a specific layout, and that you have the correct layout configured in your code.
+In this assignment, you’ll learn how to use the `usb_hid` library to simulate keyboard or mouse inputs with your microcontroller. Remember that when working with keyboards, it’s important to understand how keys are mapped to characters in a specific layout, and that you have the correct layout configured in your code.
 
 Pressing a key once typically produces a single character on the screen. However, holding a key down can result in multiple repeated characters. The `usb_hid` library lets you simulate these behaviors with commands like `keyboard.press(key)` to simulate a key press and `keyboard.release_all()` to release all pressed keys.
 
