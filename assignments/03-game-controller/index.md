@@ -2,19 +2,29 @@
 layout: default
 title: "3: Game Controller"
 parent: Assignments
-has_children: false
+has_children: true
 ---
 
 # Game Controller
-In this weeks assignment we are going to build and embody a physical controller to control a game on our screen.
+In this week's assignment we are going to build and embody a physical controller to control a game on our screen.
+
+---
+## Coding Instructions
+In this section, you’ll learn how to use the `usb_hid` library to simulate keyboard or mouse inputs with your microcontroller. Remember that when working with keyboards, it’s important to understand how keys are mapped to characters in a specific layout, and that you have the correct layout configured in your code.
+
+Pressing a key once typically produces a single character on the screen. However, holding a key down can result in multiple repeated characters. The `usb_hid` library lets you simulate these behaviors with commands like `keyboard.press(key)` to simulate a key press and `keyboard.release_all()` to release all pressed keys.
+
+In this assignment you’ll also explore Python basics, such as variables, loops (`while`), conditional statements (`if`, `elif`, `else`), and working with functions. 
+By integrating these concepts with the `usb_hid` library, you’ll gain the skills to create interactive devices that can simulate keyboard or mouse actions dynamically.
+
 
 ---
 
 ## Download and install needed libraries
 For the code to work, we need an additional library that turns our ItsyBitsy into a device that can send keyboard commands to our computer.
-1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 8.x. If you get an error about an
- incompetable .mpy file then you need the bundle for version 9.x.
-3. Search for the folder names `adafruit_hid` and copy it into the `lib` folder of your `CIRCUITPY` device.
+1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 8.x. 
+   If you get an error about an incompetable .mpy file then you need the bundle for version 9.x.
+2. Search for the folder names `adafruit_hid` and copy it into the `lib` folder of your `CIRCUITPY` device.
 
 ---
 
@@ -28,246 +38,106 @@ These are just some examples of games you can play, and there are many more onli
 
 --- 
 
-## Code examples
+## Coding Assignment
 You will see that different games need different inputs. Either they expect a single keycode or mouse press, or a continous stream of keycodes to play the game.
----
 
-### Send a single `SPACE` key
+Here below we present a template with **almost** everything you need to make your game controller work. Although, one crucial part is **missing**, the part inside the `while` loop.
+
+Your assignment is to use the template code and one of the acting machine diagrams here below to create a working controller.
+
+**Before starting**, if it's your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: [[Coding instructions]]
+
+| Single keypress Acting Machine Diagram | Continuous keypress Acting Machine Diagram |
+| -------------------------------------- | ------------------------------------------ |
+| ![[singleKeypress.png]]                | ![[continuousKeypress.png]]                |
+
+### Code template
 ```python
 ##--- Library Imports
 import time
 import board
 import digitalio
 
-# Make sure to download and place the USB HID library in the lib folder of CIRCUITPY
-import usb_hid
-from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
-from adafruit_hid.keycode import Keycode
-
-
-##--- Defining states
-
-state_wait = 0
-state_button_is_pressed = 1
-current_state = 0
-
-
-##--- Keyboard variables
-
-#We want to emulate a keyboard interface
-#To do so we use the usb_hid (Human-interface device) library to send commands to our computer
-
-# Define a new keyboard and set the layout to US (mostly same as the Dutch layout)
-keyboard = Keyboard(usb_hid.devices)
-keyboard_layout = KeyboardLayoutUS(keyboard)
-
-# We want to send the SPACE key when the button is pressed
-key = Keycode.SPACE
-
-
-##--- Button variables
-
-## Define a new button variable and assign it to port D13 of our board
-button = digitalio.DigitalInOut(board.D13)
-
-## Define the button as an input component
-button.direction = digitalio.Direction.INPUT
-
-
-# Sleep for a bit to avoid a race condition on some systems
-time.sleep(1)
-print("Waiting for key pin...")
-
-while True:
-
-    if button.value is True and current_state is state_wait:
-        keyboard.press(key)  # Send our defined key as a command...
-        print("button is pressed") #Print a confirmation in the serial monitor
-        keyboard.release_all()  # and release all keys again
-
-        current_state = state_button_is_pressed # Update our state
-
-    if button.value is False and current_state is state_button_is_pressed:
-        print("button is released") #Print a confirmation in the serial monitor
-        current_state = state_wait #Reset the state
-
-    time.sleep(0.01)
-```
-
----
-
-### Send a continous `SPACE` key
-```python
-##--- Library Imports
-import time
-import board
-import digitalio
-
-# Make sure to download and place the USB HID library in the lib folder of CIRCUITPY
-import usb_hid
-from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
-from adafruit_hid.keycode import Keycode
-
-
-##--- Defining states
-
-state_wait = 0
-state_button_is_pressed = 1
-current_state = 0
-
-##--- Keyboard variables
-
-#We want to emulate a keyboard interface
-#To do so we use the usb_hid (Human-interface device) library to send commands to our computer
-
-# Define a new keyboard and set the layout to US (mostly same as the Dutch layout)
-keyboard = Keyboard(usb_hid.devices)
-keyboard_layout = KeyboardLayoutUS(keyboard)
-
-# We want to send the SPACE key when the button is pressed
-key = Keycode.SPACE
-
-##--- Button variables
-
-## Define a new button variable and assign it to port D13 of our board
-button = digitalio.DigitalInOut(board.D13)
-
-## Define the button as an input component
-button.direction = digitalio.Direction.INPUT
-
-
-# Sleep for a bit to avoid a race condition on some systems
-time.sleep(1)
-print("Waiting for key pin...")
-
-while True:
-
-    if button.value is True and current_state is state_wait:
-        keyboard.press(key)  # Send our defined key as a command...
-        print("button is pressed") #Print a confirmation in the serial monitor
-        current_state = state_button_is_pressed # Update our state
-        
-    if button.value is False and current_state is state_button_is_pressed:
-        print("button is released") #Print a confirmation in the serial monitor
-        keyboard.release_all()  # and release all keys again
-        current_state = state_wait #Reset the state
-
-    time.sleep(0.01)
-```
-
----
-
-### Send a mouse left click
-```python
-##--- Library Imports
-import time
-import board
-import digitalio
-
-# Make sure to download and place the USB HID library in the lib folder of CIRCUITPY
-import usb_hid
-from adafruit_hid.mouse import Mouse
-
-
-##--- Defining states
-
-state_wait = 0
-state_button_is_pressed = 1
-current_state = 0
-
-##--- Mouse variables
-
-#We want to emulate a mouse
-#To do so we use the usb_hid (Human-interface device) library to send commands to our computer
-mouse = Mouse(usb_hid.devices)
-mouse_key = Mouse.LEFT_BUTTON
-
-##--- Button variables
-
-## Define a new button variable and assign it to port D13 of our board
-button = digitalio.DigitalInOut(board.D13)
-
-## Define the button as an input component
-button.direction = digitalio.Direction.INPUT
-
-# Sleep for a bit to avoid a race condition on some systems
-time.sleep(1)
-print("Waiting for key pin...")
-
-while True:
-
-    if button.value is True and current_state is state_wait:
-        mouse.press(mouse_key)  # Send our defined key as a command...
-        print("button is pressed") #Print a confirmation in the serial monitor
-        current_state = state_button_is_pressed # Update our state
-        
-    if button.value is False and current_state is state_button_is_pressed:
-        print("button is released") #Print a confirmation in the serial monitor
-        mouse.release(Mouse.LEFT_BUTTON) # Release the button again
-        time.sleep(0.02) # Add a little debounce delay
-        current_state = state_wait #Reset the state
-
-    time.sleep(0.01)
-```
-
----
-
-### Control the mouse X axis
-```python
-##--- Library Imports
-import time
-import analogio
-import board
-import digitalio
-
-# Make sure to download and place the USB HID library in the lib folder of CIRCUITPY
-import usb_hid
-from adafruit_hid.mouse import Mouse
-
-
-##--- Mouse variables
-
-# We want to emulate a mouse
+# We want to emulate a keyboard interface
 # To do so we use the usb_hid (Human-interface device) library to send commands to our computer
-mouse = Mouse(usb_hid.devices)
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
+from adafruit_hid.keycode import Keycode
 
-##--- Potentiometer variables
+##--- Defining states
+state_wait = 0
+state_button_is_pressed = 1
+current_state = 0
 
-# Define a new mouse variable and assign it to port A2 of our board
-x_axis = analogio.AnalogIn(board.A2)
+##--- Keyboard variables
 
-# Set variables to control the minimum and maximum of the potentiometer
-pot_min = 0.00
-pot_max = 3.29
-step = (pot_max - pot_min) / 20.0
+# Define a new keyboard and set the layout to US (mostly same as the Dutch layout)
+keyboard = Keyboard(usb_hid.devices)
+keyboard_layout = KeyboardLayoutUS(keyboard)
 
-##--- Helper functions
-# Read the pin voltage
-def get_voltage(pin):
-    return (pin.value * 3.3) / 65536
+# We want to send the SPACE key when the button is pressed
+# For other keys search online "Circuit Python Keycode"
+key = Keycode.SPACE
 
-# Maps the potentiometer voltage range to 0-20
-def steps(axis):
-    return round((axis - pot_min) / step)
+##--- Button variables
 
-while True:
+## Define a new button variable and assign it to port D13 of our board
+button = digitalio.DigitalInOut(board.D13)
 
-    x = get_voltage(x_axis)
+## Define the button as an input component
+button.direction = digitalio.Direction.INPUT
 
-    if steps(x) > 11.0:
-        print(steps(x))
-        mouse.move(x=1)
-    if steps(x) < 9.0:
-        # print(steps(x))
-        mouse.move(x=-1)
+##--- Main loop
 
-    if steps(x) > 19.0:
-        print(steps(x))
-        mouse.move(x=8)
-    if steps(x) < 1.0:
-        print(steps(x))
-        mouse.move(x=-8)
-    time.sleep(0.02)  # Debounce delay
+# Sleep for a bit to allow the host operating system to configure the new USB device 
+time.sleep(1)
+
+while True: 
+
+	# -------------------------------------------------------------| 
+	#                                                              | 
+	# Use the Acting Machine Diagram to program your solution here | 
+	#                                                              | 
+	# -------------------------------------------------------------|
+	
+	# Sleep for a bit to make the keypress events occur at a human timescale 
+	# Skilled gamers can do ~7 button presses per second (says ChatGPT) 
+	time.sleep(0.143)
+
 ```
+
+
+If you are struggling with the assignment we provide the solution here below.
+**Attention:** Keep in mind that from next week on you won't find a solution to the assignments, so you should take this opportunity to become familiar with programming concepts and try hard to make the code work.
+
+[[Code solution]]
+
+--- 
+
+## Extra Challenge: Control your mouse!
+In this week's extra challenge you'll explore how to use the `usb_hid` library to control mouse movements and simulate clicks.
+
+Here we propose a brief introduction on how to use the mouse functions from the `usb_hid` library:
+
+### **Key Functions for Mouse Control**
+
+**Mouse Clicks**
+- Use `mouse.press(button)` to simulate pressing a mouse button (e.g., `Mouse.LEFT_BUTTON` for the left button or `Mouse.RIGHT_BUTTON` for the right button).
+- Use `mouse.release(button)` to simulate releasing the button.
+- To ensure all buttons are released, use `mouse.release_all()`.
+
+**Moving the Mouse**
+- Use `mouse.move(x=amount, y=amount)` to move the mouse pointer:
+	- The `x` parameter controls horizontal movement (positive for right, negative for left).
+	- The `y` parameter controls vertical movement (positive for down, negative for up).
+
+**Scrolling**
+- Use `mouse.move(wheel=amount)` to simulate scrolling the mouse wheel. Positive values scroll up, and negative values scroll down.
+
+### **Your Challenge**
+
+The previous section shows how to handle button inputs and control the mouse. Use it to try and implement your own logic to play different games from the ones listed.
+
+Have fun with this challenge, and don’t hesitate to test out creative ideas! 
+The more you experiment, the more you'll understand how to bring your prototypes to life.
