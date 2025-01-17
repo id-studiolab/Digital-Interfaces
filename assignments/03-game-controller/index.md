@@ -45,7 +45,7 @@ Here below we present a template with **almost** everything you need to make you
 
 Your assignment is to use the template code and one of the acting machine diagrams here below to create a working controller.
 
-**Before starting**, if it's your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: [[Coding instructions]]
+**Before starting**, if it's your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: [Coding instructions](coding_instructions.md)
 
 | Single keypress Acting Machine Diagram | Continuous keypress Acting Machine Diagram |
 | -------------------------------------- | ------------------------------------------ |
@@ -111,7 +111,7 @@ while True:
 If you are struggling with the assignment we provide the solution here below.
 **Attention:** Keep in mind that from next week on you won't find a solution to the assignments, so you should take this opportunity to become familiar with programming concepts and try hard to make the code work.
 
-[[Code solution]]
+[Code solution](code_solution.md)
 
 --- 
 
