@@ -8,6 +8,12 @@ has_children: true
 # Reaction Game
 In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms.
 
+## Coding Instructions
+In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together.
+
+As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (`while`), making decisions with `if` and `elif` statements, and defining and using functions. Additionally, you’ll learn to work with the `neopixel` library to control LED colors, giving your prototype a vibrant and interactive feel.
+
+By the end, you’ll have an understanding of how to run code on your board, how to connect  components and a rough idea of how the code is structured.
 
 ## Game hardware and control flow
 The basic game makes use of two input components (either **Touch Sensor** or **Tactile Switch**), and a **Chainable RGB LED** as an output. 
@@ -30,7 +36,6 @@ In order to navigate to the right code you first have to identify the LED form f
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGB LED" width="250"/> | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Grove-Chainable-LED-2.0.png" alt="Chainable RGB LED" width="250"/> |
 |    [Code for the game](game_code_neopixel){: .btn .btn-blue }    |     [Code for the game](game_code_p9813){: .btn .btn-blue }     |
-
 
 ## Extra Challenge: Make It Better!
 
