@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Step 3 (optional): Working with an offline fallback"
+title: "Fallback solution: Working with an offline fallback"
 parent: "Week 4: Data Embodiment"
 grand_parent: Assignments
 has_children: false
 ---
 
-# Step 3 (optional): Working with an offline fallback
+#  Working with an offline fallback (Optional)
 
 Designing with incoming live data is exciting, however it also makes our design susceptible for failures. What if the internet connection is disturbed? What if the server stops sending? 
 
@@ -84,4 +84,4 @@ We saved some real data for the ISS and Perlin noise in these `.txt` files. This
 
 5. Open the `Serial Monitor` and you should see the collected data!
 
-[Previous Step](step-2){: .btn .btn-gray }
+[Next Step](step-2){: .btn .btn-blue } [Home](index){: .btn .btn-gray }
