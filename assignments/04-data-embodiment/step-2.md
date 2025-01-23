@@ -53,16 +53,19 @@ my_list.pop()  # my_list: [3, 2, 1, 5, 4]    (The 6 we added before was removed)
 
 Using these 5 basic functions here below we show how you can use them to create some useful helper functions.
 
+{: .note }
+If you're seeing an error that looks like this: `unsupported operand type(s) for +: 'int' and 'str'` then you probably need to convert your elements to numbers before adding them to your list: `my_list.append(int(my_variable))`
+
 ### Add data to a list
 
 ```python
 #  lst: The list
 #  x: Element we wish to add to the list
-#  length: How long we want our list to be at most.
-def add_to_fixed_list(lst, x, length):  
-    lst.append(x) # Add our x to the end of the list
-    while len(lst) > length:  # While the list contains more than the allowed amount of items
-        lst.pop(0)   # Remove the first item
+#  maxLength: How long we want our list to be at most.
+def add_to_bounded_list(lst, x, maxLength): 
+   lst.append(x)  # Add x to the end of the list
+   while len(lst) > maxLength:  # While the list exceeds the maximum length
+      lst.pop(0)  # Remove the first item
 ```
 
 **Code example**
@@ -82,10 +85,10 @@ maximum_number_of_entries = 10
 #  lst: The list
 #  x: Element we wish to add to the list
 #  maxLength: How long we want our list to be at most.
-def add_to_fixed_list(lst, x, maxLength): 
-   lst.append(x) # Add our x to the end of the list
-   while len(lst) > maxLength:  # While the list contains more than the allowed amount of items
-      lst.pop(0)   # Remove the first item
+def add_to_bounded_list(lst, x, maxLength): 
+   lst.append(x)  # Add x to the end of the list
+   while len(lst) > maxLength:  # While the list exceeds the maximum length
+      lst.pop(0)  # Remove the first item
 
 # --- Main loop
 while True:
@@ -93,7 +96,7 @@ while True:
    random_number = random.randint(0,1024)
    
    ## Add random_number to our list, and remove first entries when the maximum capacity is reached
-   add_to_fixed_list(data_collection, random_number, maximum_number_of_entries)
+   add_to_bounded_list(data_collection, random_number, maximum_number_of_entries)
    
    print(f"The data list is: {data_collection}")
    time.sleep(1)
