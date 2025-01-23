@@ -18,47 +18,84 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       'ssid' : 'TUD-facility', # The wifi we connect to 
       'password' : 'replace-with-your-iPSK-String', # Our personal password to connect to Wifi
       'mqtt_broker' : 'ide-education.cloud.shiftr.io', # The MQTT server we connect to
-      'mqtt_broker_user' : 'ide-education', # The username for connecting to the server
-      'mqtt_broker_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
+      'mqtt_user' : 'ide-education', # The username for connecting to the server
+
+      'mqtt_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
       'mqtt_clientid': 'Studio5_Caspar', # The device name we present to the server when connecting
    }
    ```
-4. Download the MQTT wrapper from this link: [#TODO: add link]() and add it to your `lib` folder.
+4. Download the MQTT wrapper [here](MQTT.zip) and add it to your `lib` folder.
 
    Open a new `code.py` file and copy the following code. 
 
    ```python
-   # Connect the client to the MQTT broker.
-   import MQTT_wrapper
-   import connect_to_wifi
+   import time
+   import digitalio
+   import board
 
-   # Connect to wifi
+   from MQTT import Create_MQTT
+   from settings import settings
 
-   # Subscribe to topic
-
-   # listen for messages
+   # Define variable to save data received from the MQTT broker
+   last_received_value = 0
       
+   """Method callled when a client's subscribed has a new value.
+   :param str topic: The topic of the feed with a new value.
+   :param str message: The new value
+   """
+   def handle_message(client, topic, msg):
+      global last_received_value
+
+      # Assign message received to last_received variable
+      last_received_value = msg
+
+      # See what was printed and on what channel
+      print("New message on topic {0}: {1}".format(topic, msg))
+
+   # You can find the client Id in the settings.py this is used to identify the board
+   client_id = settings["mqtt_clientid"]
+
+   # Here you can choose what topic you want to subscribe to. The default is Perlin Noise.
+   # Make sure there is only one topic active at any given time (and otherwise add a # before the one you do not want to use anymore)
+   MQTT_topic = "perlin"
+   #MQTT_topic = "iss/distance"
+   #MQTT_topic = "iss/location
+
+   # Create a mqtt connection based on the settings file.
+   mqtt_client = Create_MQTT(client_id, handle_message)
+
+   # Listen for messages on the topic specified above
+   mqtt_client.subscribe(MQTT_topic)
+
+
    # --- Main loop
    while True:
       # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
       try:
          mqtt_client.loop(0.1)
+
       except (ValueError, RuntimeError) as e:
          print("Failed to get data, retrying\n", e)
-         wifi.reset()
          mqtt_client.reconnect()
          continue
          
-         
-      # Add your own looping functions to do something with the data below this line
-         
       # Let's print the incoming data in our Serial Monitor
       print(last_incoming_value)
+
+      # ---------------------------------------------------| 
+      #                                                    | 
+      # Use last_incoming_variable in your code to use     | 
+      # the data received from the MQTT broker.            | 
+      #                                                    | 
+      # ---------------------------------------------------|
       
       time.sleep(0.01)
 
    ```
 
-5. How to get messages...
+5. With the code above we connect to an MQTT client, specify the **topic** and listen to the data being sent to it.
+If you want to process the data received you can use the `last_incoming_value` variable in the `while True` loop.
+
+In the next page we show some useful functions on how to process the data received.
 
 [Previous Step](index){: .btn .btn-gray }  [Next Step](step-2){: .btn .btn-blue }
