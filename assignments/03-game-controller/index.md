@@ -111,7 +111,11 @@ while True:
 If you are struggling with the assignment we provide the solution here below.
 **Attention:** Keep in mind that from next week on you won't find a solution to the assignments, so you should take this opportunity to become familiar with programming concepts and try hard to make the code work.
 
-[Code solution](code_solution.md)
+
+{: .warning } 
+Jumping straight to the solution might seem tempting, but it’s important to work through the assignment on your own first. By skipping ahead, you’ll miss out on learning critical concepts and skills that are essential for the next stages of the course. 
+
+[Code solution](code_solution.md){: .btn .btn-blue }
 
 --- 
 
