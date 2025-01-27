@@ -3,6 +3,7 @@ layout: default
 title: "5+6: Animistic Design"
 parent: Assignments
 has_children: true
+hidden: true
 ---
 
 # Animistic Design
