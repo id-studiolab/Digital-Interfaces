@@ -25,4 +25,5 @@ while True:
    # Sleep for a bit to make the keypress events occur at a human timescale
    # Skilled gamers can do ~7 button presses per second (says ChatGPT)
     time.sleep(0.143)
+    
 ```
