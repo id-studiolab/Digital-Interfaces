@@ -49,7 +49,7 @@ Your assignment is to use the template code and one of the acting machine diagra
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 
-| ![](singleKeypress.png)                | 
+| ![](stateDiagram.png)                | 
 
 ### Code template
 ```python
