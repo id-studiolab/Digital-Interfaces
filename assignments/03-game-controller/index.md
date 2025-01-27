@@ -39,7 +39,7 @@ These are just some examples of games you can play, and there are many more onli
 --- 
 
 ## Coding Assignment
-You will see that different games need different inputs. Either they expect a single keycode or mouse press, or a continous stream of keycodes to play the game.
+You will see that different games need different inputs. 
 
 Here below we present a template with **almost** everything you need to make your game controller work. Although, one crucial part is **missing**, the part inside the `while` loop.
 
@@ -47,9 +47,9 @@ Your assignment is to use the template code and one of the acting machine diagra
 
 **Before starting**, if it's your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: [Coding instructions](coding_instructions.md)
 
-| Single keypress Acting Machine Diagram | Continuous keypress Acting Machine Diagram |
-| -------------------------------------- | ------------------------------------------ |
-| ![](singleKeypress.png)                | ![](continuousKeypress.png)                |
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](singleKeypress.png)                | 
 
 ### Code template
 ```python
