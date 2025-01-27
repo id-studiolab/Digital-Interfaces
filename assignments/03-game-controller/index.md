@@ -49,7 +49,7 @@ Your assignment is to use the template code and one of the acting machine diagra
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 
-| ![](singleKeypress.png)                | 
+| ![](stateDiagram.png)                | 
 
 ### Code template
 ```python
@@ -95,15 +95,15 @@ time.sleep(1)
 
 while True: 
 
-	# -------------------------------------------------------------| 
-	#                                                              | 
-	# Use the Acting Machine Diagram to program your solution here | 
-	#                                                              | 
-	# -------------------------------------------------------------|
-	
-	# Sleep for a bit to make the keypress events occur at a human timescale 
-	# Skilled gamers can do ~7 button presses per second (says ChatGPT) 
-	time.sleep(0.143)
+   # -------------------------------------------------------------| 
+   #                                                              | 
+   # Use the Acting Machine Diagram to program your solution here | 
+   #                                                              | 
+   # -------------------------------------------------------------|
+   
+   # Sleep for a bit to make the keypress events occur at a human timescale 
+   # Skilled gamers can do ~7 button presses per second (says ChatGPT) 
+   time.sleep(0.143)
 
 ```
 

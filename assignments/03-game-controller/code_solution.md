@@ -26,4 +26,3 @@ while True:
    # Skilled gamers can do ~7 button presses per second (says ChatGPT)
     time.sleep(0.143)
 ```
-
