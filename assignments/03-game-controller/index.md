@@ -145,3 +145,9 @@ The previous section shows how to handle button inputs and control the mouse. Us
 
 Have fun with this challenge, and don’t hesitate to test out creative ideas! 
 The more you experiment, the more you'll understand how to bring your prototypes to life.
+
+If you're lost check the state diagram below for some inspiration on how to structure your code!
+
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](extraChallengeDiagram.png)                | 
