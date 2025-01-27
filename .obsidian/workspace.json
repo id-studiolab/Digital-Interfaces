@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "7f29c54f99fde879",
+    "type": "split",
+    "children": [
+      {
+        "id": "93e441915832d136",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "16939ea8f8a2174b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "assignments/03-game-controller/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "e7be552e5812c28d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "assignments/03-game-controller/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "592c9bff3b1ed37e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2555c69cb4116918",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dca8d57a755b69f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c3da067f29225243",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4b3461f40da8bf3d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 241.5
+  },
+  "right": {
+    "id": "c79ee0af56a26426",
+    "type": "split",
+    "children": [
+      {
+        "id": "e601266e9e320fc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9da3b13fb5853b0e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "assignments/02-reaction-game/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for index"
+            }
+          },
+          {
+            "id": "662576d39a10f475",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "assignments/02-reaction-game/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from index"
+            }
+          },
+          {
+            "id": "778972fd2b201832",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "eab0b0b1bd991e21",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "assignments/02-reaction-game/index.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "16939ea8f8a2174b",
+  "lastOpenFiles": [
+    "assignments/03-game-controller/coding_introduction.md",
+    "assignments/03-game-controller/index.md",
+    "assignments/02-reaction-game/game_code_neopixel.md",
+    "assignments/02-reaction-game/index.md",
+    "assignments/03-game-controller/coding.md",
+    "assignments/03-game-controller/controller_code.md",
+    "coding_introduction.md",
+    "[.md",
+    "assignments/02-reaction-game/game_code_p9813.md",
+    "assignments/04-data-embodiment/step-3.md",
+    "assignments/04-data-embodiment/step-2.md",
+    "assignments/04-data-embodiment/step-1.md",
+    "assignments/04-data-embodiment/index.md",
+    "assignments/02-reaction-game/ItsyBitsyPort.png",
+    "assignments/01-digital-interface-safari/index.md",
+    "assignments/01-digital-interface-safari/assignment-2.png",
+    "assignments/01-digital-interface-safari/assignment-1.png",
+    "assignments/02-reaction-game/reaction_game.jpg"
+  ]
+}
