@@ -17,8 +17,18 @@ The basic game makes use of two input components (either Touch Sensor or Tactile
 Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the corresponding color.
 
 ![](reaction_game.jpg)
+## Connecting the cables
+Your ItsyBitsy has several connection ports on it. 
+To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same used in your code.
+
+For example, if you connect a component to port D7, you need to use the following code to reference it:
+
+| ![](ItsyBitsyPort.png) | ![](pinAssignment.png) |
+| -------------------------- | -------------------------------------------------------- |
+
 ## Code for the game
-We provide you with the basic code for the game. You can deduce the correct wiring of the buttons and LED from the set variables. Copy this code into your `code.py` file and connect all hardware components to have a basic game ready.
+We provide you with the basic code for the game. Copy this code into your `code.py` file and connect all hardware components to have a basic game ready.
+Look through the code and use the examples from the previous section to deduce where to connect your components!
 
 ```python
 ##--- Imports
