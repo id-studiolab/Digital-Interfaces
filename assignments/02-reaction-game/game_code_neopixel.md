@@ -23,7 +23,6 @@ To be sure that your code works properly, you need to make sure that the ports t
 For example, if you connect a component to port D7, you need to use the following code to reference it:
 
 | ![](ItsyBitsyPort.png) | ![](pinAssignment.png) |
-| -------------------------- | -------------------------------------------------------- |
 
 ## Code for the game
 We provide you with the basic code for the game. Copy this code into your `code.py` file and connect all hardware components to have a basic game ready.

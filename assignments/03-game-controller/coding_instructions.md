@@ -50,7 +50,7 @@ The main difference between `else` and `elif` is that `elif` can have condition 
 condition = False
 
 if condition is True:
-   print('Condition satisfied!`)
+   print('Condition satisfied!')
 elif button_is_pressed is True:
    print('Button is pressed!')
 else:
