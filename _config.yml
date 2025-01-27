@@ -4,3 +4,11 @@ title: Digital Interfaces
 color_scheme: digital-interfaces
 plugins:
   - jekyll-redirect-from
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: note
+    color: blue
