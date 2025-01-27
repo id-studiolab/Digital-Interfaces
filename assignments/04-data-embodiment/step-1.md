@@ -29,6 +29,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    Open a new `code.py` file and copy the following code. 
 
    ```python
+   ##--- Library Imports
    import time
    import digitalio
    import board
@@ -39,10 +40,8 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    # Define variable to save data received from the MQTT broker
    last_received_value = 0
       
-   """Method callled when a client's subscribed has a new value.
-   :param str topic: The topic of the feed with a new value.
-   :param str message: The new value
-   """
+   # Method used when the board receives 
+   # a message from the MQTT server.
    def handle_message(client, topic, msg):
       global last_received_value
 
@@ -79,12 +78,12 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
          mqtt_client.reconnect()
          continue
          
-      # Let's print the incoming data in our Serial Monitor
-      print(last_incoming_value)
+      # Let's print the received data in our Serial Monitor
+      print(last_received_value)
 
       # ---------------------------------------------------| 
       #                                                    | 
-      # Use last_incoming_variable in your code to use     | 
+      # Use last_received_variable in your code to use     | 
       # the data received from the MQTT broker.            | 
       #                                                    | 
       # ---------------------------------------------------|
@@ -94,7 +93,7 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    ```
 
 5. With the code above we connect to an MQTT client, specify the **topic** and listen to the data being sent to it.
-If you want to process the data received you can use the `last_incoming_value` variable in the `while True` loop.
+If you want to process the data received you can use the `last_received_value` variable in the `while True` loop.
 
 In the next page we show some useful functions on how to process the data received.
 
