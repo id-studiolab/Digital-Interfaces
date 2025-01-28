@@ -15,7 +15,9 @@ nav_order: 0
 
 [4: Data Embodiment](assignments/04-data-embodiment/index)
 
-[5+6: Animistic Design](assignments/05-animistic-design/index)
+[5: Walkie-Talkie](assignments/05-walkie-talkie/index)
+
+[6: Disco ball](assignments/06-disco-ball/index)
 
 
 ## Tutorials
