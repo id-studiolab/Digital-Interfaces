@@ -42,4 +42,4 @@ If you’re unable to connect to the internet, don’t worry! We’ve provided a
 
 However, it’s essential to revisit this tutorial later when you have internet access. Connecting to the MQTT server is a key part of understanding how to integrate real-time data into your prototypes.
 
-[Fallback data](no-internet){: .btn .btn-blue }
+[Fallback data](no_internet){: .btn .btn-blue }
