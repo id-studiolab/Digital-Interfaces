@@ -1,10 +1,10 @@
-#---
-#layout: default
-#title: "5+6: Animistic Design"
-#parent: Assignments
-#has_children: true
-#nav_exclude: true
-#---
+---
+layout: default
+title: "7+8: Animistic Design"
+parent: Assignments
+has_children: true
+nav_exclude: true
+---
 
 # Animistic Design
 
