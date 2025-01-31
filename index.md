@@ -21,7 +21,7 @@ nav_order: 0
 
 
 ## Tutorials
-[Building a Pomodoro timer](tutorials/01-pomodoro/index)
+[Building a Pomodoro timer](tutorials/02-pomodoro/index)
 
 ## Other links
 [⤴ Documentation for the Connected Interaction Kit](https://id-studiolab.github.io/Connected-Interaction-Kit/){:target="_blank"}
