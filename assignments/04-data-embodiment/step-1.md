@@ -10,8 +10,14 @@ has_children: false
 
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
-1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy over only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
-2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` library folder into the `lib` folder of your `CIRCUITPY` device
+1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. 
+{: .warning } 
+Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
+
+2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` folder into the `lib` folder of your `CIRCUITPY` device.
+{: .note }
+If you followed the tutorial for connecting your board to the WiFi you should already have a folder called `adafruit_esp32spi`, double check and if you don't have it be sure to get it from the bundle you just downloaded.
+
 3. Extend your `secrets.py` file and add the entries for the MQTT broker (the server we connect to), your username (please construct it as **Studio[your studio]_YourName**), and add the access token below. Save the file afterwards.
    ```python
    secrets = {
@@ -19,12 +25,12 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
       'password' : 'replace-with-your-iPSK-String', # Our personal password to connect to Wifi
       'mqtt_broker' : 'ide-education.cloud.shiftr.io', # The MQTT server we connect to
       'mqtt_user' : 'ide-education', # The username for connecting to the server
-
       'mqtt_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
       'mqtt_clientid': 'Studio5_Caspar', # The device name we present to the server when connecting
    }
    ```
-4. Download the MQTT wrapper [here](MQTT.zip) and add it to your `lib` folder.
+4. Download the MQTT wrapper using the button below and add it to your `lib` folder.
+[Download MQTT wrapper](MQTT.zip){: .btn .btn-blue }
 
    Open a new `code.py` file and copy the following code. 
 
@@ -37,9 +43,15 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
    from MQTT import Create_MQTT
    from settings import settings
 
+   ##--- Defining states
+   state_wait = 0
+   current_state = 0
+
    # Define variable to save data received from the MQTT broker
    last_received_value = 0
       
+   ##--- MQTT Setup
+
    # Method used when the board receives 
    # a message from the MQTT server.
    def handle_message(client, topic, msg):
@@ -78,15 +90,16 @@ After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connec
          mqtt_client.reconnect()
          continue
          
-      # Let's print the received data in our Serial Monitor
-      print(last_received_value)
+      if current_state is state_wait:
+         # Let's print the received data in our Serial Monitor
+         print(last_received_value)
 
-      # ---------------------------------------------------| 
-      #                                                    | 
-      # Use last_received_variable in your code to use     | 
-      # the data received from the MQTT broker.            | 
-      #                                                    | 
-      # ---------------------------------------------------|
+         # ---------------------------------------------------| 
+         #                                                    | 
+         # Use last_received_variable in your code to use     | 
+         # the data received from the MQTT broker.            | 
+         #                                                    | 
+         # ---------------------------------------------------|
       
       time.sleep(0.01)
 
