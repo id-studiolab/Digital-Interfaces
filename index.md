@@ -28,4 +28,6 @@ nav_order: 0
 
 [⤴ IOB22 - Digital Product Development](https://datacentricdesign.github.io/iob22/){:target="_blank"}
 
-[⤴ Brightspace](https://brightspace.tudelft.nl/d2l/home/411563){:target="_blank"}
+[⤴ Brightspace](https://brightspace.tudelft.nl/d2l/home/681612){:target="_blank"}
+
+[⤴ Hedy - Python tutorial](https://hedy.org/)
