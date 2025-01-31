@@ -19,6 +19,7 @@ nav_order: 0
 
 [6: Disco ball](assignments/06-disco-ball/index)
 
+[7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
 ## Tutorials
 [Building a Pomodoro timer](tutorials/02-pomodoro/index)
