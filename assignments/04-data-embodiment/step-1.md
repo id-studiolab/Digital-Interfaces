@@ -11,10 +11,10 @@ has_children: false
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
 {: .note }
-If you followed the tutorial for connecting your board to the WiFi you should already have a folder called `adafruit_esp32spi`, double check and if you don't have it be sure to get it from the bundle you just downloaded.
+If you followed the tutorial for connecting your board to the WiFi you should already have a folder called `adafruit_esp32spi`, double check and if you don't have it be sure to get it from the bundle listed below in point 1.
 
 {: .warning } 
-Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
+Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only the specific libraries and folders that you need for this assignment. They are referenced in the steps below. 
 
 1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. 
 
