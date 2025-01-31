@@ -43,7 +43,7 @@ You will see that different games need different inputs.
 
 Here below we present a template with **almost** everything you need to make your game controller work. Although, one crucial part is **missing**, the part inside the `while` loop.
 
-Your assignment is to use the template code and one of the acting machine diagrams here below to create a working controller.
+Your assignment is to use the template code and the acting machine diagram here below to create a working controller.
 
 **Before starting**, if it's your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: [Coding instructions](coding_instructions.md)
 
@@ -145,3 +145,9 @@ The previous section shows how to handle button inputs and control the mouse. Us
 
 Have fun with this challenge, and don’t hesitate to test out creative ideas! 
 The more you experiment, the more you'll understand how to bring your prototypes to life.
+
+If you're lost check the state diagram below for some inspiration on how to structure your code!
+
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](extraChallengeDiagram.png)                | 

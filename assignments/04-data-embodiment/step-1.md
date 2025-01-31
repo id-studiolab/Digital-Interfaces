@@ -8,195 +8,106 @@ has_children: false
 
 # Step 1: Setting up MQTT on your ItsyBitsy
 
-{:.note}
-   If you see the following error:    
-   `File "code.py", line 6, in <module>`  
-   `ImportError: no module named 'adafruit_connection_manager'`  
-    then you need to update your ItsyBitsy and all the libraries. To do so, please check out [this page](https://id-studiolab.github.io/Connected-Interaction-Kit/support/) 
-
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
-1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy over only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
-2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` library folder into the `lib` folder of your `CIRCUITPY` device
+1. Download the [Circuit Python library bundle for Version 9.x](https://circuitpython.org/libraries) if you haven’t already. 
+{: .warning } 
+Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only the specific library folders that you need for this assignment. They are referenced in this tutorial. 
+
+2. Search for `adafruit_minimqtt` and copy the whole `adafruit_minimqtt` folder into the `lib` folder of your `CIRCUITPY` device.
+{: .note }
+If you followed the tutorial for connecting your board to the WiFi you should already have a folder called `adafruit_esp32spi`, double check and if you don't have it be sure to get it from the bundle you just downloaded.
+
 3. Extend your `secrets.py` file and add the entries for the MQTT broker (the server we connect to), your username (please construct it as **Studio[your studio]_YourName**), and add the access token below. Save the file afterwards.
    ```python
    secrets = {
       'ssid' : 'TUD-facility', # The wifi we connect to 
       'password' : 'replace-with-your-iPSK-String', # Our personal password to connect to Wifi
       'mqtt_broker' : 'ide-education.cloud.shiftr.io', # The MQTT server we connect to
-      'mqtt_broker_user' : 'ide-education', # The username for connecting to the server
-      'mqtt_broker_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
+      'mqtt_user' : 'ide-education', # The username for connecting to the server
+      'mqtt_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
       'mqtt_clientid': 'Studio5_Caspar', # The device name we present to the server when connecting
    }
    ```
-4. This week we are introducing a new way of choosing what code should be executed on your ItsyBitsy. We think that this will help you when juggling or working on multiple prototypes or code tryouts at the same time.
+4. Download the MQTT wrapper using the button below and add it to your `lib` folder.
+[Download MQTT wrapper](MQTT.zip){: .btn .btn-blue }
 
-   Create a new file called `mqtt_client.py` and paste the following code into it. It looks like a bunch, but you don’t have to worry about most of it. Save the file on your `CIRCUITPY` device.
+   Open a new `code.py` file and copy the following code. 
 
    ```python
-   # --- Imports
+   ##--- Library Imports
    import time
+   import digitalio
    import board
-   import busio
-   from digitalio import DigitalInOut
-   import adafruit_connection_manager
-   from adafruit_esp32spi import adafruit_esp32spi
-   from adafruit_esp32spi import adafruit_esp32spi_wifimanager
-   import adafruit_esp32spi.adafruit_esp32spi_socket as socket
-   import adafruit_minimqtt.adafruit_minimqtt as MQTT
+
+   from MQTT import Create_MQTT
+   from settings import settings
+
+   ##--- Defining states
+   state_wait = 0
+   current_state = 0
+
+   # Define variable to save data received from the MQTT broker
+   last_received_value = 0
       
-   #################################################################
-   ################# SETTING UP WIFI AND MQTT ######################
-   #################################################################
-      
-   # --- WIFI Setup
-      
-   # Get wifi details and more from a secrets.py file
-   try:
-      from secrets import secrets
-   except ImportError:
-      print("WiFi secrets are kept in secrets.py, please add them there!")
-      raise
-      
-   # If you have an externally connected ESP32:
-   esp32_cs = DigitalInOut(board.D9)               # Chip select pin
-   esp32_ready = DigitalInOut(board.D11)           # BUSY or READY pin
-   esp32_reset = DigitalInOut(board.D12)           # Reset pin
-      
-   spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
-   esp = adafruit_esp32spi.ESP_SPIcontrol(spi, esp32_cs, esp32_ready, esp32_reset)
-      
-   # --- MQTT Functions
-      
-   # Define callback methods which are called when events occur
-   # pylint: disable=unused-argument, redefined-outer-name
-   def connected(client, userdata, flags, rc):
-      # This function will be called when the client is connected
-      # successfully to the broker.
-      print("Connected to MQTT broker! Listening for topic changes on %s" % MQTT_topic)
-      # Subscribe to all changes on the default MQTT topic feed.
-      client.subscribe(MQTT_topic)
-      
-   def disconnected(client, userdata, rc):
-      # This method is called when the client is disconnected
-      print("Disconnected from MQTT Broker!")
-      
-   # Connect to WiFi
-   print("Connecting to WiFi...")
-   wifi_connecting = True
-   while wifi_connecting:
-       try:
-           esp.connect_AP(secrets["ssid"], secrets["password"])
-           wifi_connecting = False
-       except ConnectionError:
-           print(f"Couldn't connect to {secrets["ssid"]}, trying again.")
-   print("Connected!")
-      
-   
-   # creating a socket pool and ssl context
-   pool = adafruit_connection_manager.get_radio_socketpool(esp)
-   ssl_context = adafruit_connection_manager.get_radio_ssl_context(esp)
-   
-   # Initialize MQTT interface with the esp interface
-   mqtt_client = MQTT.MQTT(
-       client_id=secrets["mqtt_clientid"],
-       broker=secrets["mqtt_broker"],
-       username=secrets["mqtt_broker_user"],
-       password=secrets["mqtt_broker_password"],
-       socket_pool=pool,
-       ssl_context=ssl_context,
-       socket_timeout=.1
-   )
-      
-   # Setup the callback methods above
-   mqtt_client.on_connect = connected
-   mqtt_client.on_disconnect = disconnected
-   
-      
-   #################################################################
-   ############## WRITE YOUR OWN CODE BELOW THIS LINE ##############
-   #################################################################
-    
-   def message(client, topic, message):
-      global last_incoming_value
-      """Method callled when a client's subscribed feed has a new
-      value.
-      :param str topic: The topic of the feed with a new value.
-      :param str message: The new value
-      """
-      print("New message on topic {0}: {1}".format(topic, message))
-         
-      # Check if we are recieving messages from ISS -> Location, that message contains two values
-      if " " in message:
-          last_incoming_value = message.split()
-          # make a number out of the message
-          last_incoming_value[0] = float(last_incoming_value[0])
-          last_incoming_value[1] = float(last_incoming_value[1])
-      else:
-          # make a number out of the message
-          last_incoming_value = float(message)
-   
-   
-   # Use the message function to handle the incoming messages
-   mqtt_client.on_message = message
-   
-   # --- Variables
-      
-   # Here you can choose what datasource you want to subscribe to. The default is Perlin Noise.
-   # Make sure there is only one datasource active at any given time (and otherwise add a # before the one you do not want to use anymore)
-      
+   ##--- MQTT Setup
+
+   # Method used when the board receives 
+   # a message from the MQTT server.
+   def handle_message(client, topic, msg):
+      global last_received_value
+
+      # Assign message received to last_received variable
+      last_received_value = msg
+
+      # See what was printed and on what channel
+      print("New message on topic {0}: {1}".format(topic, msg))
+
+   # You can find the client Id in the settings.py this is used to identify the board
+   client_id = settings["mqtt_clientid"]
+
+   # Here you can choose what topic you want to subscribe to. The default is Perlin Noise.
+   # Make sure there is only one topic active at any given time (and otherwise add a # before the one you do not want to use anymore)
    MQTT_topic = "perlin"
    #MQTT_topic = "iss/distance"
-   #MQTT_topic = "iss/location"
-      
-   # We will use this value to save new incoming data
-   last_incoming_value = 0
-      
-   ## --- Functions
-      
-   # --- Setup
-      
-   # Connect the client to the MQTT broker.
-   print("Connecting to MQTT broker...")
-   mqtt_client.connect()
-   mqtt_client._backwards_compatible_sock = True
-      
+   #MQTT_topic = "iss/location
+
+   # Create a mqtt connection based on the settings file.
+   mqtt_client = Create_MQTT(client_id, handle_message)
+
+   # Listen for messages on the topic specified above
+   mqtt_client.subscribe(MQTT_topic)
+
+
    # --- Main loop
    while True:
       # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
       try:
          mqtt_client.loop(0.1)
+
       except (ValueError, RuntimeError) as e:
          print("Failed to get data, retrying\n", e)
-         wifi.reset()
          mqtt_client.reconnect()
          continue
          
-         
-      # Add your own looping functions to do something with the data below this line
-         
-      # Let's print the incoming data in our Serial Monitor
-      print(last_incoming_value)
+      if current_state is state_wait:
+         # Let's print the received data in our Serial Monitor
+         print(last_received_value)
+
+         # ---------------------------------------------------| 
+         #                                                    | 
+         # Use last_received_variable in your code to use     | 
+         # the data received from the MQTT broker.            | 
+         #                                                    | 
+         # ---------------------------------------------------|
       
       time.sleep(0.01)
 
    ```
-   
-5. The ItsyBitsy always looks for the file `code.py` to run code. By passing the following one line in our `code.py` file and saving it, we instruct our ItsyBitsy to run all code found in the  `mqtt_client.py` file that we created in the previous step
-   
-   ```python
-   import mqtt_client
-   ```
-   
-   The benefit is that we keep our `code.py` tidy, and can quickly switch between different code iterations like so:
-   
-   ```python
-   # Comment or uncomment the file you want to run
-   #import mqtt_client
-   import mqtt_led_color
-   #import mqtt_servo_motor
-   ```
 
-6. Let’s `import mqtt_client` for now and save the file. Open the `Serial Monitor` and you should be receiving data!
+5. With the code above we connect to an MQTT client, specify the **topic** and listen to the data being sent to it.
+If you want to process the data received you can use the `last_received_value` variable in the `while True` loop.
+
+In the next page we show some useful functions on how to process the data received.
 
 [Previous Step](index){: .btn .btn-gray }  [Next Step](step-2){: .btn .btn-blue }
