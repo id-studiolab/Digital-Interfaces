@@ -73,6 +73,9 @@ speak_button.direction = digitalio.Direction.INPUT
 actuator = digitalio.DigitalInOut(board.D4)
 actuator.direction = digitalio.Direction.OUTPUT
 
+# For more information on how to use PWM check this link: 
+# https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm
+
 #actuator = pwmio.PWMOut(board.D4, variable_frequency=True)
 
 ##--- MQTT configuration
@@ -121,9 +124,7 @@ while True:
 
    print(last_received_value)
    
-   # Sleep for a bit to make the keypress events occur at a human timescale 
-   # Skilled gamers can do ~7 button presses per second (says ChatGPT) 
-   time.sleep(0.143)
+   time.sleep(0.1)
 
 ```
 
