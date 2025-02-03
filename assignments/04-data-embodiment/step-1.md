@@ -114,6 +114,12 @@ If you want to process the data received you can use the `last_received_value` v
 | -------------------------------------- | 
 | ![](data_embodiment_state_diagram.png)                | 
 
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| <div style="text-align: center;">
+    <img src="data_embodiment_state_diagram.png" alt="Data Embodiment Acting Machine Diagram" style="width:50%;">
+  </div>| 
+
 In the next page we show some useful functions on how to process the data received.
 
 [Previous Step](index){: .btn .btn-gray }  [Next Step](step-2){: .btn .btn-blue }
