@@ -31,4 +31,4 @@ nav_order: 0
 
 [⤴ Brightspace](https://brightspace.tudelft.nl/d2l/home/681612){:target="_blank"}
 
-[⤴ Hedy - Python tutorial](https://hedy.org/)
+[Hedy - Python tutorial](https://hedy.org/)<svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>
