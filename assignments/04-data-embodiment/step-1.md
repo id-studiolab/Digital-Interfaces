@@ -118,7 +118,8 @@ If you want to process the data received you can use the `last_received_value` v
 | -------------------------------------- | 
 | <div style="text-align: center;">
     <img src="data_embodiment_state_diagram.png" alt="Data Embodiment Acting Machine Diagram" style="width:50%;">
-  </div>| 
+  </div>|
+| Nog wat Text |
 
 In the next page we show some useful functions on how to process the data received.
 
