@@ -27,7 +27,7 @@ For this week’s assignment, we prepared a lot of different code snippets to he
 Although we will use a lot of code, you are not required to understand every little line, but rather analyse your needs and search for the specific code sample.
 
 ### Important!
-As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
+As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
 
 {:.note}
    If you see the following error:    
@@ -38,7 +38,7 @@ As a prerequisite for this tutorial to work, make sure you followed and successf
 
 [Get started](step-1){: .btn .btn-blue }
 
-If you’re unable to connect to the internet, don’t worry! We’ve provided an alternative method that allows you to use previously stored data from the same sources. This ensures you can still complete the tutorial and practice working with the data.
+If you’re unable to connect to the internet, don’t worry! We’ve provided a fallback method that allows you to use previously stored data from the same sources. This ensures you can still complete the tutorial and practice working with the data.
 
 However, it’s essential to revisit this tutorial later when you have internet access. Connecting to the MQTT server is a key part of understanding how to integrate real-time data into your prototypes.
 
