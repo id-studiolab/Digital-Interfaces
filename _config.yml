@@ -12,3 +12,14 @@ callouts:
   note:
     title: note
     color: blue
+
+# External navigation links
+nav_external_links:
+  - title: IOB22 - Digital Product Development
+    url: https://datacentricdesign.github.io/iob22
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
+  - title: Connected Interaction Kit
+    url: https://id-studiolab.github.io/Connected-Interaction-Kit
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
