@@ -6,7 +6,7 @@ has_children: false
 ---
 
 # Walkie-Talkie
-In this week's assignment we are going to build-up from the knowledge learned last week from using MQTT, and we will expand it by also publishing on the server!
+In this week's assignment we are going to build-up from the knowledge learned last week on MQTT, and we will expand it by also publishing on the server!
 The goal is to build a walkie-talkie that can both send and receive messages from other boards.
 
 ---
@@ -15,7 +15,7 @@ The goal is to build a walkie-talkie that can both send and receive messages fro
 In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
 
 When connected to an MQTT server, we can not only listen to a topic (e.g. "perlin" and "iss/distance" from last week), but also send data to it!
-The act of sending data is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
+Sending data to the MQTT broker is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
 
 ---
 
@@ -25,7 +25,7 @@ Your goal is to implement 2 buttons and an actuator of your choice (we recommend
 - 1 button to send messages on the channel
 - 1 actuator that is triggered when a message is received
 
-Remember that walkie-talkies cannot receive messages while their channel is open.
+**Remember that walkie-talkies cannot receive messages while their channel is open.**
 
 Just like last week, here below we present a template with **almost** everything you need to make your walkie-talkie work. 
 Although, one crucial part is **missing**, the part inside the `while` loop.
@@ -132,4 +132,14 @@ while True:
 --- 
 
 ## Extra Challenge: Interpret received messages 
-TBI
+
+In the current assignment, your walkie-talkie sends a fixed message ("ping") each time you press the button. But real communication isn't just about sending the same thing over and over; messages can carry different meanings!  
+
+For this challenge, modify your code so that different messages can be sent instead of always sending "ping". 
+Think about the different ways in which you could send different messages, for example, assign two buttons or create a switch to select messages before sending. 
+
+When receiving messages, be sure that your board also interprets incoming messages and responds differently based on their content.
+
+Think about how this could enhance the interaction, different messages could trigger different responses from the actuator, maybe also triggering different actuators.
+
+Push yourself to explore how MQTT can be used for more dynamic communication!
