@@ -63,7 +63,7 @@ last_received_value = 0
 open_channel_button = digitalio.DigitalInOut(board.D13)
 
 # Define the speak button variable and assign it to port D7 of our board
-speak_button digitalio.DigitalInOut(board.D7)
+speak_button = digitalio.DigitalInOut(board.D7)
 
 ## Define the buttons as an input component
 open_channel_button.direction = digitalio.Direction.INPUT
@@ -111,6 +111,14 @@ mqtt_client.subscribe(mqtt_listen_topic)
 ##--- Main loop
 
 while True: 
+
+    try:
+        mqtt_client.loop(0.1)
+
+    except (ValueError, RuntimeError) as e:
+        print("Failed to get data, retrying\n", e)
+        mqtt_client.reconnect()
+        continue
 
     # -------------------------------------------------------------| 
     #                                                              | 
