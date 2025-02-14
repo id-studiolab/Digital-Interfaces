@@ -47,6 +47,7 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
 
    ##--- Defining states
    state_wait = 0
+   state_received_value = 1
    current_state = 0
 
    # Define variable to save data received from the MQTT broker
@@ -58,12 +59,13 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
    # a message from the MQTT server.
    def handle_message(client, topic, msg):
        global last_received_value
+       global current_state
 
        # Assign message received to last_received variable
        last_received_value = msg
 
        # See what was printed and on what channel
-       print("New message on topic {0}: {1}".format(topic, msg))
+       current_state = state_received_value
 
    # You can find the client Id in the settings.py this is used to identify the board
    client_id = settings["mqtt_clientid"]
@@ -72,7 +74,7 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
    # Make sure there is only one topic active at any given time (and otherwise add a # before the one you do not want to use anymore)
    MQTT_topic = "perlin"
    #MQTT_topic = "iss/distance"
-   #MQTT_topic = "iss/location
+   #MQTT_topic = "iss/location"
 
    # Create a mqtt connection based on the settings file.
    mqtt_client = Create_MQTT(client_id, handle_message)
@@ -94,7 +96,12 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
          
        if current_state is state_wait:
            # Let's print the received data in our Serial Monitor
-           print(last_received_value)
+           print("Waiting for message...", end='\r')
+
+       elif current_state is state_received_value:
+   
+           current_state = state_wait
+           print("New message on topic {0}: {1}".format(MQTT_topic, last_received_value))
 
            # ---------------------------------------------------| 
            #                                                    | 
