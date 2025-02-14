@@ -112,19 +112,19 @@ mqtt_client.subscribe(mqtt_listen_topic)
 
 while True: 
 
-   # -------------------------------------------------------------| 
-   #                                                              | 
-   # Use the Acting Machine Diagram to program your solution here | 
-   #                                                              | 
-   # -------------------------------------------------------------|
+    # -------------------------------------------------------------| 
+    #                                                              | 
+    # Use the Acting Machine Diagram to program your solution here | 
+    #                                                              | 
+    # -------------------------------------------------------------|
 
-   message = "ping"
+    message = "ping"
 
-   # mqtt_client.publish(message, mqtt_speak_topic)
+    # mqtt_client.publish(message, mqtt_speak_topic)
 
-   print(last_received_value)
-   
-   time.sleep(0.1)
+    print(last_received_value)
+    
+    time.sleep(0.1)
 
 ```
 

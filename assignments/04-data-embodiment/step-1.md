@@ -57,13 +57,13 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
    # Method used when the board receives 
    # a message from the MQTT server.
    def handle_message(client, topic, msg):
-      global last_received_value
+       global last_received_value
 
-      # Assign message received to last_received variable
-      last_received_value = msg
+       # Assign message received to last_received variable
+       last_received_value = msg
 
-      # See what was printed and on what channel
-      print("New message on topic {0}: {1}".format(topic, msg))
+       # See what was printed and on what channel
+       print("New message on topic {0}: {1}".format(topic, msg))
 
    # You can find the client Id in the settings.py this is used to identify the board
    client_id = settings["mqtt_clientid"]
@@ -83,27 +83,27 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
 
    # --- Main loop
    while True:
-      # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
-      try:
-         mqtt_client.loop(0.1)
+       # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
+       try:
+           mqtt_client.loop(0.1)
 
-      except (ValueError, RuntimeError) as e:
-         print("Failed to get data, retrying\n", e)
-         mqtt_client.reconnect()
-         continue
+       except (ValueError, RuntimeError) as e:
+           print("Failed to get data, retrying\n", e)
+           mqtt_client.reconnect()
+           continue
          
-      if current_state is state_wait:
-         # Let's print the received data in our Serial Monitor
-         print(last_received_value)
+       if current_state is state_wait:
+           # Let's print the received data in our Serial Monitor
+           print(last_received_value)
 
-         # ---------------------------------------------------| 
-         #                                                    | 
-         # Use last_received_variable in your code to use     | 
-         # the data received from the MQTT broker.            | 
-         #                                                    | 
-         # ---------------------------------------------------|
+           # ---------------------------------------------------| 
+           #                                                    | 
+           # Use last_received_variable in your code to use     | 
+           # the data received from the MQTT broker.            | 
+           #                                                    | 
+           # ---------------------------------------------------|
       
-      time.sleep(0.01)
+       time.sleep(0.01)
 
    ```
 

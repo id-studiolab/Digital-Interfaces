@@ -108,15 +108,15 @@ smooth_sequence = [
 
 while True:
 
-   brightness, running, changed = vs.sequence(sequence=[], loop_max=1)
+    brightness, running, changed = vs.sequence(sequence=[], loop_max=1)
 
-   # -------------------------------------------------------------| 
-   #                                                              | 
-   # Use the Acting Machine Diagram to program your solution here | 
-   #                                                              | 
-   # -------------------------------------------------------------|
+    # -------------------------------------------------------------| 
+    #                                                              | 
+    # Use the Acting Machine Diagram to program your solution here | 
+    #                                                              | 
+    # -------------------------------------------------------------|
 
-   time.sleep(0.1)
+    time.sleep(0.1)
 
 ```
 

@@ -92,7 +92,7 @@ while True:
     if current_state == state_wait:
         set_led_color(led_off)
         set_timer(random.randint(3, 10))
-	print("starting game!")
+    print("starting game!")
         current_state = state_start_game
 
     elif current_state == state_start_game:
