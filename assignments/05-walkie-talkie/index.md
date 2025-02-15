@@ -49,8 +49,9 @@ from settings import settings
 
 ##--- Defining states
 state_idle = 0
-state_listening = 1
-state_speaking = 2
+state_receiving = 1
+state_channel_open = 2
+state_transmitting = 3
 
 current_state = 0
 
@@ -82,36 +83,38 @@ actuator.direction = digitalio.Direction.OUTPUT
 
 # Define variable to save data received from the MQTT broker
 last_received_value = 0
+device_has_received_new_value = False
    
-# Method used when the board receives 
-# a message from the MQTT server.
+# Method used when the board receives a message from the MQTT server.
 def handle_message(client, topic, msg):
-   global last_received_value
+    global last_received_value
+    global device_has_received_new_value
 
-   # Assign message received to last_received variable
-   last_received_value = msg
+    # Assign message received to last_received variable
+    last_received_value = msg
 
-   # See what was printed and on what topic
-   print("New message on topic {0}: {1}".format(topic, msg))
+    device_has_received_new_value = True
+
 
 # You can find the client Id in the settings.py this is used to identify the board
 client_id = settings["mqtt_clientid"]
 
-# Here you should select the topic of the person you want to talk to.
-# They should set as listen_topic the topic to which you're sending messages to.
-mqtt_listen_topic = "ItsyBitsy Studiolab"
-mqtt_speak_topic = "TOPIC YOU WANT TO PUBLISH TO HERE"
-
 # Create a mqtt connection based on the settings file.
 mqtt_client = Create_MQTT(client_id, handle_message)
+
+# Here you should select the topic of the person you want to talk to.
+# Write the topic you want to send messages to.
+mqtt_speak_topic = "MySpeakTopic"
+
+# You should set as "listen_topic" their "speak_topic" and vice-versa
+mqtt_listen_topic = "MyListenTopic"
+
 
 # Listen for messages on the topic specified above
 mqtt_client.subscribe(mqtt_listen_topic)
 
 ##--- Main loop
-
 while True: 
-
     try:
         mqtt_client.loop(0.1)
 
@@ -119,23 +122,29 @@ while True:
         print("Failed to get data, retrying\n", e)
         mqtt_client.reconnect()
         continue
-
-    # -------------------------------------------------------------| 
-    #                                                              | 
-    # Use the Acting Machine Diagram to program your solution here | 
-    #                                                              | 
-    # -------------------------------------------------------------|
+    # ---------------------------------------------
+    # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
+    # ---------------------------------------------
 
     message = "ping"
 
-    # mqtt_client.publish(message, mqtt_speak_topic)
+    # Use this method to publish messages on a topic:
+    # mqtt_client.publish(mqtt_speak_topic, message)
 
-    print(last_received_value)
-    
+    # ----------------------------------------------------------------| 
+    #                                                                 | 
+    # Use the Acting Machine Diagram to program your solution here    | 
+    #                                                                 |
+    # Hint: Make use of the "device_has_received_new_value" variable  |
+    #                                                                 | 
+    # ----------------------------------------------------------------|
+
+    # ----------------------------------------------
+    # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
+    # ----------------------------------------------
+    device_has_received_new_value = False
     time.sleep(0.1)
-
 ```
-
 
 --- 
 
