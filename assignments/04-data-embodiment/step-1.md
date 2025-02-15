@@ -46,26 +46,26 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
    from settings import settings
 
    ##--- Defining states
-   state_wait = 0
+   state_idle = 0
    state_received_value = 1
    current_state = 0
 
    # Define variable to save data received from the MQTT broker
    last_received_value = 0
-      
+   device_has_received_new_value = False
+
    ##--- MQTT Setup
 
    # Method used when the board receives 
    # a message from the MQTT server.
    def handle_message(client, topic, msg):
        global last_received_value
-       global current_state
+       global device_has_received_new_value
 
        # Assign message received to last_received variable
        last_received_value = msg
 
-       # See what was printed and on what channel
-       current_state = state_received_value
+       device_has_received_new_value = True
 
    # You can find the client Id in the settings.py this is used to identify the board
    client_id = settings["mqtt_clientid"]
@@ -94,22 +94,17 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
            mqtt_client.reconnect()
            continue
          
-       if current_state is state_wait:
-           # Let's print the received data in our Serial Monitor
-           print("Waiting for message...", end='\r')
+       # ----------------------------------------------------------------| 
+       #                                                                 | 
+       # Use the Acting Machine Diagram to program your solution here    | 
+       #                                                                 |
+       # Hint: Make use of the "device_has_received_new_value" variable  |
+       #                                                                 | 
+       # ----------------------------------------------------------------|
 
-       elif current_state is state_received_value:
-   
-           current_state = state_wait
-           print("New message on topic {0}: {1}".format(MQTT_topic, last_received_value))
-
-           # ---------------------------------------------------| 
-           #                                                    | 
-           # Use last_received_variable in your code to use     | 
-           # the data received from the MQTT broker.            | 
-           #                                                    | 
-           # ---------------------------------------------------|
-      
+       
+       # Do not change anything below this point!
+       device_has_received_new_value = False
        time.sleep(0.01)
 
    ```
