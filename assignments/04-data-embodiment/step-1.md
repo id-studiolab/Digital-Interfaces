@@ -93,6 +93,10 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
            print("Failed to get data, retrying\n", e)
            mqtt_client.reconnect()
            continue
+       # ---------------------------------------------
+       # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
+       # ---------------------------------------------
+
          
        # ----------------------------------------------------------------| 
        #                                                                 | 
@@ -103,10 +107,11 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
        # ----------------------------------------------------------------|
 
        
-       # Do not change anything below this point!
+       # ----------------------------------------------
+       # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
+       # ----------------------------------------------
        device_has_received_new_value = False
        time.sleep(0.01)
-
    ```
 
 ### Acting Machine Diagram 
