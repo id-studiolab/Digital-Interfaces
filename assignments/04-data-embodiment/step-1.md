@@ -27,7 +27,7 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
       'password' : 'replace-with-your-iPSK-String', # Our personal password to connect to Wifi
       'mqtt_broker' : 'ide-education.cloud.shiftr.io', # The MQTT server we connect to
       'mqtt_user' : 'ide-education', # The username for connecting to the server
-      'mqtt_password' : '9RI9jcOCtnoIAESq', # The password for connecting to the server
+      'mqtt_password' : 'Sy0L85iwSSgc1P7E', # The password for connecting to the server
       'mqtt_clientid': 'Studio5_Caspar', # The device name we present to the server when connecting
    }
    ```
