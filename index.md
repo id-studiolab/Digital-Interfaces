@@ -23,8 +23,3 @@ nav_order: 0
 
 ## Tutorials
 [Building a Pomodoro timer](tutorials/02-pomodoro/index)
-
-## Other links
-[⤴ TU Delft Brightspace](https://brightspace.tudelft.nl/d2l/home/681612){:target="_blank"}
-
-[⤴ Hedy - Python tutorial](https://hedy.org/){:target="_blank"}
