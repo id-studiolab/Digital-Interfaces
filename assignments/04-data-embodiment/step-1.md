@@ -128,3 +128,25 @@ If you want to process the data received you can use the `last_received_value` v
 In the next page we show some useful functions on how to process the data received.
 
 [Previous Step](index){: .btn .btn-gray }  [Next Step](step-2){: .btn .btn-blue }
+
+--- 
+
+## Extra Challenge: Use Advanced Components 
+
+Now that you have successfully managed messages from MQTT, you can push your project further by incorporating additional components beyond the standard Connected Interaction Kit. 
+This challenge encourages you to explore and integrate elements that can enhance the interactivity and visual appeal of your design.
+
+Below are some components you can experiment with:
+   - LED Strip (WS2812 / Neopixel)
+   - LED Ring 
+   - LED Segment Bar
+   - LCD Screen
+   - Speaker / MP3 Player
+   - Fans
+
+{: .note }
+A basic introduction on how to use these components can be found here below:
+
+[Complete Prototyping Components List](https://ide-studiolab.notion.site/Complete-Prototyping-Component-List-5882007ea7e94a7db77ad8bd3892cd24){: .btn .btn-blue }
+
+Be creative and experiment! This challenge is about exploring new possibilities and applying what you've learned to enhance your project. 🚀
