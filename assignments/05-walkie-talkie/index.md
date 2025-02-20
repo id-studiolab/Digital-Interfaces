@@ -59,16 +59,29 @@ current_state = 0
 last_received_value = 0
 
 ##--- Button variables
-
-# Define the open channel button variable and assign it to port D13 of our board
-open_channel_button = digitalio.DigitalInOut(board.D13)
-
-# Define the speak button variable and assign it to port D7 of our board
-speak_button = digitalio.DigitalInOut(board.D7)
-
-## Define the buttons as an input component
+open_channel_pin = board.D13
+open_channel_button = digitalio.DigitalInOut(open_channel_pin)
 open_channel_button.direction = digitalio.Direction.INPUT
+
+speak_channel_pin = board.D7
+speak_button = digitalio.DigitalInOut(speak_channel_pin)
 speak_button.direction = digitalio.Direction.INPUT
+
+##-- Led variables
+pin_leds = board.D3
+num_leds = 1
+leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
+
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_green = (0, 255, 0, 0)
+led_white = (0, 0, 0, 255)
+
+def set_led_color(color):
+    global leds
+    leds.fill(color)
+    leds.show()
 
 ##--- Actuator variables
 actuator = digitalio.DigitalInOut(board.D4)
