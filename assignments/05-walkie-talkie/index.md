@@ -28,14 +28,10 @@ Your goal is to implement 2 buttons and an actuator of your choice (we recommend
 **Remember that walkie-talkies cannot receive messages while their channel is open.**
 
 Just like last week, here below we present a template with **almost** everything you need to make your walkie-talkie work. 
-Although, one crucial part is **missing**, the part inside the `while` loop.
 
-Your assignment is to use the template code and one of the acting machine diagrams here below to create a working controller.
+Although, one crucial part is **missing**, the part inside the `while` loop, you should use the acting machine diagram below the code to make your walkie-talkie work.
 
-| Acting Machine Diagram | 
-| -------------------------------------- | 
-| TODO: Insert image                | 
-
+Happy coding!
 
 ### Code template
 ```python
@@ -159,6 +155,10 @@ while True:
     time.sleep(0.1)
 ```
 
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](walkie_talkie_state_diagram.png)                | 
+
 --- 
 
 ## Extra Challenge: Interpret received messages 
@@ -168,8 +168,14 @@ In the current assignment, your walkie-talkie sends a fixed message ("ping") eac
 For this challenge, modify your code so that different messages can be sent instead of always sending "ping". 
 Think about the different ways in which you could send different messages, for example, assign two buttons or create a switch to select messages before sending. 
 
-When receiving messages, be sure that your board also interprets incoming messages and responds differently based on their content.
+When receiving messages, be sure that your walkie-talkie also interprets incoming messages and responds differently based on their content.
 
 Think about how this could enhance the interaction, different messages could trigger different responses from the actuator, maybe also triggering different actuators.
 
 Push yourself to explore how MQTT can be used for more dynamic communication!
+
+Here below we provide a more advanced acting machine digram to help you create your improved walkie-talkie
+
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](walkie_talkie_extra_challenge_state_diagram.png)                | 
