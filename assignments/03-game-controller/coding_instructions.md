@@ -31,9 +31,9 @@ score = 6      # Updates the value of "score" to 6
 current_state = 0
 
 if buttun_pressed is True:
-   current_state = 1
+    current_state = 1
 else:
-   current_state = 0
+    current_state = 0
 ```
 
 In the previous example our code checks whether the button has been pressed, if that's the case then `current_state` will be updated to have value 1.
@@ -50,11 +50,11 @@ The main difference between `else` and `elif` is that `elif` can have condition 
 condition = False
 
 if condition is True:
-   print('Condition satisfied!')
+    print('Condition satisfied!')
 elif button_is_pressed is True:
-   print('Button is pressed!')
+    print('Button is pressed!')
 else:
-   print('Idle')
+    print('Idle')
 ```
 
 
@@ -63,8 +63,8 @@ While loops are parts of code that are repeated, like the name suggests, **while
 
 ```python
 while button_is_pressed:
-   print('Button is pressed!')        # Print while button is pressed
-   button_is_pressed = button.value   # Detect button press
+    print('Button is pressed!')        # Print while button is pressed
+    button_is_pressed = button.value   # Detect button press
 ```
 
 Keep in mind that only the code inside the `while` block will be executed as long as the 
@@ -80,7 +80,7 @@ Remember to always include  `time.sleep(0.1)` at the end of your `while True:` l
 ```python
 while True:
 
-   # Your code logic here....
+    # Your code logic here....
 
-   time.sleep(0.1)
+    time.sleep(0.1)
 ```

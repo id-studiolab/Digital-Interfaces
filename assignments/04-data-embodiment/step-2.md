@@ -63,9 +63,9 @@ If you're seeing an error that looks like this: `unsupported operand type(s) for
 #  x: Element we wish to add to the list
 #  maxLength: How long we want our list to be at most.
 def add_to_bounded_list(lst, x, maxLength): 
-   lst.append(x)  # Add x to the end of the list
-   while len(lst) > maxLength:  # While the list exceeds the maximum length
-      lst.pop(0)  # Remove the first item
+    lst.append(x)  # Add x to the end of the list
+    while len(lst) > maxLength:  # While the list exceeds the maximum length
+        lst.pop(0)  # Remove the first item
 ```
 
 **Code example**
@@ -86,20 +86,20 @@ maximum_number_of_entries = 10
 #  x: Element we wish to add to the list
 #  maxLength: How long we want our list to be at most.
 def add_to_bounded_list(lst, x, maxLength): 
-   lst.append(x)  # Add x to the end of the list
-   while len(lst) > maxLength:  # While the list exceeds the maximum length
-      lst.pop(0)  # Remove the first item
+    lst.append(x)  # Add x to the end of the list
+    while len(lst) > maxLength:  # While the list exceeds the maximum length
+        lst.pop(0)  # Remove the first item
 
 # --- Main loop
 while True:
-   ## Generate a random integer between 0 and 1024
-   random_number = random.randint(0,1024)
-   
-   ## Add random_number to our list, and remove first entries when the maximum capacity is reached
-   add_to_bounded_list(data_collection, random_number, maximum_number_of_entries)
-   
-   print(f"The data list is: {data_collection}")
-   time.sleep(1)
+    ## Generate a random integer between 0 and 1024
+    random_number = random.randint(0,1024)
+    
+    ## Add random_number to our list, and remove first entries when the maximum capacity is reached
+    add_to_bounded_list(data_collection, random_number, maximum_number_of_entries)
+    
+    print(f"The data list is: {data_collection}")
+    time.sleep(1)
 ```
 
 --- 
@@ -123,13 +123,13 @@ calculated_average = 0
 
 ## --- Functions
 def calculate_average(lst):
-   return sum(lst) / len(lst) # To get the average of a list, we get the sum of the list (all numbers added together) and divide it by the length of the list (the amount of numbers in the list)
+    return sum(lst) / len(lst) # To get the average of a list, we get the sum of the list (all numbers added together) and divide it by the length of the list (the amount of numbers in the list)
 
 # --- Main loop
 while True:
-   calculated_average = calculate_average(data_collection)
-   print(f"List average: {calculated_average}")
-   time.sleep(1)
+    calculated_average = calculate_average(data_collection)
+    print(f"List average: {calculated_average}")
+    time.sleep(1)
 ```
 --- 
 
@@ -143,24 +143,24 @@ This mapping function comes very useful in those cases.
 ```python
 # To map a number from one range to another, we just need to apply some math to the number.
 def map_to_range(x, inputMin, inputMax, outputMin, outputMax): 
-   # Calculate the size of the input range.
-   inputSize = inputMax - inputMin 
+    # Calculate the size of the input range.
+    inputSize = inputMax - inputMin 
 
-   # Same as previous but for the minimum and maximum we want to work towards.
-   outputSize = outputMax - outputMin
+    # Same as previous but for the minimum and maximum we want to work towards.
+    outputSize = outputMax - outputMin
 
-   # Find how the output range scales compared to the input range.
-   multiplier = outputSize / inputSize
+    # Find how the output range scales compared to the input range.
+    multiplier = outputSize / inputSize
 
-   # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
-   y = x - inputMin 
+    # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
+    y = x - inputMin 
 
-   # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
-   z = y * multiplier 
-   
-   # We get the result by adding the minimum of the To to our previous result.
-   result = z + outputMin 
-   return result  
+    # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
+    z = y * multiplier 
+    
+    # We get the result by adding the minimum of the To to our previous result.
+    result = z + outputMin 
+    return result  
 ```
 
 ### Code Example
@@ -176,45 +176,45 @@ mapped_int = 0
 
 # To map a number from one range to another, we just need to apply some math to the number.
 def map_to_range(x, inputMin, inputMax, outputMin, outputMax): 
-   # Calculate the size of the input range.
-   inputSize = inputMax - inputMin 
+    # Calculate the size of the input range.
+    inputSize = inputMax - inputMin 
 
-   # Same as previous but for the minimum and maximum we want to work towards.
-   outputSize = outputMax - outputMin
+    # Same as previous but for the minimum and maximum we want to work towards.
+    outputSize = outputMax - outputMin
 
-   # Find how the output range scales compared to the input range.
-   multiplier = outputSize / inputSize
+    # Find how the output range scales compared to the input range.
+    multiplier = outputSize / inputSize
 
-   # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
-   y = x - inputMin 
+    # If our number is at the minimum, we want it to be at 0. This makes multiplying easier.
+    y = x - inputMin 
 
-   # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
-   z = y * multiplier 
-   
-   # We get the result by adding the minimum of the To to our previous result.
-   result = z + outputMin 
-   return result  
+    # Multiply said number by our multiplier so we get the correct range. For example a range from 0,1 turns into 0,180 by multiplying by 180.
+    z = y * multiplier 
+    
+    # We get the result by adding the minimum of the To to our previous result.
+    result = z + outputMin 
+    return result  
 
 # --- Setup
 
 # --- Main loop
 while True:
    
-   # Count up from 0 to 1024
-   for i in range(0, 1024, 1):
-      raw_value = i
+    # Count up from 0 to 1024
+    for i in range(0, 1024, 1):
+        raw_value = i
       
-      # Map the raw_value that goes from 0 to 1024 to a new range of 0 to 255
-      mapped_value = map_to_range(raw_value,0,1024,0,255)
+        # Map the raw_value that goes from 0 to 1024 to a new range of 0 to 255
+        mapped_value = map_to_range(raw_value,0,1024,0,255)
       
-      # Sometimes we only need the integer and not full float number
-      # The int() function rounds our float input either up or down
-      mapped_int = int(mapped_value)
+        # Sometimes we only need the integer and not full float number
+        # The int() function rounds our float input either up or down
+        mapped_int = int(mapped_value)
       
-      print(f"Raw value: {raw_value} // Mapped value: {mapped_value} // Mapped integer: {mapped_int}")
-      time.sleep(0.1)
+        print(f"Raw value: {raw_value} // Mapped value: {mapped_value} // Mapped integer: {mapped_int}")
+        time.sleep(0.1)
 
-   time.sleep(0.1)
+    time.sleep(0.1)
 ```
 
 --- 
