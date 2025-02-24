@@ -75,6 +75,10 @@ Do not copy the entire .zip bundle to your CIRCUITPY device! Instead copy only t
    MQTT_topic = "perlin"
    #MQTT_topic = "iss/distance"
    #MQTT_topic = "iss/location"
+   #MQTT_topic = "coffee-waiting-line"
+   #MQTT_topic = "ocean-cleanup-stock"
+   #MQTT_topic = "outside-temperature"
+
 
    # Create a mqtt connection based on the settings file.
    mqtt_client = Create_MQTT(client_id, handle_message)
