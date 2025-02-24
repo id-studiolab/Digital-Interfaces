@@ -17,15 +17,6 @@ Pressing a key once typically produces a single character on the screen. However
 In this assignment you’ll also explore Python basics, such as variables, loops (`while`), conditional statements (`if`, `elif`, `else`), and working with functions. 
 By integrating these concepts with the `usb_hid` library, you’ll gain the skills to create interactive devices that can simulate keyboard or mouse actions dynamically.
 
-
----
-
-## Download and install needed libraries
-For the code to work, we need an additional library that turns our ItsyBitsy into a device that can send keyboard commands to our computer.
-1. Download the[ CircuitPython Library Bundle](https://circuitpython.org/libraries) for Version 8.x. 
-   If you get an error about an incompetable .mpy file then you need the bundle for version 9.x.
-2. Search for the folder names `adafruit_hid` and copy it into the `lib` folder of your `CIRCUITPY` device.
-
 ---
 
 ## Possible games you can play
