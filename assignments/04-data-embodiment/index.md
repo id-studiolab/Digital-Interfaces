@@ -11,7 +11,7 @@ has_children: true
 
 In this weeks assignment we are going to use online data to inform our design by embodying it into a physical artefact. We will use [MQTT](https://mqtt.org) (a lightweight protocol for the Internet of Things) to provide you with multiple data sources that you can use in this assignment.
 
-The three datasources we provide are:
+The five datasources we provide are:
 
 1. The wind speed, as reported by a virtual windspeed sensor (you can decide to locate it anywhere on planet earth), it shows values between 0 km/hour and 120 km/hhour.
 2. The length of a virtual queue at a coffee machine (which coffee machine is up to you), values are between 0 and 20 people.
