@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Step 1: Setting up MQTT on your ItsyBitsy"
+title: "Setting up MQTT on your ItsyBitsy"
 parent: "Week 4: Data Embodiment"
 grand_parent: Assignments
 has_children: false
@@ -22,6 +22,7 @@ settings = {
 }
 ```
 2. We have prepared a library for you that sets up your microcontroller to start a wifi connection, connects to an MQTT broker and takes care of the details of receiving and publishing messages. Download this library using the button below, unzip it and add it to the `lib` folder on your microcontroller.
+
 [Download MQTT wrapper](MQTT.zip){: .btn .btn-blue }
 
 Open a new `code.py` file and copy the following code. 
