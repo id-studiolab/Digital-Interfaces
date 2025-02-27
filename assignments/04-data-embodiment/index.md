@@ -7,7 +7,7 @@ has_children: true
 
 # Data Embodiment
 
-![Shiftr MQTT Broker window](data_embodiment.jpg)](https://ide-education.cloud.shiftr.io)
+[![Shiftr MQTT Broker window](data_embodiment.jpg)](https://ide-education.cloud.shiftr.io)
 
 In this weeks assignment we are going to use online data to inform our design by embodying it into a physical artefact. We will use [MQTT](https://mqtt.org) (a lightweight protocol for the Internet of Things) to provide you with multiple data sources that you can use in this assignment.
 
