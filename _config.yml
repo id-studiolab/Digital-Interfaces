@@ -15,23 +15,23 @@ callouts:
 
 # External navigation links
 nav_external_links:
-  - title: IOB22 - Digital Product Development
-    url: https://datacentricdesign.github.io/iob22
-    hide_icon: false # set to true to hide the external link icon - defaults to false
-    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
   - title: Connected Interaction Kit
     url: https://id-studiolab.github.io/Connected-Interaction-Kit
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
-  - title: Brightspace Page
+  - title: Digital Interfaces Brightspace
     url: https://brightspace.tudelft.nl/d2l/home/681612
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
-  - title: Hedy - Python introduction tutorial
+  - title: Hedy - Python learning
     url: https://hedy.org/
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
-  - title: W3Schools - Python tutorial
+  - title: W3Schools - Python
     url: https://www.w3schools.com/python/
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Adarfruit - CircuitPython Docs
+    url: https://docs.circuitpython.org/en/latest/README.html
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false

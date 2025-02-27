@@ -21,7 +21,7 @@ settings = {
 	"mqtt_clientid": "Studio5_Caspar", # The device name we present to the server when connecting
 }
 ```
-2. Download the MQTT wrapper using the button below and add it to your `lib` folder.
+2. We have prepared a library for you that sets up your ItsyBitsy to start a wifi connection, connects to an MQTT broker and takes care of the details of receiving and publishing messages. Download this library using the button below, unzip it and add it to your `lib` folder.
 [Download MQTT wrapper](MQTT.zip){: .btn .btn-blue }
 
    Open a new `code.py` file and copy the following code. 
