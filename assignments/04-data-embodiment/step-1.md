@@ -49,13 +49,13 @@ device_has_received_new_value = False
 # Method used when the board receives 
 # a message from the MQTT server.
 def handle_message(client, topic, msg):
-	global last_received_value
-	global device_has_received_new_value
+    global last_received_value
+    global device_has_received_new_value
 
-	# Assign message received to last_received variable
-	last_received_value = msg
+    # Assign message received to last_received variable
+    last_received_value = msg
 
-	device_has_received_new_value = True
+    device_has_received_new_value = True
 
 # You can find the client Id in the settings.py this is used to identify the board
 client_id = settings["mqtt_clientid"]
@@ -79,33 +79,33 @@ mqtt_client.subscribe(MQTT_topic)
 
 # --- Main loop
 while True:
-	# This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
-	try:
-		mqtt_client.loop(0.1)
+    # This try / except loop is used to continuously get new data from MQTT, and reset if anything goes wrong
+    try:
+        mqtt_client.loop(0.1)
 
-	except (ValueError, RuntimeError) as e:
-		print("Failed to get data, retrying\n", e)
-		mqtt_client.reconnect()
-		continue
-	# ---------------------------------------------
-	# ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
-	# ---------------------------------------------
+    except (ValueError, RuntimeError) as e:
+        print("Failed to get data, retrying\n", e)
+        mqtt_client.reconnect()
+        continue
+    # ---------------------------------------------
+    # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
+    # ---------------------------------------------
 
-	# ----------------------------------------------------------------| 
-	#                                                                 | 
-	# Use the Acting Machine Diagram to program your solution here    | 
-	#                                                                 | 
-	# ----------------------------------------------------------------|
+    # ----------------------------------------------------------------| 
+    #                                                                 | 
+    # Use the Acting Machine Diagram to program your solution here    | 
+    #                                                                 | 
+    # ----------------------------------------------------------------|
 
-	# Example to print the received data - you may want to use this for your code solution
-	if device_has_received_new_value == True:
-		print(last_received_value)
+    # Example to print the received data - you may want to use this for your code solution
+    if device_has_received_new_value == True:
+        print(last_received_value)
 
-	# ----------------------------------------------
-	# v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
-	# ----------------------------------------------
-	device_has_received_new_value = False
-	time.sleep(0.01)
+    # ----------------------------------------------
+    # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
+    # ----------------------------------------------
+    device_has_received_new_value = False
+    time.sleep(0.01)
 
 ```
 
