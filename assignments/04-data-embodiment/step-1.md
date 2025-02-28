@@ -6,7 +6,7 @@ grand_parent: Assignments
 has_children: false
 ---
 
-# Step 1: Setting up MQTT on your ItsyBitsy
+# Setting up MQTT on your ItsyBitsy
 
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
