@@ -10,7 +10,7 @@ has_children: false
 
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
-1. Extend your `settings.py` file and add the entries for the MQTT broker (the server we connect to), your username (please construct it as **Studio[your studio]_YourName**), and add the access token below. Save the file afterwards.
+1. Extend your `settings.py` file and add the entries for the MQTT broker (the server we connect to), be sure to set your username in the parameter called **mqtt_clientid** (please construct it as **Studio[your studio]_YourName**). Save the file afterwards.
 ```python
 settings = {
 	"ssid" : "TUD-facility", # The wifi we connect to 
