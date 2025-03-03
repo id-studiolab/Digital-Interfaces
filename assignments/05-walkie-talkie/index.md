@@ -63,7 +63,21 @@ open_channel_button.direction = digitalio.Direction.INPUT
 speak_channel_pin = board.D7
 speak_button = digitalio.DigitalInOut(speak_channel_pin)
 speak_button.direction = digitalio.Direction.INPUT
+speak_button_released = True
 
+def is_speak_button_pressed():
+    global speak_button_released
+    
+    print(speak_button.value, speak_button_released)
+    if speak_button.value is True and speak_button_released is True:
+        speak_button_released = False
+        return True
+    
+    if speak_button.value is False:
+        speak_button_released = True 
+    
+    return False
+        
 ##-- Led variables
 pin_leds = board.D3
 num_leds = 1
@@ -112,12 +126,24 @@ client_id = settings["mqtt_clientid"]
 # Create a mqtt connection based on the settings file.
 mqtt_client = Create_MQTT(client_id, handle_message)
 
+
+
+# <-------------------------------------------->
+# -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE --
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+
 # Here you should select the topic of the person you want to talk to.
 # Write the topic you want to send messages to.
-mqtt_speak_topic = "MySpeakTopic"
+mqtt_speak_topic = "MyListenTopic"
 
 # You should set as "listen_topic" their "speak_topic" and vice-versa
-mqtt_listen_topic = "MyListenTopic"
+mqtt_listen_topic = "MySpeakTopic"
+
+
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# <-------------------------------------------->
+
 
 
 # Listen for messages on the topic specified above
@@ -146,7 +172,8 @@ while True:
     # Use the Acting Machine Diagram to program your solution here    | 
     #                                                                 |
     # Hint: Make use of the "device_has_received_new_value" variable  |
-    #                                                                 | 
+    # Hint: Use is_speak_button_pressed() to check the                |
+    #       speak button is pressed.                                  | 
     # ----------------------------------------------------------------|
 
     # ----------------------------------------------
