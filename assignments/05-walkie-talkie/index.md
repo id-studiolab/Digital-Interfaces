@@ -39,6 +39,7 @@ Happy coding!
 import time
 import digitalio
 import board
+import neopixel
 
 from MQTT import Create_MQTT
 from settings import settings
