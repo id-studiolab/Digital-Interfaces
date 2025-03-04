@@ -116,10 +116,8 @@ while True:
     <img src="data_embodiment_state_diagram.png" alt="Data Embodiment Acting Machine Diagram" style="width:70%;"/>
 </div>
 
-5. With the code above we connect to an MQTT client, specify the **topic** and listen to the data being sent to it.
+3. With the code above we connect to an MQTT client, specify the **topic** and listen to the data being sent to it.
 If you want to process the data received you can use the `last_received_value` variable in the `while True` loop.
-
-| Nog wat Text |
 
 In the next page we show some useful functions on how to process the data received.
 
