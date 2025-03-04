@@ -68,7 +68,6 @@ speak_button_released = True
 def is_speak_button_pressed():
     global speak_button_released
     
-    print(speak_button.value, speak_button_released)
     if speak_button.value is True and speak_button_released is True:
         speak_button_released = False
         return True
@@ -135,10 +134,10 @@ mqtt_client = Create_MQTT(client_id, handle_message)
 
 # Here you should select the topic of the person you want to talk to.
 # Write the topic you want to send messages to.
-mqtt_speak_topic = "MyListenTopic"
+mqtt_speak_topic = "MySpeakTopic"
 
 # You should set as "listen_topic" their "speak_topic" and vice-versa
-mqtt_listen_topic = "MySpeakTopic"
+mqtt_listen_topic = "MyListenTopic"
 
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,10 +170,36 @@ while True:
     #                                                                 | 
     # Use the Acting Machine Diagram to program your solution here    | 
     #                                                                 |
-    # Hint: Make use of the "device_has_received_new_value" variable  |
+    # Hint: Use of the "device_has_received_new_value" variable       |
     # Hint: Use is_speak_button_pressed() to check the                |
     #       speak button is pressed.                                  | 
     # ----------------------------------------------------------------|
+
+    if current_state is state_idle:
+        set_led_color(led_off)
+
+        # Check if device has received new value -> state_receiving
+        # Check if open channel button is pressed -> state_channel_open
+
+    elif current_state is state_receiving:
+        set_led_color(led_red)
+
+        # Trigger actuator
+        # Check if device has NOT received new value -> state_idle
+
+    elif current_state is state_channel_open:
+        set_led_color(led_green)
+
+        # Check if open channel button is released -> state_idle
+        # Check if speak button is pressed -> state_transmitting
+      
+    elif current_state is state_transmitting:
+        set_led_color(led_blue)
+
+        # Publish on MQTT topic
+        # Check if open channel button is released -> state_idle
+        # Go back to state_open
+
 
     # ----------------------------------------------
     # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
