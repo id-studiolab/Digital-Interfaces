@@ -198,7 +198,7 @@ while True:
 
         # Publish on MQTT topic
         # Check if open channel button is released -> state_idle
-        # Go back to state_open
+        # Go back to state_channel_open
 
 
     # ----------------------------------------------
