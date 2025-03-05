@@ -61,8 +61,14 @@ def handle_message(client, topic, msg):
 # You can find the client Id in the settings.py this is used to identify the board
 client_id = settings["mqtt_clientid"]
 
+
+# <-------------------------------------------->
+# --     CHOOSE YOUR LISTEN TOPIC HERE        --
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
 # Here you can choose what topic you want to subscribe to. The default is Perlin Noise.
 # Make sure there is only one topic active at any given time (and otherwise add a # before the one you do not want to use anymore)
+
 MQTT_topic = "perlin"
 #MQTT_topic = "iss/distance"
 #MQTT_topic = "iss/location"
@@ -70,6 +76,8 @@ MQTT_topic = "perlin"
 #MQTT_topic = "windspeed"
 #MQTT_topic = "temperature"
 
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# <-------------------------------------------->
 
 # Create a mqtt connection based on the settings file.
 mqtt_client = Create_MQTT(client_id, handle_message)
