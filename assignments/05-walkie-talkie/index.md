@@ -178,28 +178,21 @@ while True:
     if current_state is state_idle:
         set_led_color(led_off)
 
-        # Check if device has received new value -> state_receiving
-        # Check if open channel button is pressed -> state_channel_open
+        if device_has_received_new_value is True:
+            current_state = state_receiving
+
+        elif open_channel_button.value is True:
+            current_state = state_channel_open
 
     elif current_state is state_receiving:
         set_led_color(led_red)
 
-        # Trigger actuator
-        # Check if device has NOT received new value -> state_idle
+        # TODO:
+        # - Trigger actuator
+        # - Check if device has NOT received new value -> state_idle
 
-    elif current_state is state_channel_open:
-        set_led_color(led_green)
 
-        # Check if open channel button is released -> state_idle
-        # Check if speak button is pressed -> state_transmitting
-      
-    elif current_state is state_transmitting:
-        set_led_color(led_blue)
-
-        # Publish on MQTT topic
-        # Check if open channel button is released -> state_idle
-        # Go back to state_channel_open
-
+    # TODO: Fill in the other states and transitions.
 
     # ----------------------------------------------
     # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
