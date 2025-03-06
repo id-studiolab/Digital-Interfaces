@@ -134,10 +134,10 @@ mqtt_client = Create_MQTT(client_id, handle_message)
 
 # Here you should select the topic of the person you want to talk to.
 # Write the topic you want to send messages to.
-mqtt_speak_topic = "MySpeakTopic"
+mqtt_speak_topic = "Studio05-Lisa-Walkie-Talkie"
 
 # You should set as "listen_topic" their "speak_topic" and vice-versa
-mqtt_listen_topic = "MyListenTopic"
+mqtt_listen_topic = "Studio05-Bram-Walkie-Talkie"
 
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
