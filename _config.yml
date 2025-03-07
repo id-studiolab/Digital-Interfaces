@@ -12,9 +12,6 @@ callouts:
   note:
     title: note
     color: blue
-  important:
-    title: important
-    color: red
   attention:
     title: attention
     color: yellow
