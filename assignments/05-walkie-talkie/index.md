@@ -46,9 +46,9 @@ from settings import settings
 
 ##--- Defining states
 state_idle = 0
-state_receiving = 1
+state_receive = 1
 state_channel_open = 2
-state_transmitting = 3
+state_transmit = 3
 
 current_state = 0
 
@@ -63,20 +63,7 @@ open_channel_button.direction = digitalio.Direction.INPUT
 speak_channel_pin = board.D7
 speak_button = digitalio.DigitalInOut(speak_channel_pin)
 speak_button.direction = digitalio.Direction.INPUT
-speak_button_released = True
 
-def is_speak_button_pressed():
-    global speak_button_released
-    
-    if speak_button.value is True and speak_button_released is True:
-        speak_button_released = False
-        return True
-    
-    if speak_button.value is False:
-        speak_button_released = True 
-    
-    return False
-        
 ##-- Led variables
 pin_leds = board.D3
 num_leds = 1
@@ -166,33 +153,16 @@ while True:
     # Use this method to publish messages on a topic:
     # mqtt_client.publish(mqtt_speak_topic, message)
 
-    # ----------------------------------------------------------------| 
-    #                                                                 | 
-    # Use the Acting Machine Diagram to program your solution here    | 
+    # ----------------------------------------------------------------|
+    #                                                                 |
+    # Use the Acting Machine Diagram to program your solution here    |
     #                                                                 |
     # Hint: Use of the "device_has_received_new_value" variable       |
-    # Hint: Use is_speak_button_pressed() to check the                |
-    #       speak button is pressed.                                  | 
+    #       Use the open_channel_button and speak_button variables    |
+    #       Use the led variable (copied from the reation game code)  |
     # ----------------------------------------------------------------|
 
-    if current_state is state_idle:
-        set_led_color(led_off)
 
-        if device_has_received_new_value is True:
-            current_state = state_receiving
-
-        elif open_channel_button.value is True:
-            current_state = state_channel_open
-
-    elif current_state is state_receiving:
-        set_led_color(led_red)
-
-        # TODO:
-        # - Trigger actuator
-        # - Check if device has NOT received new value -> state_idle
-
-
-    # TODO: Fill in the other states and transitions.
 
     # ----------------------------------------------
     # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
