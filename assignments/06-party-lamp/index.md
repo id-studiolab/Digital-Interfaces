@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "6: Disco ball"
+title: "6: Party Lamp"
 parent: Assignments
 has_children: false
 ---
 
-# Disco Ball
+# Party Lamp
 
 In this final assignment, we will use the asyncio library in CircuitPython to control an LED disco lamp with multiple modes. The goal is to understand how to manage multiple tasks simultaneously without blocking the execution of the code—something that is crucial when working with animations, sensors, and interactive components.
 
