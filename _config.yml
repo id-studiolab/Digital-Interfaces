@@ -12,9 +12,12 @@ callouts:
   note:
     title: note
     color: blue
-  note:
+  important:
     title: important
     color: red
+  attention:
+    title: attention
+    color: yellow
 
 # External navigation links
 nav_external_links:

@@ -17,6 +17,12 @@ In this assignment you will learn how to publish data to an MQTT topic and revis
 When connected to an MQTT server, we can not only listen to a topic (e.g. "perlin" and "iss/distance" from last week), but also send data to it!
 Sending data to the MQTT broker is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
 
+{: .attention } 
+If you didn't complete last week's assignment, you should make sure you have done the following things before starting with this assignment:
+- Follow the tutorial on how to connect your board to TUD-facility [here](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/)
+- Download the MQTT wrapper [here](../04-data-embodiment/MQTT.zip)
+- Create a `settings.py` file like the one shown in [step 1 - 4: Data Embodiment](../04-data-embodiment/step-1.md)
+
 ---
 
 ## Coding Assignment
