@@ -20,9 +20,9 @@ Sending data to the MQTT broker is called "publishing" and when doing so, all de
 
 {: .attention } 
 > If you didn't complete last week's assignment, you should make sure you have done the following things before starting with this assignment:
-> - Follow the tutorial on how to connect your board to TUD-facility [here](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/)
-> - Download the MQTT wrapper [here](../04-data-embodiment/MQTT.zip)
-> - Create a `settings.py` file like the one shown in [step 1 - 4: Data Embodiment](../04-data-embodiment/step-1.md)
+> - Follow the tutorial on how to connect your board to TUD-facility wifi [here](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/).
+> - Download the MQTT wrapper [here](../04-data-embodiment/MQTT.zip) and put it in your `lib` folder.
+> - Create a `settings.py` file like the one shown in [step 1 - 4: Data Embodiment](../04-data-embodiment/step-1.md) and add the wifi credentials.
 
 
 ---
