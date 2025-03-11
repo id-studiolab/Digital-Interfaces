@@ -21,8 +21,8 @@ This approach is essential when working with animations, sensors, and interactiv
 In the code provided below, we offer this brand new class called `Timer`.  
 You don't need to worry about what a "class" is in programming — here, we simply provide examples of how to use it to create timers.
 
-|                Timer Class definition      | 
-| :----------------------------------------: | 
+### Timer Class definition
+
 ```python
 # -- Timer class
 class Timer():
@@ -40,9 +40,7 @@ class Timer():
         return (time.monotonic() - self.time_mark) > self.duration
 ```
 
-|                Timer examples                 | 
-| :----------------------------------------: | 
-
+### Timer examples
 ```python
 import time
 
@@ -57,6 +55,8 @@ print(my_timer.expired())  # Will print "True", since more than 2 seconds have p
 ```
 
 Once a timer has expired, you can always restart it with `my_timer.start()` — this will restart the same timer.
+
+---
 
 ## Coding Assignment
 
