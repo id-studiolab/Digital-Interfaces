@@ -7,120 +7,178 @@ has_children: false
 
 # Party Lamp
 
-In this final assignment, we will use the asyncio library in CircuitPython to control an LED disco lamp with multiple modes. The goal is to understand how to manage multiple tasks simultaneously without blocking the execution of the code—something that is crucial when working with animations, sensors, and interactive components.
+After the challenges and struggles of working with MQTT in the last two assignments, this final assignment goes back to the roots, using only 1 button and 1 LED.  
+This week we will use timers to create a Party Lamp with multiple modes, focusing on writing **non-blocking code** — that is, code that can handle multiple tasks at the same time, without pausing everything else or waiting for a result.  
+
+Introducing **blocking versus non-blocking code** (also called **multitasking**): while the product exhibits animations like transitions, fading or blinking, it always remains responsive to the user. **When you press the mode change button, the product should immediately respond by changing the light behavior.** We will test this during studio time and perhaps in the wrap-up session.  
+
+This approach is essential when working with animations, sensors, and interactive features, and it will help us create a **responsive and dynamic Party Lamp**.
 
 ---
 
-## Prerequisites
-
-For the code to work, we need an additional library that help us with controlling different sequences for LEDs, motors, etc. You can take a look at the [VarSpeed library documentation here](https://github.com/pvanallen/VarSpeedPython).
-
-1. Download the library [here](varspeed.zip)
-2. Unzip the library and add the files `varspeed.py` and `easing_functions.py` into the `lib` folder of your `CIRCUITPY`
-
-
-## Why use the VarSpeed library?
-
-When trying to animate an LED, a servo motor, or any kind of actuator for that matter, we have to set its value. This might be the LED color, the motor angle, vibration strength – you name it. 
-
-Usually, we would perhaps solve this manually by setting a new value and then a `time.sleep()` like this code that blinks the Chainable LED.
-
-```python
-# --- Main loop
-while True:
-    print("hello world")
-    leds.fill((0, 0, 255))
-    leds.write()
-    time.sleep(2)
-    leds.fill((0, 0, 0))
-    leds.write()
-    time.sleep(2)
-```
-
-The issue with this code is, that the `time.sleep(2)` function actually *blocks* our entire main loop for two seconds, before continuing. If we want to still read sensors while blinking our LED, or want to move another actuator at a different interval, we run into issues.
-
-The VarSpeed library solves this issue neatly by allowing us to define actuator behaviour in a simple way. In the code below, we can easily define a sequence of movements for our servo motor by providing four inputs:
-1. A target-value, 
-2. Time to get to that value (in seconds), 
-3. Number of steps to get there, 
-4. An easing function (see: [easing functions](https://easings.net))
-
-All this without having to worry about our code being blocked by a `time.sleep()` function. 
-
-Pretty cool! Take a look at the code examples below to get a better understanding of the library and how you can use it to bring your creature to life!
-
 ## Coding instructions
 
+In the code provided below, we offer this brand new class called `Timer`.  
+You don't need to worry about what a "class" is in programming — here, we simply provide examples of how to use it to create timers.
+
+|                Timer Class definition      | 
+| :----------------------------------------: | 
+```python
+# -- Timer class
+class Timer():
+    def __init__(self, duration=0):
+        self.duration = duration
+        self.time_mark = 0
+
+    def start(self):
+        self.time_mark = time.monotonic()
+
+    def set_duration(self, duration):
+        self.duration = duration
+
+    def expired(self):
+        return (time.monotonic() - self.time_mark) > self.duration
+```
+
+|                Timer examples                 | 
+| :----------------------------------------: | 
+
+```python
+import time
+
+my_timer = Timer(2.0)   # Creates timer of 2 seconds 
+my_timer.start()        # Starts timer
+
+print(my_timer.expired())  # Will print "False", since 2 seconds haven't passed
+
+time.sleep(3)  # Wait 3 seconds
+
+print(my_timer.expired())  # Will print "True", since more than 2 seconds have passed
+```
+
+Once a timer has expired, you can always restart it with `my_timer.start()` — this will restart the same timer.
 
 ## Coding Assignment
-Your goal is to implement a selector that switches between the different modes of the disco ball. 
-- 1 potentiomenter
-- 1 RGB LED
 
+Just like in previous weeks, we only provide a template with the components already configured and a couple of helper functions.  
+
+Your goal is to use the **Acting Machine Diagram** below the code template to complete the part inside the `while True:` loop and implement a **Party Lamp**.
+
+The lamp should cycle between the following modes:
+- **Off**: The LED is off.  
+- **Fade**: The LED slowly fades off, then fades on again continuously.  
+- **Blink**: The LED rapidly blinks on and off.  
+
+For this assignment, we will use a **Button** and a **neopixel LED**.  
+Be sure to check the template code to see where they should be connected.
 
 ### Code template
 
 ```python
-##--- Library Imports
-import time
-import board
-import analogio
-import neopixel
-from varspeed import Vspeed
-
-##--- Defining states
-state_off = 0
-state_smooth = 1
-state_party = 2
-
-current_state = 0
-
-##--- LED variables
-pin_leds = board.D13
-num_leds = 1
-leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
-
-##--- Potentiometer Setup
-potentiometer = analogio.AnalogIn(board.A0)
-
-##--- VarSpeed Setup for LED Animation
-MIN_BRIGHTNESS = 0   # Minimum brightness level
-MAX_BRIGHTNESS = 100 # Maximum brightness level
-
-vs = Vspeed(init_position=MIN_BRIGHTNESS, result="int")
-vs.set_bounds(lower_bound=MIN_BRIGHTNESS, upper_bound=MAX_BRIGHTNESS)
-
-##--- Flicker Sequence (Random fast changes)
-flicker_sequence = [
-   (255, 0.01, 2, "QuadEaseOut"),  
-   (50, 0.05, 2, "LinearInOut"),  
-   (200, 0.03, 1, "SineEaseInOut"),  
-   (0, 0.05, 2, "LinearInOut"),    
-]
-
-##--- Smooth Dimming Sequence
-smooth_sequence = [
-   (100, 0.8, 20, "SineEaseInOut"),  # Brighten smoothly
-   (0, 0.8, 20, "SineEaseInOut"),  # Dim smoothly
-]
 
 ##--- Main Loop
+import board
+import neopixel
+import digitalio
+import time
+
+# -- Define states
+state_off = 0
+state_fade_in = 1
+state_fade_out = 2
+state_blink_on = 3
+state_blink_off = 4
+
+current_state = state_off
+
+# -- Initialize the button
+button = digitalio.DigitalInOut(board.D7)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+
+button_released = True
+
+# -- Button debounce function
+def is_button_pressed():
+    global button_released
+    
+    if button.value is True and button_released is True:
+        button_released = False
+        return True
+    
+    if button.value is False:
+        button_released = True
+    
+    return False
+
+# -- Initialize the NeoPixel
+led = neopixel.NeoPixel(board.D13, 1, brightness=0.3, auto_write=False)
+
+# Define basic led colors
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_green = (0, 255, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_white = (0, 0, 0, 255)
+
+def set_led_color(color):
+    global led
+    led.fill(color)
+    led.show()
+
+
+# -- Timer class
+class Timer():
+    def __init__(self, duration=0):
+        self.duration = duration
+        self.time_mark = 0
+
+    def start(self):
+        self.time_mark = time.monotonic()
+
+    def set_duration(self, duration):
+        self.duration = duration
+
+    def expired(self):
+        return (time.monotonic() - self.time_mark) > self.duration
+
+
+# Initialize timers
+fade_timer = Timer(0.01)  # Controls fade speed
+blink_timer = Timer(0.2)  # Controls blink speed
+
 
 while True:
 
-    brightness, running, changed = vs.sequence(sequence=[], loop_max=1)
 
-    # -------------------------------------------------------------| 
-    #                                                              | 
-    # Use the Acting Machine Diagram to program your solution here | 
-    #                                                              | 
-    # -------------------------------------------------------------|
+    # ----------------------------------------------------------------| 
+    #                                                                 | 
+    # Use the Acting Machine Diagram to program your solution here    | 
+    #                                                                 | 
+    # Hint: you can use led.brightness to acces and change the        | 
+    #       ligth brightness.                                         | 
+    #       The brightness has a value between 0.0 and 1.0.           | 
+    #                                                                 | 
+    # ex: led.brightness = 0.5  # Sets the led to half the brightness | 
+    #                                                                 | 
+    # ----------------------------------------------------------------|
 
+    led.show()
     time.sleep(0.1)
-
 ```
 
+| Acting Machine Diagram | 
+| -------------------------------------- | 
+| ![](acting_diagram_party_lamp.png)                | 
 
-## Extra challenge
+---
 
-TODO: Design your own light effect...
+## Extra challenge 
+
+**Add new modes to the Party Lamp!**  
+If you manage to get the basic modes working, try extending your Party Lamp by adding more complex effects, such as:  
+- **Rainbow mode**: Slowly shifting between all colors of the rainbow.  
+- **Strobe mode**: Very fast flashing (disco-style).  
+- **Special color programs**: Sequences of color changes, like alternating between red and green for a Christmas effect.  
+
+You'll need to think carefully about how to manage the timing and transitions using your timers, while keeping everything responsive to the button press.
