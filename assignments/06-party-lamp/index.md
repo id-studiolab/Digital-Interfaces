@@ -18,43 +18,37 @@ This approach is essential when working with animations, sensors, and interactiv
 
 ## Coding instructions
 
-In the code provided below, we offer this brand new class called `Timer`.  
-You don't need to worry about what a "class" is in programming — here, we simply provide examples of how to use it to create timers.
+In the code provided below, we offer two simple timer functions that allow you to create and check timers.
+These functions make it easy to work with time-based events in your code.
 
 ### Timer Class definition
 
 ```python
-# -- Timer class
-class Timer():
-    def __init__(self, duration=0):
-        self.duration = duration
-        self.time_mark = 0
+# -- Timer functions
+last_timer_mark = 0
+timer_duration = 0
 
-    def start(self):
-        self.time_mark = time.monotonic()
+def start_timer(duration):    # Takes duration in seconds
+    global last_timer_mark, timer_duration
+    last_timer_mark = time.monotonic()
+    timer_duration = duration
 
-    def set_duration(self, duration):
-        self.duration = duration
-
-    def expired(self):
-        return (time.monotonic() - self.time_mark) > self.duration
+def is_timer_expired():       # Returns True/False
+    return (time.monotonic() - last_timer_mark) > timer_duration
 ```
 
 ### Timer examples
 ```python
 import time
 
-my_timer = Timer(2.0)   # Creates timer of 2 seconds 
-my_timer.start()        # Starts timer
+start_timer(2.0)             # Creates and starts a timer of 2 seconds 
+print(is_timer_expired())    # Will print "False", since 2 seconds haven't passed
 
-print(my_timer.expired())  # Will print "False", since 2 seconds haven't passed
-
-time.sleep(3)  # Wait 3 seconds
-
-print(my_timer.expired())  # Will print "True", since more than 2 seconds have passed
+time.sleep(3)                # Wait 3 seconds
+print(is_timer_expired())    # Will print "True", since more than 2 seconds have passed
 ```
 
-Once a timer has expired, you can always restart it with `my_timer.start()` — this will restart the same timer.
+Once a timer has expired, you can always create a new timer with `start_timer()` — this will start a fresh timer with the duration you specify.
 
 ---
 
@@ -75,7 +69,6 @@ Be sure to check the template code to see where they should be connected.
 ### Code template
 
 ```python
-
 ##--- Main Loop
 import board
 import neopixel
@@ -94,7 +87,6 @@ current_state = state_off
 # -- Initialize the button
 button = digitalio.DigitalInOut(board.D7)
 button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP
 
 button_released = True
 
@@ -127,25 +119,26 @@ def set_led_color(color):
     led.show()
 
 
-# -- Timer class
-class Timer():
-    def __init__(self, duration=0):
-        self.duration = duration
-        self.time_mark = 0
+# -- Timer functions
+last_timer_mark = 0
+timer_duration = 0
 
-    def start(self):
-        self.time_mark = time.monotonic()
+def start_timer(duration):
+    global last_timer_mark, timer_duration
+    last_timer_mark = time.monotonic()
+    timer_duration = duration
 
-    def set_duration(self, duration):
-        self.duration = duration
+def is_timer_expired():
+    return (time.monotonic() - last_timer_mark) > timer_duration
 
-    def expired(self):
-        return (time.monotonic() - self.time_mark) > self.duration
+# Initialize timer durations
+fade_duration = 0.01  # Controls fade speed
+blink_duration = 0.2  # Controls blink speed
 
-
-# Initialize timers
-fade_timer = Timer(0.01)  # Controls fade speed
-blink_timer = Timer(0.2)  # Controls blink speed
+# Controls fade in/out steps: 
+# - low numbers: smooth transition, but slow.
+# - high numbers: fast transition, but rough.
+fade_step = 0.05    
 
 
 while True:
@@ -163,6 +156,10 @@ while True:
     #                                                                 | 
     # ----------------------------------------------------------------|
 
+
+    # ----------------------------------------------
+    # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
+    # ----------------------------------------------
     led.show()
     time.sleep(0.1)
 ```
