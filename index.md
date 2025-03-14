@@ -17,7 +17,7 @@ nav_order: 0
 
 [5: Walkie-Talkie](assignments/05-walkie-talkie/index)
 
-[6: Disco ball](assignments/06-disco-ball/index)
+[6: Party Lamp](assignments/06-party-lamp/index)
 
 [7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
