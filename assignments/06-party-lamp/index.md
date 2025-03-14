@@ -21,7 +21,7 @@ This approach is essential when working with animations, sensors, and interactiv
 In the code provided below, we offer two simple timer functions that allow you to create and check timers.
 These functions make it easy to work with time-based events in your code.
 
-### Timer Class definition
+### Timer Functions
 
 ```python
 # -- Timer functions
