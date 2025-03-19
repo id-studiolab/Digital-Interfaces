@@ -104,7 +104,7 @@ def is_button_pressed():
     return False
 
 # -- Initialize the NeoPixel
-led = neopixel.NeoPixel(board.D13, 1, brightness=0.3, auto_write=False)
+led = neopixel.NeoPixel(board.D13, 1, brightness=0.3, auto_write=False, pixel_order=neopixel.GRBW)
 
 # Define basic led colors
 led_off = (0, 0, 0, 0)
