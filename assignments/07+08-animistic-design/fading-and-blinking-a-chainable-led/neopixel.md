@@ -1,39 +1,37 @@
 ---
 layout: default
-title: "Chainable LED P9813"
-parent: "01: Fading and blinking a Chainable LED"
-grand_parent: "5+6: Animistic Design"
+title: "Chainable LED ChaiNEO"
+parent: "Fading and blinking a Chainable LED"
+grand_parent: "7+8: Animistic Design"
 has_children: false
 ---
 
-# 01: Fading and blinking a Chainable LED (Groove)
+# Fading and blinking a Chainable LED
 
-This example used the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-p9813) of the Connected Interaction Kit, connected with the IN to `D13` and the OUT to `D10` of the Expander Board 
-
+This example used the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) of the Connected Interaction Kit, connected to `D13` of the Expander Board.
 
 ```python
 ##--- Library Imports
 import time
 import board
-import p9813
+import neopixel
 from varspeed import Vspeed
 
 ##--- VarSpeed Variables
 
-MIN = 0  # The minimum  possible value of our component
-MAX = 255  # The maximum possible value of our component
+MIN = 0.0  # The minimum  possible value of our component
+MAX = 1.0  # The maximum possible value of our component
 
-vs = Vspeed(init_position=MIN, result="int")  # init_position = initial start position // result = float, int
+vs = Vspeed(init_position=MIN, result="float")  # init_position = initial start position // result = float, int
 vs.set_bounds(lower_bound=MIN, upper_bound=MAX)  # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
-pin_clk = board.D13
-pin_data = board.D10
+pin_leds = board.D13
 num_leds = 1
-leds = p9813.P9813(pin_clk, pin_data, num_leds)
+leds = neopixel.NeoPixel(pin_leds, num_leds, brightness=0.5, auto_write=False, pixel_order=neopixel.GRBW)
 
 ##--- Custom Movement Sequence
-# This is where we can define the brightness of our LDED
+# This is where we can define the brightness of our LED
 # The sequence will go through each entry and move to the next entry
 # The sequence is defined in this format: (next-position,seconds-to-move,number-of-steps,easing function)
 # Take a look at different easing functions here: https://easings.net 
@@ -50,21 +48,21 @@ led_looping = 0  # play the sequence in an endless loop forever
 # led_looping = 10 # play the sequence 10 times
 # led_looping = 15 # play the sequence 15 times
 
-leds.fill((0, 0, 0))
-leds.write()
+leds.fill((0, 255, 0))  # Color the LED green
+leds.show()
 
 ##--- Main loop
 while True:
-    
+
     # Make a call to the library and request the desired of our LED
     position, running, changed = vs.sequence(sequence=led_sequence, loop_max=led_looping)
-    
+
     # See if the values changed for the next move, then do so
     if changed:
         print(
             f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
-        
-        leds.fill((int(position), 0, 0))
-        leds.write()
+
+        leds.brightness = position
+        leds.show()
 
 ```

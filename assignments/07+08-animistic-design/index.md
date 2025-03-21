@@ -121,10 +121,8 @@ while True:
 
 Here are some examples to get you started:
 
-[Example: State Machine Implementation](state-machine-example){: .btn .btn-blue }
+[Fading and blinking a Chainable LED](fading-and-blinking-a-chainable-led-index){: .btn .btn-blue }
 
-[Fading and blinking a Chainable LED](03-fading-and-blinking-a-chainable-led-index){: .btn .btn-blue }
+[Running two sequences](running-two-sequences-index){: .btn .btn-blue }
 
-[Running two sequences](04-running-two-sequences-index){: .btn .btn-blue }
-
-[Trigger different sequences](05-trigger-different-sequences-index){: .btn .btn-blue }
+[Trigger different sequences](trigger-different-sequences-index){: .btn .btn-blue }

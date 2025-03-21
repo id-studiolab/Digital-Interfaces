@@ -1,19 +1,21 @@
 ---
 layout: default
-title: "01: Fading and blinking a Chainable LED"
-parent: "5+6: Animistic Design"
+title: "Running two sequences simultaneously"
+parent: "7+8: Animistic Design"
 grand_parent: Assignments
 has_children: true
 ---
 
-# 01: Fading and blinking a Chainable LED
+# Running two sequences simultaneously
 
-This example uses a Chainable LED, Please select the type of LED that you are using.
+When we want to run two sequences at the same time, for example to control a servo and an LED, we basically have to double everything from the individual sequence.
+
+In this example, we will let the Chainable LED on pin `D13` blink, while we wiggle the servo motor connected to `D2`
 
 ---
 
 |                                                               Chainable RGB/W LED (ChaiNEO)                                                                |                                                                       Chainable RGB LED (Grove)                                                                       |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGB LED" width="250"/> | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Grove-Chainable-LED-2.0.png" alt="Chainable RGB LED" width="250"/> |
-|                                   [Code](03-fading-and-blinking-a-chainable-led/neopixel){: .btn .btn-blue }                                   |                                         [Code](03-fading-and-blinking-a-chainable-led/p9813){: .btn .btn-blue }                                          |
+|                                   [Code](running-two-sequences/neopixel){: .btn .btn-blue }                                   |                                         [Code](running-two-sequences/p9813){: .btn .btn-blue }                                          |
 

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Chainable LED P9813"
-parent: "02: Triggering different sequences based on context or interaction"
-grand_parent: "5+6: Animistic Design"
+title: "Chainable LED ChaiNEO"
+parent: "Triggering different sequences based on context or interaction"
+grand_parent: "7+8: Animistic Design"
 has_children: false
 ---
 
-# 03: Triggering different sequences based on context or interaction
+# Triggering different sequences based on context or interaction
 
 How could we trigger different sequences based on user or context interaction? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
@@ -18,7 +18,7 @@ Connect the Chainable LED to pin `D13`, the Servo Motor to pin `D2` and the Touc
 ##--- Library Imports
 import time
 import board
-import p9813
+import neopixel
 import pwmio
 import digitalio
 from adafruit_motor import servo
@@ -46,10 +46,9 @@ vs_servo.set_bounds(lower_bound=MIN_SERVO,
 touch = digitalio.DigitalInOut(board.D3)
 touch.direction = digitalio.Direction.INPUT
 
-pin_clk = board.D13
-pin_data = board.D10
+pin_leds = board.D13
 num_leds = 1
-leds = p9813.P9813(pin_clk, pin_data, num_leds)
+leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
 pwm = pwmio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D2.
 my_servo = servo.Servo(pwm)  # Create a servo object, my_servo
@@ -100,7 +99,7 @@ servo_looping = 0  # play the sequence in an endless loop forever
 
 # Set the LEDs to off
 leds.fill((0, 0, 0))
-leds.write()
+leds.show()
 
 ##--- Main loop
 while True:
@@ -116,8 +115,8 @@ while True:
 
             # Turn LED White
             led_value = int(position_led)
-            leds.fill((led_value, led_value, led_value))
-            leds.write()
+            leds.fill((0, 0, 0, led_value))
+            leds.show()
 
         # Make a call to the library and request the desired of our servo motor
         position_servo, running_servo, changed_servo = vs_servo.sequence(sequence=servo_sequence_sleep,
@@ -140,7 +139,7 @@ while True:
             # Turn LED Red
             led_value = int(position_led)
             leds.fill((led_value, 0, 0))
-            leds.write()
+            leds.show()
 
         # Make a call to the library and request the desired of our servo motor
         position_servo, running_servo, changed_servo = vs_servo.sequence(sequence=servo_sequence_angry,
