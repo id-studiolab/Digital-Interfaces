@@ -19,19 +19,19 @@ from varspeed import Vspeed
 
 ##--- VarSpeed Variables
 
-MIN = 0  # The minimum  possible value of our component
-MAX = 255  # The maximum possible value of our component
+MIN = 0.0  # The minimum  possible value of our component
+MAX = 1.0  # The maximum possible value of our component
 
-vs = Vspeed(init_position=MIN, result="int")  # init_position = initial start position // result = float, int
+vs = Vspeed(init_position=MIN, result="float")  # init_position = initial start position // result = float, int
 vs.set_bounds(lower_bound=MIN, upper_bound=MAX)  # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
 pin_leds = board.D13
 num_leds = 1
-leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
+leds = neopixel.NeoPixel(pin_leds, num_leds, brightness=0.5, auto_write=False, pixel_order=neopixel.GRBW)
 
 ##--- Custom Movement Sequence
-# This is where we can define the brightness of our LDED
+# This is where we can define the brightness of our LED
 # The sequence will go through each entry and move to the next entry
 # The sequence is defined in this format: (next-position,seconds-to-move,number-of-steps,easing function)
 # Take a look at different easing functions here: https://easings.net 
@@ -48,7 +48,7 @@ led_looping = 0  # play the sequence in an endless loop forever
 # led_looping = 10 # play the sequence 10 times
 # led_looping = 15 # play the sequence 15 times
 
-leds.fill((0, 0, 0))
+leds.fill((0, 255, 0))  # Color the LED green
 leds.show()
 
 ##--- Main loop
@@ -62,7 +62,7 @@ while True:
         print(
             f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
 
-        leds.fill((int(position), 0, 0))
+        leds.brightness = position
         leds.show()
 
 ```
