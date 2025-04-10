@@ -183,6 +183,31 @@ while True:
 | -------------------------------------- | 
 | ![](walkie_talkie_state_diagram.png)                | 
 
+
+## Understanding Speak and Listen Topics
+
+In the code, you'll find two variables called `mqtt_speak_topic` and `mqtt_listen_topic`. You can use them to establish communication between walkie-talkies.
+
+**Speak Topic** = where you send messages  
+**Listen Topic** = where you receive messages
+
+For two devices to communicate:
+- Your speak topic must be your partner's listen topic
+- Your listen topic must be your partner's speak topic
+
+**Example:**
+```
+Your Device:
+- Speak Topic: "Studio05-YourName-WalkieTalkie"
+- Listen Topic: "Studio05-PartnerName-WalkieTalkie"
+
+Partner's Device:
+- Speak Topic: "Studio05-PartnerName-WalkieTalkie"
+- Listen Topic: "Studio05-YourName-WalkieTalkie"
+```
+
+Note: Topics must match exactly, including capitalization!
+
 --- 
 
 ## Extra Challenge: Interpret received messages 
