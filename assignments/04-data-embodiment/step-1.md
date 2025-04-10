@@ -21,11 +21,20 @@ settings = {
 	"mqtt_clientid": "Studio5_Caspar", # The device name we present to the server when connecting
 }
 ```
-2. We have prepared a library for you that sets up your microcontroller to start a wifi connection, connects to an MQTT broker and takes care of the details of receiving and publishing messages. Download this library using the button below, unzip it and add it to the `lib` folder on your microcontroller.
+Here's a simpler version:
+
+2. We've created a library that helps your microcontroller connect to WiFi, connect to an MQTT broker and takes care of the details of receiving and publishing messages. 
+Download the library using the button below, unzip it, and place the file named `MQTT.py` directly in the `lib` folder on your microcontroller. Don't put the entire folder in `lib` - just the `MQTT.py` file itself.
 
 [Download MQTT wrapper](MQTT.zip){: .btn .btn-blue }
 
-Open a new `code.py` file and copy the following code. 
+If you followed the tutorial to connect to the wifi replace that code with the one below, otherwise create a new `code.py` copy the following code. 
+
+{: .note }
+>TUD-facility can sometimes be unreliable, you can choose to use your phone hotspot instead.
+>To do so change `settings.py` and set the **ssid** to the name of your hotspot and the **password** to your password.
+>
+>If you're using an iPhone it is necessary that you turn on the **Maximize-Compatibility** option in your hotspot settings.
 
 ```python
 ##--- Library Imports
@@ -117,6 +126,19 @@ while True:
     time.sleep(0.01)
 
 ```
+
+{: .attention } 
+> If you're trying to use the value received from MQTT for calculations, you might encounter the following errors.
+> - TypeError: unsupported operand type(s) for +: 'int' and 'str'
+> - TypeError: cannot concatenate 'str' and 'int' objects
+>
+> That's because the received value is in the form of text (string in python), so we need to convert it before we use it.
+>
+> - You can convert it to a whole number using: 
+> `last_received_value = int(last_received_value)` 
+> - Or to a decimal number using: 
+> `last_received_value = float(last_received_value)`
+
 
 ### Acting Machine Diagram 
 
