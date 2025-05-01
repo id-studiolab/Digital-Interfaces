@@ -9,7 +9,7 @@ has_children: true
 
 ---
 ## Links
-[What is a computer? (Eames)](https://www.youtube.com/watch?v=eIgX6sPOqCY&t=345s){:target="_blank"}
+[What is a computer? (Eames)](https://www.youtube.com/watch?v=eIgX6sPOqCY){:target="_blank"}
 
 [Switch Inspiration Machine ✨](https://switch-inspiration-machine.netlify.app){:target="_blank"}
 
