@@ -7,7 +7,7 @@ title: Digital Interfaces
 color_scheme: digital-interfaces
 plugins:
   - jekyll-redirect-from
-  - jekyll-code-tabs
+  - jekyll-tabs
 callouts:
   warning:
     title: Warning

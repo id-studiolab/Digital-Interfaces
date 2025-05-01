@@ -23,27 +23,27 @@ These functions make it easy to work with time-based events in your code.
 
 ### Timer Functions
 
-{% codetabs %}
+{% tabs %}
 
-{% codetab C %}
+{% tab C %}
 ```c
 printf("Hello, world!");
 ```
-{% endcodetab %}
+{% endtab %}
 
-{% codetab Go %}
+{% tab Go %}
 ```go
 fmt.Println("Hello, world!")
 ```
-{% endcodetab %}
+{% endtab %}
 
-{% codetab Python %}
+{% tab Python %}
 ```python
 print("Hello, world!")
 ```
-{% endcodetab %}
+{% endtab %}
 
-{% endcodetabs %}
+{% endtabs %}
 
 ```python
 # -- Timer functions
