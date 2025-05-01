@@ -1,7 +1,7 @@
 theme: just-the-docs
 
 
-baseurl: /repository-name  # For test branch: /repository-name/test
+baseurl: /repository-name/test  # For test branch: /repository-name/test
 
 #theme: just-the-docs 
 title: Digital Interfaces
