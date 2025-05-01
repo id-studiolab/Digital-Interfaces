@@ -1,10 +1,13 @@
-remote_theme: pmarsceill/just-the-docs
+theme: just-the-docs
+
+baseurl: /Digital-Interfaces  # For test branch: /repository-name/test
+
 #theme: just-the-docs 
 title: Digital Interfaces
 color_scheme: digital-interfaces
 plugins:
   - jekyll-redirect-from
-
+  - jekyll-code-tabs
 callouts:
   warning:
     title: Warning

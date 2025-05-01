@@ -1,0 +1,37 @@
+name: Deploy Main to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+
+      # This step assumes you have a Gemfile in your test branch root
+      - name: Install Jekyll and dependencies
+        run: |
+          bundle config --local path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll site
+        run: |
+          rm -rf output
+          bundle exec jekyll build -d output
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAGES_DEPLOYMENT}}
+          publish_dir: ./output
+          publish_branch: gh-pages
