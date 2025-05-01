@@ -1,5 +1,13 @@
+h1 {
+   font-family: "SFMono-Regular", menlo, consolas, monospace !important;
+   text-transform: uppercase !important;
+}
 
-h1, .site-header {
-    font-family: $mono-font-family;
-    text-transform: uppercase;
+.site-header {
+   font-family: "SFMono-Regular", menlo, consolas, monospace !important;
+   text-transform: uppercase !important;
+}
+
+a {
+   color: #830b00 !important;
 }
