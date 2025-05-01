@@ -2,21 +2,21 @@ name: Deploy Test Site
 
 on:
   push:
-    branches: [test] # Trigger this workflow only on pushes to the 'test' branch
+    branches: [test]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest # Use the latest Ubuntu environment
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout test branch
-        uses: actions/checkout@v3 # Checkout the 'test' branch source code
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1 # Set up Ruby environment
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0' # Specify the Ruby version
-          bundler-cache: true # Cache installed gems for faster builds
+          ruby-version: '3.0'
+          bundler-cache: true
 
       # This step assumes you have a Gemfile in your test branch root
       - name: Install Jekyll and dependencies
@@ -26,20 +26,13 @@ jobs:
 
       - name: Build Jekyll site
         run: |
-          # Clean the output directory before building
           rm -rf output
-          # Build the site using bundle exec to ensure correct gem versions
           bundle exec jekyll build -d output
 
       - name: Deploy to GitHub Pages /test subdirectory
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_DEPLOYMENT}}
           publish_dir: ./output
           publish_branch: gh-pages
-          destination_dir: test 
-          # ... other parameters ...
-          # Optional: Set a custom commit message for the deployment
-          # commit_message: ${{ github.event.head_commit.message }}
-          # USE WITH EXTREME CAUTION: Force push to overwrite target branch history
-          # force_orphan: true # Only uncomment if you understand the risks!
+          destination_dir: test
