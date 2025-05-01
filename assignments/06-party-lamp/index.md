@@ -23,21 +23,21 @@ These functions make it easy to work with time-based events in your code.
 
 ### Timer Functions
 
-{% tabs %}
+{% tabs example %}
 
-{% tab C %}
+{% tab example C %}
 ```c
 printf("Hello, world!");
 ```
 {% endtab %}
 
-{% tab Go %}
+{% tab example Go %}
 ```go
 fmt.Println("Hello, world!")
 ```
 {% endtab %}
 
-{% tab Python %}
+{% tab example Python %}
 ```python
 print("Hello, world!")
 ```
