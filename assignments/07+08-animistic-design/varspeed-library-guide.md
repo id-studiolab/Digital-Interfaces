@@ -86,13 +86,30 @@ For the result we chose `int` because our output should only contain whole numbe
    ```
    
 3. Afterwards we can configure our servo motor by defining the pin we connect it to (Pin `D2`), creating a variable for the motor we can use to steer it, and set an initial angle. If you haven't worked with a servo before, take a look at its [documentation page](https://id-studiolab.github.io/Connected-Interaction-Kit/components/servo-motor/servo-motor).
-    
+
+
+{% tabs data-struct %}
+
+{% tab data-struct PicoExpander %}
+   ```python
+   ##--- Hardware Setup
+   pwm = pwmio.PWMOut(board.GP10, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D2.
+   my_servo = servo.Servo(pwm) # Create a servo object, my_servo
+   my_servo.angle = MIN # set the servo to a known starting point
+   ```
+{% endtab %}
+
+{% tab data-struct BitsyExpander %}
    ```python
    ##--- Hardware Setup
    pwm = pwmio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D2.
    my_servo = servo.Servo(pwm) # Create a servo object, my_servo
    my_servo.angle = MIN # set the servo to a known starting point
    ```
+{% endtab %}
+
+{% endtabs %}
+
    
 4. Now instead of having to fiddle with code ourselves to define the motor movement, we can do so by writing it into a sequence that then gets interpreted by the VarSpeed library into the actual angle values.
 

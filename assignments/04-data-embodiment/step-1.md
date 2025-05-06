@@ -21,7 +21,6 @@ settings = {
 	"mqtt_clientid": "Studio5_Caspar", # The device name we present to the server when connecting
 }
 ```
-Here's a simpler version:
 
 2. We've created a library that helps your microcontroller connect to WiFi, connect to an MQTT broker and takes care of the details of receiving and publishing messages. 
 Download the library using the button below, unzip it, and place the file named `MQTT.py` directly in the `lib` folder on your microcontroller. Don't put the entire folder in `lib` - just the `MQTT.py` file itself.

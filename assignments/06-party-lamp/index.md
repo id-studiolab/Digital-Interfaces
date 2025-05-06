@@ -21,61 +21,7 @@ This approach is essential when working with animations, sensors, and interactiv
 In the code provided below, we offer two simple timer functions that allow you to create and check timers.
 These functions make it easy to work with time-based events in your code.
 
-
-### First tabs
-
-{% tabs log %}
-
-{% tab log php %}
-```php
-var_dump('hello');
-```
-{% endtab %}
-
-{% tab log js %}
-```javascript
-console.log('hello');
-```
-{% endtab %}
-
-{% tab log ruby %}
-```javascript
-pputs 'hello'
-```
-{% endtab %}
-
-{% endtabs %}
-
-### Second tabs
-
-{% tabs data-struct %}
-
-{% tab data-struct php %}
-```yaml
-hello:
-  - 'whatsup'
-  - 'hi'
-```
-{% endtab %}
-
-{% tab data-struct js %}
-```json
-{
-    "hello": ["whatsup", "hi"]
-}
-```
-{% endtab %}
-
-{% endtabs %}
-
-
-
-
 ### Timer Functions
-
-
-
-
 
 ```python
 # -- Timer functions
@@ -122,6 +68,108 @@ Be sure to check the template code to see where they should be connected.
 
 ### Code template
 
+
+{% tabs data-struct %}
+
+{% tab data-struct PicoExpander %}
+```python
+##--- Main Loop
+import board
+import neopixel
+import digitalio
+import time
+
+# -- Define states
+state_off = 0
+state_fade_in = 1
+state_fade_out = 2
+state_blink_on = 3
+state_blink_off = 4
+
+current_state = state_off
+
+# -- Initialize the button
+button = digitalio.DigitalInOut(board.GP8)
+button.direction = digitalio.Direction.INPUT
+
+button_released = True
+
+# -- Button debounce function
+def is_button_pressed():
+    global button_released
+    
+    if button.value is True and button_released is True:
+        button_released = False
+        return True
+    
+    if button.value is False:
+        button_released = True
+    
+    return False
+
+# -- Initialize the NeoPixel
+led = neopixel.NeoPixel(board.GP10, 1, brightness=0.3, auto_write=False, pixel_order=neopixel.GRBW)
+
+# Define basic led colors
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_green = (0, 255, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_white = (0, 0, 0, 255)
+
+def set_led_color(color):
+    global led
+    led.fill(color)
+    led.show()
+
+
+# -- Timer functions
+last_timer_mark = 0
+timer_duration = 0
+
+def start_timer(duration):
+    global last_timer_mark, timer_duration
+    last_timer_mark = time.monotonic()
+    timer_duration = duration
+
+def is_timer_expired():
+    return (time.monotonic() - last_timer_mark) > timer_duration
+
+# Initialize timer durations
+fade_duration = 0.01  # Controls fade speed
+blink_duration = 0.2  # Controls blink speed
+
+# Controls fade in/out steps: 
+# - low numbers: smooth transition, but slow.
+# - high numbers: fast transition, but rough.
+fade_step = 0.05    
+
+
+while True:
+
+
+    # ----------------------------------------------------------------| 
+    #                                                                 | 
+    # Use the Acting Machine Diagram to program your solution here    | 
+    #                                                                 | 
+    # Hint: you can use led.brightness to acces and change the        | 
+    #       ligth brightness.                                         | 
+    #       The brightness has a value between 0.0 and 1.0.           | 
+    #                                                                 | 
+    # ex: led.brightness = 0.5  # Sets the led to half the brightness | 
+    #                                                                 | 
+    # ----------------------------------------------------------------|
+
+
+    # ----------------------------------------------
+    # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
+    # ----------------------------------------------
+    led.show()
+    time.sleep(0.1)
+```
+{% endtab %}
+
+{% tab data-struct BitsyExpander %}
 ```python
 ##--- Main Loop
 import board
@@ -217,6 +265,13 @@ while True:
     led.show()
     time.sleep(0.1)
 ```
+{% endtab %}
+
+{% endtabs %}
+
+
+
+
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 

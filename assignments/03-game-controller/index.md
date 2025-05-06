@@ -43,6 +43,67 @@ Your assignment is to use the template code and the acting machine diagram here 
 | ![](stateDiagram.png)                | 
 
 ### Code template
+
+{% tabs data-struct %}
+
+{% tab data-struct PicoExpander %}
+```python
+##--- Library Imports
+import time
+import board
+import digitalio
+
+# We want to emulate a keyboard interface
+# To do so we use the usb_hid (Human-interface device) library to send commands to our computer
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
+from adafruit_hid.keycode import Keycode
+
+##--- Defining states
+state_wait = 0
+state_button_is_pressed = 1
+current_state = 0
+
+##--- Keyboard variables
+
+# Define a new keyboard and set the layout to US (mostly same as the Dutch layout)
+keyboard = Keyboard(usb_hid.devices)
+keyboard_layout = KeyboardLayoutUS(keyboard)
+
+# We want to send the SPACE key when the button is pressed
+# For other keys search online "Circuit Python Keycode"
+key = Keycode.SPACE
+
+##--- Button variables
+
+## Define a new button variable and assign it to port D13 of our board
+button = digitalio.DigitalInOut(board.GP6)
+
+## Define the button as an input component
+button.direction = digitalio.Direction.INPUT
+
+##--- Main loop
+
+# Sleep for a bit to allow the host operating system to configure the new USB device 
+time.sleep(1)
+
+while True: 
+
+    # -------------------------------------------------------------| 
+    #                                                              | 
+    # Use the Acting Machine Diagram to program your solution here | 
+    #                                                              | 
+    # -------------------------------------------------------------|
+    
+    # Sleep for a bit to make the keypress events occur at a human timescale 
+    # Skilled gamers can do ~7 button presses per second (says ChatGPT) 
+    time.sleep(0.143)
+
+```
+{% endtab %}
+
+{% tab data-struct BitsyExpander %}
 ```python
 ##--- Library Imports
 import time
@@ -97,6 +158,12 @@ while True:
     time.sleep(0.143)
 
 ```
+{% endtab %}
+
+{% endtabs %}
+
+
+
 
 
 If you are struggling with the assignment we provide the solution here below.
