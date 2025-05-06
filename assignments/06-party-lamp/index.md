@@ -21,29 +21,61 @@ This approach is essential when working with animations, sensors, and interactiv
 In the code provided below, we offer two simple timer functions that allow you to create and check timers.
 These functions make it easy to work with time-based events in your code.
 
-### Timer Functions
 
-{% tabs example %}
+### First tabs
 
-{% tab example C %}
-```c
-printf("Hello, world!");
+{% tabs log %}
+
+{% tab log php %}
+```php
+var_dump('hello');
 ```
 {% endtab %}
 
-{% tab example Go %}
-```go
-fmt.Println("Hello, world!")
+{% tab log js %}
+```javascript
+console.log('hello');
 ```
 {% endtab %}
 
-{% tab example Python %}
-```python
-print("Hello, world!")
+{% tab log ruby %}
+```javascript
+pputs 'hello'
 ```
 {% endtab %}
 
 {% endtabs %}
+
+### Second tabs
+
+{% tabs data-struct %}
+
+{% tab data-struct php %}
+```yaml
+hello:
+  - 'whatsup'
+  - 'hi'
+```
+{% endtab %}
+
+{% tab data-struct js %}
+```json
+{
+    "hello": ["whatsup", "hi"]
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
+
+
+### Timer Functions
+
+
+
+
 
 ```python
 # -- Timer functions
