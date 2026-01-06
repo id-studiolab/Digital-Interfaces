@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "1: Reaction Game"
+title: "1: Reaction Game - Hardware and Code"
 parent: Assignments
 has_children: true
 ---
