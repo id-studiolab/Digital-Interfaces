@@ -51,72 +51,72 @@
     "doc": "Game code for ChaiNEO",
     "title": "Reaction Game",
     "content": "In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_neopixel.html#reaction-game",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#reaction-game",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_neopixel.html#reaction-game"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#reaction-game"
   },"8": {
     "doc": "Game code for ChaiNEO",
     "title": "Game logic and hardware involved",
     "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the corresponding color. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_neopixel.html#game-logic-and-hardware-involved",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#game-logic-and-hardware-involved",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_neopixel.html#game-logic-and-hardware-involved"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#game-logic-and-hardware-involved"
   },"9": {
     "doc": "Game code for ChaiNEO",
     "title": "Connecting the cables",
     "content": "Your ItsyBitsy has several connection ports on it. To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same used in your code. For example, if you connect a component to port D7, you need to use the following code to reference it: . | | . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_neopixel.html#connecting-the-cables",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#connecting-the-cables",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_neopixel.html#connecting-the-cables"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#connecting-the-cables"
   },"10": {
     "doc": "Game code for ChaiNEO",
     "title": "Code for the game",
     "content": "We provide you with the basic code for the game. Copy this code into your code.py file and connect all hardware components to have a basic game ready. Look through the code and use the examples from the previous section to deduce where to connect your components! . | PicoExpander | BitsyExpander | . | ##--- Imports import digitalio import board import neopixel import time import random ##--- Variables state_wait = 0 state_start_game = 1 state_wait_button_press = 2 state_red_wins = 3 state_blue_wins = 4 current_state = 0 # Button variables red_pin = board.GP6 red_button = digitalio.DigitalInOut(red_pin) red_button.direction = digitalio.Direction.INPUT blue_pin = board.GP8 blue_button = digitalio.DigitalInOut(blue_pin) blue_button.direction = digitalio.Direction.INPUT # For the Chainable LED: pin_leds = board.GP10 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_white = (0, 0, 0, 255) # Timer variables timer_duration = 0 timer_mark = 0 ##--- Functions def set_led_color(color): global leds leds.fill(color) leds.show() def set_timer(duration): global timer_duration, timer_mark timer_duration = duration timer_mark = time.monotonic() def timer_expired(): global timer_mark, timer_duration if time.monotonic() - timer_mark &gt; timer_duration: return True else: return False ##--- Main loop while True: if current_state == state_wait: set_led_color(led_off) set_timer(random.randint(3, 10)) print(\"starting game!\") current_state = state_start_game elif current_state == state_start_game: if timer_expired(): print(\"timer expired, press your buttons!\") set_led_color(led_white) current_state = state_wait_button_press elif current_state == state_wait_button_press: if red_button.value: print(\"red won\") current_state = state_red_wins elif blue_button.value: print(\"blue won\") current_state = state_blue_wins elif current_state == state_blue_wins: set_led_color(led_blue) time.sleep(3) current_state = state_wait elif current_state == state_red_wins: set_led_color(led_red) time.sleep(3) current_state = state_wait . | ##--- Imports import digitalio import board import neopixel import time import random ##--- Variables state_wait = 0 state_start_game = 1 state_wait_button_press = 2 state_red_wins = 3 state_blue_wins = 4 current_state = 0 # Button variables red_pin = board.D7 red_button = digitalio.DigitalInOut(red_pin) red_button.direction = digitalio.Direction.INPUT blue_pin = board.D13 blue_button = digitalio.DigitalInOut(blue_pin) blue_button.direction = digitalio.Direction.INPUT # For the Chainable LED: pin_leds = board.D3 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_white = (0, 0, 0, 255) # Timer variables timer_duration = 0 timer_mark = 0 ##--- Functions def set_led_color(color): global leds leds.fill(color) leds.show() def set_timer(duration): global timer_duration, timer_mark timer_duration = duration timer_mark = time.monotonic() def timer_expired(): global timer_mark, timer_duration if time.monotonic() - timer_mark &gt; timer_duration: return True else: return False ##--- Main loop while True: if current_state == state_wait: set_led_color(led_off) set_timer(random.randint(3, 10)) print(\"starting game!\") current_state = state_start_game elif current_state == state_start_game: if timer_expired(): print(\"timer expired, press your buttons!\") set_led_color(led_white) current_state = state_wait_button_press elif current_state == state_wait_button_press: if red_button.value: print(\"red won\") current_state = state_red_wins elif blue_button.value: print(\"blue won\") current_state = state_blue_wins elif current_state == state_blue_wins: set_led_color(led_blue) time.sleep(3) current_state = state_wait elif current_state == state_red_wins: set_led_color(led_red) time.sleep(3) current_state = state_wait . | . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_neopixel.html#code-for-the-game",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#code-for-the-game",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_neopixel.html#code-for-the-game"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html#code-for-the-game"
   },"11": {
     "doc": "Game code for ChaiNEO",
     "title": "Game code for ChaiNEO",
     "content": " ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_neopixel.html",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_neopixel.html"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_neopixel.html"
   },"12": {
     "doc": "Game code for Grove",
     "title": "Reaction Game",
     "content": "In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_p9813.html#reaction-game",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#reaction-game",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_p9813.html#reaction-game"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#reaction-game"
   },"13": {
     "doc": "Game code for Grove",
     "title": "Game logic and hardware involved",
     "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Refer to the component page for the Grove Chainable RGB LED , to obtain the P9813.py Python module. Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the corresponding color. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_p9813.html#game-logic-and-hardware-involved",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#game-logic-and-hardware-involved",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_p9813.html#game-logic-and-hardware-involved"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#game-logic-and-hardware-involved"
   },"14": {
     "doc": "Game code for Grove",
     "title": "Connecting the cables",
     "content": "Your ItsyBitsy has several connection ports on it. To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same used in your code. For example, if you connect a component to port D7, you need to use the following code to reference it: . | | . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_p9813.html#connecting-the-cables",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#connecting-the-cables",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_p9813.html#connecting-the-cables"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#connecting-the-cables"
   },"15": {
     "doc": "Game code for Grove",
     "title": "Code for the game",
     "content": "We provide you with the basic code for the game. Copy this code into your code.py file and connect all hardware components to have a basic game ready. Look through the code and use the examples from the previous section to deduce where to connect your components! . | PicoExpander | BitsyExpander | . | ##--- Imports import digitalio import board import p9813 import time import random ##--- Variables state_wait = 0 state_start_game = 1 state_wait_button_press = 2 state_red_wins = 3 state_blue_wins = 4 current_state = 0 # Button variables red_pin = board.D7 red_button = digitalio.DigitalInOut(red_pin) red_button.direction = digitalio.Direction.INPUT blue_pin = board.D13 blue_button = digitalio.DigitalInOut(blue_pin) blue_button.direction = digitalio.Direction.INPUT # For the Chainable LED: pin_clk = board.D3 pin_data = board.D4 num_leds = 1 leds = p9813.P9813(pin_clk, pin_data, num_leds) led_off = (0, 0, 0) led_red = (255, 0, 0) led_blue = (0, 0, 255) led_white = (255, 255, 255) # Timer variables timer_duration = 0 timer_mark = 0 ##--- Functions def set_led_color(color): global leds leds.fill(color) leds.write() def set_timer(duration): global timer_duration, timer_mark timer_duration = duration timer_mark = time.monotonic() def timer_expired(): global timer_mark, timer_duration if time.monotonic() - timer_mark &gt; timer_duration: return True else: return False ##--- Main loop while True: if current_state == state_wait: set_led_color(led_off) set_timer(random.randint(3, 10)) print(\"starting game!\") current_state = state_start_game elif current_state == state_start_game: if timer_expired(): print(\"timer expired, press your buttons!\") set_led_color(led_white) current_state = state_wait_button_press elif current_state == state_wait_button_press: if red_button.value: print(\"red won\") current_state = state_red_wins elif blue_button.value: print(\"blue won\") current_state = state_blue_wins elif current_state == state_blue_wins: set_led_color(led_blue) time.sleep(3) current_state = state_wait elif current_state == state_red_wins: set_led_color(led_red) time.sleep(3) current_state = state_wait . | ##--- Imports import digitalio import board import p9813 import time import random ##--- Variables state_wait = 0 state_start_game = 1 state_wait_button_press = 2 state_red_wins = 3 state_blue_wins = 4 current_state = 0 # Button variables red_pin = board.GP6 red_button = digitalio.DigitalInOut(red_pin) red_button.direction = digitalio.Direction.INPUT blue_pin = board.GP8 blue_button = digitalio.DigitalInOut(blue_pin) blue_button.direction = digitalio.Direction.INPUT # For the Chainable LED: pin_clk = board.GP10 pin_data = board.GP11 num_leds = 1 leds = p9813.P9813(pin_clk, pin_data, num_leds) led_off = (0, 0, 0) led_red = (255, 0, 0) led_blue = (0, 0, 255) led_white = (255, 255, 255) # Timer variables timer_duration = 0 timer_mark = 0 ##--- Functions def set_led_color(color): global leds leds.fill(color) leds.write() def set_timer(duration): global timer_duration, timer_mark timer_duration = duration timer_mark = time.monotonic() def timer_expired(): global timer_mark, timer_duration if time.monotonic() - timer_mark &gt; timer_duration: return True else: return False ##--- Main loop while True: if current_state == state_wait: set_led_color(led_off) set_timer(random.randint(3, 10)) print(\"starting game!\") current_state = state_start_game elif current_state == state_start_game: if timer_expired(): print(\"timer expired, press your buttons!\") set_led_color(led_white) current_state = state_wait_button_press elif current_state == state_wait_button_press: if red_button.value: print(\"red won\") current_state = state_red_wins elif blue_button.value: print(\"blue won\") current_state = state_blue_wins elif current_state == state_blue_wins: set_led_color(led_blue) time.sleep(3) current_state = state_wait elif current_state == state_red_wins: set_led_color(led_red) time.sleep(3) current_state = state_wait . | . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_p9813.html#code-for-the-game",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#code-for-the-game",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_p9813.html#code-for-the-game"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html#code-for-the-game"
   },"16": {
     "doc": "Game code for Grove",
     "title": "Game code for Grove",
     "content": " ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/game_code_p9813.html",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html",
     
-    "relUrl": "/assignments/01-reaction-game/game_code_p9813.html"
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/game_code_p9813.html"
   },"17": {
     "doc": "02 Pomodoro",
     "title": "02 Pomodoro Timer",
@@ -377,138 +377,138 @@
     
     "relUrl": "/assignments/04-data-embodiment/"
   },"54": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Reaction Game",
-    "content": "In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/#reaction-game",
-    
-    "relUrl": "/assignments/01-reaction-game/#reaction-game"
-  },"55": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Coding Instructions",
-    "content": "In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together. As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (while), making decisions with if and elif statements, and defining and using functions. Additionally, you’ll learn to work with the neopixel library to control LED colors, giving your prototype a vibrant and interactive feel. By the end, you’ll have an understanding of how to run code on your board, how to connect components and a rough idea of how the code is structured. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/#coding-instructions",
-    
-    "relUrl": "/assignments/01-reaction-game/#coding-instructions"
-  },"56": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Game hardware and control flow",
-    "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner. The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about Acting Machine Diagrams later. For now you can already interpret how the control might flow if you start in the state (circle) labeled “wait” and then traverse the transitions (arrows) from state to state. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/#game-hardware-and-control-flow",
-    
-    "relUrl": "/assignments/01-reaction-game/#game-hardware-and-control-flow"
-  },"57": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Game code",
-    "content": "There is a simple way to derive a program that implement the control flow from the Acting Machine Diagram, we have already done that for you! . In order to navigate to the right code you first have to identify the LED form factor of the LEDs in your Connected Interaction Kit. Match the LED in your kit with one of the images below, then access the game code by pressing the button under the matching image. | Chainable RGB/W LED (ChaiNEO) | Chainable RGB LED (Grove) | . | | | . | Code for the game | Code for the game | . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/#game-code",
-    
-    "relUrl": "/assignments/01-reaction-game/#game-code"
-  },"58": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Extra Challenge: Make It Better!",
-    "content": "Congratulations on getting the basic version of the game running! Now it’s time to put on your problem-solving hats and improve the game! The code you’ve been working with has a few intentional bugs. One key challenge involves the way button presses are handled: . Hint: If you keep a button pressed before the LED turns white, you’ll always win. That doesn’t sound very fair, does it? . Your task is to identify and fix this bug so the game works as intended. Look through the code and think of how you could achieve this, maybe also penalizing a player if they press the button before the led turns white! . ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/#extra-challenge-make-it-better",
-    
-    "relUrl": "/assignments/01-reaction-game/#extra-challenge-make-it-better"
-  },"59": {
-    "doc": "1: Reaction Game - Hardware and Code",
-    "title": "1: Reaction Game - Hardware and Code",
-    "content": " ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game/",
-    
-    "relUrl": "/assignments/01-reaction-game/"
-  },"60": {
     "doc": "3: Game Controller",
     "title": "Game Controller",
     "content": "In this week’s assignment we are going to build and embody a physical controller to control a game on our screen. ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#game-controller",
     
     "relUrl": "/assignments/03-game-controller/#game-controller"
-  },"61": {
+  },"55": {
     "doc": "3: Game Controller",
     "title": "Coding Instructions",
     "content": "In this assignment, you’ll learn how to use the usb_hid library to simulate keyboard or mouse inputs with your microcontroller. Remember that when working with keyboards, it’s important to understand how keys are mapped to characters in a specific layout, and that you have the correct layout configured in your code. Pressing a key once typically produces a single character on the screen. However, holding a key down can result in multiple repeated characters. The usb_hid library lets you simulate these behaviors with commands like keyboard.press(key) to simulate a key press and keyboard.release_all() to release all pressed keys. In this assignment you’ll also explore Python basics, such as variables, loops (while), conditional statements (if, elif, else), and working with functions. By integrating these concepts with the usb_hid library, you’ll gain the skills to create interactive devices that can simulate keyboard or mouse actions dynamically. ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#coding-instructions",
     
     "relUrl": "/assignments/03-game-controller/#coding-instructions"
-  },"62": {
+  },"56": {
     "doc": "3: Game Controller",
     "title": "Possible games you can play",
     "content": "These are just some examples of games you can play, and there are many more online (or to download). Your chosen embodiment should fit the game! . | Flappy Bird | Drift Boss | Pong Game | Crazy Flips | Canabalt | . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#possible-games-you-can-play",
     
     "relUrl": "/assignments/03-game-controller/#possible-games-you-can-play"
-  },"63": {
+  },"57": {
     "doc": "3: Game Controller",
     "title": "Safe mode",
     "content": "Especially when your ItsyBitsy is sending (wrong) keyboard inputs to your laptop, it can be useful to be able to stop the code from running, while still editing the code. By pressing the reset button right after start-up, while the LED is blinking yellow, the ItsyBitsy goes into Safe mode where it will not execute any of your code.py. You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing reset again. This allows you to fix the code without it interferring with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more. ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#safe-mode",
     
     "relUrl": "/assignments/03-game-controller/#safe-mode"
-  },"64": {
+  },"58": {
     "doc": "3: Game Controller",
     "title": "Coding Assignment",
     "content": "You will see that different games need different inputs. Here below we present a template with almost everything you need to make your game controller work. Although, one crucial part is missing, the part inside the while loop. Your assignment is to use the template code and the acting machine diagram here below to create a working controller. Before starting, if it’s your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: Coding instructions . | Acting Machine Diagram | . | | . Code template . | PicoExpander | BitsyExpander | . | ##--- Library Imports import time import board import digitalio # We want to emulate a keyboard interface # To do so we use the usb_hid (Human-interface device) library to send commands to our computer import usb_hid from adafruit_hid.keyboard import Keyboard from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS from adafruit_hid.keycode import Keycode ##--- Defining states state_wait = 0 state_button_is_pressed = 1 current_state = 0 ##--- Keyboard variables # Define a new keyboard and set the layout to US (mostly same as the Dutch layout) keyboard = Keyboard(usb_hid.devices) keyboard_layout = KeyboardLayoutUS(keyboard) # We want to send the SPACE key when the button is pressed # For other keys search online \"Circuit Python Keycode\" key = Keycode.SPACE ##--- Button variables ## Define a new button variable and assign it to port D13 of our board button = digitalio.DigitalInOut(board.GP6) ## Define the button as an input component button.direction = digitalio.Direction.INPUT ##--- Main loop # Sleep for a bit to allow the host operating system to configure the new USB device time.sleep(1) while True: # -------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # -------------------------------------------------------------| # Sleep for a bit to make the keypress events occur at a human timescale # Skilled gamers can do ~7 button presses per second (says ChatGPT) time.sleep(0.143) . | ##--- Library Imports import time import board import digitalio # We want to emulate a keyboard interface # To do so we use the usb_hid (Human-interface device) library to send commands to our computer import usb_hid from adafruit_hid.keyboard import Keyboard from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS from adafruit_hid.keycode import Keycode ##--- Defining states state_wait = 0 state_button_is_pressed = 1 current_state = 0 ##--- Keyboard variables # Define a new keyboard and set the layout to US (mostly same as the Dutch layout) keyboard = Keyboard(usb_hid.devices) keyboard_layout = KeyboardLayoutUS(keyboard) # We want to send the SPACE key when the button is pressed # For other keys search online \"Circuit Python Keycode\" key = Keycode.SPACE ##--- Button variables ## Define a new button variable and assign it to port D13 of our board button = digitalio.DigitalInOut(board.D13) ## Define the button as an input component button.direction = digitalio.Direction.INPUT ##--- Main loop # Sleep for a bit to allow the host operating system to configure the new USB device time.sleep(1) while True: # -------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # -------------------------------------------------------------| # Sleep for a bit to make the keypress events occur at a human timescale # Skilled gamers can do ~7 button presses per second (says ChatGPT) time.sleep(0.143) . | . If you are struggling with the assignment we provide the solution here below. Attention: Keep in mind that from next week on you won’t find a solution to the assignments, so you should take this opportunity to become familiar with programming concepts and try hard to make the code work. Jumping straight to the solution might seem tempting, but it’s important to work through the assignment on your own first. By skipping ahead, you’ll miss out on learning critical concepts and skills that are essential for the next stages of the course. Code solution . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#coding-assignment",
     
     "relUrl": "/assignments/03-game-controller/#coding-assignment"
-  },"65": {
+  },"59": {
     "doc": "3: Game Controller",
     "title": "Extra Challenge: Control your mouse!",
     "content": "In this week’s extra challenge you’ll explore how to use the usb_hid library to control mouse movements and simulate clicks. Here we propose a brief introduction on how to use the mouse functions from the usb_hid library: . Key Functions for Mouse Control . Mouse Clicks . | Use mouse.press(button) to simulate pressing a mouse button (e.g., Mouse.LEFT_BUTTON for the left button or Mouse.RIGHT_BUTTON for the right button). | Use mouse.release(button) to simulate releasing the button. | To ensure all buttons are released, use mouse.release_all(). | . Moving the Mouse . | Use mouse.move(x=amount, y=amount) to move the mouse pointer: . | The x parameter controls horizontal movement (positive for right, negative for left). | The y parameter controls vertical movement (positive for down, negative for up). | . | . Scrolling . | Use mouse.move(wheel=amount) to simulate scrolling the mouse wheel. Positive values scroll up, and negative values scroll down. | . Your Challenge . The previous section shows how to handle button inputs and control the mouse. Use it to try and implement your own logic to play different games from the ones listed. Have fun with this challenge, and don’t hesitate to test out creative ideas! The more you experiment, the more you’ll understand how to bring your prototypes to life. If you’re lost check the state diagram below for some inspiration on how to structure your code! . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/#extra-challenge-control-your-mouse",
     
     "relUrl": "/assignments/03-game-controller/#extra-challenge-control-your-mouse"
-  },"66": {
+  },"60": {
     "doc": "3: Game Controller",
     "title": "3: Game Controller",
     "content": " ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller/",
     
     "relUrl": "/assignments/03-game-controller/"
-  },"67": {
+  },"61": {
     "doc": "5: Walkie-Talkie",
     "title": "Walkie-Talkie",
     "content": "In this week’s assignment we are going to build-up from the knowledge learned last week on MQTT, and we will expand it by also publishing on the server! The goal is to build a walkie-talkie that can both send and receive messages from other boards. ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/#walkie-talkie",
     
     "relUrl": "/assignments/05-walkie-talkie/#walkie-talkie"
-  },"68": {
+  },"62": {
     "doc": "5: Walkie-Talkie",
     "title": "Coding Instructions",
     "content": "In this assignment you will learn how to publish data to an MQTT topic and revise last week’s assignment on how to process received data. When connected to an MQTT server, we can not only listen to a topic (e.g. “perlin” and “iss/distance” from last week), but also send data to it! Sending data to the MQTT broker is called “publishing” and when doing so, all devices which are connected to the topic you’re sending information to will receive the data you send. If you didn’t complete last week’s assignment, you should make sure you have done the following things before starting with this assignment: . | Follow the tutorial on how to connect your board to TUD-facility wifi here. | Download the MQTT wrapper here and put it in your lib folder. | Create a settings.py file like the one shown in step 1 - 4: Data Embodiment and add the wifi credentials. | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/#coding-instructions",
     
     "relUrl": "/assignments/05-walkie-talkie/#coding-instructions"
-  },"69": {
+  },"63": {
     "doc": "5: Walkie-Talkie",
     "title": "Coding Assignment",
     "content": "Your goal is to implement 2 buttons and an actuator of your choice (we recommend either a piezo buzzer or a vibration motor), in the following way: . | 1 button dedicated to opening the walkie-talkie channel | 1 button to send messages on the channel | 1 actuator that is triggered when a message is received | . Remember that walkie-talkies cannot receive messages while their channel is open. Just like last week, here below we present a template with almost everything you need to make your walkie-talkie work. Although, one crucial part is missing, the part inside the while loop, you should use the acting machine diagram below the code to make your walkie-talkie work. Happy coding! . Code template . | PicoExpander | BitsyExpander | . | ##--- Library Imports import time import digitalio import board import neopixel from MQTT import Create_MQTT from settings import settings ##--- Defining states state_idle = 0 state_receive = 1 state_channel_open = 2 state_transmit = 3 current_state = 0 # Define variable to save data received from the MQTT broker last_received_value = 0 ##--- Button variables open_channel_pin = board.GP6 open_channel_button = digitalio.DigitalInOut(open_channel_pin) open_channel_button.direction = digitalio.Direction.INPUT speak_channel_pin = board.GP8 speak_button = digitalio.DigitalInOut(speak_channel_pin) speak_button.direction = digitalio.Direction.INPUT ##-- Led variables pin_leds = board.GP10 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_green = (0, 255, 0, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global leds leds.fill(color) leds.show() ##--- Actuator variables actuator = digitalio.DigitalInOut(board.GP12) actuator.direction = digitalio.Direction.OUTPUT # For more information on how to use PWM check this link: # https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm #actuator = pwmio.PWMOut(board.GP14, variable_frequency=True) ##--- MQTT configuration # Define variable to save data received from the MQTT broker last_received_value = 0 device_has_received_new_value = False # Method used when the board receives a message from the MQTT server. def handle_message(client, topic, msg): global last_received_value global device_has_received_new_value # Assign message received to last_received variable last_received_value = msg device_has_received_new_value = True # You can find the client Id in the settings.py this is used to identify the board client_id = settings[\"mqtt_clientid\"] # Create a mqtt connection based on the settings file. mqtt_client = Create_MQTT(client_id, handle_message) # &lt;--------------------------------------------&gt; # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE -- # VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV # Here you should select the topic of the person you want to talk to. # Write the topic you want to send messages to. mqtt_speak_topic = \"Studio05-Lisa-WalkieTalkie\" # You should set as \"listen_topic\" their \"speak_topic\" and vice-versa mqtt_listen_topic = \"Studio05-Bram-WalkieTalkie\" # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ # &lt;--------------------------------------------&gt; # Listen for messages on the topic specified above mqtt_client.subscribe(mqtt_listen_topic) ##--- Main loop while True: try: mqtt_client.loop(0.1) except (ValueError, RuntimeError) as e: print(\"Failed to get data, retrying\\n\", e) mqtt_client.reconnect() continue # --------------------------------------------- # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ | # --------------------------------------------- message = \"ping\" # Use this method to publish messages on a topic: # mqtt_client.publish(mqtt_speak_topic, message) # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: Use of the \"device_has_received_new_value\" variable | # Use the open_channel_button and speak_button variables | # Use the led variable (copied from the reation game code) | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- device_has_received_new_value = False time.sleep(0.1) . | ##--- Library Imports import time import digitalio import board import neopixel from MQTT import Create_MQTT from settings import settings ##--- Defining states state_idle = 0 state_receive = 1 state_channel_open = 2 state_transmit = 3 current_state = 0 # Define variable to save data received from the MQTT broker last_received_value = 0 ##--- Button variables open_channel_pin = board.D13 open_channel_button = digitalio.DigitalInOut(open_channel_pin) open_channel_button.direction = digitalio.Direction.INPUT speak_channel_pin = board.D7 speak_button = digitalio.DigitalInOut(speak_channel_pin) speak_button.direction = digitalio.Direction.INPUT ##-- Led variables pin_leds = board.D3 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_green = (0, 255, 0, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global leds leds.fill(color) leds.show() ##--- Actuator variables actuator = digitalio.DigitalInOut(board.D4) actuator.direction = digitalio.Direction.OUTPUT # For more information on how to use PWM check this link: # https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm #actuator = pwmio.PWMOut(board.D4, variable_frequency=True) ##--- MQTT configuration # Define variable to save data received from the MQTT broker last_received_value = 0 device_has_received_new_value = False # Method used when the board receives a message from the MQTT server. def handle_message(client, topic, msg): global last_received_value global device_has_received_new_value # Assign message received to last_received variable last_received_value = msg device_has_received_new_value = True # You can find the client Id in the settings.py this is used to identify the board client_id = settings[\"mqtt_clientid\"] # Create a mqtt connection based on the settings file. mqtt_client = Create_MQTT(client_id, handle_message) # &lt;--------------------------------------------&gt; # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE -- # VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV # Here you should select the topic of the person you want to talk to. # Write the topic you want to send messages to. mqtt_speak_topic = \"Studio05-Lisa-WalkieTalkie\" # You should set as \"listen_topic\" their \"speak_topic\" and vice-versa mqtt_listen_topic = \"Studio05-Bram-WalkieTalkie\" # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ # &lt;--------------------------------------------&gt; # Listen for messages on the topic specified above mqtt_client.subscribe(mqtt_listen_topic) ##--- Main loop while True: try: mqtt_client.loop(0.1) except (ValueError, RuntimeError) as e: print(\"Failed to get data, retrying\\n\", e) mqtt_client.reconnect() continue # --------------------------------------------- # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ | # --------------------------------------------- message = \"ping\" # Use this method to publish messages on a topic: # mqtt_client.publish(mqtt_speak_topic, message) # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: Use of the \"device_has_received_new_value\" variable | # Use the open_channel_button and speak_button variables | # Use the led variable (copied from the reation game code) | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- device_has_received_new_value = False time.sleep(0.1) . | . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/#coding-assignment",
     
     "relUrl": "/assignments/05-walkie-talkie/#coding-assignment"
-  },"70": {
+  },"64": {
     "doc": "5: Walkie-Talkie",
     "title": "Understanding Speak and Listen Topics",
     "content": "In the code, you’ll find two variables called mqtt_speak_topic and mqtt_listen_topic. You can use them to establish communication between walkie-talkies. Speak Topic = where you send messages Listen Topic = where you receive messages . For two devices to communicate: . | Your speak topic must be your partner’s listen topic | Your listen topic must be your partner’s speak topic | . Example: . Your Device: - Speak Topic: \"Studio05-YourName-WalkieTalkie\" - Listen Topic: \"Studio05-PartnerName-WalkieTalkie\" Partner's Device: - Speak Topic: \"Studio05-PartnerName-WalkieTalkie\" - Listen Topic: \"Studio05-YourName-WalkieTalkie\" . Note: Topics must match exactly, including capitalization! . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/#understanding-speak-and-listen-topics",
     
     "relUrl": "/assignments/05-walkie-talkie/#understanding-speak-and-listen-topics"
-  },"71": {
+  },"65": {
     "doc": "5: Walkie-Talkie",
     "title": "Extra Challenge: Interpret received messages",
     "content": "In the current assignment, your walkie-talkie sends a fixed message (“ping”) each time you press the button. But real communication isn’t just about sending the same thing over and over; messages can carry different meanings! . For this challenge, modify your code so that different messages can be sent instead of always sending “ping”. Think about the different ways in which you could send different messages, for example, assign two buttons or create a switch to select messages before sending. When receiving messages, be sure that your walkie-talkie also interprets incoming messages and responds differently based on their content. Think about how this could enhance the interaction, different messages could trigger different responses from the actuator, maybe also triggering different actuators. Push yourself to explore how MQTT can be used for more dynamic communication! . Here below we provide a more advanced acting machine digram to help you create your improved walkie-talkie . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/#extra-challenge-interpret-received-messages",
     
     "relUrl": "/assignments/05-walkie-talkie/#extra-challenge-interpret-received-messages"
-  },"72": {
+  },"66": {
     "doc": "5: Walkie-Talkie",
     "title": "5: Walkie-Talkie",
     "content": " ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie/",
     
     "relUrl": "/assignments/05-walkie-talkie/"
+  },"67": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "Reaction Game",
+    "content": "In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game. ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/#reaction-game",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/#reaction-game"
+  },"68": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "Coding Instructions",
+    "content": "In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together. As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (while), making decisions with if and elif statements, and defining and using functions. Additionally, you’ll learn to work with the neopixel library to control LED colors, giving your prototype a vibrant and interactive feel. By the end, you’ll have an understanding of how to run code on your board, how to connect components and a rough idea of how the code is structured. ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/#coding-instructions",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/#coding-instructions"
+  },"69": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "Game hardware and control flow",
+    "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner. The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about Acting Machine Diagrams later. For now you can already interpret how the control might flow if you start in the state (circle) labeled “wait” and then traverse the transitions (arrows) from state to state. ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/#game-hardware-and-control-flow",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/#game-hardware-and-control-flow"
+  },"70": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "Game code",
+    "content": "There is a simple way to derive a program that implement the control flow from the Acting Machine Diagram, we have already done that for you! . In order to navigate to the right code you first have to identify the LED form factor of the LEDs in your Connected Interaction Kit. Match the LED in your kit with one of the images below, then access the game code by pressing the button under the matching image. | Chainable RGB/W LED (ChaiNEO) | Chainable RGB LED (Grove) | . | | | . | Code for the game | Code for the game | . ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/#game-code",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/#game-code"
+  },"71": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "Extra Challenge: Make It Better!",
+    "content": "Congratulations on getting the basic version of the game running! Now it’s time to put on your problem-solving hats and improve the game! The code you’ve been working with has a few intentional bugs. One key challenge involves the way button presses are handled: . Hint: If you keep a button pressed before the LED turns white, you’ll always win. That doesn’t sound very fair, does it? . Your task is to identify and fix this bug so the game works as intended. Look through the code and think of how you could achieve this, maybe also penalizing a player if they press the button before the led turns white! . ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/#extra-challenge-make-it-better",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/#extra-challenge-make-it-better"
+  },"72": {
+    "doc": "1: Reaction Game - Hardware and Code",
+    "title": "1: Reaction Game - Hardware and Code",
+    "content": " ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hardware%20and%20code/",
+    
+    "relUrl": "/assignments/01-reaction-game-hardware%20and%20code/"
   },"73": {
     "doc": "Assignments",
     "title": "Assignments",
