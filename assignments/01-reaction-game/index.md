@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "2: Reaction Game"
+title: "1: Reaction Game"
 parent: Assignments
 has_children: true
 ---
 
 # Reaction Game
-In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms.
+In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game.
 
 ## Coding Instructions
 In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together.

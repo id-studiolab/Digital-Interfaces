@@ -7,9 +7,10 @@ nav_order: 0
 # Digital Interfaces
 
 ## Assignments
-[1: Digital Interfaces Safari](assignments/01-digital-interface-safari/index)
 
-[2: Reaction Game](assignments/02-reaction-game/index)
+[1: Reaction Game - Hardware and Code](assignments/01-reaction-game/index)
+
+[2: Reaction Game - Embodiment]
 
 [3: Game Controller](assignments/03-game-controller/index)
 
