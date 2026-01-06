@@ -8,9 +8,9 @@ nav_order: 0
 
 ## Assignments
 
-[1: Reaction Game - Hardware and Code](assignments/01-reaction-game/index)
+[1: Reaction Game - Hardware and Code](assignments/01-reaction-game-hw-code/index)
 
-[2: Reaction Game - Embodiment]
+[2: Reaction Game - Embodiment](assignements/02-reaction-game-embodiment/index)
 
 [3: Game Controller](assignments/03-game-controller/index)
 
