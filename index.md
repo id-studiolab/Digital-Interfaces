@@ -24,4 +24,4 @@ nav_order: 0
 
 ## Tutorials
 [Building a Pomodoro timer](tutorials/02-pomodoro/index)
-testing this shit
+
