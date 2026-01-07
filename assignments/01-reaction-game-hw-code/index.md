@@ -5,20 +5,30 @@ parent: Assignments
 has_children: true
 ---
 
-# Reaction Game
-In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game.
+# Reaction Game - Hardware and Code
+In this weeks assignment we are going to build a simple reaction game. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game.
+
+Your kit contains a touch sensor that can act as a button but there is only one. So in order to test your game you'll have to borrow a touch sensor or a button from one of your fellow students or the staff. During the next week there will be time for you to go to the PMB and [assemble and solder](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/assembling-custom-components/tactile-switch) one or two tactile switches from parts available in your Connected Interaction Kit.
 
 ## Coding Instructions
 In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together.
 
 As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (`while`), making decisions with `if` and `elif` statements, and defining and using functions. Additionally, you’ll learn to work with the `neopixel` library to control LED colors, giving your prototype a vibrant and interactive feel.
 
-By the end, you’ll have an understanding of how to run code on your board, how to connect  components and a rough idea of how the code is structured.
+By the end, you’ll have an understanding of how to run code on your board, how to connect components and a rough idea of how the code is structured.
 
 ## Game hardware and control flow
 The basic game makes use of two input components (either **Touch Sensor** or **Tactile Switch**), and a **Chainable RGB LED** as an output. 
 
+|   Chainable RGB/W (ChaiNEO)   |   Touch Sensor   |   Tactile Switch   |
+| :---------------------------: | :--------------: |  :---------------: |
+| <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGB LED" width="166"/> |
+<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Grove-Touch-Sensor.png" alt="GroveTouch Sensor" width="166"/> | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/custom-tactile-switch-centered.png" alt="Tactile Switch" width="166"/> |
+|                               |                  |                    |
+
 Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner.
+
+
 
 ![](reaction_game.jpg)
 
