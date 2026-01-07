@@ -513,23 +513,23 @@
     "doc": "2: Reaction Game - Embodiment",
     "title": "Reaction Game",
     "content": "Na de opdracht van de vorige week waar we de hardware en code hebben gemaakt gaan we deze week aan de slag met de embodiment van the reaction game. ",
-    "url": "/Digital-Interfaces/test/assignments/02-reaction%20game-embodiment/#reaction-game",
+    "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/#reaction-game",
     
-    "relUrl": "/assignments/02-reaction%20game-embodiment/#reaction-game"
+    "relUrl": "/assignments/02-reaction-game-embodiment/#reaction-game"
   },"74": {
     "doc": "2: Reaction Game - Embodiment",
     "title": "Coding Instructions",
     "content": "In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together. As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (while), making decisions with if and elif statements, and defining and using functions. Additionall . ",
-    "url": "/Digital-Interfaces/test/assignments/02-reaction%20game-embodiment/#coding-instructions",
+    "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/#coding-instructions",
     
-    "relUrl": "/assignments/02-reaction%20game-embodiment/#coding-instructions"
+    "relUrl": "/assignments/02-reaction-game-embodiment/#coding-instructions"
   },"75": {
     "doc": "2: Reaction Game - Embodiment",
     "title": "2: Reaction Game - Embodiment",
     "content": " ",
-    "url": "/Digital-Interfaces/test/assignments/02-reaction%20game-embodiment/",
+    "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/",
     
-    "relUrl": "/assignments/02-reaction%20game-embodiment/"
+    "relUrl": "/assignments/02-reaction-game-embodiment/"
   },"76": {
     "doc": "Assignments",
     "title": "Assignments",
