@@ -12,13 +12,13 @@ nav_order: 0
 
 [2: Reaction Game - Embodiment](assignements/02-reaction-game-embodiment/index)
 
-[3: Game Controller](assignments/03-game-controller/index)
+[3: Game Controller - Hardware and Code](assignments/03-game-controller-hw-code/index)
 
-[4: Data Embodiment](assignments/04-data-embodiment/index)
+[4: Game Controller - Embodiment](assigment/04-gamecontroller-embodiment/index)
 
-[5: Walkie-Talkie](assignments/05-walkie-talkie/index)
+[5: Walkie-Talkie - Hardware and Code](assignments/05-walkie-talkie-hw-code/index)
 
-[6: Party Lamp](assignments/06-party-lamp/index)
+[6: Walkie-Talkie - Embodiment](assignments/05-walkie-talkie-embodiment/index)
 
 [7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
