@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "5: Walkie-Talkie"
+title: "5: Walkie-Talkie - Hardware and Code"
 parent: Assignments
 has_children: false
 ---
 
-# Walkie-Talkie
+# Walkie-Talkie - Hardware and Code
 In this week's assignment we are going to build-up from the knowledge learned last week on MQTT, and we will expand it by also publishing on the server!
 The goal is to build a walkie-talkie that can both send and receive messages from other boards.
 

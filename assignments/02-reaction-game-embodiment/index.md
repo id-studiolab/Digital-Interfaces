@@ -5,7 +5,7 @@ parent: Assignments
 has_children: true
 ---
 
-# Reaction Game
+# Reaction Game - Embodiment
 Na de opdracht van de vorige week waar we de hardware en code hebben gemaakt gaan we deze week aan de slag met de embodiment van the reaction game.  
 
 ## Coding Instructions

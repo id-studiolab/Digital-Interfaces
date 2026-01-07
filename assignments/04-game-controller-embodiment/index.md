@@ -5,7 +5,7 @@ parent: Assignments
 has_children: true
 ---
 
-# Game Controller Embodiment
+# Game Controller - Embodiment
 
 
 

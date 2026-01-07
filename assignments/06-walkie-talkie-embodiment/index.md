@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "6: Party Lamp"
+title: "6: Walkie-Talkie - Embodiment"
 parent: Assignments
 has_children: false
 ---
 
-# Party Lamp
+# Walkie-Talkie - Embodiment 
 
 After the challenges and struggles of working with MQTT in the last two assignments, this final assignment goes back to the roots, using only 1 button and 1 LED.  
 This week we will use timers to create a Party Lamp with multiple modes, focusing on writing **non-blocking code** — that is, code that can handle multiple tasks at the same time, without pausing everything else or waiting for a result.  

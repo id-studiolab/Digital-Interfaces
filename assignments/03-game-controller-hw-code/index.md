@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "3: Game Controller"
+title: "3: Game Controller - Hardware and Code"
 parent: Assignments
 has_children: true
 ---
 
-# Game Controller
+# Game Controller - Hardware and Code
 In this week's assignment we are going to build and embody a physical controller to control a game on our screen.
 
 ---
