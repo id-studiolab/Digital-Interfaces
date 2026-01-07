@@ -18,7 +18,7 @@ nav_order: 0
 
 [5: Walkie-Talkie - Hardware and Code](assignments/05-walkie-talkie-hw-code/index)
 
-[6: Walkie-Talkie - Embodiment](assignments/05-walkie-talkie-embodiment/index)
+[6: Walkie-Talkie - Embodiment](assignments/06-walkie-talkie-embodiment/index)
 
 [7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
