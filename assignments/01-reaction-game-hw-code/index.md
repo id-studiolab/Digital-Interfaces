@@ -20,15 +20,16 @@ By the end, you’ll have an understanding of how to run code on your board, how
 ## Game hardware and control flow
 The basic game makes use of two input components (either **Touch Sensor** or **Tactile Switch**), and a **Chainable RGB LED** as an output. 
 
-|   Chainable RGB/W (ChaiNEO)   |   Touch Sensor   |   Tactile Switch   |
-| :---------------------------: | :--------------: |  :---------------: |
-| <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGB LED" width="166"/> |
-<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Grove-Touch-Sensor.png" alt="GroveTouch Sensor" width="166"/> | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/custom-tactile-switch-centered.png" alt="Tactile Switch" width="166"/> |
+|   Chainable RGB/W (ChaiNEO)   |          Touch Sensor          |        Tactile Switch         |
+| :---------------------------: | :----------------------------: |  :--------------------------: |
+| <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGBW LED" width="200"/> |
+<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/tactile-switch/assets/custom-tactile-switch-centered.png" alt="Tactile Switch" width="200"/>|
+ | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/touch-sensor/assets/Grove-Touch-Sensor.png" alt="Touch Sensor" width="200"/> |
 |                               |                  |                    |
 
 Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner.
 
-
+https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png
 
 ![](reaction_game.jpg)
 
