@@ -321,36 +321,36 @@
     
     "relUrl": "/assignments/07+08-animistic-design/"
   },"46": {
-    "doc": "6: Party Lamp",
-    "title": "Party Lamp",
+    "doc": "6: Walkie-Talkie - Embodiment",
+    "title": "Walkie-Talkie - Embodiment",
     "content": "After the challenges and struggles of working with MQTT in the last two assignments, this final assignment goes back to the roots, using only 1 button and 1 LED. This week we will use timers to create a Party Lamp with multiple modes, focusing on writing non-blocking code — that is, code that can handle multiple tasks at the same time, without pausing everything else or waiting for a result. Introducing blocking versus non-blocking code (also called multitasking): while the product exhibits animations like transitions, fading or blinking, it always remains responsive to the user. When you press the mode change button, the product should immediately respond by changing the light behavior. We will test this during studio time and perhaps in the wrap-up session. This approach is essential when working with animations, sensors, and interactive features, and it will help us create a responsive and dynamic Party Lamp. ",
-    "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/#party-lamp",
+    "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/#walkie-talkie---embodiment",
     
-    "relUrl": "/assignments/06-walkie-talkie-embodiment/#party-lamp"
+    "relUrl": "/assignments/06-walkie-talkie-embodiment/#walkie-talkie---embodiment"
   },"47": {
-    "doc": "6: Party Lamp",
+    "doc": "6: Walkie-Talkie - Embodiment",
     "title": "Coding instructions",
     "content": "In the code provided below, we offer two simple timer functions that allow you to create and check timers. These functions make it easy to work with time-based events in your code. Timer Functions . # -- Timer functions last_timer_mark = 0 timer_duration = 0 def start_timer(duration): # Takes duration in seconds global last_timer_mark, timer_duration last_timer_mark = time.monotonic() timer_duration = duration def is_timer_expired(): # Returns True/False return (time.monotonic() - last_timer_mark) &gt; timer_duration . Timer examples . import time start_timer(2.0) # Creates and starts a timer of 2 seconds print(is_timer_expired()) # Will print \"False\", since 2 seconds haven't passed time.sleep(3) # Wait 3 seconds print(is_timer_expired()) # Will print \"True\", since more than 2 seconds have passed . Once a timer has expired, you can always create a new timer with start_timer() — this will start a fresh timer with the duration you specify. ",
     "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/#coding-instructions",
     
     "relUrl": "/assignments/06-walkie-talkie-embodiment/#coding-instructions"
   },"48": {
-    "doc": "6: Party Lamp",
+    "doc": "6: Walkie-Talkie - Embodiment",
     "title": "Coding Assignment",
     "content": "Just like in previous weeks, we only provide a template with the components already configured and a couple of helper functions. Your goal is to use the Acting Machine Diagram below the code template to complete the part inside the while True: loop and implement a Party Lamp. The lamp should cycle between the following modes: . | Off: The LED is off. | Fade: The LED slowly fades off, then fades on again continuously. | Blink: The LED rapidly blinks on and off. | . For this assignment, we will use a Button and a neopixel LED. Be sure to check the template code to see where they should be connected. Code template . | PicoExpander | BitsyExpander | . | ##--- Main Loop import board import neopixel import digitalio import time # -- Define states state_off = 0 state_fade_in = 1 state_fade_out = 2 state_blink_on = 3 state_blink_off = 4 current_state = state_off # -- Initialize the button button = digitalio.DigitalInOut(board.GP8) button.direction = digitalio.Direction.INPUT button_released = True # -- Button debounce function def is_button_pressed(): global button_released if button.value is True and button_released is True: button_released = False return True if button.value is False: button_released = True return False # -- Initialize the NeoPixel led = neopixel.NeoPixel(board.GP10, 1, brightness=0.3, auto_write=False, pixel_order=neopixel.GRBW) # Define basic led colors led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_green = (0, 255, 0, 0) led_blue = (0, 0, 255, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global led led.fill(color) led.show() # -- Timer functions last_timer_mark = 0 timer_duration = 0 def start_timer(duration): global last_timer_mark, timer_duration last_timer_mark = time.monotonic() timer_duration = duration def is_timer_expired(): return (time.monotonic() - last_timer_mark) &gt; timer_duration # Initialize timer durations fade_duration = 0.01 # Controls fade speed blink_duration = 0.2 # Controls blink speed # Controls fade in/out steps: # - low numbers: smooth transition, but slow. # - high numbers: fast transition, but rough. fade_step = 0.05 while True: # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: you can use led.brightness to acces and change the | # ligth brightness. | # The brightness has a value between 0.0 and 1.0. | # | # ex: led.brightness = 0.5 # Sets the led to half the brightness | # | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- led.show() time.sleep(0.1) . | ##--- Main Loop import board import neopixel import digitalio import time # -- Define states state_off = 0 state_fade_in = 1 state_fade_out = 2 state_blink_on = 3 state_blink_off = 4 current_state = state_off # -- Initialize the button button = digitalio.DigitalInOut(board.D7) button.direction = digitalio.Direction.INPUT button_released = True # -- Button debounce function def is_button_pressed(): global button_released if button.value is True and button_released is True: button_released = False return True if button.value is False: button_released = True return False # -- Initialize the NeoPixel led = neopixel.NeoPixel(board.D13, 1, brightness=0.3, auto_write=False, pixel_order=neopixel.GRBW) # Define basic led colors led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_green = (0, 255, 0, 0) led_blue = (0, 0, 255, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global led led.fill(color) led.show() # -- Timer functions last_timer_mark = 0 timer_duration = 0 def start_timer(duration): global last_timer_mark, timer_duration last_timer_mark = time.monotonic() timer_duration = duration def is_timer_expired(): return (time.monotonic() - last_timer_mark) &gt; timer_duration # Initialize timer durations fade_duration = 0.01 # Controls fade speed blink_duration = 0.2 # Controls blink speed # Controls fade in/out steps: # - low numbers: smooth transition, but slow. # - high numbers: fast transition, but rough. fade_step = 0.05 while True: # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: you can use led.brightness to acces and change the | # ligth brightness. | # The brightness has a value between 0.0 and 1.0. | # | # ex: led.brightness = 0.5 # Sets the led to half the brightness | # | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- led.show() time.sleep(0.1) . | . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/#coding-assignment",
     
     "relUrl": "/assignments/06-walkie-talkie-embodiment/#coding-assignment"
   },"49": {
-    "doc": "6: Party Lamp",
+    "doc": "6: Walkie-Talkie - Embodiment",
     "title": "Extra challenge",
     "content": "Add new modes to the Party Lamp! If you manage to get the basic modes working, try extending your Party Lamp by adding more complex effects, such as: . | Rainbow mode: Slowly shifting between all colors of the rainbow. | Strobe mode: Very fast flashing (disco-style). | Special color programs: Sequences of color changes, like alternating between red and green for a Christmas effect. | . You’ll need to think carefully about how to manage the timing and transitions using your timers, while keeping everything responsive to the button press. ",
     "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/#extra-challenge",
     
     "relUrl": "/assignments/06-walkie-talkie-embodiment/#extra-challenge"
   },"50": {
-    "doc": "6: Party Lamp",
-    "title": "6: Party Lamp",
+    "doc": "6: Walkie-Talkie - Embodiment",
+    "title": "6: Walkie-Talkie - Embodiment",
     "content": " ",
     "url": "/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/",
     
@@ -399,11 +399,11 @@
     "relUrl": "/assignments/01-reaction-game-hw-code/"
   },"57": {
     "doc": "4: Game Controller Embodiment",
-    "title": "Game Controller Embodiment",
+    "title": "Game Controller - Embodiment",
     "content": ". ",
-    "url": "/Digital-Interfaces/test/assignments/04-game-controller-embodiment/#game-controller-embodiment",
+    "url": "/Digital-Interfaces/test/assignments/04-game-controller-embodiment/#game-controller---embodiment",
     
-    "relUrl": "/assignments/04-game-controller-embodiment/#game-controller-embodiment"
+    "relUrl": "/assignments/04-game-controller-embodiment/#game-controller---embodiment"
   },"58": {
     "doc": "4: Game Controller Embodiment",
     "title": "4: Game Controller Embodiment",
@@ -412,103 +412,103 @@
     
     "relUrl": "/assignments/04-game-controller-embodiment/"
   },"59": {
-    "doc": "5: Walkie-Talkie",
-    "title": "Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
+    "title": "Walkie-Talkie - Hardware and Code",
     "content": "In this week’s assignment we are going to build-up from the knowledge learned last week on MQTT, and we will expand it by also publishing on the server! The goal is to build a walkie-talkie that can both send and receive messages from other boards. ",
-    "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#walkie-talkie",
+    "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#walkie-talkie---hardware-and-code",
     
-    "relUrl": "/assignments/05-walkie-talkie-hw-code/#walkie-talkie"
+    "relUrl": "/assignments/05-walkie-talkie-hw-code/#walkie-talkie---hardware-and-code"
   },"60": {
-    "doc": "5: Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
     "title": "Coding Instructions",
     "content": "In this assignment you will learn how to publish data to an MQTT topic and revise last week’s assignment on how to process received data. When connected to an MQTT server, we can not only listen to a topic (e.g. “perlin” and “iss/distance” from last week), but also send data to it! Sending data to the MQTT broker is called “publishing” and when doing so, all devices which are connected to the topic you’re sending information to will receive the data you send. If you didn’t complete last week’s assignment, you should make sure you have done the following things before starting with this assignment: . | Follow the tutorial on how to connect your board to TUD-facility wifi here. | Download the MQTT wrapper here and put it in your lib folder. | Create a settings.py file like the one shown in step 1 - 4: Data Embodiment and add the wifi credentials. | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#coding-instructions",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/#coding-instructions"
   },"61": {
-    "doc": "5: Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
     "title": "Coding Assignment",
     "content": "Your goal is to implement 2 buttons and an actuator of your choice (we recommend either a piezo buzzer or a vibration motor), in the following way: . | 1 button dedicated to opening the walkie-talkie channel | 1 button to send messages on the channel | 1 actuator that is triggered when a message is received | . Remember that walkie-talkies cannot receive messages while their channel is open. Just like last week, here below we present a template with almost everything you need to make your walkie-talkie work. Although, one crucial part is missing, the part inside the while loop, you should use the acting machine diagram below the code to make your walkie-talkie work. Happy coding! . Code template . | PicoExpander | BitsyExpander | . | ##--- Library Imports import time import digitalio import board import neopixel from MQTT import Create_MQTT from settings import settings ##--- Defining states state_idle = 0 state_receive = 1 state_channel_open = 2 state_transmit = 3 current_state = 0 # Define variable to save data received from the MQTT broker last_received_value = 0 ##--- Button variables open_channel_pin = board.GP6 open_channel_button = digitalio.DigitalInOut(open_channel_pin) open_channel_button.direction = digitalio.Direction.INPUT speak_channel_pin = board.GP8 speak_button = digitalio.DigitalInOut(speak_channel_pin) speak_button.direction = digitalio.Direction.INPUT ##-- Led variables pin_leds = board.GP10 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_green = (0, 255, 0, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global leds leds.fill(color) leds.show() ##--- Actuator variables actuator = digitalio.DigitalInOut(board.GP12) actuator.direction = digitalio.Direction.OUTPUT # For more information on how to use PWM check this link: # https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm #actuator = pwmio.PWMOut(board.GP14, variable_frequency=True) ##--- MQTT configuration # Define variable to save data received from the MQTT broker last_received_value = 0 device_has_received_new_value = False # Method used when the board receives a message from the MQTT server. def handle_message(client, topic, msg): global last_received_value global device_has_received_new_value # Assign message received to last_received variable last_received_value = msg device_has_received_new_value = True # You can find the client Id in the settings.py this is used to identify the board client_id = settings[\"mqtt_clientid\"] # Create a mqtt connection based on the settings file. mqtt_client = Create_MQTT(client_id, handle_message) # &lt;--------------------------------------------&gt; # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE -- # VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV # Here you should select the topic of the person you want to talk to. # Write the topic you want to send messages to. mqtt_speak_topic = \"Studio05-Lisa-WalkieTalkie\" # You should set as \"listen_topic\" their \"speak_topic\" and vice-versa mqtt_listen_topic = \"Studio05-Bram-WalkieTalkie\" # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ # &lt;--------------------------------------------&gt; # Listen for messages on the topic specified above mqtt_client.subscribe(mqtt_listen_topic) ##--- Main loop while True: try: mqtt_client.loop(0.1) except (ValueError, RuntimeError) as e: print(\"Failed to get data, retrying\\n\", e) mqtt_client.reconnect() continue # --------------------------------------------- # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ | # --------------------------------------------- message = \"ping\" # Use this method to publish messages on a topic: # mqtt_client.publish(mqtt_speak_topic, message) # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: Use of the \"device_has_received_new_value\" variable | # Use the open_channel_button and speak_button variables | # Use the led variable (copied from the reation game code) | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- device_has_received_new_value = False time.sleep(0.1) . | ##--- Library Imports import time import digitalio import board import neopixel from MQTT import Create_MQTT from settings import settings ##--- Defining states state_idle = 0 state_receive = 1 state_channel_open = 2 state_transmit = 3 current_state = 0 # Define variable to save data received from the MQTT broker last_received_value = 0 ##--- Button variables open_channel_pin = board.D13 open_channel_button = digitalio.DigitalInOut(open_channel_pin) open_channel_button.direction = digitalio.Direction.INPUT speak_channel_pin = board.D7 speak_button = digitalio.DigitalInOut(speak_channel_pin) speak_button.direction = digitalio.Direction.INPUT ##-- Led variables pin_leds = board.D3 num_leds = 1 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW) led_off = (0, 0, 0, 0) led_red = (255, 0, 0, 0) led_blue = (0, 0, 255, 0) led_green = (0, 255, 0, 0) led_white = (0, 0, 0, 255) def set_led_color(color): global leds leds.fill(color) leds.show() ##--- Actuator variables actuator = digitalio.DigitalInOut(board.D4) actuator.direction = digitalio.Direction.OUTPUT # For more information on how to use PWM check this link: # https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm #actuator = pwmio.PWMOut(board.D4, variable_frequency=True) ##--- MQTT configuration # Define variable to save data received from the MQTT broker last_received_value = 0 device_has_received_new_value = False # Method used when the board receives a message from the MQTT server. def handle_message(client, topic, msg): global last_received_value global device_has_received_new_value # Assign message received to last_received variable last_received_value = msg device_has_received_new_value = True # You can find the client Id in the settings.py this is used to identify the board client_id = settings[\"mqtt_clientid\"] # Create a mqtt connection based on the settings file. mqtt_client = Create_MQTT(client_id, handle_message) # &lt;--------------------------------------------&gt; # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE -- # VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV # Here you should select the topic of the person you want to talk to. # Write the topic you want to send messages to. mqtt_speak_topic = \"Studio05-Lisa-WalkieTalkie\" # You should set as \"listen_topic\" their \"speak_topic\" and vice-versa mqtt_listen_topic = \"Studio05-Bram-WalkieTalkie\" # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ # &lt;--------------------------------------------&gt; # Listen for messages on the topic specified above mqtt_client.subscribe(mqtt_listen_topic) ##--- Main loop while True: try: mqtt_client.loop(0.1) except (ValueError, RuntimeError) as e: print(\"Failed to get data, retrying\\n\", e) mqtt_client.reconnect() continue # --------------------------------------------- # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ | # --------------------------------------------- message = \"ping\" # Use this method to publish messages on a topic: # mqtt_client.publish(mqtt_speak_topic, message) # ----------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # Hint: Use of the \"device_has_received_new_value\" variable | # Use the open_channel_button and speak_button variables | # Use the led variable (copied from the reation game code) | # ----------------------------------------------------------------| # ---------------------------------------------- # v DO NOT CHANGE ANYTHING BELOW THIS POINT v | # ---------------------------------------------- device_has_received_new_value = False time.sleep(0.1) . | . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#coding-assignment",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/#coding-assignment"
   },"62": {
-    "doc": "5: Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
     "title": "Understanding Speak and Listen Topics",
     "content": "In the code, you’ll find two variables called mqtt_speak_topic and mqtt_listen_topic. You can use them to establish communication between walkie-talkies. Speak Topic = where you send messages Listen Topic = where you receive messages . For two devices to communicate: . | Your speak topic must be your partner’s listen topic | Your listen topic must be your partner’s speak topic | . Example: . Your Device: - Speak Topic: \"Studio05-YourName-WalkieTalkie\" - Listen Topic: \"Studio05-PartnerName-WalkieTalkie\" Partner's Device: - Speak Topic: \"Studio05-PartnerName-WalkieTalkie\" - Listen Topic: \"Studio05-YourName-WalkieTalkie\" . Note: Topics must match exactly, including capitalization! . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#understanding-speak-and-listen-topics",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/#understanding-speak-and-listen-topics"
   },"63": {
-    "doc": "5: Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
     "title": "Extra Challenge: Interpret received messages",
     "content": "In the current assignment, your walkie-talkie sends a fixed message (“ping”) each time you press the button. But real communication isn’t just about sending the same thing over and over; messages can carry different meanings! . For this challenge, modify your code so that different messages can be sent instead of always sending “ping”. Think about the different ways in which you could send different messages, for example, assign two buttons or create a switch to select messages before sending. When receiving messages, be sure that your walkie-talkie also interprets incoming messages and responds differently based on their content. Think about how this could enhance the interaction, different messages could trigger different responses from the actuator, maybe also triggering different actuators. Push yourself to explore how MQTT can be used for more dynamic communication! . Here below we provide a more advanced acting machine digram to help you create your improved walkie-talkie . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#extra-challenge-interpret-received-messages",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/#extra-challenge-interpret-received-messages"
   },"64": {
-    "doc": "5: Walkie-Talkie",
-    "title": "5: Walkie-Talkie",
+    "doc": "5: Walkie-Talkie - Hardware and Code",
+    "title": "5: Walkie-Talkie - Hardware and Code",
     "content": " ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/"
   },"65": {
-    "doc": "3: Game Controller",
-    "title": "Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
+    "title": "Game Controller - Hardware and Code",
     "content": "In this week’s assignment we are going to build and embody a physical controller to control a game on our screen. ",
-    "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#game-controller",
+    "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#game-controller---hardware-and-code",
     
-    "relUrl": "/assignments/03-game-controller-hw-code/#game-controller"
+    "relUrl": "/assignments/03-game-controller-hw-code/#game-controller---hardware-and-code"
   },"66": {
-    "doc": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
     "title": "Coding Instructions",
     "content": "In this assignment, you’ll learn how to use the usb_hid library to simulate keyboard or mouse inputs with your microcontroller. Remember that when working with keyboards, it’s important to understand how keys are mapped to characters in a specific layout, and that you have the correct layout configured in your code. Pressing a key once typically produces a single character on the screen. However, holding a key down can result in multiple repeated characters. The usb_hid library lets you simulate these behaviors with commands like keyboard.press(key) to simulate a key press and keyboard.release_all() to release all pressed keys. In this assignment you’ll also explore Python basics, such as variables, loops (while), conditional statements (if, elif, else), and working with functions. By integrating these concepts with the usb_hid library, you’ll gain the skills to create interactive devices that can simulate keyboard or mouse actions dynamically. ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#coding-instructions",
     
     "relUrl": "/assignments/03-game-controller-hw-code/#coding-instructions"
   },"67": {
-    "doc": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
     "title": "Possible games you can play",
     "content": "These are just some examples of games you can play, and there are many more online (or to download). Your chosen embodiment should fit the game! . | Flappy Bird | Drift Boss | Pong Game | Crazy Flips | Canabalt | . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#possible-games-you-can-play",
     
     "relUrl": "/assignments/03-game-controller-hw-code/#possible-games-you-can-play"
   },"68": {
-    "doc": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
     "title": "Safe mode",
     "content": "Especially when your ItsyBitsy is sending (wrong) keyboard inputs to your laptop, it can be useful to be able to stop the code from running, while still editing the code. By pressing the reset button right after start-up, while the LED is blinking yellow, the ItsyBitsy goes into Safe mode where it will not execute any of your code.py. You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing reset again. This allows you to fix the code without it interferring with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more. ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#safe-mode",
     
     "relUrl": "/assignments/03-game-controller-hw-code/#safe-mode"
   },"69": {
-    "doc": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
     "title": "Coding Assignment",
     "content": "You will see that different games need different inputs. Here below we present a template with almost everything you need to make your game controller work. Although, one crucial part is missing, the part inside the while loop. Your assignment is to use the template code and the acting machine diagram here below to create a working controller. Before starting, if it’s your first time coding or has been a while since the last time, we created this page that quickly introduces you to some key coding elements: Coding instructions . | Acting Machine Diagram | . | | . Code template . | PicoExpander | BitsyExpander | . | ##--- Library Imports import time import board import digitalio # We want to emulate a keyboard interface # To do so we use the usb_hid (Human-interface device) library to send commands to our computer import usb_hid from adafruit_hid.keyboard import Keyboard from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS from adafruit_hid.keycode import Keycode ##--- Defining states state_wait = 0 state_button_is_pressed = 1 current_state = 0 ##--- Keyboard variables # Define a new keyboard and set the layout to US (mostly same as the Dutch layout) keyboard = Keyboard(usb_hid.devices) keyboard_layout = KeyboardLayoutUS(keyboard) # We want to send the SPACE key when the button is pressed # For other keys search online \"Circuit Python Keycode\" key = Keycode.SPACE ##--- Button variables ## Define a new button variable and assign it to port D13 of our board button = digitalio.DigitalInOut(board.GP6) ## Define the button as an input component button.direction = digitalio.Direction.INPUT ##--- Main loop # Sleep for a bit to allow the host operating system to configure the new USB device time.sleep(1) while True: # -------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # -------------------------------------------------------------| # Sleep for a bit to make the keypress events occur at a human timescale # Skilled gamers can do ~7 button presses per second (says ChatGPT) time.sleep(0.143) . | ##--- Library Imports import time import board import digitalio # We want to emulate a keyboard interface # To do so we use the usb_hid (Human-interface device) library to send commands to our computer import usb_hid from adafruit_hid.keyboard import Keyboard from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS from adafruit_hid.keycode import Keycode ##--- Defining states state_wait = 0 state_button_is_pressed = 1 current_state = 0 ##--- Keyboard variables # Define a new keyboard and set the layout to US (mostly same as the Dutch layout) keyboard = Keyboard(usb_hid.devices) keyboard_layout = KeyboardLayoutUS(keyboard) # We want to send the SPACE key when the button is pressed # For other keys search online \"Circuit Python Keycode\" key = Keycode.SPACE ##--- Button variables ## Define a new button variable and assign it to port D13 of our board button = digitalio.DigitalInOut(board.D13) ## Define the button as an input component button.direction = digitalio.Direction.INPUT ##--- Main loop # Sleep for a bit to allow the host operating system to configure the new USB device time.sleep(1) while True: # -------------------------------------------------------------| # | # Use the Acting Machine Diagram to program your solution here | # | # -------------------------------------------------------------| # Sleep for a bit to make the keypress events occur at a human timescale # Skilled gamers can do ~7 button presses per second (says ChatGPT) time.sleep(0.143) . | . If you are struggling with the assignment we provide the solution here below. Attention: Keep in mind that from next week on you won’t find a solution to the assignments, so you should take this opportunity to become familiar with programming concepts and try hard to make the code work. Jumping straight to the solution might seem tempting, but it’s important to work through the assignment on your own first. By skipping ahead, you’ll miss out on learning critical concepts and skills that are essential for the next stages of the course. Code solution . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#coding-assignment",
     
     "relUrl": "/assignments/03-game-controller-hw-code/#coding-assignment"
   },"70": {
-    "doc": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
     "title": "Extra Challenge: Control your mouse!",
     "content": "In this week’s extra challenge you’ll explore how to use the usb_hid library to control mouse movements and simulate clicks. Here we propose a brief introduction on how to use the mouse functions from the usb_hid library: . Key Functions for Mouse Control . Mouse Clicks . | Use mouse.press(button) to simulate pressing a mouse button (e.g., Mouse.LEFT_BUTTON for the left button or Mouse.RIGHT_BUTTON for the right button). | Use mouse.release(button) to simulate releasing the button. | To ensure all buttons are released, use mouse.release_all(). | . Moving the Mouse . | Use mouse.move(x=amount, y=amount) to move the mouse pointer: . | The x parameter controls horizontal movement (positive for right, negative for left). | The y parameter controls vertical movement (positive for down, negative for up). | . | . Scrolling . | Use mouse.move(wheel=amount) to simulate scrolling the mouse wheel. Positive values scroll up, and negative values scroll down. | . Your Challenge . The previous section shows how to handle button inputs and control the mouse. Use it to try and implement your own logic to play different games from the ones listed. Have fun with this challenge, and don’t hesitate to test out creative ideas! The more you experiment, the more you’ll understand how to bring your prototypes to life. If you’re lost check the state diagram below for some inspiration on how to structure your code! . | Acting Machine Diagram | . | | . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#extra-challenge-control-your-mouse",
     
     "relUrl": "/assignments/03-game-controller-hw-code/#extra-challenge-control-your-mouse"
   },"71": {
-    "doc": "3: Game Controller",
-    "title": "3: Game Controller",
+    "doc": "3: Game Controller - Hardware and Code",
+    "title": "3: Game Controller - Hardware and Code",
     "content": " ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/",
     
     "relUrl": "/assignments/03-game-controller-hw-code/"
   },"72": {
     "doc": "2: Reaction Game - Embodiment",
-    "title": "Reaction Game",
+    "title": "Reaction Game - Embodiment",
     "content": "Na de opdracht van de vorige week waar we de hardware en code hebben gemaakt gaan we deze week aan de slag met de embodiment van the reaction game. ",
-    "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/#reaction-game",
+    "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/#reaction-game---embodiment",
     
-    "relUrl": "/assignments/02-reaction-game-embodiment/#reaction-game"
+    "relUrl": "/assignments/02-reaction-game-embodiment/#reaction-game---embodiment"
   },"73": {
     "doc": "2: Reaction Game - Embodiment",
     "title": "Coding Instructions",
