@@ -357,11 +357,11 @@
     "relUrl": "/assignments/06-walkie-talkie-embodiment/"
   },"51": {
     "doc": "1: Reaction Game - Hardware and Code",
-    "title": "Reaction Game",
-    "content": "In this weeks assignment we are going to build a simple reaction game and embody it in different shapes and forms. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game. ",
-    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hw-code/#reaction-game",
+    "title": "Reaction Game - Hardware and Code",
+    "content": "In this weeks assignment we are going to build a simple reaction game. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game. Your kit contains a touch sensor that can act as a button but there is only one. So in order to test your game you’ll have to borrow a touch sensor or a button from one of your fellow students or the staff. During the next week there will be time for you to go to the PMB and assemble and solder one or two tactile switches from parts available in your Connected Interaction Kit. ",
+    "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hw-code/#reaction-game---hardware-and-code",
     
-    "relUrl": "/assignments/01-reaction-game-hw-code/#reaction-game"
+    "relUrl": "/assignments/01-reaction-game-hw-code/#reaction-game---hardware-and-code"
   },"52": {
     "doc": "1: Reaction Game - Hardware and Code",
     "title": "Coding Instructions",
@@ -372,7 +372,7 @@
   },"53": {
     "doc": "1: Reaction Game - Hardware and Code",
     "title": "Game hardware and control flow",
-    "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner. The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about Acting Machine Diagrams later. For now you can already interpret how the control might flow if you start in the state (circle) labeled “wait” and then traverse the transitions (arrows) from state to state. ",
+    "content": "The basic game makes use of two input components (either Touch Sensor or Tactile Switch), and a Chainable RGB LED as an output. | Chainable RGB/W (ChaiNEO) | Touch Sensor | Tactile Switch | . | |   |   | . | | |   | . |   |   |   | . Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner. The image above shows the minimal components you need to make the technology work. The diagram shows the control flow of the game. We will go into more detail of explaining about Acting Machine Diagrams later. For now you can already interpret how the control might flow if you start in the state (circle) labeled “wait” and then traverse the transitions (arrows) from state to state. ",
     "url": "/Digital-Interfaces/test/assignments/01-reaction-game-hw-code/#game-hardware-and-control-flow",
     
     "relUrl": "/assignments/01-reaction-game-hw-code/#game-hardware-and-control-flow"
