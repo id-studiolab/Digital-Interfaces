@@ -40,8 +40,9 @@ For example, if you connect a component to port D7, you need to use the followin
 | ![](ItsyBitsyPort.png) | ![](pinAssignment.png) |
 
 ## Code for the game
-We provide you with the basic code for the game. Copy this code into your `code.py` file and connect all hardware components to have a basic game ready.
+We provide you with the basic code for the game. When you connect your Pico Expander board to your laptop using a micro-USB cable the device will show up as a USB drive named CIRCUITPY. On this drive there is a file called `code.py`. Copy the code below into your `code.py` file and connect all hardware components to have a basic game ready.
 Look through the code and use the examples from the previous section to deduce where to connect your components!
+If you want to know more about the workings of the Pico Expander you can visit the [site of the Connected Interaction Kit.](https://id-studiolab.github.io/Connected-Interaction-Kit/)
 
 ```python  
 ##--- Imports
@@ -60,16 +61,16 @@ state_blue_wins = 4
 current_state = 0
 
 # Button variables
-red_pin = board.GP6
+red_pin = board.D6
 red_button = digitalio.DigitalInOut(red_pin)
 red_button.direction = digitalio.Direction.INPUT
 
-blue_pin = board.GP8
+blue_pin = board.D8
 blue_button = digitalio.DigitalInOut(blue_pin)
 blue_button.direction = digitalio.Direction.INPUT
 
 # For the Chainable LED:
-pin_leds = board.GP10
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
@@ -142,3 +143,5 @@ Hint: If you keep a button pressed before the LED turns white, you’ll always w
 
 Your task is to identify and fix this bug so the game works as intended.
 Look through the code and think of how you could achieve this, maybe also penalizing a player if they press the button before the led turns white!
+
+While improving the game already think about what kind of game you would want it to be and what kind of embodiment would support your imagined style of gameplay. Is it going to be small and table top, will it become a physical challenge, will it have a certain theme? Everything is possible as long as you can imagine and realise it.
