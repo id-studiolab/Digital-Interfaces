@@ -151,6 +151,13 @@ If you're lost check the state diagram below for some inspiration on how to stru
 
 ---
 
-## Extra Challenge 2: Use an accelerometer as input!
+## Extra Challenge 2: Use an IMU sensor as input!
 
-Your connected interaction kit contains an accelerometer. This device can detect and measure movements and gravity so you could imagine that this opens up 
+This sensor can detect acceleration end angular velocity. It also measures gravity (and therefore orientation relative to the world). This sensor does not provide a discrete value (0 or 1) but an “analog” value (between 0 and 65,500).
+You can imagine that this creates a wide range of possibilities for creative input devices for games.
+
+
+|        IMU Sensor        |  
+| :----------------------: |  
+|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/test/components/imu-sensor/assets/imu.svg" alt="IMU Sensor" width="200"/>|
+
