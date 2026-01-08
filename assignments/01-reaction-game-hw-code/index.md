@@ -10,12 +10,16 @@ In this weeks assignment we are going to build a simple reaction game. The game 
 
 Your kit contains a touch sensor that can act as a button but there is only one. So in order to test your game you'll have to borrow a touch sensor or a button from one of your fellow students or the staff. During the coming week there will be time for you to go to the PMB and [assemble and solder](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/assembling-custom-components/tactile-switch) one or two tactile switches from parts available in your Connected Interaction Kit.
 
+---
+
 ## Coding Instructions
 In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together.
 
 As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (`while`), making decisions with `if` and `elif` statements, and defining and using functions. Additionally, you’ll learn to work with the `neopixel` library to control LED colors, giving your prototype a vibrant and interactive feel.
 
 By the end, you’ll have an understanding of how to run code on your board, how to connect components and a rough idea of how the code is structured.
+
+---
 
 ## Game hardware and control flow
 The basic game makes use of two input components (either **Touch Sensor** or **Tactile Switch**), and a **Chainable RGB LED** as an output. 
@@ -31,6 +35,8 @@ Once the LED turns white, both players have to try and touch their sensor as qui
 
 The image above shows the diagram representing the control flow of the game. We will go into more detail of explaining about <i>Acting Machine Diagrams</i> later. For now you can already interpret how the control might flow if you start in the <i>state</i> (circle) labeled "wait" and then traverse the <i>transitions</i> (arrows) from state to state.
 
+---
+
 ## Connecting the cables
 Your ItsyBitsy has several connection ports on it. 
 To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same used in your code.
@@ -38,6 +44,8 @@ To be sure that your code works properly, you need to make sure that the ports t
 For example, if you connect a component to port D7, you need to use the following code to reference it:
 
 | ![](ItsyBitsyPort.png) | ![](pinAssignment.png) |
+
+---
 
 ## Code for the game
 We provide you with the basic code for the game. When you connect your Pico Expander board to your laptop using a micro-USB cable the device will show up as a USB drive named CIRCUITPY. On this drive there is a file called `code.py`. Copy the code below into your `code.py` file and connect all hardware components to have a basic game ready.
@@ -133,6 +141,8 @@ while True:
         time.sleep(3)
         current_state = state_wait
 ```
+
+---
 
 ## Extra Challenge: Make It Better!
 
