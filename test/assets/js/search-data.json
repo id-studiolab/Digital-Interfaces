@@ -504,11 +504,11 @@
     "relUrl": "/assignments/03-game-controller-hw-code/#extra-challenge-1-control-your-mouse"
   },"72": {
     "doc": "3: Game Controller - Hardware and Code",
-    "title": "Extra Challenge 2: Use an accelerometer as input!",
-    "content": "Your connected interaction kit contains an accelerometer. This device can detect and measure movements and gravity so you could imagine that this opens up . ",
-    "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#extra-challenge-2-use-an-accelerometer-as-input",
+    "title": "Extra Challenge 2: Use an IMU sensor as input!",
+    "content": "This sensor can detect acceleration end angular velocity. It also measures gravity (and therefore orientation relative to the world). This sensor does not provide a discrete value (0 or 1) but an “analog” value (between 0 and 65,500). You can imagine that this creates a wide range of possibilities for creative input devices for games. | IMU Sensor | . | | . ",
+    "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/#extra-challenge-2-use-an-imu-sensor-as-input",
     
-    "relUrl": "/assignments/03-game-controller-hw-code/#extra-challenge-2-use-an-accelerometer-as-input"
+    "relUrl": "/assignments/03-game-controller-hw-code/#extra-challenge-2-use-an-imu-sensor-as-input"
   },"73": {
     "doc": "3: Game Controller - Hardware and Code",
     "title": "3: Game Controller - Hardware and Code",
