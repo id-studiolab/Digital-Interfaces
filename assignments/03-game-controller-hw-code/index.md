@@ -26,6 +26,7 @@ These are just some examples of games you can play, and there are many more onli
 3. [Pong Game](https://www.ponggame.org)
 4. [Crazy Flips](https://www.crazygames.com/game/crazy-flips-3d?theatreMode=true)
 5. [Canabalt](https://alluracy.itch.io/canabalt-clone)
+6. Any other game that you find fun...
 
 ---
  
@@ -153,11 +154,42 @@ If you're lost check the state diagram below for some inspiration on how to stru
 
 ## Extra Challenge 2: Use an IMU sensor as input!
 
-This sensor can detect acceleration end angular velocity. It also measures gravity (and therefore orientation relative to the world). This sensor does not provide a discrete value (0 or 1) but an “analog” value (between 0 and 65,500).
-You can imagine that this creates a wide range of possibilities for creative input devices for games.
+This IMU (Inertial Measurement Unit) can measure both linear acceleration and angular velocity. It also senses gravity, which makes it possible to determine the device’s orientation relative to the world. Unlike simple digital sensors that only return a 0 or 1, the IMU outputs continuous (“analog”) values. Acceleration is measured in a range of −16 g to +16 g, and angular velocity in a range of −2000 dps to +2000 dps.
+Because it can track movement and orientation, this type of sensor enables a wide range of possibilities for creative game input devices.
 
 
 |        IMU Sensor        |  
 | :----------------------: |  
 |<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/test/components/imu-sensor/assets/imu.svg" alt="IMU Sensor" width="200"/>|
 
+### **Your Challenge**
+
+In the code example below, acceleration is mapped to the mouse pointer. The implementation is minimal but functional. How could you adapt this code to create a fun gameplay experience? Think about issues as smoothing, velocity mapping and input frequency and of course there is always the possibily to map the input on to different outputs (like key presses) or to use the angular velocity as an input. Just play around and see what gives a fun result.
+
+### Code template
+
+```python
+##--- library imports
+import time
+import board
+import busio
+import digitalio
+import usb_hid
+from adafruit_hid.mouse import Mouse
+from adafruit_lsm6ds.lsm6ds3trc import LSM6DS3TRC
+
+##--- object declarations
+mouse = Mouse(usb_hid.devices)
+imu_i2c = busio.I2C(board.SCL, board.SDA)
+sensor = LSM6DS3TRC(imu_i2c, address=0x6b)
+
+while True:
+    accel_x, accel_y, accel_z = sensor.acceleration
+    print(f"Acceleration: X:{accel_x:.2f}, Y: {accel_y:.2f}, Z: {accel_z:.2f} m/s^2")
+    gyro_x, gyro_y, gyro_z = sensor.gyro
+    print(f"Gyro X:{gyro_x:.2f}, Y: {gyro_y:.2f}, Z: {gyro_z:.2f} radians/s")
+    
+    mouse.move(int(accel_x),int(accel_y))
+    time.sleep(0.2)
+
+```
