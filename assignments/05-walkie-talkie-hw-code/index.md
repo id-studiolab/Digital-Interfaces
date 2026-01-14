@@ -24,7 +24,9 @@ Although we will use a lot of code, you are not required to understand every lit
 {: .warning } 
 As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/test/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
 
+After connecting to the internet the next step is to connect to the MQTT server.
 
+[Get started](step-1){: .btn .btn-blue }
 
 
 ## Coding Instructions
