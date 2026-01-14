@@ -6,10 +6,26 @@ has_children: false
 ---
 
 # Walkie-Talkie - Hardware and Code
-In this week's assignment we are going to build-up from the knowledge learned last week on MQTT, and we will expand it by also publishing on the server!
-The goal is to build a walkie-talkie that can both send and receive messages from other boards.
+This week you’ll build a small device that can send messages to someone else’s device. The message can be as simple as a single buzz, or something more structured—like a sequence in [Morse code](https://en.wikipedia.org/wiki/Morse_code).
+We’ll use [MQTT](https://mqtt.org/) (a lightweight messaging protocol commonly used in Internet of Things projects) to send your message to a server. Once your message is published to the server, someone else can subscribe to your topic and receive it on their device.
+
+What you’ll do
+- Publish a message from your device to an MQTT broker (server)
+- Subscribe to someone else’s topic to receive their messages
+- Design a message format (e.g., short buzz patterns or Morse-like timing)
 
 ---
+
+## Before we begin
+For this week’s assignment, we prepared a lot of different code snippets to help you along. They are meant for you to use and **modify** for your specific design and device. Simple copy+pasting without a rough understanding of what you are copying **will not work!**
+
+Although we will use a lot of code, you are not required to understand every little line, but rather analyse your needs and search for the specific code sample.
+
+{: .warning } 
+As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/test/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
+
+
+
 
 ## Coding Instructions
 In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
