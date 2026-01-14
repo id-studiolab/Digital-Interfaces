@@ -428,7 +428,7 @@
   },"61": {
     "doc": "5: Walkie-Talkie - Hardware and Code",
     "title": "Before we begin",
-    "content": "For this week’s assignment, we prepared a lot of different code snippets to help you along. They are meant for you to use and modify for your specific design and device. Simple copy+pasting without a rough understanding of what you are copying will not work! . Although we will use a lot of code, you are not required to understand every little line, but rather analyse your needs and search for the specific code sample. As a prerequisite for this tutorial to work, make sure you followed and successfully completed Tutorial 4 of the Connected Interaction Kit website and connected your ItsyBitsy to the internet. ",
+    "content": "For this week’s assignment, we prepared a lot of different code snippets to help you along. They are meant for you to use and modify for your specific design and device. Simple copy+pasting without a rough understanding of what you are copying will not work! . Although we will use a lot of code, you are not required to understand every little line, but rather analyse your needs and search for the specific code sample. As a prerequisite for this tutorial to work, make sure you followed and successfully completed Tutorial 4 of the Connected Interaction Kit website and connected your ItsyBitsy to the internet. After connecting to the internet the next step is to connect to the MQTT server. Get started . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-hw-code/#before-we-begin",
     
     "relUrl": "/assignments/05-walkie-talkie-hw-code/#before-we-begin"
