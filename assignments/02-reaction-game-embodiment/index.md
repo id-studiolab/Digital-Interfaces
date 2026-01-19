@@ -21,18 +21,18 @@ The standard game consists of two buttons and one LED, but there are countless p
 
 |        Minifigs as Buttons  |
 | :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react1.png" alt="Tactile Switch" width="400"/>|
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react1.png" alt="Tactile Switch" width="600"/>|
 
 |  Extended Levers |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react2.png" alt="Chainable RGBW LED" width="400"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react2.png" alt="Chainable RGBW LED" width="600"/> |
 
 |  ??? |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react3.png" alt="Chainable RGBW LED" width="400"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react3.png" alt="Chainable RGBW LED" width="600"/> |
 
 |  Gun Duel |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react4.png" alt="Chainable RGBW LED" width="400"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react4.png" alt="Chainable RGBW LED" width="600"/> |
 
 
