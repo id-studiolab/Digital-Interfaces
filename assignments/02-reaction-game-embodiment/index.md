@@ -18,6 +18,7 @@ The standard game consists of two buttons and one LED, but there are countless p
 |||
 
 ## Inspiration from Previous Years
+
 |        Minifigs as Buttons  |
 | :--------------------------: |
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/react1.png" alt="Tactile Switch" width="400"/>|
