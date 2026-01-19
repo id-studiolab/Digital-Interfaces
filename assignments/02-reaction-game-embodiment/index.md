@@ -15,5 +15,5 @@ As you work through the tutorial, you’ll explore key Python concepts such as d
 
 |         Touch Sensor          |        Catching Sticks Game          |  Whac-A-Mole  |
 | :---------------------------: | :----------------------------: |  :--------------------------: |
-| <img src="https://id-studiolab.github.io/Digital-Interfaces/test/02-reaction-game-embodiment/react_com1.png" alt="Touch Sensor" width="200"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/02-reaction-game-embodiment/react_com2.png" alt="Tactile Switch" width="200"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/02-reaction-game-embodiment/react_com3.png" alt="Chainable RGBW LED" width="200"/> |
+| <img src="https://id-studiolab.github.io/Digital-Interfaces/tree/test/02-reaction-game-embodiment/react_com1.png" alt="Touch Sensor" width="200"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/tree/test/02-reaction-game-embodiment/react_com2.png" alt="Tactile Switch" width="200"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/tree/test/02-reaction-game-embodiment/react_com3.png" alt="Chainable RGBW LED" width="200"/> |
 |      |      |      |
