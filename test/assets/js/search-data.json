@@ -533,7 +533,7 @@
   },"76": {
     "doc": "2: Reaction Game - Embodiment",
     "title": "Coding Instructions",
-    "content": "In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together. As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (while), making decisions with if and elif statements, and defining and using functions. Additionall . | Touch Sensor | Catching Sticks Game | Whac-A-Mole | . | | | | . |   |   |   | . ",
+    "content": "In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together. As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (while), making decisions with if and elif statements, and defining and using functions. Additionall . | Catching Sticks Game | Whac-A-Mole | . | | | . |   |   | . ",
     "url": "/Digital-Interfaces/test/assignments/02-reaction-game-embodiment/#coding-instructions",
     
     "relUrl": "/assignments/02-reaction-game-embodiment/#coding-instructions"
