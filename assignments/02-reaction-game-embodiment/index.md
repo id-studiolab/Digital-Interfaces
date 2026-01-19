@@ -12,3 +12,8 @@ Na de opdracht van de vorige week waar we de hardware en code hebben gemaakt gaa
 In this tutorial, you’ll learn how to set up a CircuitPython program to bring your microcontroller, buttons, and LED to life. We’ll guide you through an example designed to match the behavior outlined in the Acting Machine Diagram (shown below). Take your time to study the code and understand how everything fits together.
 
 As you work through the tutorial, you’ll explore key Python concepts such as declaring variables, using loops (`while`), making decisions with `if` and `elif` statements, and defining and using functions. Additionall
+
+|         Touch Sensor          |        Catching Sticks Game          |  Whac-A-Mole  |
+| :---------------------------: | :----------------------------: |  :--------------------------: |
+| <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/touch-sensor/assets/react_com1.png" alt="Touch Sensor" width="200"/>|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/tactile-switch/assets/react_com2.png" alt="Tactile Switch" width="200"/>|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/Creact_com3.png" alt="Chainable RGBW LED" width="200"/> |
+|      |      |      |
