@@ -28,7 +28,15 @@ For truly creative alternative inputs, Japan’s arcade halls are a great place 
 
 ---
 
-We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 Alt.Cntrl.GDC event.
+We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 [Alt.Cntrl.GDC](https://www.engadget.com/2014-03-22-gdcs-alternative-arcade.html) event.
+
+|        Alt.Ctrl.GDC  |
+| :----------------------------: |  :--------------------------: |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt1.png" alt="Boom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt2.png" alt="Rocking" width="300"/> |
+|Missile Control Board| Guitar Padles as Input|
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt4.gif" alt="Wooosh" width="300"/> |
+|Caterpillar Simulator| Wooosh |
+
 
 Finally, here are some input devices designed by students during a previous edition of this course.
 
