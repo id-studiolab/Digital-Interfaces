@@ -7,6 +7,17 @@ has_children: false
 
 # Walkie-Talkie - Embodiment 
 
+In deze opdracht is het de bedoeling dat de vorige week gemaakte Walkie-Talkie een behuizing krijgt. Uiteraard mag je hier weer je creativiteit op los laten wat betreft vormgeving en werking. Bedenk wel dat het mogelijk moet blijven om de Walkie-Talkie te bedienen. Je moet dus in staat zijn om één knop in te drukken om zo het kanaal open te stellen om vervolgens met de andere knop een bericht te verzenden.
+
+Wat we deze week aan het maken zijn kan je eigenlijk nog het beste vergelijken met een mix tussen een pager en een walkie-talkie. De apparaten kunnen direct met elkaar communiceren (walkie-talkie) maar in plaats van een directe radioverbinding bestaan boodschappen uit van te voren bedachte codes (pager). 
+
+|        Wireless Communicators  |
+| :----------------------------: |  :--------------------------: |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/pager.webp" alt="Bzzt, bzzt" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/06-walkie-talkie-embodiment/walkie-talkie.webp" alt="...over" width="300"/> |
+|Pager | Walkie-Talkie|
+
+---
+
 After the challenges and struggles of working with MQTT in the last two assignments, this final assignment goes back to the roots, using only 1 button and 1 LED.  
 This week we will use timers to create a Party Lamp with multiple modes, focusing on writing **non-blocking code** — that is, code that can handle multiple tasks at the same time, without pausing everything else or waiting for a result.  
 

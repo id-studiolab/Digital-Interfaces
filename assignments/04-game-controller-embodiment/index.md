@@ -17,6 +17,9 @@ This week we have the second embodiment assignment, this time for a game control
 |Nintendo Light Gun| Nintendo Wii|
 
 ---
+
+##Japan's Arcades
+
 For truly creative alternative inputs, Japan’s arcade halls are a great place to look. There you can find everything from motorcycles you can sit on to full train simulators, dance machines, and the famous [Cho Chabudai Gaeshi](https://en.wikipedia.org/wiki/Cho_Chabudai_Gaeshi) (Super Dinner Table Flipping), where the game controller is nothing more than a table that you can pound on after which you can flip the whole thing upside down to vent all your frustrations.
 
 |        Japan's Arcades  |
@@ -27,6 +30,8 @@ For truly creative alternative inputs, Japan’s arcade halls are a great place 
 |Dance A Highscore| Super Dinner Table Flipping |
 
 ---
+
+##Homemade Alternatives
 
 We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 [Alt.Cntrl.GDC](https://www.engadget.com/2014-03-22-gdcs-alternative-arcade.html) event.
 
@@ -41,7 +46,3 @@ We will keep things a bit more limited, but a simple input interface, if well de
 Finally, here are some input devices designed by students during a previous edition of this course.
 
 ---
-
-
-
-https://www.engadget.com/2014-03-22-gdcs-alternative-arcade.html
