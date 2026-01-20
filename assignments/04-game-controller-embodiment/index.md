@@ -16,7 +16,8 @@ This week we have the second embodiment assignment, this time for a game control
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/lightgun.webp" alt="Light Gun" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/nintendo_wii.webp" alt="Wii" width="300"/> |
 |Nintendo Light Gun| Nintendo Wii|
 
-For truly alternative inputs, Japan’s arcade halls are the place to look. There you can find everything from motorcycles you can sit on to full train simulators, dance machines, and the famous [Cho Chabudai Gaeshi](https://en.wikipedia.org/wiki/Cho_Chabudai_Gaeshi) (Super Dinner Table Flipping), where the game controller is nothing more than a table that you can pound on after which you can flip the whole thing upside down to vent all your frustrations.
+---
+For truly creative alternative inputs, Japan’s arcade halls are a great place to look. There you can find everything from motorcycles you can sit on to full train simulators, dance machines, and the famous [Cho Chabudai Gaeshi](https://en.wikipedia.org/wiki/Cho_Chabudai_Gaeshi) (Super Dinner Table Flipping), where the game controller is nothing more than a table that you can pound on after which you can flip the whole thing upside down to vent all your frustrations.
 
 |        Japan's Arcades  |
 | :----------------------------: |  :--------------------------: |
@@ -25,6 +26,7 @@ For truly alternative inputs, Japan’s arcade halls are the place to look. Ther
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
 |Dance A Highscore| Super Dinner Table Flipping |
 
+---
 
 We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 Alt.Cntrl.GDC event.
 
