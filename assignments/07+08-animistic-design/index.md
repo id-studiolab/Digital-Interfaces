@@ -30,12 +30,33 @@ This approach is fine for simple interactions, such as the Reaction Game. Howeve
 - Monitor buttons or sensors
 - Respond to multiple events at the same time
 
+---
 
-For this final assignment it's important that you understand the concept of **blocking** and **non-blocking** code. What we have used until now has been mainly blocking code. This is code where you manage your time using the **time.sleep()** function. This function causes the microproccers to halt until the given number of seconds have passed after which it will proceed to the next instruction. This is no problem for simple interactions like we had in the Reaction Game but you could imagine that this does noet work if you constantly have to updat LED outputs or monitor different inputs from buttons and sensors. To circumvent this we can make use of **time.monotonic()**. This function returns the number of seconds (in a floating point number) that have passed since the python program started running. By using it in a clever way we can keep use time intervals without blocking the rest of the program. 
+### Non-blocking code with time.monotonic()
 
-The code below gives you two functions that make it easy to work with time-based events in your code. Try to understand how it works befor applying it in your program.
+To avoid blocking the program, we can use:
+```python
+time.monotonic()
+```
+This function returns the number of **seconds (as a floating-point value)** that have passed since the Python program started running.
+
+Instead of waiting, we:
+- Store a time reference
+- Continuously check how much time has passed
+- Act only when a set interval has expired
+
+This allows the rest of the program to keep running.
+
+---
+### Timer helper functions
+
+The code below provides two helper functions for working with time-based events in a non-blocking way.
+Try to understand how it works before using it in your own program.
 
 ```python
+# -- Import timer library
+import time
+
 # -- Timer functions
 last_timer_mark = 0
 timer_duration = 0
@@ -45,20 +66,31 @@ def start_timer(duration):    # Takes duration in seconds
     last_timer_mark = time.monotonic()
     timer_duration = duration
 
-def is_timer_expired():       # Returns True/False
+def is_timer_expired():       # Returns True / False
     return (time.monotonic() - last_timer_mark) > timer_duration
 ```
+**Key idea:**
+The program never stops running — it only checks whether enough time has passed.
 
-So rember:
-**Blocking**: “Do this, wait, then do the next thing.”
-**Non-blocking**: “Keep checking — act when it’s time.”
+---
 
+### Remember
+**Blocking:**
+   “Do this, wait, then do the next thing.”
+**Non-blocking:**
+   “Keep checking — act when it’s time.”
 
-In this assignment we will use this concept to create more complex interactive behaviors. It focuses on creating an object with at least two different (opposing) behavioral states that can be triggered by sensors and expressed through various outputs.
+---
+### Assignment goal
+In this assignment, you will use non-blocking code to create more complex interactive behaviors.
+Your object must have:
+- At least two opposing behavioral states
+- State changes triggered by sensor input
+- Behaviors expressed through outputs (e.g. LEDs, sound, movement)
 
-## Assignment Overview
+This approach is essential for creating systems that feel responsive, reactive, and alive.
 
-Your task is to design and program an animistic creature that has a distinct personality expressed through at least two opposing behavioral states (e.g., calm/agitated, shy/curious, sleeping/awake). Your prototype should respond to sensor inputs and change its behavior depending on the state it is in.
+---
 
 ## The VarSpeed library
 
@@ -76,10 +108,6 @@ Here below we provide a code template to help you get started.
 
 ## Code Template
 
-
-{% tabs data-struct %}
-
-{% tab data-struct PicoExpander %}
 ```python
 ##--- Main Loop
 import board
@@ -164,99 +192,6 @@ while True:
     led.show()
     time.sleep(0.1)
    ```
-{% endtab %}
-
-{% tab data-struct BitsyExpander %}
-```python
-##--- Main Loop
-import board
-import neopixel
-import digitalio
-import time
-import pwmio
-from varspeed import Vspeed
-
-# -- Define states
-# TODO: Change variables according to your behaviours names
-state_behaviour_1 = 0   
-state_behaviour_2 = 1
-#state_behaviour_3 = 2
-
-current_state = state_behaviour_1
-
-# -- Initialize the NeoPixel
-led_pin = board.D13
-
-led = neopixel.NeoPixel(led_pin, 1, brightness=0.5, auto_write=False, pixel_order=neopixel.GRBW)
-
-# Define basic led colors
-led_off = (0, 0, 0, 0)
-led_red = (255, 0, 0, 0)
-led_green = (0, 255, 0, 0)
-led_blue = (0, 0, 255, 0)
-led_white = (0, 0, 0, 255)
-
-def set_led_color(color):
-    global led
-    led.fill(color)
-    led.show()
-
-##-- VarSpeed Variables
-
-# TODO: Change according to your component
-MIN = 0     # The minimum  possible value of our component
-MAX = 255   # The maximum possible value of our component
-
-# init_position = initial start position - result = "float", "int"
-vs = Vspeed(init_position=MIN, result="int") 
-
-# make the output of the function be within the bounds set
-vs.set_bounds(lower_bound=MIN, upper_bound=MAX) 
-
-# TODO: Define your sequence
-my_sequence = [
-
-]
-
-# Define how many times the defined sequence should be repeated
-looping = 0    # play the sequence in an endless loop forever
-#looping = 1   # play the sequence only once
-#looping = 10  # play the sequence 10 times
-
-while True:
-
-    # Make a call to the library and request the parameters
-    position, running, changed = vs.sequence(sequence=my_sequence, loop_max=looping)
-
-    # - Position: The new value to assign to our servo
-    # - Running: False if the sequence is finished, True if it's still running
-    # - Changed: False if the value hasn't changed since the last function call, True if it has
-
-
-    # See if the values changed for the next move, then do so
-    if changed:
-        print(f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
-
-
-    # ----------------------------------------------------------------| 
-    #                                                                 | 
-    # Use your own Acting Machine Diagram to program your interaction | 
-    #                                                                 | 
-    # ----------------------------------------------------------------|
-
-
-    # ----------------------------------------------
-    # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
-    # ----------------------------------------------
-    led.show()
-    time.sleep(0.1)
-
-    ```
-{% endtab %}
-
-{% endtabs %}
-
-
 
 ## Example Code
 
