@@ -13,6 +13,7 @@ For this final assignment, it is essential that you understand the difference be
 
 ---
 
+## Timing Explained  
 ### Blocking Code
 
 So far, most of the code you have written has been blocking. Blocking code controls time using:
@@ -29,8 +30,6 @@ This approach is fine for simple interactions, such as the Reaction Game. Howeve
 - Continuously update LEDs
 - Monitor buttons or sensors
 - Respond to multiple events at the same time
-
----
 
 ### Non-blocking code with time.monotonic()
 
@@ -91,11 +90,11 @@ Once a timer has expired, you can always create a new timer with ```start_timer(
 &nbsp;&nbsp;&nbsp;“Keep checking — act when it’s time.”
 
 ---
-### Assignment goal
+## Assignment goal
 In this assignment, you will use non-blocking code to create more complex interactive behaviors.
 Your object must have:
-- At least two opposing behavioral states
-- State changes triggered by sensor input
+- At least two opposing behavioral states (e.g., calm/agitated, shy/curious, sleeping/awake)
+- State changes triggered by sensor input (e.g., buttons, sliders, distance, movement)
 - Behaviors expressed through outputs (e.g. LEDs, sound, movement)
 
 This approach is essential for creating systems that feel responsive, reactive, and alive.
@@ -136,7 +135,7 @@ state_behaviour_2 = 1
 current_state = state_behaviour_1
 
 # -- Initialize the NeoPixel
-led_pin = board.GP10
+led_pin = board.D10
 
 led = neopixel.NeoPixel(led_pin, 1, brightness=0.5, auto_write=False, pixel_order=neopixel.GRBW)
 
