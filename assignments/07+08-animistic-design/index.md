@@ -48,7 +48,7 @@ Instead of waiting, we:
 This allows the rest of the program to keep running.
 
 ---
-### Timer helper functions
+### Timer functions
 
 The code below provides two helper functions for working with time-based events in a non-blocking way.
 Try to understand how it works before using it in your own program.
@@ -72,12 +72,24 @@ def is_timer_expired():       # Returns True / False
 **Key idea:**
 The program never stops running — it only checks whether enough time has passed.
 
+### Timer examples
+```python
+import time
+
+start_timer(2.0)             # Creates and starts a timer of 2 seconds 
+print(is_timer_expired())    # Will print "False", since 2 seconds haven't passed
+
+time.sleep(3)                # Wait 3 seconds
+print(is_timer_expired())    # Will print "True", since more than 2 seconds have passed
+```
+Once a timer has expired, you can always create a new timer with ```start_timer()``` — this will start a fresh timer with the duration you specify.
+
 ---
 
 ### Remember
-**Blocking:**
+**Blocking:**  
    “Do this, wait, then do the next thing.”
-**Non-blocking:**
+**Non-blocking:**  
    “Keep checking — act when it’s time.”
 
 ---
