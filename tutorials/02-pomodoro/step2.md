@@ -52,7 +52,7 @@ Connect the button to pin `D7`. The following variables allow for communication 
 ##--- Variables
 #...
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D2
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
