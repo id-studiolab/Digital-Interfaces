@@ -10,7 +10,7 @@ has_children: false
 
 When we want to run two sequences at the same time, for example to control a servo and an LED, we basically have to double everything from the individual sequence.
 
-In this example, we will let the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) on pin `D13` blink, while we wiggle the servo motor connected to `D2`
+In this example, we will let the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) on pin `D6` blink, while we wiggle the servo motor connected to `D8`
 
 ```python
 ##--- Library Imports

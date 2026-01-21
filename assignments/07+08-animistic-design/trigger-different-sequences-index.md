@@ -11,7 +11,7 @@ has_children: false
 
 How could we trigger different sequences based on user or context interaction? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
-Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D6` and the Touch Sensor to `D8`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
+Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D10` and the Touch Sensor to `D8`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
 
 ---
 {% tabs data-struct %}
@@ -49,11 +49,11 @@ Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D6` and the Touc
     touch = digitalio.DigitalInOut(board.D8)
     touch.direction = digitalio.Direction.INPUT
 
-    pin_leds = board.D10
+    pin_leds = board.D6
     num_leds = 1
     leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
-    pwm = pwmio.PWMOut(board.D6, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D2.
+    pwm = pwmio.PWMOut(board.D10, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D2.
     my_servo = servo.Servo(pwm)  # Create a servo object, my_servo
     my_servo.angle = MIN_SERVO  # set the servo to a known starting point
 

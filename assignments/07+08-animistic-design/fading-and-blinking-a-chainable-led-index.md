@@ -8,7 +8,7 @@ has_children: false
 
 # Fading and blinking a Chainable LED
 
-This example used the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) of the Connected Interaction Kit, connected to `D13` of the Expander Board.
+This example used the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) of the Connected Interaction Kit, connected to `D6` of the Expander Board.
 
 ```python
 ##--- Library Imports
