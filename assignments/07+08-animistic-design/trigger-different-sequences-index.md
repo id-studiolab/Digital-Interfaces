@@ -14,9 +14,6 @@ How could we trigger different sequences based on user or context interaction? I
 Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D10` and the Touch Sensor to `D8`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
 
 ---
-{% tabs data-struct %}
-
-{% tab data-struct PicoExpander %}
    ```python
     ##--- Library Imports
     import time
