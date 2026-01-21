@@ -84,13 +84,11 @@ print(is_timer_expired())    # Will print "True", since more than 2 seconds have
 ```
 Once a timer has expired, you can always create a new timer with ```start_timer()``` — this will start a fresh timer with the duration you specify.
 
----
-
 ### Remember
 **Blocking:**  
-   “Do this, wait, then do the next thing.”
+&nbsp;&nbsp;&nbsp;“Do this, wait, then do the next thing.”  
 **Non-blocking:**  
-   “Keep checking — act when it’s time.”
+&nbsp;&nbsp;&nbsp;“Keep checking — act when it’s time.”
 
 ---
 ### Assignment goal
