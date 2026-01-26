@@ -28,7 +28,7 @@ state_long_break = 5
 current_state = state_idle
 
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
@@ -61,7 +61,7 @@ buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 # Servo variables
-pwm = pwmio.PWMOut(board.D13, frequency = 50)
+pwm = pwmio.PWMOut(board.D12, frequency = 50)
 my_servo = servo.Servo(pwm)
 
 ##--- Functions
