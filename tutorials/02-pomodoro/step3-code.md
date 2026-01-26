@@ -28,8 +28,7 @@ current_button_state = False
 last_button_state = False
 
 # For the Chainable LED:
-pin_clk = board.D
-pin_data = board.D10
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
