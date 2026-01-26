@@ -21,12 +21,12 @@ Then, add the following variables to the program:
 
 ```python
 # Servo variables
-pwm = pwmio.PWMOut(board.D13, frequency = 50)
+pwm = pwmio.PWMOut(board.D14, frequency = 50)
 my_servo = servo.Servo(pwm)
 
 ```
 
-Attach the servo to pin D13. We can now control the servo through the *my_servo* variable. Let's create a function that updates the servo's angle. This function should look at the timer variables, *timer_mark* and *timer_duration*, as well as the current time, and map these to an angle.
+Attach the servo to pin D14. We can now control the servo through the *my_servo* variable. Let's create a function that updates the servo's angle. This function should look at the timer variables, *timer_mark* and *timer_duration*, as well as the current time, and map these to an angle.
 
 We do this by subtracting the minimum time value (*timer_mark*) from the current time. Then we divide this result by the timer's duration. This will give us a number between 0 and 1.
 

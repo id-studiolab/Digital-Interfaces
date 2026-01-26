@@ -48,7 +48,7 @@ timer_duration = 0
 timer_mark = 0
 
 # Buzzer variables
-buzzerpin = board.A0
+buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 ##--- Functions
