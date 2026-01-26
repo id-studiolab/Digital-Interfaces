@@ -20,7 +20,7 @@ state_work = 1
 current_state = state_idle
 
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D2
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
@@ -28,7 +28,7 @@ current_button_state = False
 last_button_state = False
 
 # For the Chainable LED:
-pin_clk = board.D3
+pin_clk = board.D
 pin_data = board.D4
 num_leds = 1
 leds = p9813.P9813(pin_clk, pin_data, num_leds)
