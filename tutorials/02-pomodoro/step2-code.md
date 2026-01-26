@@ -19,7 +19,7 @@ state_work = 1
 current_state = state_idle
 
 # Button variables
-buttonpin = board.D8
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 

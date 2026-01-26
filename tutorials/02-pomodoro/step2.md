@@ -46,13 +46,13 @@ import board
 
 ```
 
-Connect the button to pin `D7`. The following variables allow for communication with the button:
+Connect the button to pin `D6`. The following variables allow for communication with the button:
 
 ```python
 ##--- Variables
 #...
 # Button variables
-buttonpin = board.D2
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
