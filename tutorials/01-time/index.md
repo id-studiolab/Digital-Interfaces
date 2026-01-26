@@ -63,8 +63,8 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D6.
-led = digitalio.DigitalInOut(board.D6)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
 led.direction = digitalio.Direction.OUTPUT
@@ -104,7 +104,7 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D13.
+# Create a DigitalInOut object for the onboard LED.
 led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
