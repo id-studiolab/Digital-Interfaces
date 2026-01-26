@@ -61,7 +61,7 @@ buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 # Servo variables
-pwm = pwmio.PWMOut(board.D12, frequency = 50)
+pwm = pwmio.PWMOut(board.D14, frequency = 50)
 my_servo = servo.Servo(pwm)
 
 ##--- Functions
