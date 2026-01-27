@@ -26,7 +26,7 @@ while True:
       
          # Sleep briefly so keypress events occur at a human timescale.
          # Skilled users can manage ~7 button presses per second, so we
-         ß# sample at roughly twice that rate to satisfy the Nyquist criterion.
+         # sample at roughly twice that rate to satisfy the Nyquist criterion.
 
     time.sleep(0.07)
 ```
