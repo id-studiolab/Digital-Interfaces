@@ -24,8 +24,9 @@ while True:
             print("button is released") # Print a confirmation in the serial monitor
             current_state = state_wait # Reset the state
       
-    # Sleep for a bit to make the keypress events occur at a human timescale 
-    # Skilled gamers can do ~7 button presses per second (says ChatGPT) so
-    # we sample with twice that frequency to adher to the Nyquist rate.
+         # Sleep briefly so keypress events occur at a human timescale.
+         # Skilled users can manage ~7 button presses per second, so we
+         ß# sample at roughly twice that rate to satisfy the Nyquist criterion.
+
     time.sleep(0.07)
 ```
