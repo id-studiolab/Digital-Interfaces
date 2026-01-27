@@ -248,4 +248,4 @@ Here below we provide a more advanced acting machine diagram to help you create 
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 
-| ![](walkie_talkie_extra_challenge_state_diagram.png)                | 
+| ![](walkie_talkie_extra_challenge_state_diagram.png)                |  
