@@ -23,5 +23,6 @@ nav_order: 0
 [7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
 ## Tutorials
+[Non-Blocking Timers](tutorials/01-time/index)
 [Building a Pomodoro timer](tutorials/02-pomodoro/index)
 
