@@ -40,9 +40,9 @@ If you followed the tutorial to connect to the wifi replace that code with the o
 import time
 import digitalio
 import board
+import os
 
 from MQTT import Create_MQTT
-from settings import settings
 
 ##--- Defining states
 state_idle = 0
