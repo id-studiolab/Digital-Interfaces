@@ -14,7 +14,7 @@ nav_order: 0
 
 [3: Game Controller - Hardware and Code](assignments/03-game-controller-hw-code/index.md)
 
-[4: Game Controller - Embodiment](assignment/04-gamecontroller-embodiment/index.md)
+[4: Game Controller - Embodiment](assignments/04-gamecontroller-embodiment/index.md)
 
 [5: Walkie-Talkie - Hardware and Code](assignments/05-walkie-talkie-hw-code/index.md)
 
