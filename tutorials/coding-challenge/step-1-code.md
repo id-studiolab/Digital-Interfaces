@@ -14,10 +14,10 @@ import digitalio
 import neopixel
 
 # Register sensors
-sound_sensor = analogio.AnalogIn(board.A0)
+sound_sensor = analogio.AnalogIn(board.A28)
 
 # Register LED
-leds = neopixel.NeoPixel(board.D13, 1, auto_write=False, pixel_order=neopixel.GRBW)
+leds = neopixel.NeoPixel(board.D10, 1, auto_write=False, pixel_order=neopixel.GRBW)
 
 # colors
 color_off = (0,0,0,0)
@@ -50,10 +50,10 @@ current_state = 0
 
 
 # Register sensors
-sound_sensor = analogio.AnalogIn(board.A0)
+sound_sensor = analogio.AnalogIn(board.A28)
 
 # Register LED
-leds = neopixel.NeoPixel(board.D13, 1, auto_write=False, pixel_order=neopixel.GRBW)
+leds = neopixel.NeoPixel(board.D10, 1, auto_write=False, pixel_order=neopixel.GRBW)
 
 # colors
 color_off = (0,0,0,0)

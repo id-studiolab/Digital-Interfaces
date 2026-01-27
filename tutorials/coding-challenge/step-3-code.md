@@ -15,13 +15,13 @@ import neopixel
 import random
 
 # Register sensors
-button = digitalio.DigitalInOut(board.D4)
+button = digitalio.DigitalInOut(board.D6)
 button.direction = digitalio.Direction.INPUT
 
-sound_sensor = analogio.AnalogIn(board.A0)
+sound_sensor = analogio.AnalogIn(board.A28)
 
 # Register LED
-leds = neopixel.NeoPixel(board.D13, 1, auto_write=False, pixel_order=neopixel.GRBW)
+leds = neopixel.NeoPixel(board.D10, 1, auto_write=False, pixel_order=neopixel.GRBW)
 
 # colors
 color_off = (0,0,0,0)
@@ -71,10 +71,10 @@ current_state = state_off
 
 
 # Register sensors
-sound_sensor = analogio.AnalogIn(board.A0)
+sound_sensor = analogio.AnalogIn(board.A28)
 
 # Register LED
-leds = neopixel.NeoPixel(board.D13, 1, auto_write=False, pixel_order=neopixel.GRBW)
+leds = neopixel.NeoPixel(board.D10, 1, auto_write=False, pixel_order=neopixel.GRBW)
 
 # colors
 color_off = (0,0,0,0)
