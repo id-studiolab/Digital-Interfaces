@@ -1,7 +1,7 @@
 {"0": {
     "doc": "Code solution",
     "title": "Solution",
-    "content": "while True: if button.value is True: if current_state is state_wait: keyboard.press(key) # Send our defined key as a command... print(\"button is pressed\") #Print a confirmation in the serial monitor keyboard.release_all() # and release all keys again current_state = state_button_is_pressed # Update our state elif button.value is False: if current_state is state_button_is_pressed: print(\"button is released\") # Print a confirmation in the serial monitor current_state = state_wait # Reset the state # Sleep for a bit to make the keypress events occur at a human timescale # Skilled gamers can do ~7 button presses per second (says ChatGPT) so # we sample with twice that frequency to adher to the Nyquist rate. time.sleep(0.07) . ",
+    "content": "while True: if button.value is True: if current_state is state_wait: keyboard.press(key) # Send our defined key as a command... print(\"button is pressed\") #Print a confirmation in the serial monitor keyboard.release_all() # and release all keys again current_state = state_button_is_pressed # Update our state elif button.value is False: if current_state is state_button_is_pressed: print(\"button is released\") # Print a confirmation in the serial monitor current_state = state_wait # Reset the state # Sleep briefly so keypress events occur at a human timescale. # Skilled users can manage ~7 button presses per second, so we ß# sample at roughly twice that rate to satisfy the Nyquist criterion. time.sleep(0.07) . ",
     "url": "/Digital-Interfaces/test/assignments/03-game-controller-hw-code/code_solution.html#solution",
     
     "relUrl": "/assignments/03-game-controller-hw-code/code_solution.html#solution"

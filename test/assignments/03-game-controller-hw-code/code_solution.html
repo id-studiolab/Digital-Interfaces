@@ -12,8 +12,9 @@
             <span class="k">print</span><span class="p">(</span><span class="s">"button is released"</span><span class="p">)</span> <span class="c1"># Print a confirmation in the serial monitor
 </span>            <span class="n">current_state</span> <span class="o">=</span> <span class="n">state_wait</span> <span class="c1"># Reset the state
 </span>      
-    <span class="c1"># Sleep for a bit to make the keypress events occur at a human timescale 
-</span>    <span class="c1"># Skilled gamers can do ~7 button presses per second (says ChatGPT) so
-</span>    <span class="c1"># we sample with twice that frequency to adher to the Nyquist rate.
-</span>    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.07</span><span class="p">)</span>
+         <span class="c1"># Sleep briefly so keypress events occur at a human timescale.
+</span>         <span class="c1"># Skilled users can manage ~7 button presses per second, so we
+</span>         <span class="n">ß</span><span class="c1"># sample at roughly twice that rate to satisfy the Nyquist criterion.
+</span>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.07</span><span class="p">)</span>
 </code></pre></div></div> </main> </div> </div> <div class="search-overlay"></div> </div> </body> </html>
