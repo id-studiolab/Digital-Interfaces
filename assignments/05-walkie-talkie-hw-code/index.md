@@ -42,18 +42,8 @@ MQTT_PORT = 1883                          # Default MQTT Port
 Extend your settings.toml file with the entries for the MQTT server and fill in your **iPSK code** and your **device id**.
 
 ## Coding Instructions
-In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
-
-When connected to an MQTT server, we cannot only listen to a topic (e.g. "perlin" and "iss/distance" from last week), but also send data to it!
+When connected to an MQTT server, we can listen to a topic to get data (subscribe) and we can send data to it!
 Sending data to the MQTT broker is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
-
-
-{: .attention } 
-> If you didn't complete last week's assignment, you should make sure you have done the following things before starting with this assignment:
-> - Follow the tutorial on how to connect your board to TUD-facility wifi [here](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/).
-> - Download the MQTT wrapper [here](../04-data-embodiment/MQTT.zip) and put it in your `lib` folder.
-> - Create a `settings.toml` file and add the wifi credentials.
-
 
 ---
 
