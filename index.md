@@ -8,21 +8,21 @@ nav_order: 0
 
 ## Assignments
 
-[1: Reaction Game - Hardware and Code](assignments/01-reaction-game-hw-code/index)
+[1: Reaction Game - Hardware and Code](assignments/01-reaction-game-hw-code/index.md)
 
-[2: Reaction Game - Embodiment](assignements/02-reaction-game-embodiment/index)
+[2: Reaction Game - Embodiment](assignements/02-reaction-game-embodiment/index.md)
 
-[3: Game Controller - Hardware and Code](assignments/03-game-controller-hw-code/index)
+[3: Game Controller - Hardware and Code](assignments/03-game-controller-hw-code/index.md)
 
-[4: Game Controller - Embodiment](assigment/04-gamecontroller-embodiment/index)
+[4: Game Controller - Embodiment](assigment/04-gamecontroller-embodiment/index.md)
 
-[5: Walkie-Talkie - Hardware and Code](assignments/05-walkie-talkie-hw-code/index)
+[5: Walkie-Talkie - Hardware and Code](assignments/05-walkie-talkie-hw-code/index.md)
 
-[6: Walkie-Talkie - Embodiment](assignments/06-walkie-talkie-embodiment/index)
+[6: Walkie-Talkie - Embodiment](assignments/06-walkie-talkie-embodiment/index.md)
 
 [7+8: Animistic design](assignments/07+08-animistic-design/index.md)
 
 ## Tutorials
-[Non-Blocking Timers](tutorials/01-time/index)  
-[Building a Pomodoro timer](tutorials/02-pomodoro/index)
+[Non-Blocking Timers](tutorials/01-time/index.md)  
+[Building a Pomodoro timer](tutorials/02-pomodoro/index.md)
 

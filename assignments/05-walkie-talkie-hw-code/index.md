@@ -24,8 +24,9 @@ Although we will use a lot of code, you are not required to understand every lit
 {: .warning } 
 As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
 
-After connecting to the internet the next step is to update your ```settings.toml``` in order to connect to the MQTT server.
-Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor cannot open it)
+After connecting to the internet the next step is to [download the MQTT library](../04-data-embodiment/MQTT.zip) and move it to the ```/lib``` folder on your **CIRCUITPY drive**.
+Next we are going to update the ```settings.toml``` file in order to connect to the MQTT server.
+Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor cannot open it).
 
 ```toml
 CIRCUITPY_WIFI_SSID = "TUD-facility"      # name of your wifi
@@ -38,8 +39,7 @@ MQTT_PASSWORD = "slpfhrGJNqRgA7Qw"        # MQTT Password
 MQTT_PORT = 1883                          # Default MQTT Port
 ```
 
-Extend your settings.toml file and add the entries for the MQTT broker (the server we connect to), be sure to set your username in the parameter called mqtt_clientid (please construct it as Studio[your studio]_YourName). Save the file afterwards. ```python CIRCUITPY_WIFI_SSID = “TUD-facility” CIRCUITPY_WIFI_PASSWORD = “your_iPSK_code”
-DEVICE_ID = “your_id” # Unique client ID for your device BROKER = “ide-education.cloud.shiftr.io” # MQTT Broker URL MQTT_CLIENT_ID = “ide-education” # MQTT Username MQTT_PASSWORD = “slpfhrGJNqRgA7Qw” # MQTT Password MQTT_PORT = 1883 # Default MQTT Port
+Extend your settings.toml file with the entries for the MQTT server and fill in your **iPSK code** and your **device id**.
 
 ## Coding Instructions
 In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
