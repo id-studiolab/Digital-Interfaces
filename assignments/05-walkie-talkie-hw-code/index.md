@@ -59,7 +59,7 @@ Although, one crucial part is **missing**, the part inside the `while` loop, you
 
 Happy coding!
 
-### Code template
+### Code template  
 ```python
 ##--- Library Imports
 import time
