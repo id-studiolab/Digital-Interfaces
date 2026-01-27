@@ -43,9 +43,9 @@ leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopi
 led_off = (0, 0, 0, 0)
 led_red = (255, 0, 0, 0)
 led_green = (0, 255, 0, 0)
-led_blue = (0, 0, 255, 0)  
+led_blue = (0, 0, 255, 0)
 led_yellow = (255, 255, 0, 0)
-led_white = (255, 255, 255, 0)
+led_white = (0, 0, 0, 255)
 
 # Timer variables
 work_duration = 5
@@ -61,7 +61,7 @@ buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 # Servo variables
-pwm = pwmio.PWMOut(board.D14, frequency = 50)
+pwm = pwmio.PWMOut(board.D14, frequency=50)
 my_servo = servo.Servo(pwm)
 
 ##--- Functions
@@ -84,7 +84,7 @@ def timer_expired():
     else:
         return False
 
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 def set_led_color(color):
     global leds
     leds.fill(color)

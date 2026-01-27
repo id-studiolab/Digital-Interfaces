@@ -11,7 +11,7 @@ We can switch between two states, and the program prints some output when this s
 
 [Using a Grove Chainable LED on the ItsyBitsy](https://www.notion.so/Using-a-Grove-Chainable-LED-on-the-ItsyBitsy-96b94be0d93647928cedf38bf2ed4097)
 
-Now we can import the p9813 library, and use it to set up some variables to control the LED.
+Now we can import the neopixel library, and use it to set up some variables to control the LED.
 
 ```python
 ##--- Imports
@@ -45,13 +45,13 @@ The LED takes RGB colors, with each channel ranging between 0 and 255. To make t
 led_off = (0, 0, 0, 0)
 led_red = (255, 0, 0, 0)
 led_green = (0, 255, 0, 0)
-led_blue = (0, 0, 255, 0)  
+led_blue = (0, 0, 255, 0)
 led_yellow = (255, 255, 0, 0)
-led_white = (255, 255, 255, 0)
+led_white = (0, 0, 0, 255)
 
 ```
 
-Equipped with our new variables and function, we can change the color of the led with only minimal alterations to our original main loop:
+Equipped with our new variables and function, we can change the color of the LED with only minimal alterations to our original main loop:
 
 ```python
 ##--- Main loop

@@ -8,7 +8,7 @@ has_children: false
 
 # Fading and blinking a Chainable LED
 
-This example used the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) of the Connected Interaction Kit, connected to `D6` of the Expander Board.
+This example uses the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) of the Connected Interaction Kit, connected to `D6` of the Expander Board.
 
 ```python
 ##--- Library Imports
@@ -19,7 +19,7 @@ from varspeed import Vspeed
 
 ##--- VarSpeed Variables
 
-MIN = 0.0  # The minimum  possible value of our component
+MIN = 0.0  # The minimum possible value of our component
 MAX = 1.0  # The maximum possible value of our component
 
 vs = Vspeed(init_position=MIN, result="float")  # init_position = initial start position // result = float, int
@@ -39,11 +39,11 @@ led_sequence = [
     (MAX, 0.1, 5, "QuadEaseIn"),
     # Translates to: Go to the MAX value within 0.1 seconds and 5 steps, and use a QuadEaseIn easing function
     (MIN, 1.0, 40, "QuadEaseInOut")
-    # Translates to: Go to the MIN value within 1 seconds and 40 steps, and use a QuadEaseInOut easing function
+    # Translates to: Go to the MIN value within 1 second and 40 steps, and use a QuadEaseInOut easing function
 ]
 
 # Define what should happen when we get to the end of our sequence
-led_looping = 0  # play the sequence in an endless loop forever
+led_looping = 0  # play the sequence in an endless loop
 # led_looping = 1 # play the sequence only once
 # led_looping = 10 # play the sequence 10 times
 # led_looping = 15 # play the sequence 15 times
@@ -54,13 +54,12 @@ leds.show()
 ##--- Main loop
 while True:
 
-    # Make a call to the library and request the desired of our LED
+    # Make a call to the library and request the desired brightness of our LED
     position, running, changed = vs.sequence(sequence=led_sequence, loop_max=led_looping)
 
     # See if the values changed for the next move, then do so
     if changed:
-        print(
-            f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
+        print(f'Sequence Num: {vs.seq_pos}, Step: {vs.step}, Position: {position}')
 
         leds.brightness = position
         leds.show()

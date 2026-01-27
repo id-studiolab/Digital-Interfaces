@@ -9,9 +9,9 @@ has_children: false
 
 # Triggering different sequences based on context or interaction
 
-How could we trigger different sequences based on user or context interaction? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
+How could we trigger different sequences based on user interaction or context? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
-Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D10` and the Touch Sensor to `D8`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
+Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D12` and the Touch Sensor to `D8`. By default, the creature will “sleep” in peace, but when touched get angry until the sensor is released again.
 
 ---
    ```python
@@ -26,13 +26,13 @@ Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D10` and the Touc
 
     ##--- VarSpeed Variables
 
-    MIN_LED = 0  # The minimum  possible value of our component
+    MIN_LED = 0  # The minimum possible value of our component
     MAX_LED = 255  # The maximum possible value of our component
 
     vs_led = Vspeed(init_position=MIN_LED, result="int")  # init_position = initial start position // result = float, int
     vs_led.set_bounds(lower_bound=MIN_LED, upper_bound=MAX_LED)  # make the output of the function be within the bounds set
 
-    MIN_SERVO = 0  # The minimum  possible value of our component
+    MIN_SERVO = 0  # The minimum possible value of our component
     MAX_SERVO = 180  # The maximum possible value of our component
 
     vs_servo = Vspeed(init_position=MIN_SERVO,
@@ -43,19 +43,19 @@ Connect the Chainable LED to pin `D6`, the Servo Motor to pin `D10` and the Touc
     ##--- Hardware Setup
 
     # Add a touch sensor
-    touch = digitalio.DigitalInOut(board.D8)
+    touch = digitalio.DigitalInOut(board.D6)
     touch.direction = digitalio.Direction.INPUT
 
-    pin_leds = board.D6
+    pin_leds = board.D10
     num_leds = 1
     leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
-    pwm = pwmio.PWMOut(board.D10, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D2.
+    pwm = pwmio.PWMOut(board.D12, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D12.
     my_servo = servo.Servo(pwm)  # Create a servo object, my_servo
     my_servo.angle = MIN_SERVO  # set the servo to a known starting point
 
     ##--- Custom Movement Sequence
-    # This is where we can define the brightness of our LDED
+    # This is where we can define the brightness of our LED
     # The sequence will go through each entry and move to the next entry
     # The sequence is defined in this format: (next-position,seconds-to-move,number-of-steps,easing function)
     # Take a look at different easing functions here: https://easings.net 

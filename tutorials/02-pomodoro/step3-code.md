@@ -37,7 +37,7 @@ led_red = (255, 0, 0, 0)
 led_green = (0, 255, 0, 0)
 led_blue = (0, 0, 255, 0)  
 led_yellow = (255, 255, 0, 0)
-led_white = (255, 255, 255, 0)
+led_white = (0, 0, 0, 255)
 
 ##--- Functions
 ##--- Acting Machine cause functions
@@ -52,7 +52,7 @@ def check_button_press():
     last_button_state = current_button_state
     return button_press
 
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 def set_led_color(color):
     global leds
     leds.fill(color)

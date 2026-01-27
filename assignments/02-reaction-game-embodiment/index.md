@@ -6,9 +6,9 @@ has_children: true
 ---
 
 # Reaction Game - Embodiment
-After last week’s assignment, where we built the hardware and wrote the code, this week we will work on the embodiment of the reaction game. Materials are available in the studio, but you are of course welcome to use materials you bring yourself.
+After last week’s assignment, in which we built the hardware and wrote the code, this week we will work on the embodiment of the reaction game. Materials are available in the studio, but you are of course welcome to use materials you bring yourself.
 
-The standard game consists of two buttons and one LED, but there are countless possible variations that can strongly influence the gameplay. This week the focus is mainly on the embodiment, but small adjustments to the code can always be made if they support your design and improve the gameplay.
+The standard game consists of two buttons and one LED, but there are many possible variations that can strongly influence the gameplay. This week, the focus is on the embodiment, but small adjustments to the code can always be made if they support your design and improve the gameplay.
 
 ## Commercial Reaction Games
 

@@ -7,7 +7,7 @@ grand_parent: "Tutorials"
 ---
 
 # Step 5: Adding an alarm
-Switching between states works now, as does the LED. But when the user's worktime is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their worktime being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
+Switching between states now works, as does the LED. But when the user's work time is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their work time being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
 
 ```python
 ##--- Imports
@@ -51,7 +51,7 @@ buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 ##--- Functions
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 def set_buzzer(value):
     if value == True:
         buzzer.value = 65535

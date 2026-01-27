@@ -32,7 +32,7 @@ These are just some examples of games you can play, and there are many more onli
  
 ## Safe mode
 Especially when your ItsyBitsy is sending (wrong) keyboard inputs to your laptop, it can be useful to be able to stop the code from running, while still editing the code. By pressing the reset button right after start-up, while the LED is blinking yellow, the ItsyBitsy goes into [Safe mode](https://learn.adafruit.com/circuitpython-safe-mode/overview) where it will not execute any of your `code.py`. 
-You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing reset again. This allows you to fix the code without it interferring with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more.
+You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing reset again. This allows you to fix the code without it interfering with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more.
 
 ---
 
@@ -76,7 +76,7 @@ keyboard = Keyboard(usb_hid.devices)
 keyboard_layout = KeyboardLayoutUS(keyboard)
 
 # We want to send the SPACE key when the button is pressed
-# For other keys search online "Circuit Python Keycode"
+# For other keys search online "CircuitPython Keycode"
 key = Keycode.SPACE
 
 ##--- Button variables
@@ -100,7 +100,7 @@ while True:
     #                                                              | 
     # -------------------------------------------------------------|
     
-    # Sleep briefly so keypress events occur at a human timescale.
+    # Sleep briefly so keypress events occur at a human time scale.
     # Skilled users can manage ~7 button presses per second, so we
     # sample at roughly twice that rate to satisfy the Nyquist criterion.
 
@@ -166,7 +166,7 @@ Because it can track movement and orientation, this type of sensor enables a wid
 
 ### **Your Challenge**
 
-In the code example below, acceleration is mapped to the mouse pointer. The implementation is minimal but functional. How could you adapt this code to create a fun gameplay experience? Think about issues as smoothing, velocity mapping and input frequency and of course there is always the possibily to map the input on to different outputs (like key presses) or to use the angular velocity as an input. Just play around and see what gives a fun result.
+In the code example below, acceleration is mapped to the mouse pointer. The implementation is minimal but functional. How could you adapt this code to create a fun gameplay experience? Think about issues as smoothing, velocity mapping and input frequency and of course there is always the possibility to map the input on to different outputs (like key presses) or to use the angular velocity as an input. Just play around and see what gives a fun result.
 
 ### Code template
 

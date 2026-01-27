@@ -6,7 +6,7 @@ has_children: true
 ---
 
 # Reaction Game - Hardware and Code
-In this weeks assignment we are going to build a simple reaction game. The game consists of two players that wait for a trigger signal after which the first one to push the button is the winner of the game.
+In this week's assignment we are going to build a simple reaction game. The game consists of two players who wait for a trigger signal after which the first one to push the button is the winner of the game.
 
 Your kit contains a touch sensor that can act as a button but there is only one. So in order to test your game you'll have to borrow a touch sensor or a button from one of your fellow students or the staff. During the coming week there will be time for you to go to the PMB and [assemble and solder](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/assembling-custom-components/tactile-switch) one or two tactile switches from parts available in your Connected Interaction Kit.
 
@@ -29,17 +29,17 @@ The basic game makes use of two input components (either **Touch Sensor** or **T
 | <img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/touch-sensor/assets/Grove-Touch-Sensor.png" alt="Touch Sensor" width="200"/>|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/tactile-switch/assets/custom-tactile-switch-centered.png" alt="Tactile Switch" width="200"/>|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/assets/ChaiNEO-RGBW.png" alt="Chainable RGBW LED" width="200"/> |
 |      |      |      |
 
-Once the LED turns white, both players have to try and touch their sensor as quick as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner.
+Once the LED turns white, both players have to try and touch/press their input as quickly as possible. Whoever is faster wins the round, and the LED will light up in the color of the winner.
 
 ![](acting_machine_diagram.png)
 
-The image above shows the diagram representing the control flow of the game. We will go into more detail of explaining about <i>Acting Machine Diagrams</i> later. For now you can already interpret how the control might flow if you start in the <i>state</i> (circle) labeled "wait" and then traverse the <i>transitions</i> (arrows) from state to state.
+The image above shows the diagram representing the control flow of the game. We will go into more detail about <i>Acting Machine Diagrams</i> later. For now you can already interpret how the control flow if you start in the <i>state</i> (circle) labeled "wait" and then traverse the <i>transitions</i> (arrows) from state to state.
 
 ---
 
 ## Connecting the cables
 Your ItsyBitsy has several connection ports on it. 
-To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same used in your code.
+To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same as those used in your code. your code.
 
 For example, if you connect a component to port D7, you need to use the following code to reference it:
 
@@ -50,7 +50,7 @@ For example, if you connect a component to port D7, you need to use the followin
 ## Code for the game
 We provide you with the basic code for the game. When you connect your Pico Expander board to your laptop using a micro-USB cable the device will show up as a USB drive named CIRCUITPY. On this drive there is a file called `code.py`. Copy the code below into your `code.py` file and connect all hardware components to have a basic game ready.
 Look through the code and use the examples from the previous section to deduce where to connect your components!
-If you want to know more about the workings of the Pico Expander you can visit the [site of the Connected Interaction Kit.](https://id-studiolab.github.io/Connected-Interaction-Kit/)
+If you want to know more about the workings of the Pico Expander you can visit the [Connected Interaction Kit site.](https://id-studiolab.github.io/Connected-Interaction-Kit/)
 
 ```python  
 ##--- Imports
@@ -152,6 +152,6 @@ The code you've been working with has a few intentional bugs. One key challenge 
 Hint: If you keep a button pressed before the LED turns white, you’ll always win. That doesn't sound very fair, does it?
 
 Your task is to identify and fix this bug so the game works as intended.
-Look through the code and think of how you could achieve this, maybe also penalizing a player if they press the button before the led turns white!
+Look through the code and think of how you could achieve this, maybe also penalizing a player if they press the button before the LED turns white!
 
 While improving the game already think about what kind of game you would want it to be and what kind of embodiment would support your imagined style of gameplay. Is it going to be small and table top, will it become a physical challenge, will it have a certain theme? Everything is possible as long as you can imagine and realise it.

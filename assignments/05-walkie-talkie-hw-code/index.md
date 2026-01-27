@@ -17,9 +17,9 @@ What you’ll do
 ---
 
 ## Before we begin
-For this week’s assignment, we prepared a lot of different code snippets to help you along. They are meant for you to use and **modify** for your specific design and device. Simple copy+pasting without a rough understanding of what you are copying **will not work!**
+For this week’s assignment, we prepared a lot of different code snippets to help you along. They are meant for you to use and **modify** for your specific design and device. Simple copy-pasting without at least a rough understanding of what you are copying **will not work!**
 
-Although we will use a lot of code, you are not required to understand every little line, but rather analyse your needs and search for the specific code sample.
+Although we will use a lot of code, you are not required to understand every little line, but rather analyze your needs and search for the specific code sample.
 
 {: .warning } 
 As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/test/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
@@ -32,7 +32,7 @@ After connecting to the internet the next step is to connect to the MQTT server.
 ## Coding Instructions
 In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
 
-When connected to an MQTT server, we can not only listen to a topic (e.g. "perlin" and "iss/distance" from last week), but also send data to it!
+When connected to an MQTT server, we cannot only listen to a topic (e.g. "perlin" and "iss/distance" from last week), but also send data to it!
 Sending data to the MQTT broker is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
 
 
@@ -53,7 +53,7 @@ Your goal is to implement 2 buttons and an actuator of your choice (we recommend
 
 **Remember that walkie-talkies cannot receive messages while their channel is open.**
 
-Just like last week, here below we present a template with **almost** everything you need to make your walkie-talkie work. 
+Just like last week, below we present a template with **almost** everything you need to make your walkie-talkie work. 
 
 Although, one crucial part is **missing**, the part inside the `while` loop, you should use the acting machine diagram below the code to make your walkie-talkie work.
 
@@ -138,7 +138,7 @@ def handle_message(client, topic, msg):
 # You can find the client Id in the settings.py this is used to identify the board
 client_id = settings["mqtt_clientid"]
 
-# Create a mqtt connection based on the settings file.
+# Create a MQTT connection based on the settings file.
 mqtt_client = Create_MQTT(client_id, handle_message)
 
 
@@ -188,7 +188,7 @@ while True:
     #                                                                 |
     # Hint: Use of the "device_has_received_new_value" variable       |
     #       Use the open_channel_button and speak_button variables    |
-    #       Use the led variable (copied from the reation game code)  |
+    #       Use the led variable (copied from the reaction game code) |
     # ----------------------------------------------------------------|
 
 
@@ -388,7 +388,7 @@ Think about how this could enhance the interaction, different messages could tri
 
 Push yourself to explore how MQTT can be used for more dynamic communication!
 
-Here below we provide a more advanced acting machine digram to help you create your improved walkie-talkie
+Here below we provide a more advanced acting machine diagram to help you create your improved walkie-talkie
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 

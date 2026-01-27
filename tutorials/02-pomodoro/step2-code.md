@@ -5,7 +5,7 @@ parent: "Step 2: Setting up the states"
 nav_exclude: true
 ---
 
-# Step 2 Code until now
+# Step 2: Code until now
 
 ```python
 ##--- Imports

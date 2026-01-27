@@ -25,15 +25,15 @@ Usually, we would solve this manually by setting a new value and then a `time.sl
 # --- Main loop
 while True:
     print("hello world")
-    leds.fill((0, 0, 255))
-    leds.write()
+    leds.fill((0, 0, 255, 0))
+    leds.show()
     time.sleep(2)
-    leds.fill((0, 0, 0))
-    leds.write()
+    leds.fill((0, 0, 0, 0))
+    leds.show()
     time.sleep(2)
 ```
 
-The issue with this code is, that the `time.sleep(2)` function actually *blocks* our entire main loop for two seconds, before continuing. If we want to still read sensors while blinking our LED, or want to move another actuator at a different interval, we run into issues.
+The issue with this code is that the `time.sleep(2)` function actually *blocks* our entire main loop for two seconds, before continuing. If we want to still read sensors while blinking our LED, or want to move another actuator at a different interval, we run into issues.
 
 The VarSpeed library solves this issue neatly by allowing us to define actuator behaviour in a simple way. In the code below, we can easily define a sequence of movements for our servo motor by providing four inputs:
 1. A target-value, 
@@ -78,44 +78,30 @@ For the result we chose `int` because our output should only contain whole numbe
    ```python
    ##--- VarSpeed Variables
    
-   MIN = 0 # The minimum  possible value of our component
+   MIN = 0 # The minimum possible value of our component
    MAX = 180 # The maximum possible value of our component
    
    vs = Vspeed(init_position=MIN, result="int") # init_position = initial start position // result = float, int
    vs.set_bounds(lower_bound=MIN, upper_bound=MAX) # make the output of the function be within the bounds set
    ```
    
-3. Afterwards we can configure our servo motor by defining the pin we connect it to (Pin `D2`), creating a variable for the motor we can use to steer it, and set an initial angle. If you haven't worked with a servo before, take a look at its [documentation page](https://id-studiolab.github.io/Connected-Interaction-Kit/components/servo-motor/servo-motor).
+3. Afterwards we can configure our servo motor by defining the pin we connect it to (Pin `D12`), creating a variable for the motor we can use to steer it, and set an initial angle. If you haven't worked with a servo before, take a look at its [documentation page](https://id-studiolab.github.io/Connected-Interaction-Kit/components/servo-motor/servo-motor).
 
 
-{% tabs data-struct %}
-
-{% tab data-struct PicoExpander %}
    ```python
    ##--- Hardware Setup
-   pwm = pwmio.PWMOut(board.GP10, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D2.
+   pwm = pwmio.PWMOut(board.D12, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D12.
    my_servo = servo.Servo(pwm) # Create a servo object, my_servo
    my_servo.angle = MIN # set the servo to a known starting point
    ```
-{% endtab %}
 
-{% tab data-struct BitsyExpander %}
-   ```python
-   ##--- Hardware Setup
-   pwm = pwmio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D2.
-   my_servo = servo.Servo(pwm) # Create a servo object, my_servo
-   my_servo.angle = MIN # set the servo to a known starting point
-   ```
-{% endtab %}
-
-{% endtabs %}
 
    
 4. Now instead of having to fiddle with code ourselves to define the motor movement, we can do so by writing it into a sequence that then gets interpreted by the VarSpeed library into the actual angle values.
 
    You can add as many entries into the `servo_sequence` array as you like, as well as define the `servo_looping` to define how often the sequence should be executed.
 
-   Learn more about different looping functions here: [https://easings.net](https://easings.net/) 
+   Learn more about different easing functions here: [https://easings.net](https://easings.net/) 
 
    ```python
    ##--- Custom Movement Sequence
@@ -126,7 +112,7 @@ For the result we chose `int` because our output should only contain whole numbe
    servo_sequence = [
        (180, 5.0, 100, "LinearInOut"), # Go to 180, in 5 seconds, in 100 steps, using a linear function
        (0, 2.0, 5, "QuadEaseOut"),     # Go to 0, in 2 seconds, in 5 steps, using a quadratic easing function
-       (90, 2.0, 10, "SineEaseInOut")  # Got to 90, in 2 seconds, in 10 steps, using a sine function
+       (90, 2.0, 10, "SineEaseInOut")  # Go to 90, in 2 seconds, in 10 steps, using a sine function
    ]
     
    # Define how many times the defined sequence should be repeated
@@ -140,7 +126,7 @@ For the result we chose `int` because our output should only contain whole numbe
    ```python
    ##--- Main loop
    while True:
-       # Make a call to the library and request the desired of our servo motor
+       # Make a call to the library and request the desired position of our servo motor
        position, running, changed = vs.sequence(sequence=servo_sequence, loop_max=servo_looping)
 
        # - Position: The new value to assign to our servo

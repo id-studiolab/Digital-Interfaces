@@ -7,9 +7,9 @@ has_children: true
 
 # Animistic Design
 
-In the coming two weeks, you will create an **animistic creature** — a digital interface that appears alive through different behaviors.
+Over the next two weeks, you will create an **animistic creature** — a digital interface that appears alive through different behaviors.
 
-For this final assignment, it is essential that you understand the difference between **blocking** and **non-blocking** code.
+For this final assignment, it is essential that you understand the difference between **Blocking** and **Non-Blocking** code.
 
 ---
 
@@ -103,7 +103,7 @@ This approach is essential for creating systems that feel responsive, reactive, 
 
 ## The VarSpeed library
 
-Last week we experimented with timers to write non-blocking code. This allowed us to check if a button was being pressed even while fading a led. But using timers is not the only way to achieve this. A different approach involves using the **VarSpeed* library.
+Last week we experimented with timers to write non-blocking code. This allowed us to check if a button was being pressed even while fading a led. But using timers is not the only way to achieve this. A different approach involves using the **VarSpeed** library.
 
 Go through the page below to learn what the **VarSpeed** library does and how to use it, then come back to this page once you're done.
 
@@ -112,7 +112,7 @@ Go through the page below to learn what the **VarSpeed** library does and how to
 
 ## Coding assignment
 
-Your assignment is to design your own acting diagram and then implement it in the code.
+Your assignment is to design your own Acting Machine Diagram and then implement it in the code.
 Here below we provide a code template to help you get started.
 
 ## Code Template
@@ -154,7 +154,7 @@ def set_led_color(color):
 ##-- VarSpeed Variables
 
 # TODO: Change according to your component
-MIN = 0     # The minimum  possible value of our component
+MIN = 0     # The minimum possible value of our component
 MAX = 255   # The maximum possible value of our component
 
 # init_position = initial start position - result = "float", "int"

@@ -7,7 +7,7 @@ has_children: false
 
 # Walkie-Talkie - Embodiment 
 
-In this assignment, the goal is to give the walkie-talkie you built last week a casing. You are free to explore your creativity in terms of form and interaction, as long as the device remains operable. It must be possible to press one button to open the channel and then use the other button to send a message.
+In this assignment, the goal is to give the walkie-talkie you built last week a housing. You are free to explore your creativity in terms of form and interaction, as long as the device remains operable. It must be possible to press one button to open the channel and then use the other button to send a message.
 
 What you are making this week can best be described as a hybrid between a pager and a walkie-talkie. Pagers are intended to receive short, often cryptic messages (newer models can also receive text messages), whereas walkie-talkies allow for direct two-way communication. Your design conceptually sits somewhere between these two devices.
 

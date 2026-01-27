@@ -18,27 +18,27 @@ This week we have the second embodiment assignment, this time for a game control
 
 ---
 
-##Japan's Arcades
+## Japan's Arcades
 
 For truly creative alternative inputs, Japan’s arcade halls are a great place to look. There you can find everything from motorcycles you can sit on to full train simulators, dance machines, and the famous [Cho Chabudai Gaeshi](https://en.wikipedia.org/wiki/Cho_Chabudai_Gaeshi) (Super Dinner Table Flipping), where the game controller is nothing more than a table that you can pound on after which you can flip the whole thing upside down to vent all your frustrations.
 
 |        Japan's Arcades  |
 | :----------------------------: |  :--------------------------: |
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/arcade-motorcycle-simulator.webp" alt="Vroom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/train_sim.jpg" alt="Train nerd's wet dream" width="300"/> |
-|Motor Arcade| Train Opperator Simulator|
+|Motor Arcade| Train Operator Simulator|
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
-|Dance A Highscore| Super Dinner Table Flipping |
+|Dance for a High Score Super Dinner Table Flipping |
 
 ---
 
-##Homemade Alternatives
+## Homemade Alternatives
 
-We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 [Alt.Cntrl.GDC](https://www.engadget.com/2014-03-22-gdcs-alternative-arcade.html) event.
+We will keep things a bit more limited, but a simple input interface, if well designed and appropriately matched, can make a game much more enjoyable. For inspiration, you can find some alternative inputs here from the 2014 [Alt.Ctrl.GDC](https://www.engadget.com/2014-03-22-gdcs-alternative-arcade.html) event.
 
 |        Alt.Ctrl.GDC  |
 | :----------------------------: |  :--------------------------: |
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt1.png" alt="Boom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt2.png" alt="Rocking" width="300"/> |
-|Missile Control Board| Guitar Padles as Input|
+|Missile Control Board| Guitar Paddles as Input|
 |<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt4.gif" alt="Wooosh" width="300"/> |
 |Caterpillar Simulator| Wooosh |
 
