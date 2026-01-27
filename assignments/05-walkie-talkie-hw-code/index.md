@@ -24,10 +24,22 @@ Although we will use a lot of code, you are not required to understand every lit
 {: .warning } 
 As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
 
-After connecting to the internet the next step is to connect to the MQTT server.
+After connecting to the internet the next step is to update your ```settings.toml``` in order to connect to the MQTT server.
+Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor cannot open it)
 
-[Get started](step-1){: .btn .btn-blue }
+```toml
+CIRCUITPY_WIFI_SSID = "TUD-facility"      # name of your wifi
+CIRCUITPY_WIFI_PASSWORD = " "             # your iPSK code
 
+DEVICE_ID = " "                           # Unique client ID for your device
+BROKER = "ide-education.cloud.shiftr.io"  # MQTT Broker URL
+MQTT_CLIENT_ID = "ide-education"          # MQTT Username
+MQTT_PASSWORD = "slpfhrGJNqRgA7Qw"        # MQTT Password
+MQTT_PORT = 1883                          # Default MQTT Port
+```
+
+Extend your settings.toml file and add the entries for the MQTT broker (the server we connect to), be sure to set your username in the parameter called mqtt_clientid (please construct it as Studio[your studio]_YourName). Save the file afterwards. ```python CIRCUITPY_WIFI_SSID = “TUD-facility” CIRCUITPY_WIFI_PASSWORD = “your_iPSK_code”
+DEVICE_ID = “your_id” # Unique client ID for your device BROKER = “ide-education.cloud.shiftr.io” # MQTT Broker URL MQTT_CLIENT_ID = “ide-education” # MQTT Username MQTT_PASSWORD = “slpfhrGJNqRgA7Qw” # MQTT Password MQTT_PORT = 1883 # Default MQTT Port
 
 ## Coding Instructions
 In this assignment you will learn how to publish data to an MQTT topic and revise last week's assignment on how to process received data.
@@ -40,7 +52,7 @@ Sending data to the MQTT broker is called "publishing" and when doing so, all de
 > If you didn't complete last week's assignment, you should make sure you have done the following things before starting with this assignment:
 > - Follow the tutorial on how to connect your board to TUD-facility wifi [here](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/).
 > - Download the MQTT wrapper [here](../04-data-embodiment/MQTT.zip) and put it in your `lib` folder.
-> - Create a `settings.toml` file like the one shown in [step 1 - 4: Data Embodiment](../04-data-embodiment/step-1.md) and add the wifi credentials.
+> - Create a `settings.toml` file and add the wifi credentials.
 
 
 ---
