@@ -10,16 +10,16 @@ has_children: false
 
 After successfully completing [Tutorial 4](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the Internet, follow the steps below to establish a basic MQTT connection with our MQTT server.
 
-1. Extend your `settings.py` file and add the entries for the MQTT broker (the server we connect to), be sure to set your username in the parameter called **mqtt_clientid** (please construct it as **Studio[your studio]_YourName**). Save the file afterwards.
+1. Extend your `settings.toml` file and add the entries for the MQTT broker (the server we connect to), be sure to set your username in the parameter called **mqtt_clientid** (please construct it as **Studio[your studio]_YourName**). Save the file afterwards.
 ```python
-settings = {
-	"ssid" : "TUD-facility", # The wifi we connect to 
-	"password" : "replace-with-your-iPSK-String", # Our personal password to connect to Wifi
-	"mqtt_broker" : "ide-education.cloud.shiftr.io", # The MQTT server we connect to
-	"mqtt_user" : "ide-education", # The username for connecting to the server
-	"mqtt_password" : "Sy0L85iwSSgc1P7E", # The password for connecting to the server
-	"mqtt_clientid": "Studio5_Caspar", # The device name we present to the server when connecting
-}
+CIRCUITPY_WIFI_SSID = "TUD-facility"
+CIRCUITPY_WIFI_PASSWORD = "your_iPSK_code"
+
+DEVICE_ID = "your_id"  # Unique client ID for your device
+BROKER = "ide-education.cloud.shiftr.io" # MQTT Broker URL
+MQTT_CLIENT_ID = "ide-education"  # MQTT Username
+MQTT_PASSWORD = "slpfhrGJNqRgA7Qw" # MQTT Password
+MQTT_PORT = 1883  # Default MQTT Port
 ```
 
 2. We've created a library that helps your microcontroller connect to WiFi, connect to an MQTT broker and takes care of the details of receiving and publishing messages. 
