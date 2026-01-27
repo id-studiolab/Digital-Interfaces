@@ -60,9 +60,6 @@ Although, one crucial part is **missing**, the part inside the `while` loop, you
 Happy coding!
 
 ### Code template
-{% tabs data-struct %}
-
-{% tab data-struct PicoExpander %}
 ```python
 ##--- Library Imports
 import time
