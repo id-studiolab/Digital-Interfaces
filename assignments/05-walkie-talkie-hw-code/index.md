@@ -72,7 +72,6 @@ import os
 
 from MQTT import Create_MQTT
 
-
 ##--- Defining states
 state_idle = 0
 state_receive = 1
@@ -112,6 +111,10 @@ def set_led_color(color):
 actuator = digitalio.DigitalInOut(board.D12)
 actuator.direction = digitalio.Direction.OUTPUT
 
+# For more information on how to use PWM check this link: 
+# https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm
+
+#actuator = pwmio.PWMOut(board.GP14, variable_frequency=True)
 
 ##--- MQTT configuration
 device_has_received_new_value = False
@@ -130,7 +133,6 @@ if not client_id:
 
 # Create MQTT connection (returns client + safe loop timeout)
 mqtt_client, mqtt_loop_timeout = Create_MQTT(client_id, handle_message)
-
 
 # <-------------------------------------------->
 # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE --
@@ -158,8 +160,6 @@ while True:
     # ---------------------------------------------
     # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
     # ---------------------------------------------
-
-
     
     message = "ping"
     
