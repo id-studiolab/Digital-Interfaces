@@ -1,0 +1,39 @@
+name: Protect branch-specific files
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  restore-config:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    outputs:
+      config_restored: ${{ steps.check.outputs.restored }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 2
+          
+      - name: Restore main's _config.yml if it was changed
+        id: check
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if git diff HEAD~1 HEAD --name-only | grep -q "^_config.yml$"; then
+            echo "_config.yml was modified by merge, restoring main's version"
+            git show HEAD~1:_config.yml > _config.yml
+            git add _config.yml
+            git commit -m "chore: restore main's _config.yml after merge [automated]"
+            git push origin main
+            echo "restored=true" >> $GITHUB_OUTPUT
+          else
+            echo "✓ _config.yml was not modified in this merge"
+            echo "restored=false" >> $GITHUB_OUTPUT
+          fi
