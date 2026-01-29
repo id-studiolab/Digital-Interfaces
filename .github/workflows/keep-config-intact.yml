@@ -9,11 +9,23 @@ jobs:
   fix-config:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repo
       - uses: actions/checkout@v3
 
-      - name: Reset _config.yml to main version
+      # Configure Git identity for commits
+      - name: Set Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Reset _config.yml to main's version and commit
+      - name: Restore _config.yml
         run: |
           git fetch origin main
           git checkout origin/main -- _config.yml
-          git commit -m "Restore _config.yml on main" -- _config.yml || echo "Nothing to commit"
-          git push origin main
+          if ! git diff --quiet _config.yml; then
+            git commit -m "Restore _config.yml on main" _config.yml
+            git push origin main
+          else
+            echo "_config.yml is already up-to-date"
+          fi
