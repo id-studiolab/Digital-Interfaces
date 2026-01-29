@@ -105,7 +105,6 @@ led_green = (0, 255, 0, 0)
 led_white = (0, 0, 0, 255)
 
 def set_led_color(color):
-    global leds
     leds.fill(color)
     leds.show()
 
@@ -113,72 +112,57 @@ def set_led_color(color):
 actuator = digitalio.DigitalInOut(board.D12)
 actuator.direction = digitalio.Direction.OUTPUT
 
-# For more information on how to use PWM check this link: 
-# https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm
-
-#actuator = pwmio.PWMOut(board.GP14, variable_frequency=True)
 
 ##--- MQTT configuration
-
-# Define variable to save data received from the MQTT broker
-last_received_value = 0
 device_has_received_new_value = False
-   
-# Method used when the board receives a message from the MQTT server.
+
 def handle_message(client, topic, msg):
     global last_received_value
     global device_has_received_new_value
-
-    # Assign message received to last_received variable
     last_received_value = msg
-
     device_has_received_new_value = True
 
 
-# You can find the client Id in the settings.toml this is used to identify the board
-client_id = os.getenv("MQTT_CLIENT_ID")
+# Client id from settings.toml via environment
+client_id = os.getenv("DEVICE_ID")
+if not client_id:
+    raise RuntimeError("settings.toml is missing DEVICE_ID")
 
-# Create a MQTT connection based on the settings file.
-mqtt_client = Create_MQTT(client_id, handle_message)
-
+# Create MQTT connection (returns client + safe loop timeout)
+mqtt_client, mqtt_loop_timeout = Create_MQTT(client_id, handle_message)
 
 
 # <-------------------------------------------->
 # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE --
-# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-
-
-# Here you should select the topic of the person you want to talk to.
-# Write the topic you want to send messages to.
-mqtt_speak_topic = "Studio05-Lisa-WalkieTalkie"
-
-# You should set as "listen_topic" their "speak_topic" and vice-versa
-mqtt_listen_topic = "Studio05-Bram-WalkieTalkie"
-
-
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+mqtt_speak_topic = "Studio05-YourName-WalkieTalkie"
+mqtt_listen_topic = "Studio05-PartnerName-WalkieTalkie"
 # <-------------------------------------------->
 
-
-
-# Listen for messages on the topic specified above
 mqtt_client.subscribe(mqtt_listen_topic)
 
 ##--- Main loop
-while True: 
+while True:
     try:
-        mqtt_client.loop(0.1)
+        # IMPORTANT: loop timeout must be > socket_timeout
+        mqtt_client.loop(timeout=mqtt_loop_timeout)
 
     except (ValueError, RuntimeError) as e:
-        print("Failed to get data, retrying\n", e)
-        mqtt_client.reconnect()
+        print("MQTT error, reconnecting:", e)
+        try:
+            mqtt_client.reconnect()
+        except Exception as e2:
+            print("Reconnect failed:", e2)
+            time.sleep(2)
         continue
+
     # ---------------------------------------------
     # ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
     # ---------------------------------------------
 
-    message = "ping"
 
+    
+    message = "ping"
+    
     # Use this method to publish messages on a topic:
     # mqtt_client.publish(mqtt_speak_topic, message)
 
@@ -192,12 +176,12 @@ while True:
     # ----------------------------------------------------------------|
 
 
-
     # ----------------------------------------------
     # v DO NOT CHANGE ANYTHING BELOW THIS POINT v  |
     # ----------------------------------------------
     device_has_received_new_value = False
     time.sleep(0.1)
+
 ```
 
 | Acting Machine Diagram | 
