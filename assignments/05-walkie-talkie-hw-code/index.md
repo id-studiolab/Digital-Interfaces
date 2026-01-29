@@ -85,16 +85,16 @@ current_state = 0
 last_received_value = 0
 
 ##--- Button variables
-open_channel_pin = board.GP6
+open_channel_pin = board.D6
 open_channel_button = digitalio.DigitalInOut(open_channel_pin)
 open_channel_button.direction = digitalio.Direction.INPUT
 
-speak_channel_pin = board.GP8
+speak_channel_pin = board.D8
 speak_button = digitalio.DigitalInOut(speak_channel_pin)
 speak_button.direction = digitalio.Direction.INPUT
 
 ##-- Led variables
-pin_leds = board.GP10
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
@@ -110,7 +110,7 @@ def set_led_color(color):
     leds.show()
 
 ##--- Actuator variables
-actuator = digitalio.DigitalInOut(board.GP12)
+actuator = digitalio.DigitalInOut(board.D12)
 actuator.direction = digitalio.Direction.OUTPUT
 
 # For more information on how to use PWM check this link: 
@@ -135,7 +135,7 @@ def handle_message(client, topic, msg):
     device_has_received_new_value = True
 
 
-# You can find the client Id in the settings.py this is used to identify the board
+# You can find the client Id in the settings.toml this is used to identify the board
 client_id = os.getenv("MQTT_CLIENT_ID")
 
 # Create a MQTT connection based on the settings file.
