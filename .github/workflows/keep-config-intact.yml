@@ -1,0 +1,19 @@
+name: Keep main _config.yml intact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fix-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Reset _config.yml to main version
+        run: |
+          git fetch origin main
+          git checkout origin/main -- _config.yml
+          git commit -m "Restore _config.yml on main" -- _config.yml || echo "Nothing to commit"
+          git push origin main
