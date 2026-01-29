@@ -42,8 +42,8 @@ MQTT_PORT = 1883                          # Default MQTT Port
 Extend your settings.toml file with the entries for the MQTT server and fill in your **iPSK code** and your **device id**.
 
 ## Coding Instructions
-When connected to an MQTT server, we can listen to a topic to get data (subscribe) and we can send data to it!
-Sending data to the MQTT broker is called "publishing" and when doing so, all devices which are connected to the topic you're sending information to will receive the data you send.
+When connected to an MQTT broker, a device can **subscribe** to a topic to receive data, and **publish** to a topic to send data.
+Publishing sends a message to the broker, which then forwards it to all devices that are subscribed to that topic.
 
 ---
 
