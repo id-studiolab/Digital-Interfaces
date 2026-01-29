@@ -38,7 +38,7 @@ vs_servo.set_bounds(lower_bound=MIN_SERVO,
                     upper_bound=MAX_SERVO)  # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
-pin_leds = board.D6
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 

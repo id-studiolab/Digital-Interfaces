@@ -169,7 +169,7 @@ vs = Vspeed(init_position=MIN, result="int") # init_position = initial start pos
 vs.set_bounds(lower_bound=MIN, upper_bound=MAX) # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
-pwm = pwmio.PWMOut(board.D12, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D2.
+pwm = pwmio.PWMOut(board.D12, duty_cycle=2 ** 15, frequency=50) # create a PWMOut object on Pin D12.
 my_servo = servo.Servo(pwm) # Create a servo object, my_servo
 my_servo.angle = MIN # set the servo to a known starting point
 

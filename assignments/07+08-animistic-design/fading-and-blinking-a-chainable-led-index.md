@@ -26,7 +26,7 @@ vs = Vspeed(init_position=MIN, result="float")  # init_position = initial start 
 vs.set_bounds(lower_bound=MIN, upper_bound=MAX)  # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
-pin_leds = board.D6
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, brightness=0.5, auto_write=False, pixel_order=neopixel.GRBW)
 
