@@ -28,16 +28,16 @@
 </span><span class="n">last_received_value</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1">##--- Button variables
-</span><span class="n">open_channel_pin</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">GP6</span>
+</span><span class="n">open_channel_pin</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">D6</span>
 <span class="n">open_channel_button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">open_channel_pin</span><span class="p">)</span>
 <span class="n">open_channel_button</span><span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">INPUT</span>
 
-<span class="n">speak_channel_pin</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">GP8</span>
+<span class="n">speak_channel_pin</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">D8</span>
 <span class="n">speak_button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">speak_channel_pin</span><span class="p">)</span>
 <span class="n">speak_button</span><span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">INPUT</span>
 
 <span class="c1">##-- Led variables
-</span><span class="n">pin_leds</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">GP10</span>
+</span><span class="n">pin_leds</span> <span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="n">D10</span>
 <span class="n">num_leds</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">leds</span> <span class="o">=</span> <span class="n">neopixel</span><span class="p">.</span><span class="n">NeoPixel</span><span class="p">(</span><span class="n">pin_leds</span><span class="p">,</span> <span class="n">num_leds</span><span class="p">,</span> <span class="n">auto_write</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pixel_order</span><span class="o">=</span><span class="n">neopixel</span><span class="p">.</span><span class="n">GRBW</span><span class="p">)</span>
 
@@ -53,7 +53,7 @@
     <span class="n">leds</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1">##--- Actuator variables
-</span><span class="n">actuator</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="p">.</span><span class="n">GP12</span><span class="p">)</span>
+</span><span class="n">actuator</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="p">.</span><span class="n">D12</span><span class="p">)</span>
 <span class="n">actuator</span><span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">OUTPUT</span>
 
 <span class="c1"># For more information on how to use PWM check this link: 
@@ -78,7 +78,7 @@
     <span class="n">device_has_received_new_value</span> <span class="o">=</span> <span class="bp">True</span>
 
 
-<span class="c1"># You can find the client Id in the settings.py this is used to identify the board
+<span class="c1"># You can find the client Id in the settings.toml this is used to identify the board
 </span><span class="n">client_id</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"MQTT_CLIENT_ID"</span><span class="p">)</span>
 
 <span class="c1"># Create a MQTT connection based on the settings file.
