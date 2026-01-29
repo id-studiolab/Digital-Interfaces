@@ -3,12 +3,11 @@ on:
   pull_request:
     branches:
       - main
+      - test
     types: [opened, synchronize, reopened]
-
 permissions:
   contents: write
   pull-requests: write
-
 jobs:
   restore-config:
     runs-on: ubuntu-latest
@@ -18,22 +17,25 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
           
-      - name: Restore main's _config.yml
+      - name: Restore target branch's _config.yml
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Get main's version of _config.yml
-          git fetch origin main
-          git show origin/main:_config.yml > /tmp/main_config.yml
+          # Get the target branch (main or test)
+          TARGET_BRANCH="${{ github.base_ref }}"
+          
+          # Get target branch's version of _config.yml
+          git fetch origin "$TARGET_BRANCH"
+          git show "origin/$TARGET_BRANCH:_config.yml" > /tmp/target_config.yml
           
           # Compare with current version
-          if ! cmp -s _config.yml /tmp/main_config.yml; then
-            echo "Restoring main's _config.yml to PR branch"
-            cp /tmp/main_config.yml _config.yml
+          if ! cmp -s _config.yml /tmp/target_config.yml; then
+            echo "Restoring $TARGET_BRANCH's _config.yml to PR branch"
+            cp /tmp/target_config.yml _config.yml
             git add _config.yml
-            git commit -m "chore: restore main's _config.yml [automated]"
+            git commit -m "chore: restore $TARGET_BRANCH's _config.yml [automated]"
             git push
           else
-            echo "✓ _config.yml already matches main's version"
+            echo "✓ _config.yml already matches $TARGET_BRANCH's version"
           fi
