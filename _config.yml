@@ -1,5 +1,7 @@
 theme: just-the-docs
 
+# If issues with merging of this file occur in the future, please run the following command in a terminal:
+# git config merge.ours.driver true 
 baseurl: /Digital-Interfaces/test  # For test branch: /repository-name/test
 
 #theme: just-the-docs 
