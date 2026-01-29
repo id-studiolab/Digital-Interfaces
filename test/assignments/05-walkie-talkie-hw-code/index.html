@@ -15,7 +15,6 @@
 
 <span class="kn">from</span> <span class="nn">MQTT</span> <span class="kn">import</span> <span class="n">Create_MQTT</span>
 
-
 <span class="c1">##--- Defining states
 </span><span class="n">state_idle</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">state_receive</span> <span class="o">=</span> <span class="mi">1</span>
@@ -55,7 +54,11 @@
 </span><span class="n">actuator</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="p">.</span><span class="n">D12</span><span class="p">)</span>
 <span class="n">actuator</span><span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="p">.</span><span class="n">Direction</span><span class="p">.</span><span class="n">OUTPUT</span>
 
-
+<span class="c1"># For more information on how to use PWM check this link: 
+# https://id-studiolab.github.io/Connected-Interaction-Kit/components/piezo-buzzer/piezo-buzzer.html#define-a-tone-using-pulse-width-modulation-pwm
+</span>
+<span class="c1">#actuator = pwmio.PWMOut(board.GP14, variable_frequency=True)
+</span>
 <span class="c1">##--- MQTT configuration
 </span><span class="n">device_has_received_new_value</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -73,7 +76,6 @@
 
 <span class="c1"># Create MQTT connection (returns client + safe loop timeout)
 </span><span class="n">mqtt_client</span><span class="p">,</span> <span class="n">mqtt_loop_timeout</span> <span class="o">=</span> <span class="n">Create_MQTT</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">handle_message</span><span class="p">)</span>
-
 
 <span class="c1"># &lt;--------------------------------------------&gt;
 # -- DEFINE YOUR SPEAK AND LISTEN TOPIC HERE --
@@ -101,9 +103,7 @@
     <span class="c1"># ---------------------------------------------
 </span>    <span class="c1"># ^ DO NOT CHANGE ANYTHING ABOVE THIS POINT ^ |
 </span>    <span class="c1"># ---------------------------------------------
-</span>
-
-    
+</span>    
     <span class="n">message</span> <span class="o">=</span> <span class="s">"ping"</span>
     
     <span class="c1"># Use this method to publish messages on a topic:
