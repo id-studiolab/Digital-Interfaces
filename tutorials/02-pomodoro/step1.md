@@ -14,7 +14,7 @@ The Pomodoro technique can be described by the following steps:
 2.  Work on the task.
 3.  When the timer rings, stop working on the task.
 4.  Take a small break. If you've had three small breaks, take a longer break instead.
-5.  Repeat until task is done.
+5.  Repeat until the task is done.
 
 These steps will look like this in a state diagram:
 ![Pomodoro State Diagram](assets/pomodoro-states.png)
@@ -29,7 +29,7 @@ Open Mu and create a new file. Add the following template to the file:
 ##--- Functions
 ##--- Acting Machine cause functions
 
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 
 ##--- Main loop
 while True:

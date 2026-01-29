@@ -5,9 +5,9 @@ parent: "02 Pomodoro"
 grand_parent: "Tutorials"
 ---
 
-# Step 2.A: Setting up the states
+## Step 2.A: Setting up the states
 Upon startup, we would like the program to be in an idle state until the user explicitly starts the timer by means of a button press.
-To do so we will start with implementing two things:
+To do so, we will start with implementing two things:
 1. Variables and logic to handle the different states.
 2. A button to toggle between states. 
 
@@ -21,7 +21,7 @@ state_work = 1
 current_state = state_idle
 ```
 
-The integer stored in `current_state` can then be compared to the different states to decide what next steps to take inside the `##—- Main loop`:
+The integer stored in `current_state` can then be compared to the different states to decide what next steps are to take inside the `##—- Main loop`:
 
 ```python
 ##--- Main loop
@@ -36,7 +36,7 @@ while True:
 
 ```
 
-# Step 2.B: Implementing a button
+## Step 2.B: Implementing a button
 To switch between the two states, we can add a button to our system. We'll need to import the *digitalio* and *board* libraries to communicate with the button.
 
 ```python
@@ -46,13 +46,13 @@ import board
 
 ```
 
-Connect the button to pin `D7`. The following variables allow for communication with the button:
+Connect the button to pin `D6`. The following variables allow for communication with the button:
 
 ```python
 ##--- Variables
 #...
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
@@ -68,7 +68,7 @@ last_button_state = False
 
 ```
 
-When the last recorded button state is false, and the current button state is true, we know the button has been pressed. To use these states we create a function to check if the button is being pressed in the `##—- Functions` Paragraph:
+When the last recorded button state is false, and the current button state is true, we know the button has been pressed. To use these states we create a function to check if the button is being pressed in the `##—- Functions` paragraph:
 
 ```python
 ##--- Functions

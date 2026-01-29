@@ -11,18 +11,18 @@ We can switch between two states, and the program prints some output when this s
 
 [Using a Grove Chainable LED on the ItsyBitsy](https://www.notion.so/Using-a-Grove-Chainable-LED-on-the-ItsyBitsy-96b94be0d93647928cedf38bf2ed4097)
 
-Now we can import the p9813 library, and use it to set up some variables to control the LED.
+Now we can import the neopixel library, and use it to set up some variables to control the LED.
 
 ```python
 ##--- Imports
-import p9813
+import neopixel
 
 ##--- Variables
 # For the Chainable LED:
-pin_clk = board.D3
-pin_data = board.D4
+pin_leds = board.D10
 num_leds = 1
-leds = p9813.P9813(pin_clk, pin_data, num_leds)
+leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
+
 
 ```
 
@@ -34,7 +34,7 @@ Attach the LED to D3. Let's create a function that can change the LED's color.
 def set_led_color(color):
     global leds
     leds.fill(color)
-    leds.write()
+    leds.show()
 
 ```
 
@@ -42,16 +42,16 @@ The LED takes RGB colors, with each channel ranging between 0 and 255. To make t
 
 ```python
 ##--- Variables
-led_off = (0, 0, 0)
-led_red = (255, 0, 0)
-led_green = (0, 255, 0)
-led_blue = (0, 0, 255)  
-led_yellow = (255, 255, 0)
-led_white = (255, 255, 255)
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_green = (0, 255, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_yellow = (255, 255, 0, 0)
+led_white = (0, 0, 0, 255)
 
 ```
 
-Equipped with our new variables and function, we can change the color of the led with only minimal alterations to our original main loop:
+Equipped with our new variables and function, we can change the color of the LED with only minimal alterations to our original main loop:
 
 ```python
 ##--- Main loop

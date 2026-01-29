@@ -5,9 +5,9 @@ has_children: false
 parent: "Tutorials"
 ---
 
-# Dealing with Time in Circuit Python
+# Dealing with Time in CircuitPython
 
-You often need to take time into account one way or another when writing programs. The **Core Module** called **time** can help us with this! It has a few more bits of functionality than I will describe here (check the documentation if you're interested). I will focus on the most important and fundamental functions, which are also very useful for the type of thing's you might be doing.
+You often need to take time into account one way or another when writing programs. The **Core Module** called **time** can help us with this! It has a few more bits of functionality than I will describe here (check the documentation if you're interested). I will focus on the most important and fundamental functions, which are also very useful for the type of things you might be doing.
 
 **time.sleep(seconds_as_floating_point)** **[returns nothing]**
 
@@ -15,7 +15,7 @@ This function is very easy to use and is sometimes the right approach - but ofte
 
 - This makes the processor (and hence the program) stop at that line and wait for the specified amount of time.
 - This is a simple way to introduce a delay of known duration between two steps.
-- Think of it like the count-down timer on your phone. When the code gets to that line, it set's a timer for the specified time, then goes to sleep until the timer ‘beeps’, it which point it wakes up and keeps going.
+- Think of it like the count-down timer on your phone. When the code gets to that line, it sets a timer for the specified time, then goes to sleep until the timer ‘beeps’, at which point it wakes up and keeps going.
 - The problem is that the processor can't do anything else (with a few exceptions, e.g. it will still detect and count pulses using **countio**) during this time. So it's a waste of processor power, and prevents the program from responding to anything else during that time.
 - For a sufficiently simple program the waste of time might not be an issue, and in some circumstances it's ok that the system becomes unresponsive for a short while, so it *can* be a valid solution in some cases, particularly where very short delays are used.
 
@@ -24,9 +24,9 @@ This function is very easy to use and is sometimes the right approach - but ofte
 
 are often a better way of doing time related stuff. But it takes a little bit more thought and coding to make use of them.
 
-Calling either of these functions can be thought of as consulting a stop-watch that is always running and counting up. The actual value is meaningless because the starting point is arbitrary, but that doesn't matter if you look at the difference between two readings taken at different times.
+Calling either of these functions can be thought of as consulting a stopwatch that is always running and counting up. The actual value is meaningless because the starting point is arbitrary, but that doesn't matter if you look at the difference between two readings taken at different times.
 
-Difference between **time.monotonic()** and **time.monotonic_ns()**
+The difference between **time.monotonic()** and **time.monotonic_ns()**
 
  is just down to how time is represented:
 
@@ -63,8 +63,8 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D13.
-led = digitalio.DigitalInOut(board.D13)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
 led.direction = digitalio.Direction.OUTPUT
@@ -93,7 +93,7 @@ The second program (“LED blink using time monotonic.py”) achieves the same t
 - The resulting LED behaviour is identical to the previous example.
 - In this very simple case, the processor spends 99.999...% of its time checking the 'stopwatch' and calculating whether enough time has passed.
 - *However*, the key difference is that you could add much more code inside the **while** loop, and it would do that between 'stopwatch checks'. As long as that code takes much less than 500ms to execute (which would almost always be the case - it's pretty hard to keep a microcontroller busy for 500ms without telling it to wait!), then the blinking would continue.
-- See the third program (“LED blink using time monotonic multiple LEDs.py”) for an example where the program is extended to blink two LEDs at different frequencies, assuming one is connected to D1 and the other to D2.
+- See the third program (“LED blink using time.monotonic() multiple LEDs”) for an example where the program is extended to blink two LEDs at different frequencies, assuming one is connected to D1 and the other to D2.
 
 ```python
 # Import the required libraries:
@@ -104,8 +104,8 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D13.
-led = digitalio.DigitalInOut(board.D13)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
 led.direction = digitalio.Direction.OUTPUT
@@ -161,14 +161,14 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D13.
-led = digitalio.DigitalInOut(board.D13)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
 led.direction = digitalio.Direction.OUTPUT
 
-# Create a DigitalInOut object for the button, connected to pin D0.
-button = digitalio.DigitalInOut(board.D0)
+# Create a DigitalInOut object for the button, connected to pin D6.
+button = digitalio.DigitalInOut(board.D6)
 
 # Set the direction of the 'button' object as INPUT, allowing us to read its state.
 button.direction = digitalio.Direction.INPUT
@@ -194,14 +194,14 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, which is connected to pin D13.
-led = digitalio.DigitalInOut(board.D13)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 
 # Set the direction of the 'led' object as OUTPUT, allowing us to control the LED state.
 led.direction = digitalio.Direction.OUTPUT
 
-# Create a DigitalInOut object for the button, connected to pin D0.
-button = digitalio.DigitalInOut(board.D0)
+# Create a DigitalInOut object for the button, connected to pin D6.
+button = digitalio.DigitalInOut(board.D6)
 
 # Set the direction of the 'button' object as INPUT, allowing us to read its state.
 button.direction = digitalio.Direction.INPUT
@@ -237,12 +237,12 @@ import board
 import digitalio
 import time
 
-# Create a DigitalInOut object for the onboard LED, connected to pin D13.
-led = digitalio.DigitalInOut(board.D13)
+# Create a DigitalInOut object for the onboard LED.
+led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT  # Set LED as output
 
-# Create a DigitalInOut object for the button, connected to pin D0.
-button = digitalio.DigitalInOut(board.D0)
+# Create a DigitalInOut object for the button, connected to pin D6.
+button = digitalio.DigitalInOut(board.D6)
 button.direction = digitalio.Direction.INPUT  # Set button as input
 
 # Initialize variables to track button and LED state, as well as click detection

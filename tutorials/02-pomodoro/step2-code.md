@@ -5,7 +5,7 @@ parent: "Step 2: Setting up the states"
 nav_exclude: true
 ---
 
-# Step 2 Code until now
+# Step 2: Code until now
 
 ```python
 ##--- Imports
@@ -19,7 +19,7 @@ state_work = 1
 current_state = state_idle
 
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 

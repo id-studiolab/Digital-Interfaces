@@ -10,7 +10,8 @@ has_children: false
 
 When we want to run two sequences at the same time, for example to control a servo and an LED, we basically have to double everything from the individual sequence.
 
-In this example, we will let the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) on pin `D13` blink, while we wiggle the servo motor connected to `D2`
+In this example, we will let the [Chainable LED](https://id-studiolab.github.io/Connected-Interaction-Kit/components/chainable-led/chainable-led-chaineo) on pin `D10` blink, while we wiggle the servo motor connected to `D12`.
+
 
 ```python
 ##--- Library Imports
@@ -38,16 +39,16 @@ vs_servo.set_bounds(lower_bound=MIN_SERVO,
                     upper_bound=MAX_SERVO)  # make the output of the function be within the bounds set
 
 ##--- Hardware Setup
-pin_leds = board.D13
+pin_leds = board.D10
 num_leds = 1
 leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
-pwm = pwmio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D2.
+pwm = pwmio.PWMOut(board.D12, duty_cycle=2 ** 15, frequency=50)  # create a PWMOut object on Pin D12.
 my_servo = servo.Servo(pwm)  # Create a servo object, my_servo
 my_servo.angle = MIN_SERVO  # set the servo to a known starting point
 
 ##--- Custom Movement Sequence
-# This is where we can define the brightness of our LDED
+# This is where we can define the brightness of our LED
 # The sequence will go through each entry and move to the next entry
 # The sequence is defined in this format: (next-position,seconds-to-move,number-of-steps,easing function)
 # Take a look at different easing functions here: https://easings.net 
@@ -55,7 +56,7 @@ led_sequence = [
     (MAX_LED, 0.1, 5, "QuadEaseIn"),
     # Translates to: Go to the MAX value within 0.1 seconds and 5 steps, and use a QuadEaseIn easing function
     (MIN_LED, 1.0, 40, "QuadEaseInOut")
-    # Translates to: Go to the MIN value within 1 seconds and 40 steps, and use a QuadEaseInOut easing function
+    # Translates to: Go to the MIN value within 1 second and 40 steps, and use a QuadEaseInOut easing function
 ]
 
 servo_sequence = [
@@ -86,7 +87,7 @@ leds.show()
 ##--- Main loop
 while True:
 
-    # Make a call to the library and request the desired of our LED
+    # Make a call to the library and request the desired brightness of our LED
     position_led, running_led, changed_led = vs_led.sequence(sequence=led_sequence, loop_max=led_looping)
 
     # See if the values changed for the next move, then do so
@@ -105,4 +106,4 @@ while True:
         my_servo.angle = position_servo
 
 
-```
+```  

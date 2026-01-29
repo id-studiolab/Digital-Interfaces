@@ -11,7 +11,7 @@ nav_exclude: true
 ##--- Imports
 import digitalio
 import board
-import p9813
+import neopixel
 import time
 from analogio import AnalogOut
 import pwmio
@@ -28,7 +28,7 @@ state_long_break = 5
 current_state = state_idle
 
 # Button variables
-buttonpin = board.D7
+buttonpin = board.D6
 button = digitalio.DigitalInOut(buttonpin)
 button.direction = digitalio.Direction.INPUT
 
@@ -36,17 +36,16 @@ current_button_state = False
 last_button_state = False
 
 # For the Chainable LED:
-pin_clk = board.D3
-pin_data = board.D4
+pin_leds = board.D10
 num_leds = 1
-leds = p9813.P9813(pin_clk, pin_data, num_leds)
+leds = neopixel.NeoPixel(pin_leds, num_leds, auto_write=False, pixel_order=neopixel.GRBW)
 
-led_off = (0, 0, 0)
-led_red = (255, 0, 0)
-led_green = (0, 255, 0)
-led_blue = (0, 0, 255)  
-led_yellow = (255, 255, 0)
-led_white = (255, 255, 255)
+led_off = (0, 0, 0, 0)
+led_red = (255, 0, 0, 0)
+led_green = (0, 255, 0, 0)
+led_blue = (0, 0, 255, 0)
+led_yellow = (255, 255, 0, 0)
+led_white = (0, 0, 0, 255)
 
 # Timer variables
 work_duration = 5
@@ -58,11 +57,11 @@ timer_mark = 0
 break_counter = 0
 
 # Buzzer variables
-buzzerpin = board.A0
+buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 # Servo variables
-pwm = pwmio.PWMOut(board.D13, frequency = 50)
+pwm = pwmio.PWMOut(board.D14, frequency=50)
 my_servo = servo.Servo(pwm)
 
 ##--- Functions
@@ -85,11 +84,11 @@ def timer_expired():
     else:
         return False
 
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 def set_led_color(color):
     global leds
     leds.fill(color)
-    leds.write()
+    leds.show()
 
 def set_timer(duration):
     global timer_duration, timer_mark

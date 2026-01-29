@@ -7,7 +7,7 @@ grand_parent: "Tutorials"
 ---
 
 # Step 5: Adding an alarm
-Switching between states works now, as does the LED. But when the user's worktime is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their worktime being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
+Switching between states now works, as does the LED. But when the user's work time is over, they aren't alerted in any way before the LED turns off and the state switches. To make the user aware of their work time being over, we should add an alarm. First, we add a new state, *state_break_alarm*. When we are in *state_work* and the timer expires, we go to *state_break_alarm*. We also color the LED red.
 
 ```python
 ##--- Imports
@@ -40,18 +40,18 @@ while True:
 
 ```
 
-Now that we've set up the break state, we are ready to implement the actual alarm. We'll use a buzzer for this. Attach the buzzer to A0. We'll need to import the AnalogOut function to send information to the buzzer.
+Now that we've set up the break state, we are ready to implement the actual alarm. We'll use a buzzer for this. Attach the buzzer to D12. We'll need to import the AnalogOut function to send information to the buzzer.
 
 Then, we also need to write a function that can turn the buzzer on and off. We will be able to pass a value on to this *set_buzzer()* function. If this value is True, we write 65535 to the buzzer. 65535 is the largest number (and thus, voltage) we can read or output to an Analog port. If we pass False to this function, we write 0 to the buzzer instead.
 
 ```python
 ##--- Variables
 # Buzzer variables
-buzzerpin = board.A0
+buzzerpin = board.D12
 buzzer = AnalogOut(buzzerpin)
 
 ##--- Functions
-##--- Acting machine effect functions
+##--- Acting Machine effect functions
 def set_buzzer(value):
     if value == True:
         buzzer.value = 65535

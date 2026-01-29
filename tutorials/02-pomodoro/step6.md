@@ -8,7 +8,7 @@ grand_parent: "Tutorials"
 
 # Step 6: Adding the breaks
 ## Step 6.1 Short break
-Instead of returning to state_idle, we want to give the user a timed break, which can be either a short break or a long break. We start with the short break. Add *state_short_break* to your variables. When the break is over, we also want to alert the user that their break is over. This state, *state_work_alarm*, should also be in your list of variables. We also store its duration in a variable called *short_break_duration*. It is set to three seconds now:
+Instead of returning to `state_idle`, we want to give the user a timed break, which can be either a short break or a long break. We start with the short break. Add *state_short_break* to your variables. When the break is over, we also want to alert the user that their break is over. This state, *state_work_alarm*, should also be in your list of variables. We also store its duration in a variable called *short_break_duration*. It is set to three seconds now:
 
 ```python
 ##--- Variables
@@ -89,7 +89,7 @@ long_break_duration = 8
 
 ```
 
-Now we need to go into *state_break_alarm* and count the amount of times that the alarm has gone off. If this number is less than 3, we enter *state_short_break*. If it's 3 or more, we reset the *break_counter* back to 0 and enter *state_long_break*.
+Now we need to go into *state_break_alarm* and count how many times the alarm has gone off. If this number is less than 3, we enter *state_short_break*. If it's 3 or more, we reset the *break_counter* back to 0 and enter *state_long_break*.
 
 ```python
 # State Break Alarm
@@ -109,7 +109,7 @@ Now we need to go into *state_break_alarm* and count the amount of times that th
 
 ```
 
-Now we can add in the behavior for the long break. When the timer runs out, we want to turn off the Pomodoro timer and return to *state_idle*:
+Now we can add the behavior for the long break. When the timer runs out, we want to turn off the Pomodoro timer and return to *state_idle*:
 
 ```python
 # State Long Break
