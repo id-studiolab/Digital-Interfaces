@@ -162,7 +162,7 @@ Because it can track movement and orientation, this type of sensor enables a wid
 
 |        IMU Sensor        |  
 | :----------------------: |  
-|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/test/components/imu-sensor/assets/imu.svg" alt="IMU Sensor" width="200"/>|
+|<img src="https://id-studiolab.github.io/Connected-Interaction-Kit/components/imu-sensor/assets/imu.svg" alt="IMU Sensor" width="200"/>|
 
 ### **Your Challenge**
 
