@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "5: Walkie-Talkie - Hardware and Code"
+title: "5: Walkie-Talkie - Discover"
 parent: Assignments
 has_children: false
 ---
 
-# Walkie-Talkie - Hardware and Code
+# Walkie-Talkie - Discover
 This week you’ll build a small device that can send messages to someone else’s device. The message can be as simple as a single buzz, or something more structured—like a sequence in [Morse code](https://en.wikipedia.org/wiki/Morse_code).
 We’ll use [MQTT](https://mqtt.org/) (a lightweight messaging protocol commonly used in Internet of Things projects) to send your message to a server. Once your message is published to the server, someone else can subscribe to your topic and receive it on their device.
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "1: Reaction Game - Hardware and Code"
+title: "1: Reaction Game - Discover"
 parent: Assignments
 has_children: true
 ---
 
-# Reaction Game - Hardware and Code
+# Reaction Game - Discover
 In this week's assignment we are going to build a simple reaction game. The game consists of two players who wait for a trigger signal after which the first one to push the button is the winner of the game.
 
 Your kit contains a touch sensor that can act as a button but there is only one. So in order to test your game you'll have to borrow a touch sensor or a button from one of your fellow students or the staff. During the coming week there will be time for you to go to the PMB and [assemble and solder](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/assembling-custom-components/tactile-switch) one or two tactile switches from parts available in your Connected Interaction Kit.
