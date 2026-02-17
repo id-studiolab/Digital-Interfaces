@@ -1,19 +1,19 @@
 ---
 layout: default
-title: "4: Game Controller Embodiment"
+title: "4: Game Controller Achieve"
 parent: Assignments
 has_children: true
 ---
 
-# Game Controller - Embodiment
+# Game Controller - Achieve
 
 This week we have the second embodiment assignment, this time for a game controller. When we think of a classic game controller, we often think of a joystick, and in more modern systems we almost always have a gamepad. However, the game controller is certainly not limited to these two options. Over the years, many different input devices have existed for home consoles. As early as the 1980s, the first Nintendo introduced the Light Gun to play Duck Hunt, and in 2006 they introduced the Nintendo Wii, which made use of player movement.
 
 |        Home Game Controllers  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/joystick.jpg" alt="Joystick" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/gamepad.png" alt="Gamepad" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/joystick.jpg" alt="Joystick" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/gamepad.png" alt="Gamepad" width="300"/> |
 |Classic Joystick| Modern Gamepad|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/lightgun.webp" alt="Light Gun" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/nintendo_wii.webp" alt="Wii" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/lightgun.webp" alt="Light Gun" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/nintendo_wii.webp" alt="Wii" width="300"/> |
 |Nintendo Light Gun| Nintendo Wii|
 
 ---
@@ -24,9 +24,9 @@ For truly creative alternative inputs, Japan’s arcade halls are a great place 
 
 |        Japan's Arcades  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/arcade-motorcycle-simulator.webp" alt="Vroom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/train_sim.jpg" alt="Train nerd's wet dream" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/arcade-motorcycle-simulator.webp" alt="Vroom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/train_sim.jpg" alt="Train nerd's wet dream" width="300"/> |
 |Motor Arcade| Train Operator Simulator|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
 |Dance for a High Score Super Dinner Table Flipping |
 
 ---
@@ -37,9 +37,9 @@ We will keep things a bit more limited, but a simple input interface, if well de
 
 |        Alt.Ctrl.GDC  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt1.png" alt="Boom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt2.png" alt="Rocking" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt1.png" alt="Boom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt2.png" alt="Rocking" width="300"/> |
 |Missile Control Board| Guitar Paddles as Input|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-embodiment/controller_alt4.gif" alt="Wooosh" width="300"/> |
+|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt4.gif" alt="Wooosh" width="300"/> |
 |Caterpillar Simulator| Wooosh |
 
 
