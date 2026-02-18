@@ -14,25 +14,25 @@ The standard game consists of two buttons and one LED, but there are many possib
 
 |        Catching Sticks Game          |  Whac-A-Mole  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react_com2.png" alt="Catch" width="200"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react_com3.png" alt="Smack" width="200"/> |
+|<img src="react_com2.png" alt="Catch" width="200"/>|<img src="react_com3.png" alt="Smack" width="200"/> |
 |||
 
 ## Inspiration from Previous Years
 
 |        Minifigs as Buttons  |
 | :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react1.png" alt="Tactile Switch" width="600"/>|
+|<img src="react1.png" alt="Tactile Switch" width="600"/>|
 
 |  Extended Levers |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react2.png" alt="Chainable RGBW LED" width="600"/> |
+|<img src="react2.png" alt="Chainable RGBW LED" width="600"/> |
 
 |  ??? |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react3.png" alt="Chainable RGBW LED" width="600"/> |
+|<img src="react3.png" alt="Chainable RGBW LED" width="600"/> |
 
 |  Gun Duel |
 | :---: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/02-reaction-game-achieve/react4.png" alt="Chainable RGBW LED" width="600"/> |
+|<img src="react4.png" alt="Chainable RGBW LED" width="600"/> |
 
 

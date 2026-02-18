@@ -11,9 +11,9 @@ This week we have the second embodiment assignment, this time for a game control
 
 |        Home Game Controllers  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/joystick.jpg" alt="Joystick" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/gamepad.png" alt="Gamepad" width="300"/> |
+|<img src="hjoystick.jpg" alt="Joystick" width="300"/>|<img src="gamepad.png" alt="Gamepad" width="300"/> |
 |Classic Joystick| Modern Gamepad|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/lightgun.webp" alt="Light Gun" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/nintendo_wii.webp" alt="Wii" width="300"/> |
+|<img src="lightgun.webp" alt="Light Gun" width="300"/>|<img src="nintendo_wii.webp" alt="Wii" width="300"/> |
 |Nintendo Light Gun| Nintendo Wii|
 
 ---
@@ -24,9 +24,9 @@ For truly creative alternative inputs, Japan’s arcade halls are a great place 
 
 |        Japan's Arcades  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/arcade-motorcycle-simulator.webp" alt="Vroom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/train_sim.jpg" alt="Train nerd's wet dream" width="300"/> |
+|<img src="arcade-motorcycle-simulator.webp" alt="Vroom" width="300"/>|<img src="train_sim.jpg" alt="Train nerd's wet dream" width="300"/> |
 |Motor Arcade| Train Operator Simulator|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
+|<img src="dance-dance.gif" alt="Boogie All Night Long" width="300"/>|<img src="cho-chabudai-gaeshi.webp" alt="Done With Everything" width="300"/> |
 |Dance for a High Score Super Dinner Table Flipping |
 
 ---
@@ -37,9 +37,9 @@ We will keep things a bit more limited, but a simple input interface, if well de
 
 |        Alt.Ctrl.GDC  |
 | :----------------------------: |  :--------------------------: |
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt1.png" alt="Boom" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt2.png" alt="Rocking" width="300"/> |
+|<img src="controller_alt1.png" alt="Boom" width="300"/>|<img src="controller_alt2.png" alt="Rocking" width="300"/> |
 |Missile Control Board| Guitar Paddles as Input|
-|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="https://id-studiolab.github.io/Digital-Interfaces/test/assignments/04-game-controller-achieve/controller_alt4.gif" alt="Wooosh" width="300"/> |
+|<img src="controller_alt3.png" alt="Caterpillar Simulator" width="300"/>|<img src="controller_alt4.gif" alt="Wooosh" width="300"/> |
 |Caterpillar Simulator| Wooosh |
 
 
