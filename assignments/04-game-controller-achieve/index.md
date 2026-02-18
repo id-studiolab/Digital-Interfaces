@@ -11,7 +11,7 @@ This week we have the second embodiment assignment, this time for a game control
 
 |        Home Game Controllers  |
 | :----------------------------: |  :--------------------------: |
-|<img src="hjoystick.jpg" alt="Joystick" width="300"/>|<img src="gamepad.png" alt="Gamepad" width="300"/> |
+|<img src="joystick.jpg" alt="Joystick" width="300"/>|<img src="gamepad.png" alt="Gamepad" width="300"/> |
 |Classic Joystick| Modern Gamepad|
 |<img src="lightgun.webp" alt="Light Gun" width="300"/>|<img src="nintendo_wii.webp" alt="Wii" width="300"/> |
 |Nintendo Light Gun| Nintendo Wii|
