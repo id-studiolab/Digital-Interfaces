@@ -44,6 +44,6 @@ nav_external_links:
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
   - title: Chat Bot - DI Helpdesk
-    url: https://poe.com/DI_assitant_bot
+    url: https://m365.cloud.microsoft:443/chat/?titleId=T_677b86e7-0163-1048-446a-d1758fe5fed7&source=embedded-builder
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab
