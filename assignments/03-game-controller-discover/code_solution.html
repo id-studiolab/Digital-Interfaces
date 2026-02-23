@@ -3,14 +3,15 @@
         <span class="k">if</span> <span class="n">current_state</span> <span class="ow">is</span> <span class="n">state_wait</span><span class="p">:</span>
             <span class="n">keyboard</span><span class="p">.</span><span class="n">press</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># Send our defined key as a command...
 </span>            <span class="k">print</span><span class="p">(</span><span class="s">"button is pressed"</span><span class="p">)</span> <span class="c1">#Print a confirmation in the serial monitor
-</span>            <span class="n">keyboard</span><span class="p">.</span><span class="n">release_all</span><span class="p">()</span>  <span class="c1"># and release all keys again
 </span>      
             <span class="n">current_state</span> <span class="o">=</span> <span class="n">state_button_is_pressed</span> <span class="c1"># Update our state
 </span>        
     <span class="k">elif</span> <span class="n">button</span><span class="p">.</span><span class="n">value</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">current_state</span> <span class="ow">is</span> <span class="n">state_button_is_pressed</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"button is released"</span><span class="p">)</span> <span class="c1"># Print a confirmation in the serial monitor
-</span>            <span class="n">current_state</span> <span class="o">=</span> <span class="n">state_wait</span> <span class="c1"># Reset the state
+            <span class="n">keyboard</span><span class="p">.</span><span class="n">release_all</span><span class="p">()</span>  <span class="c1"># and release all keys again
+</span>            <span class="k">print</span><span class="p">(</span><span class="s">"button is released"</span><span class="p">)</span> <span class="c1"># Print a confirmation in the serial monitor
+</span>            
+            <span class="n">current_state</span> <span class="o">=</span> <span class="n">state_wait</span> <span class="c1"># Reset the state
 </span>      
          <span class="c1"># Sleep briefly so keypress events occur at a human timescale.
 </span>         <span class="c1"># Skilled users can manage ~7 button presses per second, so we
