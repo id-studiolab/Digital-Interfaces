@@ -47,7 +47,7 @@ Your assignment is to use the template code and the acting machine diagram here 
 
 | Acting Machine Diagram | 
 | -------------------------------------- | 
-| ![](stateDiagram.png)                | 
+| ![](state_diagram_corrected.png)                | 
 
 ### Code template
 
