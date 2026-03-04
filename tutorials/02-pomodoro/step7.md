@@ -44,7 +44,7 @@ def update_servo_angle():
 
 We can call this function in every state we have a timer in: *state_work*, *state_short_break*, and *state_long_break*.
 
-Upload your code to the ItsyBitsy and see if it works. This concludes the programming part of the assignment! 
+Upload your code to the PicoExpander and see if it works. This concludes the programming part of the assignment! 
 
 [Click here to see the code you should have until now.](step7-code)
 

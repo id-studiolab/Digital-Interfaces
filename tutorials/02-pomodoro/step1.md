@@ -6,7 +6,7 @@ grand_parent: "Tutorials"
 ---
 
 # Step 1: Preparation
-To follow this tutorial, you will need your ItsyBitsy, a chainable LED, a button, a buzzer, and a servo motor. You will also need materials to construct the Pomodoro Timer embodiment. These materials can be picked up at the faculty.
+To follow this tutorial, you will need your PicoExpander, a chainable LED, a button, a buzzer, and a servo motor. You will also need materials to construct the Pomodoro Timer embodiment. These materials can be picked up at the faculty.
 
 The Pomodoro technique can be described by the following steps:
 
@@ -36,6 +36,6 @@ while True:
 	return
 
 ```
-This template provides us with some basic organization for the programming that we will do in the following steps. Save this new file as *code.py* on your ItsyBitsy. If you already have a *code.py* file from a previous tutorial, move it over to some place on your computer so you can access it later.
+This template provides us with some basic organization for the programming that we will do in the following steps. Save this new file as *code.py* on your PicoExpander. If you already have a *code.py* file from a previous tutorial, move it over to some place on your computer so you can access it later.
 
 [Next Step](step2){: .btn .btn-blue }

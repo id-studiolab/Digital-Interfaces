@@ -89,7 +89,7 @@ while True:
 
 ```
 
-It's time to upload your code to the ItsyBitsy and see if it works! Your code should now:
+It's time to upload your code to the PicoExpander and see if it works! Your code should now:
 
  - Turn the LED green when switching to state_work
  - Turn the LED red and turn on the buzzer when switching to state_break_alarm

@@ -22,7 +22,7 @@ For this week’s assignment, we prepared a lot of different code snippets to he
 Although we will use a lot of code, you are not required to understand every little line, but rather analyze your needs and search for the specific code sample.
 
 {: .warning } 
-As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your ItsyBitsy to the internet. 
+As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your PicoExpander to the internet. 
 
 After connecting to the internet the next step is to [download the MQTT library](MQTT.zip) and move it to the ```/lib``` folder on your **CIRCUITPY drive**.
 Next we are going to update the ```settings.toml``` file in order to connect to the MQTT server.

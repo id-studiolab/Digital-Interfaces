@@ -105,7 +105,7 @@ while True:
 
 ```
 
-It's time to upload your code to the ItsyBitsy and see if it works! Your code should now:
+It's time to upload your code to the PicoExpander and see if it works! Your code should now:
 
  - Output a print statement once the state changes
  - Switch between states upon button press
