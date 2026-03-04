@@ -38,7 +38,7 @@ The image above shows the diagram representing the control flow of the game. We 
 ---
 
 ## Connecting the cables
-Your ItsyBitsy has several connection ports on it. 
+Your PicoExpander has several connection ports on it. 
 To be sure that your code works properly, you need to make sure that the ports to which you connected your components are the same as those used in your code. your code.
 
 For example, if you connect a component to port D7, you need to use the following code to reference it:

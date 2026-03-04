@@ -31,8 +31,8 @@ These are just some examples of games you can play, and there are many more onli
 ---
  
 ## Safe mode
-Especially when your ItsyBitsy is sending (wrong) keyboard inputs to your laptop, it can be useful to be able to stop the code from running, while still editing the code. By pressing the reset button right after start-up, while the LED is blinking yellow, the ItsyBitsy goes into [Safe mode](https://learn.adafruit.com/circuitpython-safe-mode/overview) where it will not execute any of your `code.py`. 
-You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing reset again. This allows you to fix the code without it interfering with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more.
+Especially when your PicoExpander is sending (wrong) keyboard inputs to your laptop, it can be useful to be able to stop the code from running, while still editing the code. By pressing the BOOTSEL button right after start-up, while the LED is blinking yellow, the PicoExpander goes into [Safe mode](https://learn.adafruit.com/circuitpython-safe-mode/overview) where it will not execute any of your `code.py`. 
+You can do this right after plugging it in to your computer, or by pressing the reset button, waiting for the yellow lights, and pressing BOOTSEL. This allows you to fix the code without it interfering with your inputs. It will also disable auto-reload, so to start running your code again, you have to press the reset button once more.
 
 ---
 

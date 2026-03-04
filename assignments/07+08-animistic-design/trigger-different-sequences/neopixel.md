@@ -8,7 +8,7 @@ has_children: false
 
 # Triggering different sequences based on context or interaction
 
-How could we trigger different sequences based on user interaction or context? In this example, we will create a little ItsyCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
+How could we trigger different sequences based on user interaction or context? In this example, we will create a little PicoCreature that sleeps peacefully until disturbed – in that case it wakes up and gets angry at the disturbance! 
 
 Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D12` and the Touch Sensor to `D6`. By default, the creature will “sleep” in peace, but when touched, it gets angry until the sensor is released again.
 

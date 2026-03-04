@@ -70,7 +70,7 @@ while True:
 
 Now, we can switch from *state_idle* to state_work with a button press. Once the button is pressed, a timer starts with the duration of *work_duration*. Once this timer expires, we transition back to *state_idle*.
 
-It's time to upload your code to the ItsyBitsy and see if it works! Your code should now:
+It's time to upload your code to the PicoExpander and see if it works! Your code should now:
 
  - Output a print statement once the state changes
  - Switch from state_work to state_idle when the timer expires

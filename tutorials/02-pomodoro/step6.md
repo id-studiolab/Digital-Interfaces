@@ -66,7 +66,7 @@ while True:
 
 ```
 
-It's time to upload your code to the ItsyBitsy and see if it works! Your code should now:
+It's time to upload your code to the PicoExpander and see if it works! Your code should now:
 
  - Have the LED turn a different color upon entering a new state
  - Sound the alarm in states state_break_alarm and state_work_alarm
@@ -121,7 +121,7 @@ Now we can add the behavior for the long break. When the timer runs out, we want
 
 ```
 
-And here we have a functional Pomodoro timer! Upload your code to the ItsyBitsy and see if it works. 
+And here we have a functional Pomodoro timer! Upload your code to the PicoExpander and see if it works. 
 
 [Click here to see the code you should have until now.](step6-code)
 
