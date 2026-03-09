@@ -30,14 +30,13 @@ Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor c
 
 ```toml
 CIRCUITPY_WIFI_SSID = "TUD-facility"      # name of your wifi
-CIRCUITPY_WIFI_PASSWORD = "YOUR_PASSWORD"  # password of your wifi
-           # your iPSK code
+CIRCUITPY_WIFI_PASSWORD = "YOUR_PASSWORD"  # your iPSK code
 
-DEVICE_ID = "YOUR_UNIQUE_NAME"                           # Unique client ID for your device
+DEVICE_ID = "YOUR_UNIQUE_NAME"                 # Unique client ID for your device
 MQTT_BROKER = "ide-education.cloud.shiftr.io"  # MQTT Broker URL
-MQTT_USERNAME = "ide-education"          # MQTT Username
-MQTT_PASSWORD = "slpfhrGJNqRgA7Qw"        # MQTT Password
-MQTT_PORT = 1883                          # Default MQTT Port
+MQTT_USERNAME = "ide-education"                # MQTT Username
+MQTT_PASSWORD = "slpfhrGJNqRgA7Qw"             # MQTT Password
+MQTT_PORT = 1883                               # Default MQTT Port
 ```
 
 Extend your settings.toml file with the entries for the MQTT server and fill in your **iPSK code** and your **device id**.
