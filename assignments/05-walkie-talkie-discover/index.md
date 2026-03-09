@@ -33,8 +33,8 @@ CIRCUITPY_WIFI_SSID = "TUD-facility"      # name of your wifi
 CIRCUITPY_WIFI_PASSWORD = " "             # your iPSK code
 
 DEVICE_ID = " "                           # Unique client ID for your device
-BROKER = "ide-education.cloud.shiftr.io"  # MQTT Broker URL
-MQTT_CLIENT_ID = "ide-education"          # MQTT Username
+MQTT_BROKER = "ide-education.cloud.shiftr.io"  # MQTT Broker URL
+MQTT_USERNAME = "ide-education"          # MQTT Username
 MQTT_PASSWORD = "slpfhrGJNqRgA7Qw"        # MQTT Password
 MQTT_PORT = 1883                          # Default MQTT Port
 ```
