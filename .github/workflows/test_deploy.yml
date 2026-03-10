@@ -36,3 +36,4 @@ jobs:
           publish_dir: ./output
           publish_branch: gh-pages
           destination_dir: test
+          keep_files: true

@@ -31,3 +31,4 @@ jobs:
           github_token: ${{ secrets.GH_PAGES_DEPLOYMENT}}
           publish_dir: ./output
           publish_branch: gh-pages
+          keep_files: true
