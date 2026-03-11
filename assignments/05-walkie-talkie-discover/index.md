@@ -45,6 +45,8 @@ Extend your settings.toml file with the entries for the MQTT server and fill in 
 When connected to an MQTT broker, a device can **subscribe** to a topic to receive data, and **publish** to a topic to send data.
 Publishing sends a message to the broker, which then forwards it to all devices that are subscribed to that topic.
 
+You can verify whether you're connected to the MQTT broker and see the messages  sent through this website: https://ide-education.cloud.shiftr.io/
+
 ---
 
 ## Coding Assignment
