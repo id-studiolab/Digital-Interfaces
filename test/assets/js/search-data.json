@@ -393,7 +393,7 @@
   },"56": {
     "doc": "5: Walkie-Talkie - Discover",
     "title": "Coding Instructions",
-    "content": "When connected to an MQTT broker, a device can subscribe to a topic to receive data, and publish to a topic to send data. Publishing sends a message to the broker, which then forwards it to all devices that are subscribed to that topic. You can verify whether you’re connected to the MQTT broker and see the messages sent through this website: https://ide-education.cloud.shiftr.io/ . ",
+    "content": "When connected to an MQTT broker, a device can subscribe to a topic to receive data, and publish to a topic to send data. Publishing sends a message to the broker, which then forwards it to all devices that are subscribed to that topic. You can verify whether you’re connected to the MQTT broker and see the messages sent through this website: Shiftr.io . ",
     "url": "/Digital-Interfaces/test/assignments/05-walkie-talkie-discover/#coding-instructions",
     
     "relUrl": "/assignments/05-walkie-talkie-discover/#coding-instructions"
