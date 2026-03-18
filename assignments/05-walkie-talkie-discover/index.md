@@ -29,7 +29,7 @@ After connecting to the internet, download the MQTT library: [MQTT.zip](MQTT.zip
 Make sure the ```MQTT.py``` file is successfully placed in the ```/lib``` folder before proceeding to the next step.
 
 Next we are going to update the ```settings.toml``` file in order to connect to the MQTT server.
-Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor cannot open it).
+Open the ```settings.toml``` file in a **text-editor** (Not word, use kladblok or similar. Unfortunately mu-editor cannot open it).
 
 ```toml
 CIRCUITPY_WIFI_SSID = "TUD-facility"      # name of your wifi
