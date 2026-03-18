@@ -24,7 +24,10 @@ Although we will use a lot of code, you are not required to understand every lit
 {: .warning } 
 As a prerequisite for this tutorial to work, make sure you followed and successfully completed [Tutorial 4 of the Connected Interaction Kit website](https://id-studiolab.github.io/Connected-Interaction-Kit/tutorials/03-connect-to-the-internet/) and connected your PicoExpander to the internet. 
 
-After connecting to the internet the next step is to [download the MQTT library](MQTT.zip) and move it to the ```/lib``` folder on your **CIRCUITPY drive**.
+
+After connecting to the internet, download the MQTT library: [MQTT.zip](MQTT.zip). Once downloaded, extract its contents to a folder.  Open the extracted MQTT folder and copy the file named ```MQTT.py``` to your the ```/lib``` folder in your **CIRCUITPY drive**. 
+Make sure the ```MQTT.py``` file is successfully placed in the ```/lib``` folder before proceeding to the next step.
+
 Next we are going to update the ```settings.toml``` file in order to connect to the MQTT server.
 Open de ```settings.toml``` file in a **text-editor** (unfortunately mu-editor cannot open it).
 
