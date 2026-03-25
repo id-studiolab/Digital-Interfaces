@@ -106,7 +106,7 @@ Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D12` and the Tou
 
         if touch.value == False:
             print("sleeping 😴")
-            # Make a call to the library and request the desired of our LED
+            # Make a call to the library and request the status of our LED
             position_led, running_led, changed_led = vs_led.sequence(sequence=led_sequence_sleep, loop_max=led_looping)
 
             # See if the values changed for the next move, then do so
@@ -118,7 +118,7 @@ Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D12` and the Tou
                 leds.fill((0, 0, 0, led_value))
                 leds.show()
 
-            # Make a call to the library and request the desired of our servo motor
+            # Make a call to the library and request the status of our servo motor
             position_servo, running_servo, changed_servo = vs_servo.sequence(sequence=servo_sequence_sleep,
                                                                             loop_max=servo_looping)
 
@@ -129,7 +129,7 @@ Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D12` and the Tou
 
         elif touch.value == True:
             print("angry!!! 😡")
-            # Make a call to the library and request the desired of our LED
+            # Make a call to the library and request the status of our LED
             position_led, running_led, changed_led = vs_led.sequence(sequence=led_sequence_angry, loop_max=led_looping)
 
             # See if the values changed for the next move, then do so
@@ -141,7 +141,7 @@ Connect the Chainable LED to pin `D10`, the Servo Motor to pin `D12` and the Tou
                 leds.fill((led_value, 0, 0))
                 leds.show()
 
-            # Make a call to the library and request the desired of our servo motor
+            # Make a call to the library and request the status of our servo motor
             position_servo, running_servo, changed_servo = vs_servo.sequence(sequence=servo_sequence_angry,
                                                                             loop_max=servo_looping)
 
