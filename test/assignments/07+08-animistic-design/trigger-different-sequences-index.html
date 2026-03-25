@@ -89,7 +89,7 @@
 
         <span class="k">if</span> <span class="n">touch</span><span class="p">.</span><span class="n">value</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="s">"sleeping 😴"</span><span class="p">)</span>
-            <span class="c1"># Make a call to the library and request the status of our LED
+            <span class="c1"># Make a call to the library and request the desired brightness of our LED
 </span>            <span class="n">position_led</span><span class="p">,</span> <span class="n">running_led</span><span class="p">,</span> <span class="n">changed_led</span> <span class="o">=</span> <span class="n">vs_led</span><span class="p">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">sequence</span><span class="o">=</span><span class="n">led_sequence_sleep</span><span class="p">,</span> <span class="n">loop_max</span><span class="o">=</span><span class="n">led_looping</span><span class="p">)</span>
 
             <span class="c1"># See if the values changed for the next move, then do so
@@ -101,7 +101,7 @@
                 <span class="n">leds</span><span class="p">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">led_value</span><span class="p">))</span>
                 <span class="n">leds</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
-            <span class="c1"># Make a call to the library and request the status of our servo motor
+            <span class="c1"># Make a call to the library and request the desired position of our servo motor
 </span>            <span class="n">position_servo</span><span class="p">,</span> <span class="n">running_servo</span><span class="p">,</span> <span class="n">changed_servo</span> <span class="o">=</span> <span class="n">vs_servo</span><span class="p">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">sequence</span><span class="o">=</span><span class="n">servo_sequence_sleep</span><span class="p">,</span>
                                                                             <span class="n">loop_max</span><span class="o">=</span><span class="n">servo_looping</span><span class="p">)</span>
 
@@ -112,7 +112,7 @@
 
         <span class="k">elif</span> <span class="n">touch</span><span class="p">.</span><span class="n">value</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="s">"angry!!! 😡"</span><span class="p">)</span>
-            <span class="c1"># Make a call to the library and request the status of our LED
+            <span class="c1"># Make a call to the library and request the desired brightness of our LED
 </span>            <span class="n">position_led</span><span class="p">,</span> <span class="n">running_led</span><span class="p">,</span> <span class="n">changed_led</span> <span class="o">=</span> <span class="n">vs_led</span><span class="p">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">sequence</span><span class="o">=</span><span class="n">led_sequence_angry</span><span class="p">,</span> <span class="n">loop_max</span><span class="o">=</span><span class="n">led_looping</span><span class="p">)</span>
 
             <span class="c1"># See if the values changed for the next move, then do so
@@ -124,7 +124,7 @@
                 <span class="n">leds</span><span class="p">.</span><span class="n">fill</span><span class="p">((</span><span class="n">led_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
                 <span class="n">leds</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
-            <span class="c1"># Make a call to the library and request the status of our servo motor
+            <span class="c1"># Make a call to the library and request the desired position of our servo motor
 </span>            <span class="n">position_servo</span><span class="p">,</span> <span class="n">running_servo</span><span class="p">,</span> <span class="n">changed_servo</span> <span class="o">=</span> <span class="n">vs_servo</span><span class="p">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">sequence</span><span class="o">=</span><span class="n">servo_sequence_angry</span><span class="p">,</span>
                                                                             <span class="n">loop_max</span><span class="o">=</span><span class="n">servo_looping</span><span class="p">)</span>
 
